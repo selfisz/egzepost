@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
+    "build:pages": "tsc --noEmit && BASE_PATH=/egzepost/ vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
     "import:acts": "tsx scripts/import-acts.ts",
     "typecheck": "tsc --noEmit"
   },
