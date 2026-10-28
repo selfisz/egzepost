@@ -19,23 +19,23 @@ npm run preview
 
 ## Import aktów
 
-ISAP PDF (`…Lj.pdf`) bywa blokowany przez Incapsula. Skrypt korzysta z **API ELI** (`api.sejm.gov.pl`):
+Domyślnie: oficjalne PDF tekstu jednolitego w `data/source/` → `pdftotext`:
 
-| Akt | Źródło MVP |
-|-----|------------|
-| u.p.e.a. | tekst jednolity PDF ELI (np. DU/2026/1311) → `pdftotext` |
-| Kpa | tekst jednolity PDF ELI (np. DU/2025/1691) → `pdftotext` |
+| Plik | Akt |
+|------|-----|
+| `upea-D19660151Lj.pdf` | u.p.e.a. |
+| `kpa-D19600168Lj.pdf` | Kpa |
 
-Wymaga `pdftotext` (poppler-utils). Offline: pliki w `scripts/raw/` + `IMPORT_SOURCE=local npm run import:acts`.
+Wymaga `pdftotext` (poppler-utils). ELI fallback: `IMPORT_SOURCE=eli npm run import:acts`.
 
-Status ostatniego importu: `public/data/IMPORT.md`.
+Status: `public/data/IMPORT.md`.
 
-## Funkcje MVP
+## Funkcje MVP (F1)
 
-- **Szukaj** — Cmd/Ctrl+K, filtry aktów/tagów, ranking tag-first, „brak w bazie”
-- **Nauka** — cloze / tag→przepis / który artykuł?, SRS 1/2/3, Spacja
-- **Tagi / Baza** — tagi in-place, słownik, eksport/import JSON
-- Karty artykułów: hierarchia §/pkt, podświetlenie składni prawa, podgląd odesłań
+- **Przeglądaj** (start) — drzewo Dział→Rozdział, czytnik: art. po art. *lub* scroll rozdziału
+- **Szukaj** — Cmd/Ctrl+K, lista → czytnik, tag-first, „brak w bazie”
+- **Ucz się** — fiszki / SRS (moduły tematyczne w F3)
+- **Moje** — tagi, eksport/import JSON
 - Motyw jasny/ciemny, PWA (offline cache)
 
 Dane użytkownika: `localStorage` (`egzepost:user:v1`).

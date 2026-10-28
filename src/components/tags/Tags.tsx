@@ -155,9 +155,9 @@ export function Tags({
   return (
     <section className="mx-auto w-full max-w-3xl px-4 pb-28 pt-4 md:pb-10 md:pt-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold tracking-tight">Tagi / Baza</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Moje</h1>
         <p className="mt-1 max-w-xl text-sm text-slate-500 dark:text-zinc-400">
-          Słownik żargonu → artykuły. Dane lokalnie w przeglądarce — eksportuj JSON na wszelki wypadek.
+          Tagi (żargon pracy), ustawienia i eksport bazy. Dane lokalnie w przeglądarce.
         </p>
       </div>
 

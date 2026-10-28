@@ -17,7 +17,7 @@ export type Article = {
 }
 
 export type ActSource = {
-  kind: 'eli-html' | 'eli-pdf' | 'local-html' | 'local-txt'
+  kind: 'isap-pdf' | 'eli-html' | 'eli-pdf' | 'local-html' | 'local-txt'
   eli?: string
   url?: string
   fetchedAt: string

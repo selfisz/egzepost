@@ -1,18 +1,17 @@
 {
-  "generatedAt": "2026-10-28T13:56:27.744Z",
+  "generatedAt": "2026-10-28T15:01:00.527Z",
   "acts": [
     {
       "id": "upea",
       "shortName": "u.p.e.a.",
       "title": "Ustawa z dnia 17 czerwca 1966 r. o postępowaniu egzekucyjnym w administracji",
       "displayAddress": "Dz.U. 1966 nr 24 poz. 151 (tekst jednolity)",
-      "articleCount": 429,
+      "articleCount": 430,
       "source": {
-        "kind": "eli-pdf",
-        "eli": "DU/2026/1311",
-        "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1311/text.pdf",
-        "fetchedAt": "2026-10-28T13:56:26.959Z",
-        "note": "Tekst jednolity PDF ELI DU/2026/1311 → pdftotext. ISAP Lj PDF: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf"
+        "kind": "isap-pdf",
+        "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf",
+        "fetchedAt": "2026-10-28T15:01:00.374Z",
+        "note": "Oficjalny tekst jednolity PDF: data/source/upea-D19660151Lj.pdf → pdftotext. ISAP: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf"
       },
       "isapPdf": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf"
     },
@@ -23,11 +22,10 @@
       "displayAddress": "Dz.U. 1960 nr 30 poz. 168 (tekst jednolity)",
       "articleCount": 306,
       "source": {
-        "kind": "eli-pdf",
-        "eli": "DU/2025/1691",
-        "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1691/text.pdf",
-        "fetchedAt": "2026-10-28T13:56:27.744Z",
-        "note": "Tekst jednolity PDF ELI DU/2025/1691 → pdftotext. ISAP Lj PDF: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf"
+        "kind": "isap-pdf",
+        "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf",
+        "fetchedAt": "2026-10-28T15:01:00.527Z",
+        "note": "Oficjalny tekst jednolity PDF: data/source/kpa-D19600168Lj.pdf → pdftotext. ISAP: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf"
       },
       "isapPdf": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf"
     }

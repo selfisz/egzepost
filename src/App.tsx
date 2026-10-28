@@ -1,5 +1,6 @@
-import { BookOpen, Search, Tags as TagsIcon } from 'lucide-react'
+import { BookOpen, Library, Search, UserRound } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Browse } from './components/browse/Browse'
 import { Lookup } from './components/lookup/Lookup'
 import { Learn } from './components/learn/Learn'
 import { Tags } from './components/tags/Tags'
@@ -11,16 +12,17 @@ import { loadUserStore, saveUserStore } from './lib/storage'
 import type { Article, UserStore } from './types'
 import { cn } from './lib/cn'
 
-type Tab = 'lookup' | 'learn' | 'tags'
+type Tab = 'browse' | 'lookup' | 'learn' | 'mine'
 
 function Shell() {
   useTheme()
-  const [tab, setTab] = useState<Tab>('lookup')
+  const [tab, setTab] = useState<Tab>('browse')
   const [data, setData] = useState<AppData | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [store, setStore] = useState<UserStore>(() => loadUserStore())
   const [focusToken, setFocusToken] = useState(0)
   const [draftTag, setDraftTag] = useState<string | null>(null)
+  const [browseFocusId, setBrowseFocusId] = useState<string | null>(null)
   const [xrefArticle, setXrefArticle] = useState<Article | null>(null)
   const [xrefOpen, setXrefOpen] = useState(false)
 
@@ -55,7 +57,7 @@ function Shell() {
     const onAssign = (e: Event) => {
       const detail = (e as CustomEvent<{ label: string }>).detail
       setDraftTag(detail.label)
-      setTab('tags')
+      setTab('mine')
     }
     window.addEventListener('egzepost:assign-tag', onAssign)
     return () => window.removeEventListener('egzepost:assign-tag', onAssign)
@@ -77,16 +79,23 @@ function Shell() {
     setXrefOpen(true)
   }
 
+  const navItems = [
+    ['browse', 'Przeglądaj', Library],
+    ['lookup', 'Szukaj', Search],
+    ['learn', 'Ucz się', BookOpen],
+    ['mine', 'Moje', UserRound],
+  ] as const
+
   return (
     <div className="min-h-full">
       <header className="border-b border-slate-200/80 bg-stone-50/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <div className="min-w-0">
             <div className="text-lg font-semibold tracking-tight">
               Egze <span className="text-indigo-600 dark:text-indigo-400">Post</span>
             </div>
             <p className="truncate text-xs text-slate-500 dark:text-zinc-500">
-              Lookup + nauka · tylko baza i Twoje tagi
+              Kodeks do pracy i nauki · tylko baza + Twoje tagi
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -111,15 +120,8 @@ function Shell() {
           </div>
         </div>
 
-        {/* Desktop top nav */}
-        <nav className="mx-auto hidden max-w-5xl gap-1 px-4 pb-2 md:flex" aria-label="Główne">
-          {(
-            [
-              ['lookup', 'Szukaj', Search],
-              ['learn', 'Nauka', BookOpen],
-              ['tags', 'Tagi / Baza', TagsIcon],
-            ] as const
-          ).map(([id, label, Icon]) => (
+        <nav className="mx-auto hidden max-w-6xl gap-1 px-4 pb-2 md:flex" aria-label="Główne">
+          {navItems.map(([id, label, Icon]) => (
             <button
               key={id}
               type="button"
@@ -150,6 +152,17 @@ function Shell() {
           <p className="p-8 text-center text-sm text-slate-500">Ładowanie bazy aktów…</p>
         )}
 
+        {data && tab === 'browse' && (
+          <Browse
+            acts={data.acts}
+            articles={data.articles}
+            store={store}
+            onStoreChange={updateStore}
+            onXref={openXref}
+            focusArticleId={browseFocusId}
+            onFocusConsumed={() => setBrowseFocusId(null)}
+          />
+        )}
         {data && tab === 'lookup' && (
           <Lookup
             acts={data.acts}
@@ -158,6 +171,10 @@ function Shell() {
             onStoreChange={updateStore}
             onXref={openXref}
             focusToken={focusToken}
+            onOpenInBrowse={(id) => {
+              setBrowseFocusId(id)
+              setTab('browse')
+            }}
           />
         )}
         {data && tab === 'learn' && (
@@ -169,7 +186,7 @@ function Shell() {
             onXref={openXref}
           />
         )}
-        {data && tab === 'tags' && (
+        {data && tab === 'mine' && (
           <Tags
             acts={data.acts}
             articles={data.articles}
@@ -182,18 +199,11 @@ function Shell() {
         )}
       </main>
 
-      {/* Mobile bottom tab bar */}
       <nav
-        className="fixed inset-x-3 bottom-3 z-30 grid grid-cols-3 gap-1 rounded-2xl border border-slate-200 bg-white/95 p-1 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-900/95"
+        className="fixed inset-x-2 bottom-3 z-30 grid grid-cols-4 gap-1 rounded-2xl border border-slate-200 bg-white/95 p-1 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-900/95"
         aria-label="Główne"
       >
-        {(
-          [
-            ['lookup', 'Szukaj', Search],
-            ['learn', 'Nauka', BookOpen],
-            ['tags', 'Tagi', TagsIcon],
-          ] as const
-        ).map(([id, label, Icon]) => (
+        {navItems.map(([id, label, Icon]) => (
           <button
             key={id}
             type="button"
@@ -203,7 +213,7 @@ function Shell() {
               if (id === 'lookup') setFocusToken((n) => n + 1)
             }}
             className={cn(
-              'flex flex-col items-center gap-0.5 rounded-xl py-2 text-[11px] font-semibold',
+              'flex flex-col items-center gap-0.5 rounded-xl py-2 text-[10px] font-semibold',
               tab === id
                 ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
                 : 'text-slate-600 dark:text-zinc-300',
