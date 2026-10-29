@@ -2,7 +2,7 @@ import { ArrowUpRight, BookmarkCheck, BookmarkPlus, Copy, Quote, Tag } from 'luc
 import { useEffect, useState, type ReactNode } from 'react'
 import { citation } from '../../lib/data'
 import { cn } from '../../lib/cn'
-import { addToLearnQueue, getPrefs, newTagId, pushRecentArticle, upsertTag } from '../../lib/storage'
+import { addToLearnQueue, getPrefs, markArticleRead, newTagId, pushRecentArticle, upsertTag } from '../../lib/storage'
 import type { Library } from '../../lib/structure'
 import { chapterLabel, isActId } from '../../lib/structure'
 import type { ActMeta, Article, UserStore } from '../../types'
@@ -26,17 +26,48 @@ export function ArticleReader({ lib, acts, article, chapterMode, store, onStoreC
   const highlight = getPrefs(store).highlightLegal
   const act = isActId(article.actId) ? lib.acts[article.actId] : undefined
 
+  const ch = act?.chapterOf.get(article.id)
+  const list = act && ch && chapterMode ? ch.articles : [article]
+
   useEffect(() => {
-    if ((store.recentArticleIds ?? [])[0] !== article.id) onStoreChange(pushRecentArticle(store, article.id))
+    let next = store
+    if ((store.recentArticleIds ?? [])[0] !== article.id) next = pushRecentArticle(next, article.id)
+    next = markArticleRead(next, article.id)
+    if (next !== store) onStoreChange(next)
     // Only on article change; store updates from this effect must not retrigger it.
   }, [article.id])
 
-  if (!act) return <div className="p-8 text-muted">Brak w bazie: {article.id}</div>
-  const ch = act.chapterOf.get(article.id)!
+  useEffect(() => {
+    if (!chapterMode || !act) return
+    const nodes = list
+      .map((a) => document.getElementById(`a-${a.id}`))
+      .filter((n): n is HTMLElement => !!n)
+    if (!nodes.length) return
+    const seen = new Set<string>()
+    const io = new IntersectionObserver(
+      (entries) => {
+        let nextStore = store
+        let changed = false
+        for (const e of entries) {
+          if (!e.isIntersecting || e.intersectionRatio < 0.5) continue
+          const id = e.target.id.replace(/^a-/, '')
+          if (seen.has(id) || store.readLog?.[id]) continue
+          seen.add(id)
+          nextStore = markArticleRead(nextStore, id)
+          changed = true
+        }
+        if (changed) onStoreChange(nextStore)
+      },
+      { threshold: 0.5 },
+    )
+    for (const n of nodes) io.observe(n)
+    return () => io.disconnect()
+  }, [chapterMode, article.id, act?.id])
+
+  if (!act || !ch) return <div className="p-8 text-muted">Brak w bazie: {article.id}</div>
   const i = act.articles.indexOf(article)
   const prev = act.articles[i - 1]
   const next = act.articles[i + 1]
-  const list = chapterMode ? ch.articles : [article]
 
   const handleXref = (fromActId: string) => (raw: string) => {
     const m = raw.match(/art(?:ykuł|\.)?\s*(\d+[a-z]*)/i)

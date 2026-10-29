@@ -1,16 +1,17 @@
-import { BookOpen, ChevronLeft, GraduationCap, Moon, Search, Sun, UserRound } from 'lucide-react'
+import { BookOpen, ChartColumn, ChevronLeft, GraduationCap, Moon, Search, Sun, UserRound } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { cn } from '../../lib/cn'
 import { useTheme } from '../ui/ThemeToggle'
 import { Wordmark } from './identity'
 import { href } from './router'
 
-export type Tab = 'start' | 'przegladaj' | 'szukaj' | 'nauka' | 'moje'
+export type Tab = 'start' | 'przegladaj' | 'szukaj' | 'nauka' | 'statystyki' | 'moje'
 
 const TABS = [
   { id: 'przegladaj', label: 'Przeglądaj', icon: BookOpen },
   { id: 'szukaj', label: 'Szukaj', icon: Search },
   { id: 'nauka', label: 'Nauka', icon: GraduationCap },
+  { id: 'statystyki', label: 'Statystyki', icon: ChartColumn },
 ] as const
 
 export function Shell({ tab, children, bare }: { tab: Tab; children: ReactNode; bare?: boolean }) {
@@ -66,7 +67,7 @@ export function Shell({ tab, children, bare }: { tab: Tab; children: ReactNode; 
           aria-label="Moduły"
           className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/85 pb-[max(env(safe-area-inset-bottom),10px)] backdrop-blur-xl md:hidden"
         >
-          <div className="mx-auto grid max-w-md grid-cols-3 px-4 pt-2">
+          <div className="mx-auto grid max-w-lg grid-cols-4 px-2 pt-2">
             {TABS.map((t) => {
               const active = tab === t.id
               return (
@@ -75,17 +76,17 @@ export function Shell({ tab, children, bare }: { tab: Tab; children: ReactNode; 
                   href={href(t.id)}
                   aria-current={active ? 'page' : undefined}
                   className={cn(
-                    'flex flex-col items-center gap-1 py-1 text-[11px] font-medium tracking-wide',
+                    'flex flex-col items-center gap-1 py-1 text-[10.5px] font-medium tracking-wide',
                     active ? 'text-ink' : 'text-muted',
                   )}
                 >
                   <span
                     className={cn(
-                      'grid h-8 w-14 place-items-center rounded-full transition',
+                      'grid h-8 w-12 place-items-center rounded-full transition',
                       active && 'bg-ink text-paper',
                     )}
                   >
-                    <t.icon className="size-[19px]" strokeWidth={active ? 2.1 : 1.7} />
+                    <t.icon className="size-[18px]" strokeWidth={active ? 2.1 : 1.7} />
                   </span>
                   {t.label}
                 </a>

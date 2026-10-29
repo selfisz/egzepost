@@ -98,6 +98,20 @@ export type AppPrefs = {
   highlightLegal: boolean
 }
 
+export type Profile = {
+  /** First name for greetings on Start. Empty until the first-visit prompt. */
+  name?: string
+  /** True once the name prompt has been shown (even if skipped). */
+  namePromptSeen?: boolean
+}
+
+/** Reading history for Statystyki — article was shown on screen at least once. */
+export type ReadEntry = {
+  firstAt: string
+  lastAt: string
+  opens: number
+}
+
 export type UserStore = {
   version: 1
   tags: UserTag[]
@@ -112,4 +126,7 @@ export type UserStore = {
   /** User-created / customized learn modules (seeds merged at runtime) */
   learnModules?: LearnModule[]
   prefs?: AppPrefs
+  profile?: Profile
+  /** articleId → reading log (Statystyki „przeczytane”) */
+  readLog?: Record<string, ReadEntry>
 }

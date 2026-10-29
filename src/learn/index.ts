@@ -49,4 +49,4 @@ export {
 
 export { isDue, isMastered } from './srs'
 
-export { loadLearnState, saveLearnState, LEARN_STORAGE_KEY } from './storage'
+export { loadLearnState, saveLearnState, parseLearnState, LEARN_STORAGE_KEY } from './storage'

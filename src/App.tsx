@@ -2,19 +2,28 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { CrossRefPopover } from './components/article/CrossRefPopover'
 import { ActList, ActOverview, ChapterView } from './components/browse/Browse'
 import { Home } from './components/home/Home'
+import { NamePrompt } from './components/home/NamePrompt'
 import { NaukaHome, readFocusAct, writeFocusAct } from './components/nauka/Nauka'
 import { Session } from './components/nauka/Session'
 import { ArticleReader } from './components/reader/ArticleReader'
 import { SearchScreen } from './components/search/Search'
+import { StatystykiHome } from './components/stats/Statystyki'
 import { go, useRoute } from './components/shell/router'
 import { Shell, TopBar, type Tab } from './components/shell/Shell'
 import { Tags } from './components/tags/Tags'
 import { useTheme } from './components/ui/ThemeToggle'
 import { ToastProvider } from './components/ui/Toast'
 import { loadAppData, type AppData } from './lib/data'
-import { learnEngine } from './lib/learn-adapter'
+import {
+  consumeLearnQueue,
+  loadBank,
+  planSession,
+  readLearnState,
+  type LearnMode,
+  type PlannedSession,
+} from './lib/learn-adapter'
 import { loadUserStore, saveUserStore } from './lib/storage'
-import { getLibrary, isActId, type ActId, type Library } from './lib/structure'
+import { getLibrary, isActId, type ActId } from './lib/structure'
 import type { Article, UserStore } from './types'
 
 function Main() {
@@ -35,6 +44,8 @@ function Main() {
       .catch((e: unknown) => {
         if (!cancelled) setError(e instanceof Error ? e.message : 'Nie udało się wczytać bazy')
       })
+    // Warm the question bank in the background.
+    loadBank().catch(() => {})
     return () => {
       cancelled = true
     }
@@ -133,17 +144,15 @@ function Main() {
         focusToken={focusToken}
       />
     )
-  } else if (p0 === 'nauka' && (p1 === 'trening' || p1 === 'etap')) {
+  } else if (p0 === 'nauka' && p1 === 'sesja') {
     return (
       <Shell tab="nauka" bare>
         <SessionRoute
-          key={route.parts.join('/')}
-          lib={lib}
-          kind={p1}
-          actId={isActId(p2) ? p2 : readFocusAct()}
-          index={Number(p3)}
+          key={[...route.parts, route.query.toString()].join('|')}
+          store={store}
+          onStoreChange={updateStore}
           onXref={openXref}
-          {...common}
+          query={route.query}
         />
         <CrossRefPopover open={xrefOpen} onOpenChange={setXrefOpen} article={xrefArticle} acts={data.acts} />
       </Shell>
@@ -154,6 +163,11 @@ function Main() {
     const actId: ActId = isActId(q) ? q : readFocusAct()
     if (isActId(q)) writeFocusAct(q)
     body = <NaukaHome lib={lib} store={store} actId={actId} />
+  } else if (p0 === 'statystyki') {
+    tab = 'statystyki'
+    const actId = isActId(p1) ? p1 : undefined
+    top = actId ? <TopBar back="statystyki" title="Statystyki" /> : <TopBar brand />
+    body = <StatystykiHome lib={lib} store={store} actId={actId} />
   } else if (p0 === 'moje') {
     tab = 'moje'
     top = <TopBar back="" title="Moje: tagi i ustawienia" />
@@ -175,44 +189,73 @@ function Main() {
     <Shell tab={tab}>
       {top}
       {body}
+      <NamePrompt store={store} onStoreChange={updateStore} />
       <CrossRefPopover open={xrefOpen} onOpenChange={setXrefOpen} article={xrefArticle} acts={data.acts} />
     </Shell>
   )
 }
 
 function SessionRoute({
-  lib,
-  kind,
-  actId,
-  index,
   store,
   onStoreChange,
   onXref,
+  query,
 }: {
-  lib: Library
-  kind: 'trening' | 'etap'
-  actId: ActId
-  index: number
   store: UserStore
   onStoreChange: (next: UserStore) => void
   onXref: (actId: string, number: string) => void
+  query: URLSearchParams
 }) {
-  // Freeze the deck at session start; grading updates the store but must not reshuffle cards.
-  const [cards] = useState(() =>
-    kind === 'trening'
-      ? learnEngine.dailyPlan(lib, store, actId).cards
-      : learnEngine.stageSession(lib.acts[actId], index, store),
-  )
-  const title = kind === 'trening' ? 'Trening na dziś' : (lib.acts[actId].chapters[index]?.title ?? 'Etap')
+  const modeRaw = query.get('tryb')
+  const mode: LearnMode = modeRaw === 'test' || modeRaw === 'flashcards' || modeRaw === 'mixed' ? modeRaw : 'mixed'
+  const actId = isActId(query.get('akt')) ? (query.get('akt') as ActId) : readFocusAct()
+  const stageId = query.get('etap') ?? undefined
+  const mistakesOnly = query.get('bledy') === '1'
+  const exitTo = `nauka?akt=${actId}`
+
+  const [plan, setPlan] = useState<PlannedSession | null>(null)
+  const [err, setErr] = useState<string | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    loadBank()
+      .then((bank) => {
+        if (cancelled) return
+        const state = readLearnState()
+        const next = planSession(bank, state, {
+          mode,
+          actId,
+          stageId,
+          mistakesOnly,
+          preferArticleIds: store.learnQueue,
+        })
+        // Consume queued articles that appear in this session.
+        const used = new Set(next.items.map((i) => i.question.articleId))
+        const consumed = store.learnQueue.filter((id) => used.has(id))
+        if (consumed.length) onStoreChange(consumeLearnQueue(store, consumed))
+        setPlan(next)
+      })
+      .catch((e: unknown) => !cancelled && setErr(e instanceof Error ? e.message : 'Brak banku'))
+    return () => {
+      cancelled = true
+    }
+    // Freeze plan once built — don't rebuild on store changes mid-session.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  if (err)
+    return (
+      <div className="p-8 text-center">
+        <p className="text-muted">{err}</p>
+        <a href={`#/${exitTo}`} className="mt-4 inline-block font-semibold">
+          Wróć
+        </a>
+      </div>
+    )
+  if (!plan) return <div className="grid min-h-dvh place-items-center text-muted">Przygotowuję sesję…</div>
+
   return (
-    <Session
-      title={title}
-      cards={cards}
-      store={store}
-      onStoreChange={onStoreChange}
-      onXref={onXref}
-      exitTo={`nauka?akt=${actId}`}
-    />
+    <Session plan={plan} store={store} onStoreChange={onStoreChange} onXref={onXref} exitTo={exitTo} />
   )
 }
 

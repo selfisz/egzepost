@@ -3,12 +3,15 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { ActMeta, Article, TagCategory, UserStore, UserTag } from '../../types'
 import { Reader } from '../reader/Reader'
 import {
+  applyImportedLearn,
   deleteTag,
   exportStoreJson,
   getPrefs,
+  getProfile,
   importStoreJson,
   newTagId,
   setPrefs,
+  setProfile,
   togglePinnedTag,
   upsertTag,
 } from '../../lib/storage'
@@ -178,7 +181,8 @@ export function Tags({
     const reader = new FileReader()
     reader.onload = () => {
       try {
-        const next = importStoreJson(String(reader.result))
+        const { store: next, learn } = importStoreJson(String(reader.result))
+        applyImportedLearn(learn)
         onStoreChange(next)
         toast.push('Zaimportowano bazę')
       } catch (e) {
@@ -347,6 +351,26 @@ export function Tags({
       {view === 'settings' && (
         <div className="space-y-6">
           <section className="space-y-3">
+            <h2 className="text-sm font-semibold text-slate-700 dark:text-zinc-200">Profil</h2>
+            <Row
+              label="Imię"
+              hint="Używane w powitaniu na starcie"
+              action={
+                <input
+                  defaultValue={getProfile(store).name ?? ''}
+                  maxLength={40}
+                  placeholder="np. Anna"
+                  onBlur={(e) => {
+                    const name = e.target.value.trim()
+                    onStoreChange(setProfile(store, { name: name || undefined, namePromptSeen: true }))
+                  }}
+                  className="h-8 w-36 rounded-lg border border-slate-200 bg-transparent px-2 text-sm dark:border-zinc-700"
+                />
+              }
+            />
+          </section>
+
+          <section className="space-y-3 border-t border-slate-200/80 pt-5 dark:border-zinc-800">
             <h2 className="text-sm font-semibold text-slate-700 dark:text-zinc-200">Wygląd</h2>
             <Row
               label="Motyw"
@@ -391,8 +415,8 @@ export function Tags({
           <section className="space-y-3 border-t border-slate-200/80 pt-5 dark:border-zinc-800">
             <h2 className="text-sm font-semibold text-slate-700 dark:text-zinc-200">Baza lokalna</h2>
             <p className="text-xs text-slate-500">
-              Eksport obejmuje tagi, postęp SRS, moduły nauki, przypięcia i preferencje. Dane tylko w
-              tej przeglądarce.
+              Eksport obejmuje tagi, imię, historię czytania, postęp nauki (pytania), stary SRS, moduły,
+              przypięcia i preferencje. Dane tylko w tej przeglądarce.
             </p>
             <div className="flex flex-wrap gap-2">
               <button
