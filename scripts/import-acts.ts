@@ -1,5 +1,5 @@
 /**
- * Import consolidated Kpa + u.p.e.a. into searchable article JSON.
+ * Import consolidated Kpa + u.p.e.a. + Ordynacja podatkowa into searchable article JSON.
  *
  * Default: official ISAP tekst jednolity PDFs in `data/source/` → pdftotext.
  * Fallback (IMPORT_SOURCE=eli): Sejm ELI API HTML/PDF (ISAP download URLs are often blocked).
@@ -72,6 +72,20 @@ const ACTS: ActDef[] = [
     tjPdfElis: ['DU/2025/1691', 'DU/2024/572'],
     htmlFile: 'kpa.html',
     txtFile: 'kpa.txt',
+  },
+  {
+    id: 'ordynacja',
+    shortName: 'Op',
+    title: 'Ustawa z dnia 29 sierpnia 1997 r. Ordynacja podatkowa',
+    displayAddress: 'Dz.U. 1997 nr 137 poz. 926 (tekst jednolity)',
+    baseEli: 'DU/1997/926',
+    isapPdf:
+      'https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19971370926/U/D19970926Lj.pdf',
+    sourcePdf: 'ordynacja-D19970926Lj.pdf',
+    tjHtmlElis: ['DU/2025/1112', 'DU/2023/2383'],
+    tjPdfElis: ['DU/2026/622', 'DU/2025/1112', 'DU/2023/2383'],
+    htmlFile: 'ordynacja.html',
+    txtFile: 'ordynacja.txt',
   },
 ]
 
@@ -340,7 +354,8 @@ function parseArticlesFromHtml(act: ActDef, html: string): Article[] {
 const PAGE_HEADER = /^©?\s*Kancelaria Sejmu\b.*$/i
 const DZIAL_RE = /^(DZIAŁ|Dział)\s+([IVXLC\d]+[a-z]?)\b\.?\s*(.*)$/i
 const ROZDZIAL_RE = /^(Rozdział|ROZDZIAŁ)\s+(\d+[a-z]?)\b\.?\s*(.*)$/i
-const ART_RE = /^Art\.\s*(\d+[a-z]?)\b\.?\s*(.*)$/i
+/** Headings only: capital „Art.” — lowercase „art.” is a cross-ref, not a new unit */
+const ART_RE = /^Art\.\s*(\d+[a-z]?)\b\.?\s*(.*)$/
 
 function cleanPdfNoise(s: string): string {
   return s
@@ -351,6 +366,8 @@ function cleanPdfNoise(s: string): string {
       if (!t) return true
       if (PAGE_HEADER.test(t)) return false
       if (/^s\.\s*\d+\s*\/\s*\d+$/i.test(t)) return false
+      // ISAP Lj date footer (e.g. 2026-10-08)
+      if (/^\d{4}-\d{2}-\d{2}$/.test(t)) return false
       return true
     })
     .join('\n')
@@ -636,9 +653,13 @@ async function importAct(act: ActDef): Promise<ActBundle> {
   console.log(`→ ${act.shortName}`)
   const { articles, source } = await loadActSource(act)
   console.log(`  ${articles.length} artykułów (${source.kind}${source.eli ? ` ${source.eli}` : ''})`)
-  // Sanity: sample articles from the UI/UX spec should exist
+  // Sanity: sample articles should exist
   const required =
-    act.id === 'upea' ? ['18', '33', '56'] : ['104', '124', '144']
+    act.id === 'upea'
+      ? ['18', '33', '56']
+      : act.id === 'kpa'
+        ? ['104', '124', '144']
+        : ['1', '2', '3']
   for (const n of required) {
     if (!articles.some((a) => a.number === n)) {
       console.warn(`  WARN: missing sample Art. ${n}`)

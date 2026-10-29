@@ -1,9 +1,11 @@
-import type { CardProgress, LearnModule, UserStore, UserTag } from '../types'
+import type { AppPrefs, CardProgress, LearnModule, UserStore, UserTag } from '../types'
 import { SEED_MODULES } from '../data/learn-seeds'
 
 const KEY = 'egzepost:user:v1'
 const MAX_RECENT_ARTICLES = 12
 const MAX_RECENT_TAGS = 12
+
+export const defaultPrefs: AppPrefs = { highlightLegal: false }
 
 const empty: UserStore = {
   version: 1,
@@ -14,6 +16,7 @@ const empty: UserStore = {
   pinnedTagIds: [],
   recentTagIds: [],
   learnModules: [],
+  prefs: { ...defaultPrefs },
 }
 
 export function loadUserStore(): UserStore {
@@ -31,10 +34,19 @@ export function loadUserStore(): UserStore {
       pinnedTagIds: parsed.pinnedTagIds ?? [],
       recentTagIds: parsed.recentTagIds ?? [],
       learnModules: parsed.learnModules ?? [],
+      prefs: { ...defaultPrefs, ...parsed.prefs },
     }
   } catch {
     return structuredClone(empty)
   }
+}
+
+export function getPrefs(store: UserStore): AppPrefs {
+  return { ...defaultPrefs, ...store.prefs }
+}
+
+export function setPrefs(store: UserStore, patch: Partial<AppPrefs>): UserStore {
+  return { ...store, prefs: { ...getPrefs(store), ...patch } }
 }
 
 /** Seeds + user modules; user overrides seed with same id. */
@@ -154,5 +166,6 @@ export function importStoreJson(raw: string): UserStore {
     pinnedTagIds: parsed.pinnedTagIds ?? [],
     recentTagIds: parsed.recentTagIds ?? [],
     learnModules: parsed.learnModules ?? [],
+    prefs: { ...defaultPrefs, ...parsed.prefs },
   }
 }

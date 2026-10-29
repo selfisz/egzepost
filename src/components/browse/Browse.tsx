@@ -2,7 +2,7 @@ import { BookOpen, ChevronDown, ListTree, Rows3 } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { ActMeta, Article, UserStore } from '../../types'
 import { buildToc, chapterPeers, siblingArticles } from '../../lib/toc'
-import { pushRecentArticle } from '../../lib/storage'
+import { getPrefs, pushRecentArticle, setPrefs } from '../../lib/storage'
 import { Reader } from '../reader/Reader'
 import { cn } from '../../lib/cn'
 
@@ -32,9 +32,12 @@ export function Browse({
   const [articleId, setArticleId] = useState<string | null>(null)
   const [readMode, setReadMode] = useState<ReadMode>('single')
   const [jump, setJump] = useState('')
-  const [highlightLegal, setHighlightLegal] = useState(false)
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({})
   const [mobileToc, setMobileToc] = useState(true)
+  const prefs = getPrefs(store)
+  const highlightLegal = prefs.highlightLegal
+  const toggleHighlight = () =>
+    onStoreChange(setPrefs(store, { highlightLegal: !prefs.highlightLegal }))
 
   const actArticles = useMemo(
     () => articles.filter((a) => a.actId === actId),
@@ -272,7 +275,7 @@ export function Browse({
               onStoreChange={onStoreChange}
               onXref={onXref}
               highlightLegal={highlightLegal}
-              onToggleHighlight={() => setHighlightLegal((v) => !v)}
+              onToggleHighlight={toggleHighlight}
               hasPrev={!!prev}
               hasNext={!!next}
               onPrev={() => prev && selectArticle(prev)}
@@ -289,7 +292,7 @@ export function Browse({
                   onStoreChange={onStoreChange}
                   onXref={onXref}
                   highlightLegal={highlightLegal}
-                  onToggleHighlight={() => setHighlightLegal((v) => !v)}
+                  onToggleHighlight={toggleHighlight}
                   bare
                   showNav={false}
                 />

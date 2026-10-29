@@ -1,6 +1,6 @@
 import type { Article, UserTag } from '../types'
 
-export type ActFilter = 'all' | 'upea' | 'kpa' | 'tags'
+export type ActFilter = 'all' | 'upea' | 'kpa' | 'ordynacja' | 'tags'
 
 export type SearchHit = {
   kind: 'article' | 'tag'
