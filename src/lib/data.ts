@@ -13,18 +13,21 @@ function ensureBlocks(a: Article): Article {
   return { ...a, blocks: [{ type: 'text', text: a.text } satisfies ArticleBlock] }
 }
 
+/** Respect Vite `base` (e.g. `/egzepost/` on GitHub Pages). */
+const dataBase = `${import.meta.env.BASE_URL.replace(/\/?$/, '/') }data/`
+
 export async function loadAppData(): Promise<AppData> {
-  const indexRes = await fetch('/data/index.json')
+  const indexRes = await fetch(`${dataBase}index.json`)
   if (!indexRes.ok) {
-    throw new Error('Brak indeksu aktów (/data/index.json). Uruchom: npm run import:acts')
+    throw new Error(`Brak indeksu aktów (${dataBase}index.json). Uruchom: npm run import:acts`)
   }
   const index = (await indexRes.json()) as DataIndex
   const byAct: Record<string, ActBundle> = {}
   const articles: Article[] = []
 
   for (const meta of index.acts) {
-    const res = await fetch(`/data/${meta.id}.json`)
-    if (!res.ok) throw new Error(`Brak pliku aktu: /data/${meta.id}.json`)
+    const res = await fetch(`${dataBase}${meta.id}.json`)
+    if (!res.ok) throw new Error(`Brak pliku aktu: ${dataBase}${meta.id}.json`)
     const bundle = (await res.json()) as ActBundle
     bundle.articles = bundle.articles.map(ensureBlocks)
     byAct[meta.id] = bundle
