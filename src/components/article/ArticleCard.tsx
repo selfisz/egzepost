@@ -115,6 +115,9 @@ export function ArticleCard({
             <ActBadge actId={article.actId} acts={acts} />
             <h2 className="font-mono text-xl font-bold tracking-tight">{article.label}</h2>
           </div>
+          {article.title && (
+            <p className="text-sm font-medium text-slate-700 dark:text-zinc-300">{article.title}</p>
+          )}
           {(article.chapter || linkedTags.length > 0) && (
             <div className="flex flex-wrap items-center gap-1.5">
               {linkedTags.map((t) => (

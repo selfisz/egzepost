@@ -9,6 +9,7 @@ PWA do szybkiego lookupu i nauki na **u.p.e.a.**, **Kpa** oraz **Ordynacji podat
 ```bash
 npm install
 npm run import:acts   # PDF w data/source/ → public/data/
+npm run import:titles # Legalis Art. N [Tytuł] → article.title
 npm run dev           # http://localhost:5173
 ```
 

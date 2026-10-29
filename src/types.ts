@@ -9,6 +9,11 @@ export type Article = {
   actId: string
   number: string
   label: string
+  /**
+   * Editorial short title from Legalis (`Art. N [Tytuł]`).
+   * Navigation aid only — not official ISAP text.
+   */
+  title?: string
   text: string
   excerpt: string
   blocks: ArticleBlock[]

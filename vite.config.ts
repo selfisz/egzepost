@@ -44,6 +44,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff2}'],
         navigateFallback: `${base}index.html`.replace(/\/{2,}/g, '/'),
+        // Ordynacja JSON + titles exceeds default 2 MiB
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
       devOptions: { enabled: true },
     }),

@@ -47,6 +47,9 @@ export function CrossRefPopover({ open, onOpenChange, article, acts }: Props) {
           <ActBadge actId={article.actId} acts={acts} />
           <span className="font-mono text-lg font-bold">{article.label}</span>
         </div>
+        {article.title && (
+          <p className="mb-1 text-sm font-medium text-slate-700 dark:text-zinc-300">{article.title}</p>
+        )}
         <p className="text-xs text-slate-500 dark:text-zinc-400">
           Podgląd odesłania · Esc zamyka
         </p>

@@ -95,7 +95,7 @@ export function searchArticles(
   }
 
   for (const a of articles) {
-    const hay = fold([a.label, a.chapter ?? '', a.section ?? '', a.text].join('\n'))
+    const hay = fold([a.label, a.title ?? '', a.chapter ?? '', a.section ?? '', a.text].join('\n'))
     let score = 0
     if (hay.includes(qFold) && qFold.length >= 3) score = 50
     else if (toks.length >= 2 && toks.every((t) => hay.includes(t))) score = 45

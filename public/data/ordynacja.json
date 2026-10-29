@@ -48,7 +48,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Zakres przedmiotowy"
     },
     {
       "id": "ordynacja:1a",
@@ -77,7 +78,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Obowiązek wynikający z rozporządzenia 2016/679"
     },
     {
       "id": "ordynacja:2",
@@ -137,7 +139,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Uszczegółowienie zakresu przedmiotowego"
     },
     {
       "id": "ordynacja:2a",
@@ -156,7 +159,8 @@
           "text": "podatkowego rozstrzyga się na korzyść podatnika."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Rozstrzyganie wątpliwości na korzyść podatnika"
     },
     {
       "id": "ordynacja:3",
@@ -329,7 +333,8 @@
           ]
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Definicje ogólne"
     },
     {
       "id": "ordynacja:3a",
@@ -358,7 +363,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Deklaracja w formie elektronicznej"
     },
     {
       "id": "ordynacja:3b",
@@ -442,7 +448,8 @@
           ]
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Forma i treść deklaracji"
     },
     {
       "id": "ordynacja:3c",
@@ -457,7 +464,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:3d",
@@ -480,7 +488,8 @@
           "text": "regulują odrębne przepisy."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Elektroniczne składanie deklaracji"
     },
     {
       "id": "ordynacja:3e",
@@ -495,7 +504,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:3f",
@@ -510,7 +520,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:4",
@@ -533,7 +544,8 @@
           "text": "z zaistnieniem zdarzenia określonego w tych ustawach."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Obowiązek podatkowy"
     },
     {
       "id": "ordynacja:5",
@@ -560,7 +572,8 @@
           "text": "w przepisach prawa podatkowego."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Zobowiązanie podatkowe"
     },
     {
       "id": "ordynacja:6",
@@ -583,7 +596,8 @@
           "text": "lub gminy, wynikające z ustawy podatkowej."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Podatek"
     },
     {
       "id": "ordynacja:7",
@@ -606,7 +620,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Podatnik"
     },
     {
       "id": "ordynacja:7a",
@@ -629,7 +644,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Prawa i obowiązki zarządcy sukcesyjnego"
     },
     {
       "id": "ordynacja:8",
@@ -656,7 +672,8 @@
           "text": "we właściwym terminie organowi podatkowemu."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Płatnik"
     },
     {
       "id": "ordynacja:9",
@@ -679,7 +696,8 @@
           "text": "podatku i wpłacenia go we właściwym terminie organowi podatkowemu."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Inkasent"
     },
     {
       "id": "ordynacja:10",
@@ -702,7 +720,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Zryczałtowana forma opodatkowania"
     },
     {
       "id": "ordynacja:11",
@@ -721,7 +740,8 @@
           "text": "podatkowa stanowi inaczej."
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Rok podatkowy"
     },
     {
       "id": "ordynacja:12",
@@ -799,7 +819,8 @@
           ]
         }
       ],
-      "chapter": "Dział I — Przepisy ogólne"
+      "chapter": "Dział I — Przepisy ogólne",
+      "title": "Terminy"
     },
     {
       "id": "ordynacja:13",
@@ -1032,7 +1053,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1 — Organy podatkowe"
+      "section": "Rozdział 1 — Organy podatkowe",
+      "title": "Organy podatkowe"
     },
     {
       "id": "ordynacja:13a",
@@ -1082,7 +1104,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1 — Organy podatkowe"
+      "section": "Rozdział 1 — Organy podatkowe",
+      "title": "Rozszerzenie uprawnień podatkowych na inne organy"
     },
     {
       "id": "ordynacja:14",
@@ -1118,7 +1141,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1 — Organy podatkowe"
+      "section": "Rozdział 1 — Organy podatkowe",
+      "title": "Uprawnienia ministra"
     },
     {
       "id": "ordynacja:14a",
@@ -1266,7 +1290,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Pisemna interpretacja"
     },
     {
       "id": "ordynacja:14b",
@@ -1529,7 +1554,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Interpretacja indywidualna"
     },
     {
       "id": "ordynacja:14c",
@@ -1565,7 +1591,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Treść interpretacji podatkowej indywidualnej, wskazania, pouczenie"
     },
     {
       "id": "ordynacja:14d",
@@ -1595,7 +1622,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Interpretacja podatkowa indywidualna, termin wydania"
     },
     {
       "id": "ordynacja:14e",
@@ -1693,7 +1721,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Interpretacja, zmiana, uchylenie, stwierdzenie wygaśnięcia"
     },
     {
       "id": "ordynacja:14f",
@@ -1754,7 +1783,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Opłata od wniosku"
     },
     {
       "id": "ordynacja:14g",
@@ -1784,7 +1814,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Braki formalne"
     },
     {
       "id": "ordynacja:14h",
@@ -1820,7 +1851,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Odpowiednie stosowanie"
     },
     {
       "id": "ordynacja:14i",
@@ -1912,7 +1944,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Publikacja interpretacji"
     },
     {
       "id": "ordynacja:14j",
@@ -1948,7 +1981,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Podmioty wydające interpretacje indywidualne"
     },
     {
       "id": "ordynacja:14k",
@@ -1978,7 +2012,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Skutki zastosowania się do interpretacji"
     },
     {
       "id": "ordynacja:14l",
@@ -2010,7 +2045,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Skutki podatkowe"
     },
     {
       "id": "ordynacja:14m",
@@ -2078,7 +2114,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Zwolnienie z obowiązku zapłaty podatku"
     },
     {
       "id": "ordynacja:14n",
@@ -2220,7 +2257,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Odpowiednie stosowanie"
     },
     {
       "id": "ordynacja:14o",
@@ -2244,7 +2282,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Postępowanie w razie niewydania interpretacji"
     },
     {
       "id": "ordynacja:14p",
@@ -2268,7 +2307,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Odpowiednie stosowanie"
     },
     {
       "id": "ordynacja:14r",
@@ -2316,7 +2356,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Wniosek wspólny"
     },
     {
       "id": "ordynacja:14s",
@@ -2340,7 +2381,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego"
+      "section": "Rozdział 1a — Interpretacje przepisów prawa podatkowego",
+      "title": "Wniosek o wydanie interpretacji w związku z udzielanym zamówieniem publicznym"
     },
     {
       "id": "ordynacja:14t",
@@ -2376,7 +2418,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Opinia, interpretacja przepisów"
     },
     {
       "id": "ordynacja:14u",
@@ -2582,7 +2625,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Wniosek"
     },
     {
       "id": "ordynacja:14v",
@@ -2606,7 +2650,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Zażalenie"
     },
     {
       "id": "ordynacja:14w",
@@ -2626,7 +2671,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Ważność opinii"
     },
     {
       "id": "ordynacja:14x",
@@ -2656,7 +2702,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Treść opinii"
     },
     {
       "id": "ordynacja:14y",
@@ -2680,7 +2727,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Wniosek, opłaty"
     },
     {
       "id": "ordynacja:14z",
@@ -2917,7 +2965,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego"
+      "section": "Rozdział 1b — Opinia w sprawie opodatkowania wyrównawczego",
+      "title": "Opłata wstępna"
     },
     {
       "id": "ordynacja:15",
@@ -2941,7 +2990,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Przestrzeganie właściwości organów"
     },
     {
       "id": "ordynacja:16",
@@ -2961,7 +3011,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Właściwość rzeczowa"
     },
     {
       "id": "ordynacja:17",
@@ -2985,7 +3036,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Właściwość miejscowa"
     },
     {
       "id": "ordynacja:17a",
@@ -3037,7 +3089,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Następstwo prawne, organ podatkowy właściwy miejscowo"
     },
     {
       "id": "ordynacja:18",
@@ -3061,7 +3114,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Zmiana właściwości miejscowej"
     },
     {
       "id": "ordynacja:18a",
@@ -3085,7 +3139,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Zmiana właściwości miejscowej po zakończeniu roku podatkowego"
     },
     {
       "id": "ordynacja:18b",
@@ -3134,7 +3189,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Niezmienność właściwości"
     },
     {
       "id": "ordynacja:18c",
@@ -3182,7 +3238,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Postanowienie w sprawie wyznaczenia organu podatkowego"
     },
     {
       "id": "ordynacja:18d",
@@ -3237,7 +3294,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Postanowienie o przekazaniu sprawy"
     },
     {
       "id": "ordynacja:19",
@@ -3322,7 +3380,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Rozstrzyganie sporów o właściwość"
     },
     {
       "id": "ordynacja:20",
@@ -3346,7 +3405,8 @@
         }
       ],
       "chapter": "Dział II — Organy podatkowe i ich właściwość",
-      "section": "Rozdział 2 — Właściwość organów podatkowych"
+      "section": "Rozdział 2 — Właściwość organów podatkowych",
+      "title": "Wstrzymanie czynności podczas sporu"
     },
     {
       "id": "ordynacja:20s",
@@ -3388,7 +3448,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Umowa o współdziałanie"
     },
     {
       "id": "ordynacja:20t",
@@ -3412,7 +3473,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Forma"
     },
     {
       "id": "ordynacja:20u",
@@ -3452,7 +3514,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Zobowiązania podatnika"
     },
     {
       "id": "ordynacja:20v",
@@ -3490,7 +3553,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Kompetencje Szefa Krajowej Administracji Skarbowej"
     },
     {
       "id": "ordynacja:20w",
@@ -3510,7 +3574,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Sukcesja praw"
     },
     {
       "id": "ordynacja:20x",
@@ -3559,7 +3624,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Wypowiedzenie i rozwiązanie umowy"
     },
     {
       "id": "ordynacja:20y",
@@ -3583,7 +3649,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Ponowne złożenie wniosku"
     },
     {
       "id": "ordynacja:20z",
@@ -3640,7 +3707,8 @@
         }
       ],
       "chapter": "Dział IIB — Współdziałanie",
-      "section": "Rozdział 1 — Umowa o współdziałanie"
+      "section": "Rozdział 1 — Umowa o współdziałanie",
+      "title": "Wypowiedzenie porozumienia podatkowego"
     },
     {
       "id": "ordynacja:21",
@@ -3701,7 +3769,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Termin powstania zobowiązania"
     },
     {
       "id": "ordynacja:21a",
@@ -3733,7 +3802,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Ulga podatkowa"
     },
     {
       "id": "ordynacja:21b",
@@ -3761,7 +3831,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Decyzja o wysokości dochodu, przychodu lub zysku"
     },
     {
       "id": "ordynacja:22",
@@ -3847,7 +3918,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Zaniechanie ustalania i poboru podatku"
     },
     {
       "id": "ordynacja:23",
@@ -3958,7 +4030,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Określenie podstawy oszacowania"
     },
     {
       "id": "ordynacja:23a",
@@ -3994,7 +4067,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Zaliczki na podatek"
     },
     {
       "id": "ordynacja:24",
@@ -4030,7 +4104,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "Oszacowanie straty"
     },
     {
       "id": "ordynacja:24a",
@@ -4046,7 +4121,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:24b",
@@ -4062,7 +4138,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:25",
@@ -4078,7 +4155,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego"
+      "section": "Rozdział 1 — Powstawanie zobowiązania podatkowego",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:26",
@@ -4098,7 +4176,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Zasada ogólna"
     },
     {
       "id": "ordynacja:26a",
@@ -4122,7 +4201,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Zakres odpowiedzialności podatnika"
     },
     {
       "id": "ordynacja:27",
@@ -4138,7 +4218,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:28",
@@ -4187,7 +4268,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Wynagrodzenie płatników i inkasentów"
     },
     {
       "id": "ordynacja:29",
@@ -4242,7 +4324,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Małżeńska wspólnota majątkowa"
     },
     {
       "id": "ordynacja:30",
@@ -4358,7 +4441,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Odpowiedzialność podatkowa płatnika i inkasenta"
     },
     {
       "id": "ordynacja:31",
@@ -4402,7 +4486,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Osoby odpowiedzialne"
     },
     {
       "id": "ordynacja:32",
@@ -4432,7 +4517,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta"
+      "section": "Rozdział 2 — Odpowiedzialność podatnika, płatnika i inkasenta",
+      "title": "Przechowywanie dokumentów"
     },
     {
       "id": "ordynacja:33",
@@ -4518,7 +4604,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Zabezpieczenie przed terminem płatności"
     },
     {
       "id": "ordynacja:33a",
@@ -4561,7 +4648,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wygaśnięcie decyzji o zabezpieczeniu"
     },
     {
       "id": "ordynacja:33b",
@@ -4595,7 +4683,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Zabezpieczenie na majątku"
     },
     {
       "id": "ordynacja:33c",
@@ -4619,7 +4708,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Odsetki za zwłokę"
     },
     {
       "id": "ordynacja:33d",
@@ -4698,7 +4788,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wykonanie decyzji"
     },
     {
       "id": "ordynacja:33e",
@@ -4722,7 +4813,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Gwarant; poręczyciel"
     },
     {
       "id": "ordynacja:33f",
@@ -4746,7 +4838,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wybór formy zabezpieczenia"
     },
     {
       "id": "ordynacja:33g",
@@ -4770,7 +4863,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Postanowienie o przyjęciu zabezpieczenia"
     },
     {
       "id": "ordynacja:34",
@@ -4862,7 +4956,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Hipoteka przymusowa"
     },
     {
       "id": "ordynacja:35",
@@ -4941,7 +5036,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Powstanie hipoteki przymusowej"
     },
     {
       "id": "ordynacja:36",
@@ -4957,7 +5053,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:37",
@@ -4973,7 +5070,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:38",
@@ -4997,7 +5095,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wniosek organu podatkowego"
     },
     {
       "id": "ordynacja:38a",
@@ -5021,7 +5120,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Tryb zaspokojenia z przedmiotu hipoteki przymusowej"
     },
     {
       "id": "ordynacja:39",
@@ -5095,7 +5195,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wyjawienie przedmiotu hipoteki"
     },
     {
       "id": "ordynacja:40",
@@ -5111,7 +5212,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:41",
@@ -5141,7 +5243,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Zastaw skarbowy"
     },
     {
       "id": "ordynacja:42",
@@ -5161,7 +5264,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Spis rzeczy"
     },
     {
       "id": "ordynacja:43",
@@ -5246,7 +5350,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Rejestr zastawów"
     },
     {
       "id": "ordynacja:44",
@@ -5313,7 +5418,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Decyzja"
     },
     {
       "id": "ordynacja:45",
@@ -5349,7 +5455,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Powstanie zastawu, wpis"
     },
     {
       "id": "ordynacja:46",
@@ -5385,7 +5492,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Skuteczność zastawu"
     },
     {
       "id": "ordynacja:46a",
@@ -5409,7 +5517,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wpis na wniosek"
     },
     {
       "id": "ordynacja:46b",
@@ -5452,7 +5561,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Badanie wniosku"
     },
     {
       "id": "ordynacja:46c",
@@ -5540,7 +5650,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Zaświadczenie"
     },
     {
       "id": "ordynacja:46d",
@@ -5564,7 +5675,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Dostęp do rejestru"
     },
     {
       "id": "ordynacja:46e",
@@ -5588,7 +5700,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Zasady dostępu"
     },
     {
       "id": "ordynacja:46f",
@@ -5644,7 +5757,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Delegacja ustawowa"
     },
     {
       "id": "ordynacja:46g",
@@ -5683,7 +5797,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wygaśnięcie zastawu"
     },
     {
       "id": "ordynacja:46h",
@@ -5720,7 +5835,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Decyzja w sprawie wykreślenia zastawu z rejestru"
     },
     {
       "id": "ordynacja:46i",
@@ -5766,7 +5882,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych"
+      "section": "Rozdział 3 — Zabezpieczenie wykonania zobowiązań podatkowych",
+      "title": "Wykreślenie na wniosek organu Skarbu Państwa"
     },
     {
       "id": "ordynacja:47",
@@ -5814,7 +5931,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 4 — Terminy płatności"
+      "section": "Rozdział 4 — Terminy płatności",
+      "title": "Terminy płatności"
     },
     {
       "id": "ordynacja:48",
@@ -5844,7 +5962,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 4 — Terminy płatności"
+      "section": "Rozdział 4 — Terminy płatności",
+      "title": "Odraczanie terminów"
     },
     {
       "id": "ordynacja:49",
@@ -5874,7 +5993,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 4 — Terminy płatności"
+      "section": "Rozdział 4 — Terminy płatności",
+      "title": "Termin płatności"
     },
     {
       "id": "ordynacja:50",
@@ -5910,7 +6030,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 4 — Terminy płatności"
+      "section": "Rozdział 4 — Terminy płatności",
+      "title": "Delegacja uprawnień - terminy"
     },
     {
       "id": "ordynacja:51",
@@ -5940,7 +6061,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 5 — Zaległość podatkowa"
+      "section": "Rozdział 5 — Zaległość podatkowa",
+      "title": "Zaległość podatkowa"
     },
     {
       "id": "ordynacja:52",
@@ -5999,7 +6121,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 5 — Zaległość podatkowa"
+      "section": "Rozdział 5 — Zaległość podatkowa",
+      "title": "Zwrot nadpłaty lub zwrotu podatku"
     },
     {
       "id": "ordynacja:52a",
@@ -6027,7 +6150,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 5 — Zaległość podatkowa"
+      "section": "Rozdział 5 — Zaległość podatkowa",
+      "title": "Zwrot wynagrodzenia płatników lub inkasentów"
     },
     {
       "id": "ordynacja:53",
@@ -6075,7 +6199,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Naliczanie odsetek"
     },
     {
       "id": "ordynacja:53a",
@@ -6099,7 +6224,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Określenie wysokości odsetek za zwłokę"
     },
     {
       "id": "ordynacja:54",
@@ -6240,7 +6366,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Zwolnienie z odsetek"
     },
     {
       "id": "ordynacja:55",
@@ -6264,7 +6391,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Wpłacanie odsetek"
     },
     {
       "id": "ordynacja:56",
@@ -6306,7 +6434,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Wysokość odsetek"
     },
     {
       "id": "ordynacja:56a",
@@ -6368,7 +6497,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Stosowanie obniżonej stawki odsetek za zwłokę"
     },
     {
       "id": "ordynacja:56b",
@@ -6426,7 +6556,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Stosowanie podwyższonej stawki odsetek za zwłokę"
     },
     {
       "id": "ordynacja:56c",
@@ -6454,7 +6585,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Stopa oprocentowania kredytu lombardowego"
     },
     {
       "id": "ordynacja:56d",
@@ -6478,7 +6610,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Ogłaszanie stawek odsetek za zwłokę"
     },
     {
       "id": "ordynacja:57",
@@ -6538,7 +6671,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Opłata prolongacyjna"
     },
     {
       "id": "ordynacja:58",
@@ -6562,7 +6696,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna"
+      "section": "Rozdział 6 — Odsetki za zwłokę i opłata prolongacyjna",
+      "title": "Delegacja"
     },
     {
       "id": "ordynacja:58a",
@@ -6635,7 +6770,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe"
+      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe",
+      "title": "Dodatkowe zobowiązanie podatkowe"
     },
     {
       "id": "ordynacja:58b",
@@ -6671,7 +6807,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe"
+      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe",
+      "title": "Wysokość dodatkowego zobowiązania podatkowego"
     },
     {
       "id": "ordynacja:58c",
@@ -6726,7 +6863,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe"
+      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe",
+      "title": "Podwojenie albo potrojenie stawek"
     },
     {
       "id": "ordynacja:58d",
@@ -6754,7 +6892,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe"
+      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe",
+      "title": "Obniżenie stawek"
     },
     {
       "id": "ordynacja:58e",
@@ -6782,7 +6921,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe"
+      "section": "Rozdział 6a — Dodatkowe zobowiązanie podatkowe",
+      "title": "Wyłączenie stosowania"
     },
     {
       "id": "ordynacja:59",
@@ -6916,7 +7056,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Wygaśnięcie zobowiązania"
     },
     {
       "id": "ordynacja:60",
@@ -7013,7 +7154,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Termin dokonania zapłaty"
     },
     {
       "id": "ordynacja:61",
@@ -7093,7 +7235,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Rozliczenia bezgotówkowe"
     },
     {
       "id": "ordynacja:61a",
@@ -7117,7 +7260,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Zapłata podatku kartą płatniczą"
     },
     {
       "id": "ordynacja:61b",
@@ -7172,7 +7316,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Mikrorachunek podatkowy"
     },
     {
       "id": "ordynacja:62",
@@ -7232,7 +7377,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Wiele zobowiązań podatkowych"
     },
     {
       "id": "ordynacja:62a",
@@ -7256,7 +7402,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "ordynacja:62b",
@@ -7305,7 +7452,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Zapłata podatku przez inny podmiot"
     },
     {
       "id": "ordynacja:63",
@@ -7341,7 +7489,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Zaokrąglanie podstawy opodatkowania"
     },
     {
       "id": "ordynacja:64",
@@ -7457,7 +7606,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Wzajemne potrącenia"
     },
     {
       "id": "ordynacja:65",
@@ -7506,7 +7656,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Potrącenia na mocy wyroku"
     },
     {
       "id": "ordynacja:66",
@@ -7586,7 +7737,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "Przeniesienie własności na Skarb Państwa"
     },
     {
       "id": "ordynacja:67",
@@ -7602,7 +7754,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych"
+      "section": "Rozdział 7 — Wygaśnięcie zobowiązań podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:67a",
@@ -7790,7 +7943,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych"
+      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych",
+      "title": "Odroczenie, umorzenie na wniosek"
     },
     {
       "id": "ordynacja:67b",
@@ -7923,7 +8077,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych"
+      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych",
+      "title": "Katalog ulg"
     },
     {
       "id": "ordynacja:67c",
@@ -7947,7 +8102,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych"
+      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych",
+      "title": "Odpowiednie stosowanie"
     },
     {
       "id": "ordynacja:67d",
@@ -8052,7 +8208,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych"
+      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych",
+      "title": "Przesłanki udzielania ulg"
     },
     {
       "id": "ordynacja:67e",
@@ -8084,7 +8241,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych"
+      "section": "Rozdział 7a — Ulgi w spłacie zobowiązań podatkowych",
+      "title": "Upoważnienie ustawowe"
     },
     {
       "id": "ordynacja:68",
@@ -8176,7 +8334,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Termin przedawnienia"
     },
     {
       "id": "ordynacja:69",
@@ -8212,7 +8371,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Utrata ulgi"
     },
     {
       "id": "ordynacja:70",
@@ -8459,7 +8619,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Termin przedawnienia zobowiązania"
     },
     {
       "id": "ordynacja:70a",
@@ -8501,7 +8662,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Zawieszenie terminu przedawnienia"
     },
     {
       "id": "ordynacja:70b",
@@ -8517,7 +8679,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:70c",
@@ -8581,7 +8744,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Zawiadomienie podatnika"
     },
     {
       "id": "ordynacja:70d",
@@ -8617,7 +8781,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Uwzględnienie porozumienia pomimo upływu terminów przedawnienia"
     },
     {
       "id": "ordynacja:70e",
@@ -8641,7 +8806,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Zawieszenie biegu terminu przedawnienia"
     },
     {
       "id": "ordynacja:71",
@@ -8673,7 +8839,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 8 — Przedawnienie"
+      "section": "Rozdział 8 — Przedawnienie",
+      "title": "Odpowiednie stosowanie"
     },
     {
       "id": "ordynacja:72",
@@ -8769,7 +8936,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Nadpłata"
     },
     {
       "id": "ordynacja:73",
@@ -8861,7 +9029,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Powstanie nadpłaty"
     },
     {
       "id": "ordynacja:74",
@@ -8907,7 +9076,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Termin powstania nadpłaty"
     },
     {
       "id": "ordynacja:74a",
@@ -8927,7 +9097,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Określenie wysokości nadpłaty"
     },
     {
       "id": "ordynacja:75",
@@ -9024,7 +9195,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Zwrot nadpłaty"
     },
     {
       "id": "ordynacja:76",
@@ -9085,7 +9257,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Zaliczenie nadpłaty"
     },
     {
       "id": "ordynacja:76a",
@@ -9122,7 +9295,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Rozwinięcie"
     },
     {
       "id": "ordynacja:76b",
@@ -9227,7 +9401,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:76c",
@@ -9255,7 +9430,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Zwrot nadpłaty"
     },
     {
       "id": "ordynacja:77",
@@ -9395,7 +9571,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Termin zwrotu nadpłaty"
     },
     {
       "id": "ordynacja:77a",
@@ -9419,7 +9596,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Możliwość zwrotu nadpłaty"
     },
     {
       "id": "ordynacja:77b",
@@ -9524,7 +9702,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Zwrot nadpłaty"
     },
     {
       "id": "ordynacja:77c",
@@ -9561,7 +9740,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Pomniejszenie nadpłaty"
     },
     {
       "id": "ordynacja:78",
@@ -9691,7 +9871,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Oprocentowanie nadpłaty"
     },
     {
       "id": "ordynacja:78a",
@@ -9719,7 +9900,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Rozliczenie nadpłaty"
     },
     {
       "id": "ordynacja:79",
@@ -9769,7 +9951,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Termin przedawnienia a wniosek o stwierdzenie nadpłaty"
     },
     {
       "id": "ordynacja:80",
@@ -9812,7 +9995,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9 — Nadpłata"
+      "section": "Rozdział 9 — Nadpłata",
+      "title": "Prawo do zwrotu nadpłaty"
     },
     {
       "id": "ordynacja:80a",
@@ -9872,7 +10056,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9a — Podpisywanie deklaracji"
+      "section": "Rozdział 9a — Podpisywanie deklaracji",
+      "title": "Pełnomocnictwo do podpisania"
     },
     {
       "id": "ordynacja:80b",
@@ -9896,7 +10081,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 9a — Podpisywanie deklaracji"
+      "section": "Rozdział 9a — Podpisywanie deklaracji",
+      "title": "Zwolnienie z obowiązku"
     },
     {
       "id": "ordynacja:81",
@@ -9963,7 +10149,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 10 — Korekta deklaracji"
+      "section": "Rozdział 10 — Korekta deklaracji",
+      "title": "Korygowanie deklaracji"
     },
     {
       "id": "ordynacja:81a",
@@ -9979,7 +10166,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 10 — Korekta deklaracji"
+      "section": "Rozdział 10 — Korekta deklaracji",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:81b",
@@ -10094,7 +10282,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 10 — Korekta deklaracji"
+      "section": "Rozdział 10 — Korekta deklaracji",
+      "title": "Możliwość korekty zeznania"
     },
     {
       "id": "ordynacja:81c",
@@ -10110,7 +10299,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 10 — Korekta deklaracji"
+      "section": "Rozdział 10 — Korekta deklaracji",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:82",
@@ -10244,7 +10434,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Zakres podmiotowy i przedmiotowy obowiązku informowania"
     },
     {
       "id": "ordynacja:82a",
@@ -10281,7 +10472,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Informacja o wynagrodzeniu"
     },
     {
       "id": "ordynacja:82b",
@@ -10305,7 +10497,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Obowiązek współdziałania organów"
     },
     {
       "id": "ordynacja:83",
@@ -10345,7 +10538,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Delegacja uprawnień"
     },
     {
       "id": "ordynacja:84",
@@ -10369,7 +10563,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Sądy, komornicy sądowi"
     },
     {
       "id": "ordynacja:84a",
@@ -10489,7 +10684,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Obowiązek przekazywania informacji"
     },
     {
       "id": "ordynacja:85",
@@ -10529,7 +10725,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Delegacja uprawnień"
     },
     {
       "id": "ordynacja:86",
@@ -10553,7 +10750,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11 — Informacje podatkowe"
+      "section": "Rozdział 11 — Informacje podatkowe",
+      "title": "Przechowywanie dokumentów przez podatników"
     },
     {
       "id": "ordynacja:86a",
@@ -10929,7 +11127,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Definicje ogólne; kryteria; podmiot powiązany"
     },
     {
       "id": "ordynacja:86b",
@@ -11125,7 +11324,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Obowiązek przekazywania informacji o schemacie podatkowym przez promotora"
     },
     {
       "id": "ordynacja:86c",
@@ -11267,7 +11467,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Obowiązek przekazywania informacji o schemacie podatkowym przez korzystającego"
     },
     {
       "id": "ordynacja:86d",
@@ -11313,7 +11514,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:86e",
@@ -11355,7 +11557,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Obowiązek przekazywania informacji o schemacie podatkowym przez więcej niż jeden podmiot"
     },
     {
       "id": "ordynacja:86f",
@@ -11516,7 +11719,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Zakres przekazywanych informacji"
     },
     {
       "id": "ordynacja:86g",
@@ -11601,7 +11805,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Sposób przekazywania informacji; nadawanie NSP"
     },
     {
       "id": "ordynacja:86h",
@@ -11656,7 +11861,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Wezwanie do uzupełnienia lub wyjaśnienia wątpliwości co do treści informacji o schemacie podatkowym"
     },
     {
       "id": "ordynacja:86i",
@@ -11772,7 +11978,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Postanowienie o odmowie nadania NSP; unieważnienie NSP"
     },
     {
       "id": "ordynacja:86j",
@@ -11875,7 +12082,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Obowiązki informacyjne promotora i korzystającego"
     },
     {
       "id": "ordynacja:86k",
@@ -11891,7 +12099,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:86l",
@@ -11907,7 +12116,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:86m",
@@ -11923,7 +12133,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:86n",
@@ -11959,7 +12170,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Informatyzacja przesyłania informacji o schematach podatkowych"
     },
     {
       "id": "ordynacja:86o",
@@ -11983,7 +12195,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 11a — Informacje o schematach podatkowych"
+      "section": "Rozdział 11a — Informacje o schematach podatkowych",
+      "title": "Zastosowanie przepisów"
     },
     {
       "id": "ordynacja:87",
@@ -12038,7 +12251,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 12 — Rachunki"
+      "section": "Rozdział 12 — Rachunki",
+      "title": "Obowiązek wystawienia rachunku"
     },
     {
       "id": "ordynacja:88",
@@ -12062,7 +12276,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 12 — Rachunki"
+      "section": "Rozdział 12 — Rachunki",
+      "title": "Kopie rachunków"
     },
     {
       "id": "ordynacja:89",
@@ -12078,7 +12293,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 12 — Rachunki"
+      "section": "Rozdział 12 — Rachunki",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:90",
@@ -12094,7 +12310,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 12 — Rachunki"
+      "section": "Rozdział 12 — Rachunki",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:91",
@@ -12114,7 +12331,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 13 — Odpowiedzialność solidarna"
+      "section": "Rozdział 13 — Odpowiedzialność solidarna",
+      "title": "Odesłanie do Kodeksu cywilnego"
     },
     {
       "id": "ordynacja:92",
@@ -12162,7 +12380,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 13 — Odpowiedzialność solidarna"
+      "section": "Rozdział 13 — Odpowiedzialność solidarna",
+      "title": "Podmioty odpowiedzialności solidarnej"
     },
     {
       "id": "ordynacja:93",
@@ -12243,7 +12462,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Osoba prawna powstała w wyniku łączenia się"
     },
     {
       "id": "ordynacja:93a",
@@ -12328,7 +12548,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Inne osoby prawne"
     },
     {
       "id": "ordynacja:93b",
@@ -12348,7 +12569,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Komunalne zakłady budżetowe"
     },
     {
       "id": "ordynacja:93c",
@@ -12372,7 +12594,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Wstąpienie w prawa i obowiązki"
     },
     {
       "id": "ordynacja:93d",
@@ -12420,7 +12643,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Zakres stosowania"
     },
     {
       "id": "ordynacja:94",
@@ -12448,7 +12672,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Uogólnienie"
     },
     {
       "id": "ordynacja:95",
@@ -12485,7 +12710,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Odpowiedzialność nabywców"
     },
     {
       "id": "ordynacja:96",
@@ -12517,7 +12743,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Odsetki za zwłokę"
     },
     {
       "id": "ordynacja:97",
@@ -12571,7 +12798,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Spadkobiercy"
     },
     {
       "id": "ordynacja:97a",
@@ -12607,7 +12835,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Odpowiedzialność za zobowiązania podatkowe"
     },
     {
       "id": "ordynacja:98",
@@ -12680,7 +12909,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Odpowiedzialność spadkobierców"
     },
     {
       "id": "ordynacja:99",
@@ -12712,7 +12942,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Zawieszenie biegu terminów"
     },
     {
       "id": "ordynacja:100",
@@ -12742,7 +12973,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Decyzja o zakresie odpowiedzialności lub uprawnień spadkobierców"
     },
     {
       "id": "ordynacja:101",
@@ -12772,7 +13004,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Odsetki za zwłokę od zaległości spadkodawcy"
     },
     {
       "id": "ordynacja:102",
@@ -12802,7 +13035,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Uszczegółowienie"
     },
     {
       "id": "ordynacja:103",
@@ -12863,7 +13097,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Zawiadamianie spadkobierców"
     },
     {
       "id": "ordynacja:104",
@@ -12879,7 +13114,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:105",
@@ -12915,7 +13151,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Nadpłaty i ich oprocentowanie"
     },
     {
       "id": "ordynacja:106",
@@ -12951,7 +13188,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych"
+      "section": "Rozdział 14 — Prawa i obowiązki następców prawnych oraz podmiotów przekształconych",
+      "title": "Odpowiedzialność zapisobiercy"
     },
     {
       "id": "ordynacja:107",
@@ -13012,7 +13250,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność osób trzecich"
     },
     {
       "id": "ordynacja:108",
@@ -13105,7 +13344,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Decyzja o odpowiedzialności"
     },
     {
       "id": "ordynacja:109",
@@ -13148,7 +13388,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:110",
@@ -13191,7 +13432,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność rozwiedzionego małżonka"
     },
     {
       "id": "ordynacja:111",
@@ -13246,7 +13488,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność rodziny"
     },
     {
       "id": "ordynacja:112",
@@ -13313,7 +13556,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Nabywca przedsiębiorstwa"
     },
     {
       "id": "ordynacja:112a",
@@ -13333,7 +13577,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Wyłączenie zastosowania przepisu"
     },
     {
       "id": "ordynacja:112b",
@@ -13361,7 +13606,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność jednoosobowej spółki kapitałowej"
     },
     {
       "id": "ordynacja:112c",
@@ -13389,7 +13635,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność solidarna"
     },
     {
       "id": "ordynacja:113",
@@ -13421,7 +13668,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Zatajenie działalności"
     },
     {
       "id": "ordynacja:114",
@@ -13470,7 +13718,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność właściciela rzeczy"
     },
     {
       "id": "ordynacja:114a",
@@ -13500,7 +13749,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność dzierżawcy"
     },
     {
       "id": "ordynacja:115",
@@ -13542,7 +13792,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność wspólników spółki osobowej"
     },
     {
       "id": "ordynacja:116",
@@ -13620,7 +13871,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność członków zarządu spółki kapitałowej"
     },
     {
       "id": "ordynacja:116a",
@@ -13662,7 +13914,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność za zaległości podatkowe innej osoby prawnej (stowarzyszenia)"
     },
     {
       "id": "ordynacja:116b",
@@ -13692,7 +13945,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność likwidatorów za zaległości podatkowe"
     },
     {
       "id": "ordynacja:117",
@@ -13728,7 +13982,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Podział osoby prawnej; zakres odpowiedzialności"
     },
     {
       "id": "ordynacja:117a",
@@ -13752,7 +14007,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność gwaranta i poręczyciela"
     },
     {
       "id": "ordynacja:117b",
@@ -13884,7 +14140,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Solidarna odpowiedzialność podatnika VAT"
     },
     {
       "id": "ordynacja:117c",
@@ -13920,7 +14177,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Odpowiedzialność pełnomocnika"
     },
     {
       "id": "ordynacja:117d",
@@ -13962,7 +14220,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Zakres odpowiedzialności zarządcy sukcesyjnego"
     },
     {
       "id": "ordynacja:117e",
@@ -13992,7 +14251,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Zakres odpowiedzialności"
     },
     {
       "id": "ordynacja:118",
@@ -14035,7 +14295,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Przedawnienie odpowiedzialności"
     },
     {
       "id": "ordynacja:119",
@@ -14059,7 +14320,8 @@
         }
       ],
       "chapter": "Dział III — Zobowiązania podatkowe",
-      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich"
+      "section": "Rozdział 15 — Odpowiedzialność podatkowa osób trzecich",
+      "title": "Waloryzacja"
     },
     {
       "id": "ordynacja:119a",
@@ -14113,7 +14375,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania"
+      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania",
+      "title": "Określenie skutków podatkowych"
     },
     {
       "id": "ordynacja:119b",
@@ -14180,7 +14443,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania"
+      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania",
+      "title": "Przypadki niestosowania art. 119a"
     },
     {
       "id": "ordynacja:119c",
@@ -14253,7 +14517,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania"
+      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania",
+      "title": "Ocena, czy sposób działania był sztuczny"
     },
     {
       "id": "ordynacja:119d",
@@ -14277,7 +14542,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania"
+      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania",
+      "title": "Uznanie czynności za podjętą w celu osiągnięcia korzyści podatkowej"
     },
     {
       "id": "ordynacja:119e",
@@ -14293,7 +14559,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania"
+      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:119f",
@@ -14317,7 +14584,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania"
+      "section": "Rozdział 1 — Klauzula przeciwko unikaniu opodatkowania",
+      "title": "Obliczenie korzyści w przypadku zespołu powiązanych ze sobą czynności"
     },
     {
       "id": "ordynacja:119g",
@@ -14444,7 +14712,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania"
+      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania",
+      "title": "Procedura postępowania"
     },
     {
       "id": "ordynacja:119h",
@@ -14486,7 +14755,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania"
+      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania",
+      "title": "Wystąpienie o opinię Rady do Spraw Przeciwdziałania Unikaniu Opodatkowania"
     },
     {
       "id": "ordynacja:119i",
@@ -14558,7 +14828,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania"
+      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania",
+      "title": "Opinia Rady, informacje i wyjaśnienia"
     },
     {
       "id": "ordynacja:119j",
@@ -14600,7 +14871,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania"
+      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania",
+      "title": "Skutki skorygowania deklaracji"
     },
     {
       "id": "ordynacja:119k",
@@ -14642,7 +14914,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania"
+      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania",
+      "title": "Umorzenie, przekazanie sprawy właściwemu organowi"
     },
     {
       "id": "ordynacja:119l",
@@ -14666,7 +14939,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania"
+      "section": "Rozdział 2 — Postępowanie podatkowe w przypadku unikania opodatkowania",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:119m",
@@ -14702,7 +14976,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Charakter Rady"
     },
     {
       "id": "ordynacja:119n",
@@ -14726,7 +15001,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Kadencja"
     },
     {
       "id": "ordynacja:119o",
@@ -14848,7 +15124,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Skład Rady"
     },
     {
       "id": "ordynacja:119p",
@@ -14878,7 +15155,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Wygaśnięcie członkostwa"
     },
     {
       "id": "ordynacja:119q",
@@ -14902,7 +15180,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Ciągłość prac"
     },
     {
       "id": "ordynacja:119r",
@@ -14932,7 +15211,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Przewodniczący"
     },
     {
       "id": "ordynacja:119s",
@@ -15011,7 +15291,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Szczegółowy tryb pracy Rady"
     },
     {
       "id": "ordynacja:119t",
@@ -15039,7 +15320,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Udostępnianie opinii"
     },
     {
       "id": "ordynacja:119u",
@@ -15059,7 +15341,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Stosowanie przepisów do wyłączenia członków Rady"
     },
     {
       "id": "ordynacja:119v",
@@ -15138,7 +15421,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania"
+      "section": "Rozdział 3 — Rada do Spraw Przeciwdziałania Unikaniu Opodatkowania",
+      "title": "Wynagrodzenie członków Rady"
     },
     {
       "id": "ordynacja:119w",
@@ -15168,7 +15452,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 4 — Opinie zabezpieczające"
+      "section": "Rozdział 4 — Opinie zabezpieczające",
+      "title": "Wniosek o wydanie opinii zabezpieczającej"
     },
     {
       "id": "ordynacja:119x",
@@ -15271,7 +15556,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 4 — Opinie zabezpieczające"
+      "section": "Rozdział 4 — Opinie zabezpieczające",
+      "title": "Dane zawarte we wniosku"
     },
     {
       "id": "ordynacja:119y",
@@ -15301,7 +15587,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 4 — Opinie zabezpieczające"
+      "section": "Rozdział 4 — Opinie zabezpieczające",
+      "title": "Odmowa wydania opinii zabezpieczającej"
     },
     {
       "id": "ordynacja:119z",
@@ -15440,7 +15727,8 @@
         }
       ],
       "chapter": "Dział IIIA — Przeciwdziałanie unikaniu opodatkowania",
-      "section": "Rozdział 4 — Opinie zabezpieczające"
+      "section": "Rozdział 4 — Opinie zabezpieczające",
+      "title": "Czynności sprawdzające, kontrola podatkowa"
     },
     {
       "id": "ordynacja:120",
@@ -15456,7 +15744,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zasada ogólna"
     },
     {
       "id": "ordynacja:121",
@@ -15480,7 +15769,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zasady postępowania"
     },
     {
       "id": "ordynacja:122",
@@ -15523,7 +15813,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zasada postępowania"
     },
     {
       "id": "ordynacja:123",
@@ -15547,7 +15838,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zasada udziału stron"
     },
     {
       "id": "ordynacja:124",
@@ -15571,7 +15863,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Uzasadnienie przesłanek"
     },
     {
       "id": "ordynacja:125",
@@ -15595,7 +15888,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Szybkość działania"
     },
     {
       "id": "ordynacja:126",
@@ -15631,7 +15925,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Dopuszczalne formy załatwiania spraw podatkowych"
     },
     {
       "id": "ordynacja:127",
@@ -15647,7 +15942,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Dwuinstancyjność"
     },
     {
       "id": "ordynacja:128",
@@ -15675,7 +15971,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Decyzje ostateczne"
     },
     {
       "id": "ordynacja:129",
@@ -15691,7 +15988,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zakres jawności"
     },
     {
       "id": "ordynacja:130",
@@ -15782,7 +16080,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego"
+      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego",
+      "title": "Wyłączenie pracownika"
     },
     {
       "id": "ordynacja:131",
@@ -15868,7 +16167,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego"
+      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego",
+      "title": "Wyłączenie naczelnika urzędu skarbowego"
     },
     {
       "id": "ordynacja:131a",
@@ -15888,7 +16188,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego"
+      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego",
+      "title": "Wyłączenie naczelnika urzędu celnego"
     },
     {
       "id": "ordynacja:131b",
@@ -15908,7 +16209,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego"
+      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego",
+      "title": "Postanowienie o wyznaczeniu innego organu podatkowego"
     },
     {
       "id": "ordynacja:132",
@@ -15957,7 +16259,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego"
+      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego",
+      "title": "Wyłączenie wójtów i burmistrzów"
     },
     {
       "id": "ordynacja:132a",
@@ -15977,7 +16280,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego"
+      "section": "Rozdział 2 — Wyłączenie pracownika organu podatkowego oraz organu podatkowego",
+      "title": "Dalsze trwanie przyczyn wyłączenia od załatwienia sprawy"
     },
     {
       "id": "ordynacja:133",
@@ -16057,7 +16361,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "Definicja strony"
     },
     {
       "id": "ordynacja:133a",
@@ -16100,7 +16405,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "Żądania organizacji społecznej"
     },
     {
       "id": "ordynacja:134",
@@ -16116,7 +16422,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:135",
@@ -16140,7 +16447,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "Zdolność prawna"
     },
     {
       "id": "ordynacja:136",
@@ -16156,7 +16464,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:137",
@@ -16172,7 +16481,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:138",
@@ -16202,7 +16512,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3 — Strona"
+      "section": "Rozdział 3 — Strona",
+      "title": "Wyznaczenie przedstawiciela"
     },
     {
       "id": "ordynacja:138a",
@@ -16250,7 +16561,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Uwierzytelnienie pełnomocnictwa"
     },
     {
       "id": "ordynacja:138b",
@@ -16280,7 +16592,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Pełnomocnik"
     },
     {
       "id": "ordynacja:138c",
@@ -16310,7 +16623,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Dane identyfikujące mocodawcę"
     },
     {
       "id": "ordynacja:138d",
@@ -16388,7 +16702,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Zakres pełnomocnictwa ogólnego"
     },
     {
       "id": "ordynacja:138e",
@@ -16424,7 +16739,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Zakres pełnomocnictwa szczególnego"
     },
     {
       "id": "ordynacja:138f",
@@ -16473,7 +16789,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Pełnomocnictwo do doręczeń w kraju"
     },
     {
       "id": "ordynacja:138g",
@@ -16501,7 +16818,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Wskazanie pełnomocnika do doręczeń przy większej liczbie pełnomocników"
     },
     {
       "id": "ordynacja:138h",
@@ -16537,7 +16855,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Dokument elektroniczny"
     },
     {
       "id": "ordynacja:138i",
@@ -16567,7 +16886,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Skutek zmiany, wypowiedzenia pełnomocnictwa"
     },
     {
       "id": "ordynacja:138j",
@@ -16604,7 +16924,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Wzór pełnomocnictwa"
     },
     {
       "id": "ordynacja:138k",
@@ -16634,7 +16955,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Organ prowadzący Rejestr"
     },
     {
       "id": "ordynacja:138l",
@@ -16658,7 +16980,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Tymczasowy pełnomocnik szczególny"
     },
     {
       "id": "ordynacja:138m",
@@ -16682,7 +17005,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Ustanowienie pełnomocnika do czasu wyznaczenia kuratora przez sąd"
     },
     {
       "id": "ordynacja:138n",
@@ -16712,7 +17036,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Wniosek o wyznaczenie"
     },
     {
       "id": "ordynacja:138o",
@@ -16732,7 +17057,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 3a — Pełnomocnictwo"
+      "section": "Rozdział 3a — Pełnomocnictwo",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:139",
@@ -16768,7 +17094,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 4 — Załatwianie spraw"
+      "section": "Rozdział 4 — Załatwianie spraw",
+      "title": "Terminy załatwiania spraw"
     },
     {
       "id": "ordynacja:140",
@@ -16792,7 +17119,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 4 — Załatwianie spraw"
+      "section": "Rozdział 4 — Załatwianie spraw",
+      "title": "Niedotrzymanie terminu, obowiązek organu podatkowego"
     },
     {
       "id": "ordynacja:141",
@@ -16835,7 +17163,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 4 — Załatwianie spraw"
+      "section": "Rozdział 4 — Załatwianie spraw",
+      "title": "Skarga na nieterminowość"
     },
     {
       "id": "ordynacja:142",
@@ -16867,7 +17196,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 4 — Załatwianie spraw"
+      "section": "Rozdział 4 — Załatwianie spraw",
+      "title": "Odpowiedzialność pracownika urzędu"
     },
     {
       "id": "ordynacja:143",
@@ -16940,7 +17270,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 4 — Załatwianie spraw"
+      "section": "Rozdział 4 — Załatwianie spraw",
+      "title": "Upoważnienie pracowników urzędu"
     },
     {
       "id": "ordynacja:144",
@@ -17056,7 +17387,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Sposób doręczenia"
     },
     {
       "id": "ordynacja:144a",
@@ -17099,7 +17431,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Zasady doręczania na adres do doręczeń elektronicznych"
     },
     {
       "id": "ordynacja:144b",
@@ -17160,7 +17493,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Wydruk pisma"
     },
     {
       "id": "ordynacja:145",
@@ -17196,7 +17530,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Sposób doręczenia"
     },
     {
       "id": "ordynacja:146",
@@ -17220,7 +17555,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Obowiązek zawiadomienia o zmianie adresu do doręczeń"
     },
     {
       "id": "ordynacja:146a",
@@ -17244,7 +17580,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Obowiązek zawiadomienia o zmianie adresu"
     },
     {
       "id": "ordynacja:147",
@@ -17260,7 +17597,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:147a",
@@ -17276,7 +17614,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:148",
@@ -17325,7 +17664,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Miejsce doręczenia"
     },
     {
       "id": "ordynacja:149",
@@ -17369,7 +17709,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Nieobecność adresata"
     },
     {
       "id": "ordynacja:150",
@@ -17424,7 +17765,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Doręczenie pisma w postępowaniu"
     },
     {
       "id": "ordynacja:150a",
@@ -17464,7 +17806,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Doręczenie na adres skrytki pocztowej"
     },
     {
       "id": "ordynacja:151",
@@ -17488,7 +17831,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Doręczenie w siedzibie lub w miejscu prowadzenia działalności"
     },
     {
       "id": "ordynacja:151a",
@@ -17512,7 +17856,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Pozostawienie w aktach sprawy ze skutkiem doręczenia"
     },
     {
       "id": "ordynacja:152",
@@ -17528,7 +17873,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:152a",
@@ -17544,7 +17890,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:153",
@@ -17574,7 +17921,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Odmowa przyjęcia"
     },
     {
       "id": "ordynacja:154",
@@ -17604,7 +17952,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Doręczenie pism kuratorowi"
     },
     {
       "id": "ordynacja:154a",
@@ -17658,7 +18007,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Wniosek ministra"
     },
     {
       "id": "ordynacja:154b",
@@ -17682,7 +18032,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Doręczanie pism od obcej władzy"
     },
     {
       "id": "ordynacja:154c",
@@ -17702,7 +18053,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 5 — Doręczenia"
+      "section": "Rozdział 5 — Doręczenia",
+      "title": "Zasada wzajemności"
     },
     {
       "id": "ordynacja:155",
@@ -17732,7 +18084,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Wezwania do stawienia się"
     },
     {
       "id": "ordynacja:156",
@@ -17774,7 +18127,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Właściwość miejscowa"
     },
     {
       "id": "ordynacja:157",
@@ -17798,7 +18152,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Postępowanie poza miejscem zamieszkania"
     },
     {
       "id": "ordynacja:157a",
@@ -17830,7 +18185,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Pomoc innego organu podatkowego"
     },
     {
       "id": "ordynacja:158",
@@ -17854,7 +18210,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Wyjątki"
     },
     {
       "id": "ordynacja:159",
@@ -17933,7 +18290,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Treść wezwania"
     },
     {
       "id": "ordynacja:160",
@@ -17957,7 +18315,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 6 — Wezwania"
+      "section": "Rozdział 6 — Wezwania",
+      "title": "Inne formy wezwania"
     },
     {
       "id": "ordynacja:161",
@@ -17973,7 +18332,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 7 — Przywrócenie terminu"
+      "section": "Rozdział 7 — Przywrócenie terminu",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:162",
@@ -18009,7 +18369,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 7 — Przywrócenie terminu"
+      "section": "Rozdział 7 — Przywrócenie terminu",
+      "title": "Niezawinione przekroczenie terminu"
     },
     {
       "id": "ordynacja:163",
@@ -18039,7 +18400,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 7 — Przywrócenie terminu"
+      "section": "Rozdział 7 — Przywrócenie terminu",
+      "title": "Przywrócenie terminu"
     },
     {
       "id": "ordynacja:164",
@@ -18063,7 +18425,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 7 — Przywrócenie terminu"
+      "section": "Rozdział 7 — Przywrócenie terminu",
+      "title": "Wstrzymanie wykonania decyzji"
     },
     {
       "id": "ordynacja:165",
@@ -18233,7 +18596,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Inicjatywa wszczęcia postępowania"
     },
     {
       "id": "ordynacja:165a",
@@ -18257,7 +18621,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Postanowienie o odmowie wszczęcia postępowania"
     },
     {
       "id": "ordynacja:165b",
@@ -18300,7 +18665,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Wszczęcie postępowania podatkowego"
     },
     {
       "id": "ordynacja:165c",
@@ -18373,7 +18739,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Nieprawidłowości"
     },
     {
       "id": "ordynacja:166",
@@ -18397,7 +18764,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Połączenie postępowań"
     },
     {
       "id": "ordynacja:166a",
@@ -18413,7 +18781,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:167",
@@ -18437,7 +18806,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Zakres żądania"
     },
     {
       "id": "ordynacja:168",
@@ -18503,7 +18873,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Formy podania"
     },
     {
       "id": "ordynacja:169",
@@ -18570,7 +18941,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Podania niespełniające wymogów prawa"
     },
     {
       "id": "ordynacja:170",
@@ -18600,7 +18972,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Podanie do niewłaściwego organu"
     },
     {
       "id": "ordynacja:171",
@@ -18642,7 +19015,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 8 — Wszczęcie postępowania"
+      "section": "Rozdział 8 — Wszczęcie postępowania",
+      "title": "Podanie dotyczące wielu spraw"
     },
     {
       "id": "ordynacja:171a",
@@ -18690,7 +19064,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Metryka sprawy"
     },
     {
       "id": "ordynacja:172",
@@ -18745,7 +19120,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Obowiązek sporządzenia protokołu"
     },
     {
       "id": "ordynacja:173",
@@ -18769,7 +19145,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Treść protokołu"
     },
     {
       "id": "ordynacja:174",
@@ -18793,7 +19170,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Protokół przesłuchania"
     },
     {
       "id": "ordynacja:175",
@@ -18817,7 +19195,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Dołączenie zeznań"
     },
     {
       "id": "ordynacja:176",
@@ -18841,7 +19220,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Skreślenia w protokole"
     },
     {
       "id": "ordynacja:177",
@@ -18865,7 +19245,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 9 — Metryki, protokoły i adnotacje"
+      "section": "Rozdział 9 — Metryki, protokoły i adnotacje",
+      "title": "Adnotacje"
     },
     {
       "id": "ordynacja:178",
@@ -18901,7 +19282,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 10 — Udostępnianie akt"
+      "section": "Rozdział 10 — Udostępnianie akt",
+      "title": "Obowiązek udostępniania akt"
     },
     {
       "id": "ordynacja:179",
@@ -18931,7 +19313,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 10 — Udostępnianie akt"
+      "section": "Rozdział 10 — Udostępnianie akt",
+      "title": "Akta objęte tajemnicą"
     },
     {
       "id": "ordynacja:179a",
@@ -18951,7 +19334,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 10 — Udostępnianie akt"
+      "section": "Rozdział 10 — Udostępnianie akt",
+      "title": "Dostęp do danych przetwarzanych"
     },
     {
       "id": "ordynacja:180",
@@ -18987,7 +19371,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Definicja dowodu"
     },
     {
       "id": "ordynacja:181",
@@ -19027,7 +19412,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Uszczegółowienie definicji"
     },
     {
       "id": "ordynacja:181a",
@@ -19057,7 +19443,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Odwzorowanie cyfrowe"
     },
     {
       "id": "ordynacja:182",
@@ -19142,7 +19529,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Informacje z banków"
     },
     {
       "id": "ordynacja:183",
@@ -19192,7 +19580,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Żądanie przekazania informacji"
     },
     {
       "id": "ordynacja:184",
@@ -19269,7 +19658,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Treść żądania"
     },
     {
       "id": "ordynacja:185",
@@ -19293,7 +19683,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Odmowa udzielenia informacji"
     },
     {
       "id": "ordynacja:186",
@@ -19309,7 +19700,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:187",
@@ -19339,7 +19731,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Materiał dowodowy"
     },
     {
       "id": "ordynacja:188",
@@ -19363,7 +19756,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Żądanie strony"
     },
     {
       "id": "ordynacja:189",
@@ -19393,7 +19787,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Termin przedstawienia dowodu"
     },
     {
       "id": "ordynacja:190",
@@ -19417,7 +19812,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Zeznania świadków"
     },
     {
       "id": "ordynacja:191",
@@ -19437,7 +19833,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Ocena dowodów"
     },
     {
       "id": "ordynacja:192",
@@ -19457,7 +19854,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Uznanie okoliczności za udowodnioną"
     },
     {
       "id": "ordynacja:193",
@@ -19517,7 +19915,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Dowody z ksiąg podatkowych"
     },
     {
       "id": "ordynacja:193a",
@@ -19572,7 +19971,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Przesyłanie ksiąg podatkowych za pomocą środków komunikacji elektronicznej"
     },
     {
       "id": "ordynacja:194",
@@ -19602,7 +20002,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Dokumenty urzędowe"
     },
     {
       "id": "ordynacja:194a",
@@ -19644,7 +20045,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Odpis lub wyciąg"
     },
     {
       "id": "ordynacja:195",
@@ -19678,7 +20080,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Świadkowie"
     },
     {
       "id": "ordynacja:196",
@@ -19714,7 +20117,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Odmowa zeznań"
     },
     {
       "id": "ordynacja:197",
@@ -19744,7 +20148,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Powołanie biegłych"
     },
     {
       "id": "ordynacja:198",
@@ -19768,7 +20173,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Oględziny"
     },
     {
       "id": "ordynacja:199",
@@ -19792,7 +20198,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Przesłuchanie strony"
     },
     {
       "id": "ordynacja:199a",
@@ -19822,7 +20229,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Zgodny zamiar stron"
     },
     {
       "id": "ordynacja:199b",
@@ -19852,7 +20260,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Przesłuchanie strony lub świadka"
     },
     {
       "id": "ordynacja:200",
@@ -19913,7 +20322,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11 — Dowody"
+      "section": "Rozdział 11 — Dowody",
+      "title": "Termin do wypowiedzenia się w sprawie zebranego materiału dowodowego"
     },
     {
       "id": "ordynacja:200a",
@@ -19962,7 +20372,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11a — Rozprawa"
+      "section": "Rozdział 11a — Rozprawa",
+      "title": "Okoliczności przeprowadzenia rozprawy"
     },
     {
       "id": "ordynacja:200b",
@@ -19982,7 +20393,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11a — Rozprawa"
+      "section": "Rozdział 11a — Rozprawa",
+      "title": "Termin rozprawy"
     },
     {
       "id": "ordynacja:200c",
@@ -20012,7 +20424,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11a — Rozprawa"
+      "section": "Rozdział 11a — Rozprawa",
+      "title": "Uczestnicy postępowania"
     },
     {
       "id": "ordynacja:200d",
@@ -20036,7 +20449,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 11a — Rozprawa"
+      "section": "Rozdział 11a — Rozprawa",
+      "title": "Przebieg rozprawy"
     },
     {
       "id": "ordynacja:201",
@@ -20253,7 +20667,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Przesłanki zawieszenia"
     },
     {
       "id": "ordynacja:202",
@@ -20281,7 +20696,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Usunięcie przyczyn zawieszenia"
     },
     {
       "id": "ordynacja:203",
@@ -20305,7 +20721,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Rozstrzyganie zagadnienia wstępnego"
     },
     {
       "id": "ordynacja:204",
@@ -20335,7 +20752,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Rozstrzyganie zagadnienia wstępnego"
     },
     {
       "id": "ordynacja:204a",
@@ -20351,7 +20769,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:205",
@@ -20405,7 +20824,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Podjęcie postępowania"
     },
     {
       "id": "ordynacja:205a",
@@ -20466,7 +20886,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Podjęcie postępowania z urzędu"
     },
     {
       "id": "ordynacja:206",
@@ -20486,7 +20907,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 12 — Zawieszenie postępowania"
+      "section": "Rozdział 12 — Zawieszenie postępowania",
+      "title": "Wstrzymanie biegu terminów"
     },
     {
       "id": "ordynacja:207",
@@ -20510,7 +20932,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Decyzja"
     },
     {
       "id": "ordynacja:208",
@@ -20534,7 +20957,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Umorzenie"
     },
     {
       "id": "ordynacja:209",
@@ -20582,7 +21006,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Opinie innych organów"
     },
     {
       "id": "ordynacja:210",
@@ -20710,7 +21135,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Treść decyzji"
     },
     {
       "id": "ordynacja:211",
@@ -20726,7 +21152,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Forma decyzji"
     },
     {
       "id": "ordynacja:212",
@@ -20750,7 +21177,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Obowiązywanie decyzji"
     },
     {
       "id": "ordynacja:213",
@@ -20792,7 +21220,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Żądanie uzupełnienia decyzji"
     },
     {
       "id": "ordynacja:214",
@@ -20812,7 +21241,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Pouczenie o odwołaniu"
     },
     {
       "id": "ordynacja:215",
@@ -20842,7 +21272,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 13 — Decyzje"
+      "section": "Rozdział 13 — Decyzje",
+      "title": "Sprostowanie błędów"
     },
     {
       "id": "ordynacja:216",
@@ -20866,7 +21297,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 14 — Postanowienia"
+      "section": "Rozdział 14 — Postanowienia",
+      "title": "Postanowienia"
     },
     {
       "id": "ordynacja:217",
@@ -20933,7 +21365,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 14 — Postanowienia"
+      "section": "Rozdział 14 — Postanowienia",
+      "title": "Treść postanowienia"
     },
     {
       "id": "ordynacja:218",
@@ -20953,7 +21386,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 14 — Postanowienia"
+      "section": "Rozdział 14 — Postanowienia",
+      "title": "Forma postanowienia"
     },
     {
       "id": "ordynacja:219",
@@ -20985,7 +21419,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 14 — Postanowienia"
+      "section": "Rozdział 14 — Postanowienia",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:220",
@@ -21015,7 +21450,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Odwołanie od decyzji"
     },
     {
       "id": "ordynacja:221",
@@ -21039,7 +21475,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Odwołanie od decyzji"
     },
     {
       "id": "ordynacja:221a",
@@ -21055,7 +21492,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:222",
@@ -21079,7 +21517,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Treść odwołania"
     },
     {
       "id": "ordynacja:223",
@@ -21116,7 +21555,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Tryb odwołania"
     },
     {
       "id": "ordynacja:223a",
@@ -21132,7 +21572,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:224",
@@ -21148,7 +21589,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:224a",
@@ -21164,7 +21606,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:224b",
@@ -21180,7 +21623,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:224c",
@@ -21196,7 +21640,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:225",
@@ -21212,7 +21657,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:226",
@@ -21236,7 +21682,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Uchylenie decyzji"
     },
     {
       "id": "ordynacja:227",
@@ -21260,7 +21707,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Przekazanie odwołania"
     },
     {
       "id": "ordynacja:228",
@@ -21303,7 +21751,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Niedopuszczalność odwołania"
     },
     {
       "id": "ordynacja:229",
@@ -21331,7 +21780,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Postępowanie uzupełniające"
     },
     {
       "id": "ordynacja:230",
@@ -21347,7 +21797,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:231",
@@ -21363,7 +21814,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:232",
@@ -21387,7 +21839,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Cofnięcie odwołania"
     },
     {
       "id": "ordynacja:233",
@@ -21447,7 +21900,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Decyzje organu odwoławczego"
     },
     {
       "id": "ordynacja:234",
@@ -21471,7 +21925,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Decyzje na niekorzyść strony"
     },
     {
       "id": "ordynacja:234a",
@@ -21491,7 +21946,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Termin zwrotu akt sprawy"
     },
     {
       "id": "ordynacja:235",
@@ -21515,7 +21971,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 15 — Odwołania"
+      "section": "Rozdział 15 — Odwołania",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:236",
@@ -21552,7 +22009,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16 — Zażalenia"
+      "section": "Rozdział 16 — Zażalenia",
+      "title": "Zażalenie na postanowienie"
     },
     {
       "id": "ordynacja:237",
@@ -21572,7 +22030,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16 — Zażalenia"
+      "section": "Rozdział 16 — Zażalenia",
+      "title": "Zaskarżenie postanowienia"
     },
     {
       "id": "ordynacja:238",
@@ -21588,7 +22047,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16 — Zażalenia"
+      "section": "Rozdział 16 — Zażalenia",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:239",
@@ -21608,7 +22068,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16 — Zażalenia"
+      "section": "Rozdział 16 — Zażalenia",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:239a",
@@ -21632,7 +22093,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Decyzja nieostateczna"
     },
     {
       "id": "ordynacja:239b",
@@ -21699,7 +22161,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Rygor natychmiastowej wykonalności"
     },
     {
       "id": "ordynacja:239c",
@@ -21719,7 +22182,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Charakter prawny decyzji o zabezpieczeniu"
     },
     {
       "id": "ordynacja:239d",
@@ -21743,7 +22207,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Wyłączenie nadania rygoru natychmiastowej wykonalności"
     },
     {
       "id": "ordynacja:239e",
@@ -21763,7 +22228,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Zasady wykonania decyzji ostatecznej"
     },
     {
       "id": "ordynacja:239f",
@@ -21819,7 +22285,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Wstrzymanie wykonania decyzji"
     },
     {
       "id": "ordynacja:239g",
@@ -21839,7 +22306,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Dobrowolne wykonanie decyzji"
     },
     {
       "id": "ordynacja:239h",
@@ -21859,7 +22327,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Zasady naliczania odsetek za zwłokę"
     },
     {
       "id": "ordynacja:239i",
@@ -21879,7 +22348,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Hipoteka; zastaw"
     },
     {
       "id": "ordynacja:239j",
@@ -21899,7 +22369,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 16a — Wykonanie decyzji"
+      "section": "Rozdział 16a — Wykonanie decyzji",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "ordynacja:240",
@@ -22008,7 +22479,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "Przesłanki wznowienia postępowania"
     },
     {
       "id": "ordynacja:241",
@@ -22057,7 +22529,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "Inicjatywa wznowienia"
     },
     {
       "id": "ordynacja:242",
@@ -22073,7 +22546,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:243",
@@ -22109,7 +22583,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "Forma decyzji o wznowieniu"
     },
     {
       "id": "ordynacja:244",
@@ -22145,7 +22620,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "Właściwość organu"
     },
     {
       "id": "ordynacja:245",
@@ -22199,7 +22675,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "Wydanie nowej decyzji"
     },
     {
       "id": "ordynacja:246",
@@ -22223,7 +22700,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 17 — Wznowienie postępowania"
+      "section": "Rozdział 17 — Wznowienie postępowania",
+      "title": "Wstrzymanie wykonania decyzji"
     },
     {
       "id": "ordynacja:247",
@@ -22302,7 +22780,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji"
+      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji",
+      "title": "Przesłanki nieważności decyzji"
     },
     {
       "id": "ordynacja:248",
@@ -22357,7 +22836,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji"
+      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji",
+      "title": "Postępowanie w sprawie o nieważność"
     },
     {
       "id": "ordynacja:249",
@@ -22394,7 +22874,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji"
+      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji",
+      "title": "Termin wniesienia żądania"
     },
     {
       "id": "ordynacja:250",
@@ -22410,7 +22891,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji"
+      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:251",
@@ -22426,7 +22908,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji"
+      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:252",
@@ -22450,7 +22933,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji"
+      "section": "Rozdział 18 — Stwierdzenie nieważności decyzji",
+      "title": "Wstrzymanie zaskarżonej decyzji"
     },
     {
       "id": "ordynacja:253",
@@ -22486,7 +22970,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "Przesłanki uchylenia lub zmiany"
     },
     {
       "id": "ordynacja:253a",
@@ -22516,7 +23001,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "Decyzja, na mocy której strona nabyła prawo"
     },
     {
       "id": "ordynacja:253b",
@@ -22568,7 +23054,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "Niestosowanie przepisów o uchyleniu lub zmianie decyzji"
     },
     {
       "id": "ordynacja:254",
@@ -22592,7 +23079,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "Decyzja dotycząca wysokości zobowiązania"
     },
     {
       "id": "ordynacja:255",
@@ -22616,7 +23104,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "Uchylenie decyzji"
     },
     {
       "id": "ordynacja:256",
@@ -22646,7 +23135,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "Termin wszczęcia postępowania"
     },
     {
       "id": "ordynacja:257",
@@ -22662,7 +23152,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej"
+      "section": "Rozdział 19 — Uchylenie lub zmiana decyzji ostatecznej",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:258",
@@ -22741,7 +23232,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 20 — Wygaśnięcie decyzji"
+      "section": "Rozdział 20 — Wygaśnięcie decyzji",
+      "title": "Przesłanki wygaśnięcia decyzji"
     },
     {
       "id": "ordynacja:259",
@@ -22757,7 +23249,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 20 — Wygaśnięcie decyzji"
+      "section": "Rozdział 20 — Wygaśnięcie decyzji",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:259a",
@@ -22785,7 +23278,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 20 — Wygaśnięcie decyzji"
+      "section": "Rozdział 20 — Wygaśnięcie decyzji",
+      "title": "Wygaśnięcie decyzji stwierdzającej nadpłatę podatku"
     },
     {
       "id": "ordynacja:259b",
@@ -22813,7 +23307,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 20 — Wygaśnięcie decyzji"
+      "section": "Rozdział 20 — Wygaśnięcie decyzji",
+      "title": "Wygaśnięcie decyzji"
     },
     {
       "id": "ordynacja:260",
@@ -22833,7 +23328,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 21 — Odpowiedzialność odszkodowawcza"
+      "section": "Rozdział 21 — Odpowiedzialność odszkodowawcza",
+      "title": "Odesłanie do przepisów prawa cywilnego"
     },
     {
       "id": "ordynacja:261",
@@ -22849,7 +23345,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 21 — Odpowiedzialność odszkodowawcza"
+      "section": "Rozdział 21 — Odpowiedzialność odszkodowawcza",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:262",
@@ -22953,7 +23450,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 22 — Kary porządkowe"
+      "section": "Rozdział 22 — Kary porządkowe",
+      "title": "Czynności zagrożone karą"
     },
     {
       "id": "ordynacja:262a",
@@ -22977,7 +23475,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 22 — Kary porządkowe"
+      "section": "Rozdział 22 — Kary porządkowe",
+      "title": "Wysokość kary"
     },
     {
       "id": "ordynacja:263",
@@ -23013,7 +23512,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 22 — Kary porządkowe"
+      "section": "Rozdział 22 — Kary porządkowe",
+      "title": "Tryb nakładania kary"
     },
     {
       "id": "ordynacja:264",
@@ -23033,7 +23533,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Zasada ogólna"
     },
     {
       "id": "ordynacja:265",
@@ -23106,7 +23607,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Definicja kosztów postępowania"
     },
     {
       "id": "ordynacja:266",
@@ -23130,7 +23632,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Tryb zwrotu kosztów"
     },
     {
       "id": "ordynacja:267",
@@ -23219,7 +23722,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Koszty obciążające stronę"
     },
     {
       "id": "ordynacja:268",
@@ -23255,7 +23759,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Dodatkowe koszty"
     },
     {
       "id": "ordynacja:269",
@@ -23279,7 +23784,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Postanowienie o kosztach strony"
     },
     {
       "id": "ordynacja:270",
@@ -23303,7 +23809,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Umorzenie kosztów"
     },
     {
       "id": "ordynacja:270a",
@@ -23323,7 +23830,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Postanowienie"
     },
     {
       "id": "ordynacja:270b",
@@ -23351,7 +23859,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Delegacja dla ministra"
     },
     {
       "id": "ordynacja:271",
@@ -23375,7 +23884,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie podatkowe",
-      "section": "Rozdział 23 — Koszty postępowania"
+      "section": "Rozdział 23 — Koszty postępowania",
+      "title": "Tryb ścigania"
     },
     {
       "id": "ordynacja:272",
@@ -23453,7 +23963,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Cel czynności sprawdzających"
     },
     {
       "id": "ordynacja:272a",
@@ -23484,7 +23995,8 @@
           "text": "dokumentów składanych do tego organu."
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Czynności sprawdzające"
     },
     {
       "id": "ordynacja:273",
@@ -23499,7 +24011,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:274",
@@ -23559,7 +24072,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Korekta deklaracji"
     },
     {
       "id": "ordynacja:274a",
@@ -23594,7 +24108,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Złożenie wyjaśnień"
     },
     {
       "id": "ordynacja:274b",
@@ -23617,7 +24132,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Przedłużenie terminu"
     },
     {
       "id": "ordynacja:274c",
@@ -23671,7 +24187,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Żądanie przedstawienia dokumentów"
     },
     {
       "id": "ordynacja:275",
@@ -23706,7 +24223,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Obowiązek informowania"
     },
     {
       "id": "ordynacja:276",
@@ -23747,7 +24265,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Oględziny lokalu"
     },
     {
       "id": "ordynacja:277",
@@ -23766,7 +24285,8 @@
           "text": "deklaracji lub wniosku w sprawie zwrotu podatku."
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Uogólnienie"
     },
     {
       "id": "ordynacja:278",
@@ -23793,7 +24313,8 @@
           "text": "do dokonywania czynności sprawdzających, pozostawiając jej kopię."
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Wyłączenie naczelnika urzędu skarbowego"
     },
     {
       "id": "ordynacja:278a",
@@ -23808,7 +24329,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:279",
@@ -23823,7 +24345,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:280",
@@ -23846,7 +24369,8 @@
           "text": "art. 171a, rozdziałów 10, 14, 16, 22 i 23 działu IV."
         }
       ],
-      "chapter": "Dział V — Czynności sprawdzające"
+      "chapter": "Dział V — Czynności sprawdzające",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:281",
@@ -23875,7 +24399,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Kontrola podatkowa"
     },
     {
       "id": "ordynacja:281a",
@@ -23890,7 +24415,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:282",
@@ -23905,7 +24431,8 @@
           "text": "Kontrolę podatkową podejmuje się z urzędu."
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Inicjatywa"
     },
     {
       "id": "ordynacja:282a",
@@ -23953,7 +24480,8 @@
           ]
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Ponowne wszczęcie kontroli"
     },
     {
       "id": "ordynacja:282b",
@@ -24043,7 +24571,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Zawiadomienie"
     },
     {
       "id": "ordynacja:282c",
@@ -24152,7 +24681,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Kontrola podatkowa bez uprzedniego zawiadomienia"
     },
     {
       "id": "ordynacja:283",
@@ -24279,7 +24809,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Upoważnienie do przeprowadzenia kontroli"
     },
     {
       "id": "ordynacja:284",
@@ -24344,7 +24875,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Doręczenie upoważnienia"
     },
     {
       "id": "ordynacja:284a",
@@ -24445,7 +24977,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Niezwłoczne podjęcie kontroli"
     },
     {
       "id": "ordynacja:284b",
@@ -24474,7 +25007,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Zakończenie kontroli"
     },
     {
       "id": "ordynacja:285",
@@ -24503,7 +25037,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Obecność kontrolowanego"
     },
     {
       "id": "ordynacja:285a",
@@ -24538,7 +25073,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Miejsce przeprowadzenia czynności kontrolnych"
     },
     {
       "id": "ordynacja:285b",
@@ -24565,7 +25101,8 @@
           "text": "z uczestniczenia w czynnościach kontrolnych."
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Czynności kontrolne w siedzibie organu podatkowego"
     },
     {
       "id": "ordynacja:286",
@@ -24679,7 +25216,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Uprawnienia kontrolującego"
     },
     {
       "id": "ordynacja:286a",
@@ -24714,7 +25252,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Pomoc lub asysta"
     },
     {
       "id": "ordynacja:287",
@@ -24774,7 +25313,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Obowiązki kontrolowanego"
     },
     {
       "id": "ordynacja:288",
@@ -24838,7 +25378,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Oględziny lokalu"
     },
     {
       "id": "ordynacja:288a",
@@ -24853,7 +25394,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:289",
@@ -24876,7 +25418,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Zawiadomienie o miejscu i terminie przeprowadzenia dowodu"
     },
     {
       "id": "ordynacja:290",
@@ -24978,7 +25521,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Treść protokołu"
     },
     {
       "id": "ordynacja:290a",
@@ -25025,7 +25569,8 @@
           "text": "i wykorzystania dowodu."
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Delegacja"
     },
     {
       "id": "ordynacja:290b",
@@ -25054,7 +25599,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Protokół z czynności kontrolnych"
     },
     {
       "id": "ordynacja:290c",
@@ -25075,7 +25621,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Podjęcie zawieszonej kontroli"
     },
     {
       "id": "ordynacja:291",
@@ -25110,7 +25657,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Zastrzeżenia"
     },
     {
       "id": "ordynacja:291a",
@@ -25139,7 +25687,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Przeprowadzanie kontroli jednoczesnej"
     },
     {
       "id": "ordynacja:291b",
@@ -25170,7 +25719,8 @@
           "text": "postępowania podatkowego uznaje się za doręczone pod dotychczasowym adresem."
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Obowiązek powiadomienia organu o zmianie adresu"
     },
     {
       "id": "ordynacja:291c",
@@ -25193,7 +25743,8 @@
           "text": "przedsiębiorców."
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:291d",
@@ -25216,7 +25767,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Odpowiednie stosowanie do reprezentanta lub pełnomocnika"
     },
     {
       "id": "ordynacja:292",
@@ -25243,7 +25795,8 @@
           "text": "10, 11, z wyłączeniem art. 182–185, oraz rozdziałów 12, 14, 16, 22 i 23 działu IV."
         }
       ],
-      "chapter": "Dział VI — Kontrola podatkowa"
+      "chapter": "Dział VI — Kontrola podatkowa",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:293",
@@ -25388,7 +25941,8 @@
           ]
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Zakres tajemnicy skarbowej"
     },
     {
       "id": "ordynacja:294",
@@ -25508,7 +26062,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Zobowiązani do tajemnicy"
     },
     {
       "id": "ordynacja:295",
@@ -25547,7 +26102,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Dostęp do informacji"
     },
     {
       "id": "ordynacja:295a",
@@ -25570,7 +26126,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Podmioty mające dostęp do informacji"
     },
     {
       "id": "ordynacja:295b",
@@ -25601,7 +26158,8 @@
           "text": "przeprowadzającemu tę kontrolę."
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Dostęp do akt"
     },
     {
       "id": "ordynacja:295c",
@@ -25636,7 +26194,8 @@
           "text": "z dnia 16 listopada 2016 r. o Krajowej Administracji Skarbowej."
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Dostęp do informacji o schematach podatkowych"
     },
     {
       "id": "ordynacja:295d",
@@ -25665,7 +26224,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Podmioty mające dostęp do informacji"
     },
     {
       "id": "ordynacja:296",
@@ -25719,7 +26279,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Przechowywanie akt"
     },
     {
       "id": "ordynacja:297",
@@ -25913,7 +26474,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie informacji bankowych"
     },
     {
       "id": "ordynacja:297a",
@@ -25948,7 +26510,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnienie informacji uzyskanych od państw UE"
     },
     {
       "id": "ordynacja:297b",
@@ -26025,7 +26588,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie danych uzyskanych w ramach przeciwdziałania wykorzystywaniu sektora finansowego do wyłudzeń skarbowych"
     },
     {
       "id": "ordynacja:297d",
@@ -26048,7 +26612,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Dostęp do informacji o schematach podatkowych ministra"
     },
     {
       "id": "ordynacja:297e",
@@ -26133,7 +26698,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępniane danych"
     },
     {
       "id": "ordynacja:297f",
@@ -26164,7 +26730,8 @@
           "text": "w tym przepisie."
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Organy mające dostęp do informacji"
     },
     {
       "id": "ordynacja:297g",
@@ -26209,7 +26776,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie informacji"
     },
     {
       "id": "ordynacja:297h",
@@ -26251,7 +26819,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie faktur"
     },
     {
       "id": "ordynacja:298",
@@ -26413,7 +26982,8 @@
           ]
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie innych informacji"
     },
     {
       "id": "ordynacja:298a",
@@ -26436,7 +27006,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnienie danych objętych tajemnicą skarbową"
     },
     {
       "id": "ordynacja:299",
@@ -26734,7 +27305,8 @@
           ]
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Przekazywanie informacji innym organom"
     },
     {
       "id": "ordynacja:299a",
@@ -26829,7 +27401,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Zgoda na ujawnienie informacji stanowiących tajemnicę skarbową"
     },
     {
       "id": "ordynacja:299d",
@@ -26848,7 +27421,8 @@
           "text": "przepisy niniejszego działu dotyczące udostępniania informacji wynikających z akt."
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:299e",
@@ -26896,7 +27470,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie przez Szefa KAS danych podatkowych za pośrednictwem systemu teleinformatycznego"
     },
     {
       "id": "ordynacja:299f",
@@ -26974,7 +27549,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Prawdopodobieństwo wystąpienia opóźnień"
     },
     {
       "id": "ordynacja:299g",
@@ -27022,7 +27598,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Sposób udostępniania faktur"
     },
     {
       "id": "ordynacja:299h",
@@ -27045,7 +27622,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Sposób udostępniania faktur"
     },
     {
       "id": "ordynacja:299i",
@@ -27074,7 +27652,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Dane"
     },
     {
       "id": "ordynacja:299j",
@@ -27110,7 +27689,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Udostępnianie danych i informacji"
     },
     {
       "id": "ordynacja:299k",
@@ -27182,7 +27762,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Dostęp do danych objętych tajemnicą skarbową"
     },
     {
       "id": "ordynacja:300",
@@ -27197,7 +27778,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:301",
@@ -27216,7 +27798,8 @@
           "text": "w art. 178 i art. 179."
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:302",
@@ -27231,7 +27814,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:303",
@@ -27246,7 +27830,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:304",
@@ -27261,7 +27846,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:305",
@@ -27290,7 +27876,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VII — Tajemnica skarbowa"
+      "chapter": "Dział VII — Tajemnica skarbowa",
+      "title": "Informacje zbiorcze"
     },
     {
       "id": "ordynacja:305p",
@@ -27332,7 +27919,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIII — Przepisy karne"
+      "chapter": "Dział VIII — Przepisy karne",
+      "title": "Naruszenie przepisów nakładających obowiązek przekazywania informacji związanych z rachunkami podmiotów kwalifikowanych"
     },
     {
       "id": "ordynacja:305q",
@@ -27355,7 +27943,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIII — Przepisy karne"
+      "chapter": "Dział VIII — Przepisy karne",
+      "title": "Niedopełnienie obowiązku dokonania blokady rachunku podmiotu kwalifikowanego"
     },
     {
       "id": "ordynacja:305r",
@@ -27410,7 +27999,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIII — Przepisy karne"
+      "chapter": "Dział VIII — Przepisy karne",
+      "title": "Nieuprawnione ujawnianie lub wykorzystywanie informacji"
     },
     {
       "id": "ordynacja:306",
@@ -27439,7 +28029,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIII — Przepisy karne"
+      "chapter": "Dział VIII — Przepisy karne",
+      "title": "Kary za złamanie tajemnicy"
     },
     {
       "id": "ordynacja:306a",
@@ -27505,7 +28096,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Zaświadczenie"
     },
     {
       "id": "ordynacja:306b",
@@ -27528,7 +28120,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Obowiązek wydania"
     },
     {
       "id": "ordynacja:306c",
@@ -27551,7 +28144,8 @@
           "text": "zażalenie."
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Odmowa wydania"
     },
     {
       "id": "ordynacja:306d",
@@ -27617,7 +28211,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Fakty znane z urzędu"
     },
     {
       "id": "ordynacja:306e",
@@ -27710,7 +28305,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Zaświadczenie o niezaleganiu"
     },
     {
       "id": "ordynacja:306f",
@@ -27733,7 +28329,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Zaświadczenie o zobowiązaniach spadkodawcy"
     },
     {
       "id": "ordynacja:306g",
@@ -27775,7 +28372,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Zaświadczenie o zobowiązaniach zbywającego"
     },
     {
       "id": "ordynacja:306h",
@@ -27853,7 +28451,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Zgoda podatnika"
     },
     {
       "id": "ordynacja:306i",
@@ -27882,7 +28481,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Zaświadczenie o wysokości dochodu"
     },
     {
       "id": "ordynacja:306j",
@@ -27937,7 +28537,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Delegacja"
     },
     {
       "id": "ordynacja:306k",
@@ -27968,7 +28569,8 @@
           "text": "Urzędzie Skarbowym, przepisy niniejszego działu stosuje się odpowiednio."
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Odesłanie"
     },
     {
       "id": "ordynacja:306l",
@@ -27991,7 +28593,8 @@
           "text": "Rzeczypospolitej Polskiej (certyfikat rezydencji)."
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Certyfikat rezydencji"
     },
     {
       "id": "ordynacja:306m",
@@ -28006,7 +28609,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "uchylony"
     },
     {
       "id": "ordynacja:306n",
@@ -28033,7 +28637,8 @@
           "text": "wnioskodawcę i organ wydający zaświadczenie."
         }
       ],
-      "chapter": "Dział VIIIA — Zaświadczenia"
+      "chapter": "Dział VIIIA — Zaświadczenia",
+      "title": "Upoważnienie dla ministra"
     },
     {
       "id": "ordynacja:307",
@@ -28092,7 +28697,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Sprawy wszczęte wcześniej"
     },
     {
       "id": "ordynacja:325",
@@ -28116,7 +28722,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Zaniechanie poboru podatku"
     },
     {
       "id": "ordynacja:326",
@@ -28140,7 +28747,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Wygasanie hipoteki ustawowej"
     },
     {
       "id": "ordynacja:327",
@@ -28160,7 +28768,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Wygasanie zastawów"
     },
     {
       "id": "ordynacja:328",
@@ -28192,7 +28801,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Wzajemne potrącenia"
     },
     {
       "id": "ordynacja:329",
@@ -28220,7 +28830,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Terminy"
     },
     {
       "id": "ordynacja:330",
@@ -28244,7 +28855,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Zwrot nadpłat"
     },
     {
       "id": "ordynacja:331",
@@ -28268,7 +28880,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Korygowanie deklaracji"
     },
     {
       "id": "ordynacja:332",
@@ -28296,7 +28909,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Odpowiedzialność osób trzecich"
     },
     {
       "id": "ordynacja:333",
@@ -28320,7 +28934,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Podział osoby prawnej"
     },
     {
       "id": "ordynacja:334",
@@ -28350,7 +28965,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Postępowanie odwoławcze"
     },
     {
       "id": "ordynacja:335",
@@ -28378,7 +28994,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Odwołania od decyzji"
     },
     {
       "id": "ordynacja:336",
@@ -28406,7 +29023,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Uchylenie decyzji ostatecznej"
     },
     {
       "id": "ordynacja:337",
@@ -28434,7 +29052,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Żądanie nieważności decyzji"
     },
     {
       "id": "ordynacja:338",
@@ -28458,7 +29077,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Żądanie nieważności decyzji; umorzenie postępowania"
     },
     {
       "id": "ordynacja:339",
@@ -28478,7 +29098,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Rozszerzenie art. 258"
     },
     {
       "id": "ordynacja:340",
@@ -28498,7 +29119,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Termin"
     },
     {
       "id": "ordynacja:341",
@@ -28522,7 +29144,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Termin"
     },
     {
       "id": "ordynacja:342",
@@ -28552,7 +29175,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 2 — Przepisy przejściowe"
+      "section": "Rozdział 2 — Przepisy przejściowe",
+      "title": "Ograniczenie obowiązku informacyjnego"
     },
     {
       "id": "ordynacja:343",
@@ -28595,7 +29219,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 3 — Przepisy końcowe"
+      "section": "Rozdział 3 — Przepisy końcowe",
+      "title": "Derogacja"
     },
     {
       "id": "ordynacja:344",
@@ -28631,7 +29256,8 @@
         }
       ],
       "chapter": "Dział IX — Zmiany w przepisach obowiązujących, przepisy przejściowe i końcowe",
-      "section": "Rozdział 3 — Przepisy końcowe"
+      "section": "Rozdział 3 — Przepisy końcowe",
+      "title": "Wejście w życie"
     }
   ]
 }

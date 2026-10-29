@@ -116,6 +116,9 @@ export function Reader({
             <ActBadge actId={article.actId} acts={acts} />
             <h2 className="font-mono text-xl font-bold tracking-tight">{article.label}</h2>
           </div>
+          {article.title && (
+            <p className="text-sm font-medium text-slate-700 dark:text-zinc-300">{article.title}</p>
+          )}
           {(article.chapter || article.section) && (
             <p className="text-xs leading-relaxed text-slate-500 dark:text-zinc-500">
               {[article.chapter, article.section].filter(Boolean).join(' › ')}
