@@ -30,6 +30,7 @@ import {
   type SessionPlan,
   type Stage,
 } from '../learn'
+import type { LearnSet } from '../types'
 import type { ActId, Chapter, Library } from './structure'
 
 export type { Grade, LearnMode, LearnState, Question, QuestionBank, QuestionType, SessionItem, SessionPlan, Stage }
@@ -38,6 +39,19 @@ export { TYPE_LABELS, flashcardOutcome, gradeAnswer, guidedPath, mistakes, progr
 const SESSION_SIZE = 12
 /** Cap „Który artykuł?” to ~1/3 of a session — it is 57% of the bank. */
 const WHICH_ARTICLE_SHARE = 1 / 3
+
+/** Shorter labels for the session preview breakdown. */
+export const TYPE_LABELS_SHORT: Record<QuestionType, string> = {
+  definition: 'Definicje',
+  deadline: 'Terminy',
+  conditions: 'Przesłanki',
+  enumeration: 'Wyliczenia',
+  exception: 'Wyjątki',
+  'duty-right': 'Obowiązki i uprawnienia',
+  'which-article': 'Który artykuł',
+  comparison: 'Porównania',
+  order: 'Kolejność',
+}
 
 let bankPromise: Promise<QuestionBank> | null = null
 
@@ -63,6 +77,8 @@ export function sessionHref(opts: {
   stageId?: string
   mistakesOnly?: boolean
   articleId?: string
+  /** Strict personal set — never pulls outside selected stages/articles. */
+  zestaw?: boolean
 }): string {
   const q = new URLSearchParams()
   q.set('m', opts.mode)
@@ -70,6 +86,7 @@ export function sessionHref(opts: {
   if (opts.stageId) q.set('etap', opts.stageId)
   if (opts.mistakesOnly) q.set('bledy', '1')
   if (opts.articleId) q.set('art', opts.articleId)
+  if (opts.zestaw) q.set('zestaw', '1')
   return `nauka/sesja?${q.toString()}`
 }
 
@@ -234,12 +251,109 @@ export type SessionRequest = {
   actId?: ActId
   stageId?: string
   mistakesOnly?: boolean
-  /** Prefer questions of this article (from „Do nauki”). */
+  /** Prefer questions of this article (legacy pin — still fills from act). */
   articleId?: string
   learnQueue?: string[]
+  /**
+   * Strict „Mój zestaw”: only questions for these stages/articles.
+   * Empty pool → empty plan (UI shows „brak pytań”).
+   */
+  zestaw?: LearnSet
+}
+
+/** Cap „Który artykuł?” using only `pool` as filler — never expands the scope. */
+function capWhichInPool(
+  state: LearnState,
+  plan: SessionPlan,
+  mode: LearnMode,
+  pool: Question[],
+): SessionPlan {
+  const size = Math.min(SESSION_SIZE, Math.max(plan.items.length, pool.length ? SESSION_SIZE : 0))
+  if (size === 0) return { ...plan, items: [], counts: { retry: 0, review: 0, new: 0 } }
+  const maxWhich = Math.max(0, Math.floor(size * WHICH_ARTICLE_SHARE))
+  const which = plan.items.filter((i) => i.question.type === 'which-article')
+  const other = plan.items.filter((i) => i.question.type !== 'which-article')
+  const presentAs = (q: Question) => (mode === 'flashcards' ? 'flashcard' : q.format)
+  let items = which.length <= maxWhich ? [...plan.items] : [...other, ...which.slice(0, maxWhich)]
+  const used = new Set(items.map((i) => i.question.id))
+  if (items.length < size) {
+    for (const q of pool) {
+      if (items.length >= size) break
+      if (used.has(q.id)) continue
+      if (q.type === 'which-article' && items.filter((i) => i.question.type === 'which-article').length >= maxWhich)
+        continue
+      if (mode === 'test' && q.format === 'flashcard') continue
+      used.add(q.id)
+      items.push({
+        question: q,
+        reason: state.questions[q.id] ? (state.questions[q.id].lastCorrect ? 'review' : 'retry') : 'new',
+        presentAs: presentAs(q) as SessionItem['presentAs'],
+      })
+    }
+  }
+  items = items.slice(0, size)
+  const counts = { retry: 0, review: 0, new: 0 }
+  for (const it of items) counts[it.reason]++
+  return { ...plan, items, counts }
+}
+
+/** Plan a session from a closed pool — never fills from outside the set. */
+function planFromPool(
+  _bank: QuestionBank,
+  state: LearnState,
+  mode: LearnMode,
+  pool: Question[],
+  now = Date.now(),
+): SessionPlan {
+  void _bank
+  const presentAs = (q: Question) => (mode === 'flashcards' ? 'flashcard' : q.format)
+  const eligible = pool.filter((q) => !(mode === 'test' && q.format === 'flashcard'))
+  const retry = eligible
+    .filter((q) => state.questions[q.id] && !state.questions[q.id].lastCorrect)
+    .sort((a, b) => state.questions[a.id].lastAnsweredAt - state.questions[b.id].lastAnsweredAt)
+  const review = eligible
+    .filter((q) => {
+      const p = state.questions[q.id]
+      return p && p.lastCorrect && p.dueAt <= now
+    })
+    .sort((a, b) => state.questions[a.id].dueAt - state.questions[b.id].dueAt)
+  const fresh = eligible.filter((q) => !state.questions[q.id])
+  const picked: SessionItem[] = []
+  const used = new Set<string>()
+  const push = (q: Question, reason: SessionItem['reason']) => {
+    if (used.has(q.id) || picked.length >= SESSION_SIZE) return
+    used.add(q.id)
+    picked.push({ question: q, reason, presentAs: presentAs(q) as SessionItem['presentAs'] })
+  }
+  for (const q of retry) push(q, 'retry')
+  for (const q of review) push(q, 'review')
+  for (const q of fresh) push(q, 'new')
+  if (picked.length < SESSION_SIZE) {
+    for (const q of eligible) {
+      if (picked.length >= SESSION_SIZE) break
+      const p = state.questions[q.id]
+      if (p && p.lastCorrect) push(q, 'review')
+    }
+  }
+  const counts = { retry: 0, review: 0, new: 0 }
+  for (const it of picked) counts[it.reason]++
+  const actId = picked[0]?.question.actId ?? null
+  const base: SessionPlan = { actId, stage: null, items: picked, counts }
+  return capWhichInPool(state, base, mode, eligible)
+}
+
+function questionsForZestaw(bank: QuestionBank, set: LearnSet): Question[] {
+  const stages = new Set(set.stageIds)
+  const articles = new Set(set.articleIds)
+  if (!stages.size && !articles.size) return []
+  return bank.questions.filter((q) => stages.has(q.stageId) || articles.has(q.articleId))
 }
 
 export function planSession(bank: QuestionBank, state: LearnState, req: SessionRequest): SessionPlan {
+  if (req.zestaw) {
+    return planFromPool(bank, state, req.mode, questionsForZestaw(bank, req.zestaw))
+  }
+
   if (req.mistakesOnly) {
     const list = mistakes(bank, state).filter((q) => !req.actId || q.actId === req.actId)
     const presentAs = (q: Question) => (req.mode === 'flashcards' ? 'flashcard' : q.format)
@@ -263,23 +377,21 @@ export function planSession(bank: QuestionBank, state: LearnState, req: SessionR
   }
   let plan = buildCappedSession(bank, state, { mode: req.mode, size: SESSION_SIZE, filter })
 
-  const pinIds: string[] = []
-  if (req.articleId) pinIds.push(req.articleId)
-  for (const id of req.learnQueue ?? []) if (!pinIds.includes(id)) pinIds.push(id)
-
-  if (pinIds.length) {
+  // Single-article pin from reader (legacy): prefer, but still fill from act/stage.
+  if (req.articleId && !req.learnQueue?.length) {
     const presentAs = (q: Question) => (req.mode === 'flashcards' ? 'flashcard' : q.format)
     const pinned: SessionItem[] = []
     const used = new Set<string>()
-    for (const artId of pinIds) {
-      for (const q of bank.questions) {
-        if (q.articleId !== artId) continue
-        if (req.mode === 'test' && q.format === 'flashcard') continue
-        if (used.has(q.id)) continue
-        used.add(q.id)
-        pinned.push({ question: q, reason: state.questions[q.id] ? 'review' : 'new', presentAs: presentAs(q) as SessionItem['presentAs'] })
-        if (pinned.length >= Math.ceil(SESSION_SIZE / 2)) break
-      }
+    for (const q of bank.questions) {
+      if (q.articleId !== req.articleId) continue
+      if (req.mode === 'test' && q.format === 'flashcard') continue
+      if (used.has(q.id)) continue
+      used.add(q.id)
+      pinned.push({
+        question: q,
+        reason: state.questions[q.id] ? 'review' : 'new',
+        presentAs: presentAs(q) as SessionItem['presentAs'],
+      })
       if (pinned.length >= Math.ceil(SESSION_SIZE / 2)) break
     }
     const rest = plan.items.filter((i) => !used.has(i.question.id))
@@ -291,6 +403,124 @@ export function planSession(bank: QuestionBank, state: LearnState, req: SessionR
   }
 
   return plan
+}
+
+export type ScopeKind = 'act' | 'chapter' | 'zestaw' | 'mistakes' | 'article'
+
+export type SessionPreviewInfo = {
+  mode: LearnMode
+  scopeKind: ScopeKind
+  /** Human scope line, e.g. „u.p.e.a. · wszystkie rozdziały”. */
+  scopeLabel: string
+  /** Questions that will actually enter the session (≤ SESSION_SIZE). */
+  count: number
+  /** How many engine questions exist in scope (before session cap). */
+  available: number
+  byType: { type: QuestionType; label: string; count: number }[]
+  lineup: { retry: number; review: number; new: number }
+  emptyMessage?: string
+  startHref: string
+}
+
+function typeBreakdown(items: Question[]): SessionPreviewInfo['byType'] {
+  const map = new Map<QuestionType, number>()
+  for (const q of items) map.set(q.type, (map.get(q.type) ?? 0) + 1)
+  return [...map.entries()]
+    .map(([type, count]) => ({ type, label: TYPE_LABELS_SHORT[type], count }))
+    .sort((a, b) => b.count - a.count)
+}
+
+function actShort(bank: QuestionBank, actId?: string | null): string {
+  if (!actId) return 'Akt'
+  return bank.acts.find((a) => a.id === actId)?.shortName ?? actId
+}
+
+export function describeSessionPreview(
+  bank: QuestionBank,
+  state: LearnState,
+  req: SessionRequest,
+  opts?: { stageLabel?: string },
+): SessionPreviewInfo {
+  const plan = planSession(bank, state, req)
+  let scopeKind: ScopeKind = 'act'
+  let scopeLabel = `${actShort(bank, req.actId)} · wszystkie rozdziały`
+  let availablePool: Question[]
+
+  if (req.zestaw) {
+    scopeKind = 'zestaw'
+    const nStages = req.zestaw.stageIds.length
+    const nArts = req.zestaw.articleIds.length
+    const parts = [
+      nStages ? `${nStages} rozdz.` : '',
+      nArts ? `${nArts} art.` : '',
+    ].filter(Boolean)
+    scopeLabel = parts.length ? `Mój zestaw · ${parts.join(' · ')}` : 'Mój zestaw (pusty)'
+    availablePool = questionsForZestaw(bank, req.zestaw).filter(
+      (q) => !(req.mode === 'test' && q.format === 'flashcard'),
+    )
+  } else if (req.mistakesOnly) {
+    scopeKind = 'mistakes'
+    scopeLabel = req.actId ? `Moje błędy · ${actShort(bank, req.actId)}` : 'Moje błędy'
+    availablePool = mistakes(bank, state).filter((q) => !req.actId || q.actId === req.actId)
+  } else if (req.stageId) {
+    scopeKind = 'chapter'
+    const stage = bank.stages.find((s) => s.id === req.stageId)
+    scopeLabel = opts?.stageLabel ?? stage?.label ?? 'Rozdział'
+    if (req.actId) scopeLabel = `${actShort(bank, req.actId)} · ${scopeLabel}`
+    availablePool = bank.questions.filter(
+      (q) => q.stageId === req.stageId && !(req.mode === 'test' && q.format === 'flashcard'),
+    )
+  } else if (req.articleId) {
+    scopeKind = 'article'
+    scopeLabel = `Artykuł · ${req.articleId}`
+    availablePool = bank.questions.filter(
+      (q) => q.articleId === req.articleId && !(req.mode === 'test' && q.format === 'flashcard'),
+    )
+  } else {
+    availablePool = bank.questions.filter(
+      (q) => (!req.actId || q.actId === req.actId) && !(req.mode === 'test' && q.format === 'flashcard'),
+    )
+  }
+
+  const emptyMessage =
+    availablePool.length === 0
+      ? scopeKind === 'zestaw' && !req.zestaw?.stageIds.length && !req.zestaw?.articleIds.length
+        ? 'Zestaw jest pusty — dodaj rozdział lub artykuł'
+        : 'brak pytań — tylko przeczytaj'
+      : undefined
+
+  return {
+    mode: req.mode,
+    scopeKind,
+    scopeLabel,
+    count: plan.items.length,
+    available: availablePool.length,
+    byType: typeBreakdown(plan.items.map((i) => i.question)),
+    lineup: plan.counts,
+    emptyMessage,
+    startHref: sessionHref({
+      mode: req.mode,
+      actId: req.actId,
+      stageId: req.stageId,
+      mistakesOnly: req.mistakesOnly,
+      articleId: req.articleId,
+      zestaw: Boolean(req.zestaw),
+    }),
+  }
+}
+
+/** Count engine questions available for a stage (respecting mode when given). */
+export function countQuestionsForStage(bank: QuestionBank, stageId: string, mode?: LearnMode): number {
+  return bank.questions.filter(
+    (q) => q.stageId === stageId && !(mode === 'test' && q.format === 'flashcard'),
+  ).length
+}
+
+export function countQuestionsForArticles(bank: QuestionBank, articleIds: string[], mode?: LearnMode): number {
+  const set = new Set(articleIds)
+  return bank.questions.filter(
+    (q) => set.has(q.articleId) && !(mode === 'test' && q.format === 'flashcard'),
+  ).length
 }
 
 export function applyAnswer(
