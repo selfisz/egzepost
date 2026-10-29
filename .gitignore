@@ -5,3 +5,4 @@ dist
 scripts/raw/*
 !scripts/raw/.gitkeep
 !scripts/raw/README.md
+dist-mockup

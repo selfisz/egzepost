@@ -10,7 +10,10 @@
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "import:acts": "tsx scripts/import-acts.ts",
     "import:titles": "tsx scripts/import-titles.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "mockup:dev": "vite --config vite.mockup.config.ts",
+    "mockup:build": "vite build --config vite.mockup.config.ts && cp dist-mockup/mockup.html dist-mockup/index.html",
+    "mockup:preview": "vite preview --config vite.mockup.config.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.3.1",
