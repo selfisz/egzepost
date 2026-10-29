@@ -1,5 +1,7 @@
-import type { AppPrefs, CardProgress, LearnModule, UserStore, UserTag } from '../types'
+import type { AppPrefs, CardProgress, LearnModule, ReadEntry, UserProfile, UserStore, UserTag } from '../types'
 import { SEED_MODULES } from '../data/learn-seeds'
+import type { LearnState } from '../learn'
+import { emptyLearnState, LEARN_STORAGE_KEY, parseLearnState, saveLearnState } from '../learn'
 
 const KEY = 'egzepost:user:v1'
 const MAX_RECENT_ARTICLES = 12
@@ -17,6 +19,36 @@ const empty: UserStore = {
   recentTagIds: [],
   learnModules: [],
   prefs: { ...defaultPrefs },
+  profile: {},
+  readLog: {},
+}
+
+function seedReadLogFromRecent(store: UserStore): Record<string, ReadEntry> {
+  const existing = store.readLog ?? {}
+  if (Object.keys(existing).length > 0) return existing
+  const now = new Date().toISOString()
+  const readLog: Record<string, ReadEntry> = {}
+  for (const id of store.recentArticleIds ?? []) {
+    readLog[id] = { firstAt: now, lastAt: now, opens: 1 }
+  }
+  return readLog
+}
+
+function normalizeStore(parsed: UserStore): UserStore {
+  const base: UserStore = {
+    version: 1,
+    tags: parsed.tags,
+    progress: parsed.progress ?? {},
+    learnQueue: parsed.learnQueue ?? [],
+    recentArticleIds: parsed.recentArticleIds ?? [],
+    pinnedTagIds: parsed.pinnedTagIds ?? [],
+    recentTagIds: parsed.recentTagIds ?? [],
+    learnModules: parsed.learnModules ?? [],
+    prefs: { ...defaultPrefs, ...parsed.prefs },
+    profile: parsed.profile ?? {},
+    readLog: parsed.readLog ?? {},
+  }
+  return { ...base, readLog: seedReadLogFromRecent(base) }
 }
 
 export function loadUserStore(): UserStore {
@@ -25,17 +57,7 @@ export function loadUserStore(): UserStore {
     if (!raw) return structuredClone(empty)
     const parsed = JSON.parse(raw) as UserStore
     if (parsed?.version !== 1 || !Array.isArray(parsed.tags)) return structuredClone(empty)
-    return {
-      version: 1,
-      tags: parsed.tags,
-      progress: parsed.progress ?? {},
-      learnQueue: parsed.learnQueue ?? [],
-      recentArticleIds: parsed.recentArticleIds ?? [],
-      pinnedTagIds: parsed.pinnedTagIds ?? [],
-      recentTagIds: parsed.recentTagIds ?? [],
-      learnModules: parsed.learnModules ?? [],
-      prefs: { ...defaultPrefs, ...parsed.prefs },
-    }
+    return normalizeStore(parsed)
   } catch {
     return structuredClone(empty)
   }
@@ -47,6 +69,14 @@ export function getPrefs(store: UserStore): AppPrefs {
 
 export function setPrefs(store: UserStore, patch: Partial<AppPrefs>): UserStore {
   return { ...store, prefs: { ...getPrefs(store), ...patch } }
+}
+
+export function getProfile(store: UserStore): UserProfile {
+  return { ...(store.profile ?? {}) }
+}
+
+export function setProfile(store: UserStore, patch: Partial<UserProfile>): UserStore {
+  return { ...store, profile: { ...getProfile(store), ...patch } }
 }
 
 /** Seeds + user modules; user overrides seed with same id. */
@@ -126,9 +156,22 @@ export function addToLearnQueue(store: UserStore, articleId: string): UserStore 
   return { ...store, learnQueue: [...store.learnQueue, articleId] }
 }
 
+export function clearLearnQueueArticle(store: UserStore, articleId: string): UserStore {
+  return { ...store, learnQueue: store.learnQueue.filter((id) => id !== articleId) }
+}
+
 export function pushRecentArticle(store: UserStore, articleId: string): UserStore {
   const next = [articleId, ...(store.recentArticleIds ?? []).filter((id) => id !== articleId)]
-  return { ...store, recentArticleIds: next.slice(0, MAX_RECENT_ARTICLES) }
+  return markArticleRead({ ...store, recentArticleIds: next.slice(0, MAX_RECENT_ARTICLES) }, articleId)
+}
+
+/** Record a genuine article read (reader / chapter scroll / „zobacz przepis”). */
+export function markArticleRead(store: UserStore, articleId: string, at = new Date().toISOString()): UserStore {
+  const prev = store.readLog?.[articleId]
+  const entry: ReadEntry = prev
+    ? { firstAt: prev.firstAt, lastAt: at, opens: prev.opens + 1 }
+    : { firstAt: at, lastAt: at, opens: 1 }
+  return { ...store, readLog: { ...(store.readLog ?? {}), [articleId]: entry } }
 }
 
 export function pushRecentTag(store: UserStore, tagId: string): UserStore {
@@ -148,24 +191,41 @@ export function newTagId(): string {
   return `tag_${crypto.randomUUID().slice(0, 8)}`
 }
 
-export function exportStoreJson(store: UserStore): string {
-  return JSON.stringify(store, null, 2)
+export type ExportBundle = {
+  version: 2
+  exportedAt: string
+  user: UserStore
+  learn: LearnState
 }
 
-export function importStoreJson(raw: string): UserStore {
-  const parsed = JSON.parse(raw) as UserStore
-  if (parsed?.version !== 1 || !Array.isArray(parsed.tags)) {
-    throw new Error('Nieprawidłowy plik bazy (oczekiwano version: 1 + tags)')
+/** Combined export: user store + Nauka v4 progress (`regest:learn:v1`). */
+export function exportStoreJson(store: UserStore, learn: LearnState = parseLearnState(localStorage.getItem(LEARN_STORAGE_KEY))): string {
+  const bundle: ExportBundle = {
+    version: 2,
+    exportedAt: new Date().toISOString(),
+    user: store,
+    learn,
   }
-  return {
-    version: 1,
-    tags: parsed.tags,
-    progress: parsed.progress ?? {},
-    learnQueue: parsed.learnQueue ?? [],
-    recentArticleIds: parsed.recentArticleIds ?? [],
-    pinnedTagIds: parsed.pinnedTagIds ?? [],
-    recentTagIds: parsed.recentTagIds ?? [],
-    learnModules: parsed.learnModules ?? [],
-    prefs: { ...defaultPrefs, ...parsed.prefs },
+  return JSON.stringify(bundle, null, 2)
+}
+
+export function importStoreJson(raw: string): { user: UserStore; learn: LearnState } {
+  const parsed = JSON.parse(raw) as ExportBundle | UserStore
+  if (parsed && typeof parsed === 'object' && 'version' in parsed && (parsed as ExportBundle).version === 2) {
+    const b = parsed as ExportBundle
+    if (!b.user || !Array.isArray(b.user.tags)) throw new Error('Nieprawidłowy plik bazy (brak user.tags)')
+    return { user: normalizeStore(b.user), learn: b.learn?.version === 1 ? parseLearnState(JSON.stringify(b.learn)) : emptyLearnState() }
   }
+  const legacy = parsed as UserStore
+  if (legacy?.version !== 1 || !Array.isArray(legacy.tags)) {
+    throw new Error('Nieprawidłowy plik bazy (oczekiwano version: 1 + tags lub version: 2)')
+  }
+  return { user: normalizeStore(legacy), learn: emptyLearnState() }
+}
+
+/** Apply an import: writes learn state to localStorage and returns the user store. */
+export function applyImport(raw: string): UserStore {
+  const { user, learn } = importStoreJson(raw)
+  saveLearnState(learn)
+  return user
 }

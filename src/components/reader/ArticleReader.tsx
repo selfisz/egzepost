@@ -1,8 +1,8 @@
 import { ArrowUpRight, BookmarkCheck, BookmarkPlus, Copy, Quote, Tag } from 'lucide-react'
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { citation } from '../../lib/data'
 import { cn } from '../../lib/cn'
-import { addToLearnQueue, getPrefs, newTagId, pushRecentArticle, upsertTag } from '../../lib/storage'
+import { addToLearnQueue, getPrefs, markArticleRead, newTagId, pushRecentArticle, upsertTag } from '../../lib/storage'
 import type { Library } from '../../lib/structure'
 import { chapterLabel, isActId } from '../../lib/structure'
 import type { ActMeta, Article, UserStore } from '../../types'
@@ -31,6 +31,36 @@ export function ArticleReader({ lib, acts, article, chapterMode, store, onStoreC
     // Only on article change; store updates from this effect must not retrigger it.
   }, [article.id])
 
+  const rootRef = useRef<HTMLDivElement>(null)
+  const marked = useRef(new Set<string>())
+
+  useEffect(() => {
+    if (!chapterMode) return
+    const root = rootRef.current
+    if (!root) return
+    const nodes = root.querySelectorAll<HTMLElement>('[data-article-id]')
+    const io = new IntersectionObserver(
+      (entries) => {
+        let nextStore = store
+        let dirty = false
+        for (const e of entries) {
+          if (!e.isIntersecting || e.intersectionRatio < 0.5) continue
+          const id = e.target.getAttribute('data-article-id')
+          if (!id || marked.current.has(id)) continue
+          marked.current.add(id)
+          nextStore = markArticleRead(nextStore, id)
+          dirty = true
+        }
+        if (dirty) onStoreChange(nextStore)
+      },
+      { threshold: [0.5] },
+    )
+    nodes.forEach((n) => io.observe(n))
+    return () => io.disconnect()
+    // Rebind when chapter list changes; ignore store churn.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chapterMode, article.id])
+
   if (!act) return <div className="p-8 text-muted">Brak w bazie: {article.id}</div>
   const ch = act.chapterOf.get(article.id)!
   const i = act.articles.indexOf(article)
@@ -45,7 +75,7 @@ export function ArticleReader({ lib, acts, article, chapterMode, store, onStoreC
   }
 
   return (
-    <div className={cn(actClass(act.id), 'px-5 md:px-8')}>
+    <div ref={rootRef} className={cn(actClass(act.id), 'px-5 md:px-8')}>
       <a href={href(`akt/${act.id}/r/${ch.index}`)} className="flex items-center gap-1.5 text-[12.5px] text-muted">
         <Emblem act={act.id} className="size-3.5 shrink-0 text-act" />
         <span className="font-semibold text-act">{act.shortName}</span>
@@ -78,6 +108,7 @@ export function ArticleReader({ lib, acts, article, chapterMode, store, onStoreC
         <article
           key={art.id}
           id={`a-${art.id}`}
+          data-article-id={art.id}
           className="mx-auto max-w-2xl border-b border-line py-7 last:border-b-0"
         >
           <h1 className="font-serif text-[34px] leading-none font-semibold tracking-tight">

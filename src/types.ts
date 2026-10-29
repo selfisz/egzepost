@@ -98,6 +98,21 @@ export type AppPrefs = {
   highlightLegal: boolean
 }
 
+/** First-visit name + greeting; editable in Moje. */
+export type UserProfile = {
+  /** Display name used in „Dzień dobry, {imię}.” */
+  name?: string
+  /** True once the first-visit prompt was answered or skipped. */
+  greeted?: boolean
+}
+
+/** Per-article reading history for Statystyki „przeczytane”. */
+export type ReadEntry = {
+  firstAt: string
+  lastAt: string
+  opens: number
+}
+
 export type UserStore = {
   version: 1
   tags: UserTag[]
@@ -112,4 +127,7 @@ export type UserStore = {
   /** User-created / customized learn modules (seeds merged at runtime) */
   learnModules?: LearnModule[]
   prefs?: AppPrefs
+  profile?: UserProfile
+  /** articleId → read history (search / xref popovers do not write here) */
+  readLog?: Record<string, ReadEntry>
 }

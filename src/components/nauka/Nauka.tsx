@@ -1,8 +1,13 @@
-import { Check, Lock, Play, RotateCcw } from 'lucide-react'
-import { useMemo } from 'react'
+import { BookOpen, Check, Layers, ListChecks, Play } from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
 import { cn } from '../../lib/cn'
-import { learnEngine, type StageInfo } from '../../lib/learn-adapter'
-import { isDue } from '../../lib/srs'
+import {
+  ensureBank,
+  naukaSnapshot,
+  sessionHref,
+  type LearnState,
+  type QuestionBank,
+} from '../../lib/learn-adapter'
 import type { ActId, Library } from '../../lib/structure'
 import { articleRange, plural } from '../../lib/structure'
 import type { UserStore } from '../../types'
@@ -11,7 +16,6 @@ import { href } from '../shell/router'
 import { SectionLabel } from '../shell/Shell'
 
 const FOCUS_KEY = 'regest:nauka-act'
-const OFFSETS = [0, 56, 84, 56, 0, -56, -84, -56]
 
 export function readFocusAct(fallback: ActId = 'upea'): ActId {
   const v = localStorage.getItem(FOCUS_KEY)
@@ -22,76 +26,159 @@ export function writeFocusAct(id: ActId) {
   localStorage.setItem(FOCUS_KEY, id)
 }
 
-export function TrainingCard({ lib, store, focusAct }: { lib: Library; store: UserStore; focusAct: ActId }) {
-  const plan = useMemo(() => learnEngine.dailyPlan(lib, store, focusAct), [lib, store, focusAct])
-  const minutes = Math.max(1, Math.round(plan.cards.length * 0.5))
-  if (!plan.cards.length)
+export function useQuestionBank() {
+  const [bank, setBank] = useState<QuestionBank | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  useEffect(() => {
+    let cancelled = false
+    ensureBank()
+      .then((b) => !cancelled && setBank(b))
+      .catch((e: unknown) => !cancelled && setError(e instanceof Error ? e.message : 'Brak banku pytań'))
+    return () => {
+      cancelled = true
+    }
+  }, [])
+  return { bank, error }
+}
+
+export function TrainingCard({ learn, focusAct, lib }: { learn: LearnState; focusAct: ActId; lib: Library }) {
+  const { bank, error } = useQuestionBank()
+  const snap = useMemo(() => (bank ? naukaSnapshot(bank, learn, lib, focusAct) : null), [bank, learn, lib, focusAct])
+
+  if (error)
     return (
       <div className="rounded-[24px] bg-hero p-5 text-hero-fg ring-1 ring-gold/15">
         <div className="text-[12px] font-semibold tracking-[0.14em] text-gold uppercase">Trening na dziś</div>
-        <div className="mt-1.5 font-serif text-[22px] leading-tight font-semibold">Na dziś wszystko zrobione</div>
-        <div className="mt-1 text-[13.5px] opacity-65">Kolejne powtórki pojawią się same.</div>
+        <div className="mt-1.5 text-[13.5px] opacity-75">{error}</div>
       </div>
     )
+
+  if (!bank || !snap)
+    return (
+      <div className="rounded-[24px] bg-hero p-5 text-hero-fg ring-1 ring-gold/15">
+        <div className="text-[12px] font-semibold tracking-[0.14em] text-gold uppercase">Trening na dziś</div>
+        <div className="mt-1.5 font-serif text-[22px] leading-tight font-semibold">Ładowanie pytań…</div>
+      </div>
+    )
+
   const parts = [
-    plan.reviews ? `${plan.reviews} ${plural(plan.reviews, 'powtórka', 'powtórki', 'powtórek')}` : '',
-    plan.fresh ? `${plan.fresh} ${plural(plan.fresh, 'nowy przepis', 'nowe przepisy', 'nowych przepisów')}` : '',
+    snap.lineup.retry ? `${snap.lineup.retry} do poprawy` : '',
+    snap.lineup.review ? `${snap.lineup.review} ${plural(snap.lineup.review, 'powtórka', 'powtórki', 'powtórek')}` : '',
+    snap.lineup.new ? `${snap.lineup.new} nowe` : '',
   ].filter(Boolean)
+
   return (
-    <a href={href('nauka/trening')} className="block overflow-hidden rounded-[24px] bg-hero p-5 text-hero-fg ring-1 ring-gold/15">
+    <div className="overflow-hidden rounded-[24px] bg-hero p-5 text-hero-fg ring-1 ring-gold/15">
       <div className="text-[12px] font-semibold tracking-[0.14em] text-gold uppercase">Trening na dziś</div>
       <div className="mt-1.5 font-serif text-[24px] leading-tight font-semibold">
-        {plan.cards.length} {plural(plan.cards.length, 'karta', 'karty', 'kart')} · ok. {minutes} min
+        {ACT_META[focusAct].short} · 12 pytań
       </div>
-      <div className="mt-1 text-[13.5px] opacity-65">{parts.join(' + ')} · układa się sam</div>
-      <div className="mt-4 flex gap-1.5" aria-hidden>
-        {plan.cards.map((c) => (
-          <span key={c.id} className={cn(actClass(c.article.actId), 'h-1.5 flex-1 rounded-full bg-act')} />
-        ))}
+      <div className="mt-1 text-[13.5px] opacity-65">
+        {parts.join(' · ') || 'Nowe pytania z aktu'}
+        {snap.lineup.proposedLabel ? ` · ${snap.lineup.proposedLabel}` : ''}
       </div>
-      <div className="mt-4 flex h-12 items-center justify-center gap-2 rounded-2xl bg-gold text-[15px] font-semibold text-black">
-        <Play className="size-4 fill-current" /> Zacznij trening
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        <a
+          href={href(sessionHref({ mode: 'test', actId: focusAct }))}
+          className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-gold text-[15px] font-semibold text-black"
+        >
+          <ListChecks className="size-4" /> Test
+        </a>
+        <a
+          href={href(sessionHref({ mode: 'flashcards', actId: focusAct }))}
+          className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-white/12 text-[15px] font-semibold ring-1 ring-white/20"
+        >
+          <Layers className="size-4" /> Fiszki
+        </a>
       </div>
-    </a>
+    </div>
   )
 }
 
-export function NaukaHome({ lib, store, actId }: { lib: Library; store: UserStore; actId: ActId }) {
-  const act = lib.acts[actId]
-  const allStages = useMemo(() => learnEngine.stages(act, store), [act, store])
-  // Fully repealed rozdziały have nothing to learn — keep them off the path.
-  const stages = allStages.filter((s) => s.total > 0)
-  const done = stages.filter((s) => s.state === 'done').length
-  const current = stages.find((s) => s.state === 'current')
-  const currentNo = current ? stages.indexOf(current) + 1 : stages.length
-  const pct = stages.length ? done / stages.length : 0
-  const stats = useMemo(() => {
-    const now = Date.now()
-    const entries = Object.values(store.progress)
-    return { seen: entries.length, due: entries.filter((p) => isDue(p, now)).length }
-  }, [store.progress])
+export function NaukaHome({
+  lib,
+  learn,
+  actId,
+}: {
+  lib: Library
+  store: UserStore
+  learn: LearnState
+  actId: ActId
+}) {
+  const { bank, error } = useQuestionBank()
+  const snap = useMemo(() => (bank ? naukaSnapshot(bank, learn, lib, actId) : null), [bank, learn, lib, actId])
+  const [sheetStage, setSheetStage] = useState<string | null>(null)
 
-  let nodeIdx = 0
+  if (error) {
+    return (
+      <div className="px-5 pt-8">
+        <h1 className="font-serif text-[32px] font-semibold">Nauka</h1>
+        <p className="mt-4 text-muted">{error}</p>
+      </div>
+    )
+  }
+
+  if (!bank || !snap) {
+    return (
+      <div className="px-5 pt-8">
+        <h1 className="font-serif text-[32px] font-semibold">Nauka</h1>
+        <p className="mt-4 text-muted">Ładowanie banku pytań…</p>
+      </div>
+    )
+  }
+
+  const sheet = sheetStage ? snap.chapters.find((c) => c.stage.id === sheetStage) : null
+  const divisions = groupByDivision(snap.chapters)
+
   return (
     <div className="px-5 pt-2 md:px-8 md:pt-8">
       <div className="flex items-end justify-between gap-3">
         <h1 className="font-serif text-[32px] leading-tight font-semibold tracking-tight">Nauka</h1>
         <div className="mb-1 text-right text-[12.5px] leading-tight text-muted tabular-nums">
           <div>
-            <b className="font-semibold text-ink">{stats.seen}</b> poznanych
+            <b className="font-semibold text-ink">{snap.mastered}</b> / {snap.total} opanowanych
           </div>
           <div>
-            <b className="font-semibold text-ink">{stats.due}</b> do powtórki
+            <b className="font-semibold text-ink">{snap.dueToday}</b> do powtórki ·{' '}
+            <b className="font-semibold text-ink">{snap.mistakes}</b> błędy
           </div>
         </div>
       </div>
 
-      <div className="mt-4">
-        <TrainingCard lib={lib} store={store} focusAct={actId} />
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        <a
+          href={href(sessionHref({ mode: 'test', actId }))}
+          className="flex h-14 flex-col items-center justify-center rounded-2xl bg-ink text-paper"
+        >
+          <span className="flex items-center gap-2 text-[16px] font-semibold">
+            <ListChecks className="size-4" /> Test
+          </span>
+        </a>
+        <a
+          href={href(sessionHref({ mode: 'flashcards', actId }))}
+          className="flex h-14 flex-col items-center justify-center rounded-2xl border border-line bg-surface"
+        >
+          <span className="flex items-center gap-2 text-[16px] font-semibold">
+            <Layers className="size-4" /> Fiszki
+          </span>
+        </a>
+      </div>
+      <div className="mt-2 text-center text-[12.5px] text-muted">
+        {ACT_META[actId].short} · wszystkie rozdziały
+      </div>
+      <div className="mt-2 text-center text-[12.5px] text-muted">
+        {[
+          snap.lineup.retry ? `${snap.lineup.retry} do poprawy` : '',
+          snap.lineup.review ? `${snap.lineup.review} powtórek` : '',
+          snap.lineup.new
+            ? `reszta nowe${snap.lineup.proposedLabel ? ` z: ${snap.lineup.proposedLabel} (proponowany)` : ''}`
+            : '',
+        ]
+          .filter(Boolean)
+          .join(' · ') || 'Sesja z całego aktu'}
       </div>
 
-      <SectionLabel className="mt-8 mb-3">Ścieżka kursu</SectionLabel>
-      <div className="grid grid-cols-3 gap-1 rounded-2xl bg-sunk p-1" role="tablist">
+      <div className="mt-6 grid grid-cols-3 gap-1 rounded-2xl bg-sunk p-1" role="tablist">
         {lib.list.map((a) => (
           <a
             key={a.id}
@@ -110,89 +197,151 @@ export function NaukaHome({ lib, store, actId }: { lib: Library; store: UserStor
         ))}
       </div>
 
-      <div className={cn(actClass(actId), 'mt-3 flex items-center gap-3 px-1')}>
-        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-sunk">
-          <div className="h-full rounded-full bg-act" style={{ width: `${Math.max(pct * 100, 2)}%` }} />
-        </div>
-        <span className="text-[12.5px] font-medium text-muted tabular-nums">
-          {done === 0 && !current?.seen ? 'Start od podstaw' : `Etap ${currentNo} z ${stages.length}`}{' '}
-          · {Math.round(pct * 100)}%
-        </span>
+      {snap.mistakes > 0 && (
+        <a
+          href={href(sessionHref({ mode: 'mixed', actId, mistakesOnly: true }))}
+          className="mt-4 flex items-center justify-between rounded-2xl border border-line bg-surface px-4 py-3"
+        >
+          <span className="text-[14.5px] font-semibold">Moje błędy</span>
+          <span className="text-[13px] text-muted tabular-nums">{snap.mistakes}</span>
+        </a>
+      )}
+
+      <SectionLabel className="mt-8 mb-3">Rozdziały</SectionLabel>
+      <div className={actClass(actId)}>
+        {divisions.map((div) => (
+          <section key={div.key} className="mb-5">
+            <div className="flex items-center gap-3 rounded-2xl bg-act-tint px-4 py-3 text-act-ink">
+              <span className="shrink-0 font-mono text-[11.5px] font-semibold">{div.heading}</span>
+              <h2 className="min-w-0 flex-1 truncate text-[14.5px] font-semibold">{div.title}</h2>
+            </div>
+            <ul className="mt-1 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-surface">
+              {div.rows.map((row) => {
+                const empty = row.total === 0
+                const pct = row.total ? row.seen / row.total : 0
+                const ch = row.chapter
+                return (
+                  <li key={row.stage.id}>
+                    <button
+                      type="button"
+                      disabled={empty}
+                      onClick={() => !empty && setSheetStage(row.stage.id)}
+                      className={cn(
+                        'flex w-full items-center gap-3 px-4 py-3 text-left',
+                        empty ? 'cursor-default opacity-55' : 'hover:bg-sunk/60',
+                      )}
+                    >
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-[14.5px] font-semibold">{row.stage.label}</span>
+                          {row.proposed && (
+                            <span className="rounded-full bg-ink px-2 py-0.5 text-[10.5px] font-semibold tracking-wide text-paper uppercase">
+                              Proponujemy
+                            </span>
+                          )}
+                          {row.status === 'completed' && <Check className="size-4 text-act" strokeWidth={2.6} />}
+                        </div>
+                        <div className="mt-0.5 text-[12px] text-muted">
+                          {empty
+                            ? 'brak pytań — tylko do czytania'
+                            : `${row.seen}/${row.total} · ${row.mistakes ? `do powtórki: ${row.mistakes}` : 'bez błędów'}${
+                                ch ? ` · ${articleRange(ch)}` : ''
+                              }`}
+                        </div>
+                        {!empty && (
+                          <div className="mt-2 h-1 overflow-hidden rounded-full bg-sunk">
+                            <div className="h-full rounded-full bg-act" style={{ width: `${Math.max(pct * 100, 2)}%` }} />
+                          </div>
+                        )}
+                      </div>
+                      {empty && ch ? (
+                        <a
+                          href={href(`akt/${actId}/r/${ch.index}`)}
+                          onClick={(e) => e.stopPropagation()}
+                          className="shrink-0 text-[12.5px] font-semibold text-act"
+                        >
+                          Czytaj
+                        </a>
+                      ) : (
+                        <Play className="size-4 shrink-0 text-muted" />
+                      )}
+                    </button>
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+        ))}
       </div>
 
-      <div className={cn(actClass(actId), 'mt-6')}>
-        {act.divisions.map((d, di) => {
-          const divStages = d.chapters.map((c) => allStages[c.index]).filter((s) => s.total > 0)
-          if (!divStages.length) return null
-          const divDone = divStages.filter((s) => s.state === 'done').length
-          return (
-            <section key={di} className="mb-6">
-              <div className="flex items-center gap-3 rounded-2xl bg-act-tint px-4 py-3 text-act-ink">
-                <span className="shrink-0 font-mono text-[11.5px] font-semibold">DZIAŁ {d.no}</span>
-                <h2 className="min-w-0 flex-1 truncate text-[14.5px] font-semibold">{d.title}</h2>
-                <span className="text-[12px] tabular-nums opacity-70">
-                  {divDone}/{d.chapters.length}
-                </span>
-              </div>
-              <div className="flex flex-col items-center py-4">
-                {divStages.map((s) => (
-                  <PathNode key={s.chapter.index} actId={actId} stage={s} offset={OFFSETS[nodeIdx++ % OFFSETS.length]} />
-                ))}
-              </div>
-            </section>
-          )
-        })}
-      </div>
+      {sheet && (
+        <ChapterSheet
+          actId={actId}
+          label={sheet.stage.label}
+          stageId={sheet.stage.id}
+          chapterIndex={sheet.chapter?.index}
+          onClose={() => setSheetStage(null)}
+        />
+      )}
     </div>
   )
 }
 
-function PathNode({ actId, stage, offset }: { actId: ActId; stage: StageInfo; offset: number }) {
-  const { chapter: ch, state } = stage
-  const link = href(`nauka/etap/${actId}/${ch.index}`)
-  const circle = cn(
-    'grid size-[68px] place-items-center rounded-full border-b-[5px] transition',
-    state === 'locked'
-      ? 'border-line bg-sunk text-muted'
-      : 'border-black/20 bg-act text-white active:translate-y-0.5 dark:text-black/80',
-    state === 'current' && 'pulse',
-  )
-  const icon =
-    state === 'done' ? (
-      <Check className="size-7" strokeWidth={2.6} />
-    ) : state === 'current' ? (
-      <Play className="size-6 fill-current" />
-    ) : (
-      <Lock className="size-5" strokeWidth={2} />
-    )
+function groupByDivision(rows: ReturnType<typeof naukaSnapshot>['chapters']) {
+  const map = new Map<string, { key: string; heading: string; title: string; rows: typeof rows }>()
+  for (const row of rows) {
+    const chapter = row.stage.chapter || 'Bez działu'
+    const key = chapter
+    const m = chapter.match(/^(Dział\s+[^\s—–-]+)\s*[—–-]\s*(.+)$/i)
+    const heading = m ? m[1].toUpperCase() : 'DZIAŁ'
+    const title = m ? m[2] : chapter
+    const g = map.get(key) ?? { key, heading, title, rows: [] }
+    g.rows.push(row)
+    map.set(key, g)
+  }
+  return [...map.values()]
+}
+
+function ChapterSheet({
+  actId,
+  label,
+  stageId,
+  chapterIndex,
+  onClose,
+}: {
+  actId: ActId
+  label: string
+  stageId: string
+  chapterIndex?: number
+  onClose: () => void
+}) {
   return (
-    <div className="flex w-full flex-col items-center py-2.5" style={{ transform: `translateX(${offset}px)` }}>
-      {state === 'current' && (
-        <div className="relative mb-3 rounded-xl bg-ink px-3 py-2 text-center text-paper shadow-lg">
-          <div className="text-[11px] font-semibold tracking-wider text-gold uppercase">Teraz</div>
-          <div className="text-[13px] font-semibold tabular-nums">
-            {stage.seen} z {stage.total} przepisów
-          </div>
-          <span className="absolute -bottom-1.5 left-1/2 size-3 -translate-x-1/2 rotate-45 bg-ink" />
+    <div className="fixed inset-0 z-40 flex flex-col justify-end bg-black/40" role="dialog" aria-modal>
+      <button type="button" className="flex-1 cursor-default" aria-label="Zamknij" onClick={onClose} />
+      <div className="rounded-t-3xl bg-paper px-5 pt-4 pb-[max(env(safe-area-inset-bottom),20px)] shadow-2xl">
+        <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-line" />
+        <h2 className="font-serif text-[22px] font-semibold">{label}</h2>
+        <p className="mt-1 text-[13px] text-muted">Wybierz tryb — bez blokad, od razu.</p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <a
+            href={href(sessionHref({ mode: 'test', actId, stageId }))}
+            className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-ink text-[15px] font-semibold text-paper"
+          >
+            <ListChecks className="size-4" /> Test
+          </a>
+          <a
+            href={href(sessionHref({ mode: 'flashcards', actId, stageId }))}
+            className="flex h-14 items-center justify-center gap-2 rounded-2xl border border-line text-[15px] font-semibold"
+          >
+            <Layers className="size-4" /> Fiszki
+          </a>
         </div>
-      )}
-      {state === 'locked' ? (
-        <span className={circle} aria-label={`${ch.title} — etap zablokowany`}>
-          {icon}
-        </span>
-      ) : (
-        <a href={link} className={circle} aria-label={`${ch.title} — ${state === 'done' ? 'powtórz etap' : 'ucz się'}`}>
-          {icon}
-        </a>
-      )}
-      <div className={cn('mt-2 w-40 text-center', state === 'locked' && 'text-muted')}>
-        <div className="line-clamp-2 text-[13px] leading-tight font-medium">{ch.title}</div>
-        <div className="mt-0.5 text-[11px] text-muted tabular-nums">
-          {articleRange(ch)} · {stage.total} {plural(stage.total, 'przepis', 'przepisy', 'przepisów')}
-        </div>
-        {state === 'done' && (
-          <a href={link} className="mt-1 inline-flex items-center gap-1 text-[11.5px] font-medium text-act">
-            <RotateCcw className="size-3" /> Powtórz
+        {chapterIndex !== undefined && (
+          <a
+            href={href(`akt/${actId}/r/${chapterIndex}`)}
+            className="mt-3 flex h-12 items-center justify-center gap-2 rounded-2xl bg-sunk text-[14px] font-semibold"
+          >
+            <BookOpen className="size-4" /> Zobacz rozdział
           </a>
         )}
       </div>

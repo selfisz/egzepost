@@ -1,85 +1,132 @@
-import { ArrowRight, Check, X } from 'lucide-react'
-import { useEffect, useState, type ReactNode } from 'react'
+import { ArrowRight, BookOpen, Check, Layers, X } from 'lucide-react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { cn } from '../../lib/cn'
-import { learnEngine, type Grade, type LearnCard } from '../../lib/learn-adapter'
-import { chapterLabel, isActId } from '../../lib/structure'
-import type { UserStore } from '../../types'
+import {
+  applyAnswer,
+  flashcardOutcome,
+  gradeAnswer,
+  gradeHint,
+  sessionHref,
+  type Grade,
+  type LearnMode,
+  type LearnState,
+  type Question,
+  type SessionItem,
+  type SessionPlan,
+  typeLabel,
+} from '../../lib/learn-adapter'
+import { markArticleRead } from '../../lib/storage'
+import type { Library } from '../../lib/structure'
+import { isActId } from '../../lib/structure'
+import type { Article, UserStore } from '../../types'
 import { LawText } from '../article/LawText'
 import { ACT_META, Emblem, actClass } from '../shell/identity'
 import { go, href } from '../shell/router'
 import { SectionLabel } from '../shell/Shell'
 
-function when(days: number) {
-  if (days <= 0) return 'dziś'
-  if (days === 1) return 'jutro'
-  return `za ${days} dni`
-}
-
-const KIND_LABEL: Record<LearnCard['kind'], string> = {
-  poznaj: 'Nowy przepis',
-  przypomnij: 'Przypomnij sobie',
-  ktory: 'Który przepis?',
+const REASON_LABEL: Record<SessionItem['reason'], string> = {
+  retry: 'Do poprawy',
+  review: 'Powtórka',
+  new: 'Nowe',
 }
 
 export function Session({
   title,
-  cards,
+  plan,
+  mode,
+  learn,
+  onLearnChange,
   store,
   onStoreChange,
-  onXref,
+  lib,
   exitTo,
 }: {
   title: string
-  cards: LearnCard[]
+  plan: SessionPlan
+  mode: LearnMode
+  learn: LearnState
+  onLearnChange: (next: LearnState) => void
   store: UserStore
   onStoreChange: (next: UserStore) => void
-  onXref: (actId: string, number: string) => void
+  lib: Library
   exitTo: string
 }) {
+  const items = plan.items
   const [idx, setIdx] = useState(0)
   const [revealed, setRevealed] = useState(false)
-  const [choice, setChoice] = useState<number | null>(null)
-  const [tally, setTally] = useState({ fresh: 0, known: 0, again: 0 })
-  const card = cards[idx]
-  const finished = idx >= cards.length
+  const [selected, setSelected] = useState<string[]>([])
+  const [checked, setChecked] = useState(false)
+  const [sheet, setSheet] = useState<Article | null>(null)
+  const [tally, setTally] = useState({ ok: 0, bad: 0 })
+  const [missed, setMissed] = useState<SessionItem[]>([])
+  const item = items[idx]
+  const finished = idx >= items.length
 
-  function grade(g: Grade) {
-    if (!card) return
-    onStoreChange(learnEngine.grade(store, card, g))
-    setTally((t) => ({
-      fresh: t.fresh + (card.isReview ? 0 : 1),
-      known: t.known + (card.isReview && g !== 'hard' ? 1 : 0),
-      again: t.again + (g === 'hard' ? 1 : 0),
-    }))
+  function advance(correct: boolean, qItem: SessionItem) {
+    setTally((t) => ({ ok: t.ok + (correct ? 1 : 0), bad: t.bad + (correct ? 0 : 1) }))
+    if (!correct) setMissed((m) => [...m, qItem])
     setIdx((i) => i + 1)
     setRevealed(false)
-    setChoice(null)
+    setSelected([])
+    setChecked(false)
     window.scrollTo(0, 0)
+  }
+
+  function openProvision(q: Question) {
+    const src = q.sources[0]
+    if (!src) return
+    const act = isActId(src.actId) ? lib.acts[src.actId] : undefined
+    const article = act?.byNumber.get(src.articleNumber) ?? act?.articles.find((a) => a.id === src.articleId)
+    if (!article) return
+    onStoreChange(markArticleRead(store, article.id))
+    setSheet(article)
   }
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!card || e.target instanceof HTMLInputElement) return
-      if (e.key === ' ' && card.kind === 'przypomnij' && !revealed) {
+      if (!item || e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      const asFlash = item.presentAs === 'flashcard'
+      if (e.key === ' ' && asFlash && !revealed) {
         e.preventDefault()
         setRevealed(true)
       }
-      if (card.kind === 'przypomnij' && revealed) {
-        if (e.key === '1') grade('hard')
-        if (e.key === '2') grade('good')
-        if (e.key === '3') grade('easy')
+      if (asFlash && revealed) {
+        if (e.key === '1') gradeFlash('again')
+        if (e.key === '2') gradeFlash('hard')
+        if (e.key === '3') gradeFlash('good')
+        if (e.key === '4') gradeFlash('easy')
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   })
 
-  if (!cards.length)
+  function gradeFlash(g: Grade) {
+    if (!item) return
+    const outcome = flashcardOutcome(g)
+    onLearnChange(applyAnswer(learn, item.question, outcome))
+    advance(outcome.correct, item)
+  }
+
+  function submitTest() {
+    if (!item || !selected.length) return
+    const result = gradeAnswer(item.question, selected)
+    setChecked(true)
+    onLearnChange(applyAnswer(learn, item.question, { correct: result.correct, selected }))
+  }
+
+  function continueAfterTest() {
+    if (!item) return
+    const result = gradeAnswer(item.question, selected)
+    advance(result.correct, item)
+  }
+
+  if (!items.length)
     return (
       <Frame title={title} exitTo={exitTo} progress={1} label="">
         <div className="mt-16 text-center">
           <div className="font-serif text-[24px] font-semibold">Nic do zrobienia</div>
-          <p className="mt-2 text-muted">Ten etap nie ma teraz kart. Wróć do ścieżki.</p>
+          <p className="mt-2 text-muted">Brak pytań w tym zakresie. Wybierz inny rozdział albo tryb.</p>
           <a href={href(exitTo)} className="mt-6 inline-flex rounded-2xl bg-ink px-5 py-3 font-semibold text-paper">
             Wróć do Nauki
           </a>
@@ -89,138 +136,164 @@ export function Session({
 
   if (finished)
     return (
-      <Frame title={title} exitTo={exitTo} progress={1} label={`${cards.length}/${cards.length}`}>
+      <Frame title={title} exitTo={exitTo} progress={1} label={`${items.length}/${items.length}`}>
         <div className="mt-12 text-center">
           <div className="mx-auto grid size-16 place-items-center rounded-full bg-gold text-black">
             <Check className="size-8" strokeWidth={2.6} />
           </div>
-          <h1 className="mt-5 font-serif text-[28px] font-semibold">Sesja zakończona</h1>
+          <h1 className="mt-5 font-serif text-[28px] font-semibold">
+            {tally.ok} z {items.length} dobrze
+          </h1>
           <p className="mt-2 text-muted">
-            {cards.length} kart · nowe: {tally.fresh} · utrwalone: {tally.known} · do powtórki: {tally.again}
+            {mode === 'flashcards' ? 'Fiszki' : mode === 'test' ? 'Test' : 'Sesja'} · błędy: {tally.bad}
           </p>
-          <button
-            type="button"
-            onClick={() => go(exitTo)}
-            className="mt-8 inline-flex h-14 items-center justify-center rounded-2xl bg-ink px-8 text-[16px] font-semibold text-paper"
-          >
-            Wróć do ścieżki
-          </button>
+          {missed.length > 0 && (
+            <ul className="mt-6 space-y-2 text-left">
+              {missed.map((m) => (
+                <li key={m.question.id} className="rounded-2xl border border-line bg-surface px-4 py-3">
+                  <div className="text-[13px] font-medium">{m.question.prompt}</div>
+                  <div className="mt-1 text-[12.5px] text-muted">{m.question.answer}</div>
+                  {m.question.sources[0] && (
+                    <button
+                      type="button"
+                      onClick={() => openProvision(m.question)}
+                      className="mt-2 text-[13px] font-semibold text-act"
+                    >
+                      zobacz przepis
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:justify-center">
+            {missed.length > 0 && (
+              <button
+                type="button"
+                onClick={() =>
+                  go(
+                    sessionHref({
+                      mode,
+                      actId: plan.actId && isActId(plan.actId) ? plan.actId : undefined,
+                      mistakesOnly: true,
+                    }),
+                  )
+                }
+                className="inline-flex h-12 items-center justify-center rounded-2xl bg-sunk px-6 text-[15px] font-semibold"
+              >
+                Jeszcze raz błędy
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() =>
+                go(
+                  sessionHref({
+                    mode,
+                    actId: plan.actId && isActId(plan.actId) ? plan.actId : undefined,
+                  }),
+                )
+              }
+              className="inline-flex h-12 items-center justify-center rounded-2xl bg-ink px-6 text-[15px] font-semibold text-paper"
+            >
+              Kolejna sesja
+            </button>
+            <button
+              type="button"
+              onClick={() => go(exitTo)}
+              className="inline-flex h-12 items-center justify-center rounded-2xl border border-line px-6 text-[15px] font-semibold"
+            >
+              Koniec
+            </button>
+          </div>
         </div>
+        {sheet && <ProvisionSheet article={sheet} onClose={() => setSheet(null)} />}
       </Frame>
     )
 
-  const a = card.article
-  const actShort = isActId(a.actId) ? ACT_META[a.actId].short : a.actId
-  const xref = (raw: string) => {
-    const m = raw.match(/art(?:ykuł|\.)?\s*(\d+[a-z]*)/i)
-    if (m) onXref(a.actId, m[1])
-  }
-  const quizAnswered = card.kind === 'ktory' && choice !== null
-  const correct = quizAnswered && !!card.options?.[choice!]?.correct
+  const q = item.question
+  const asFlash = item.presentAs === 'flashcard'
+  const actShort = isActId(q.actId) ? ACT_META[q.actId].short : q.actId
+  const result = checked ? gradeAnswer(q, selected) : null
 
   return (
-    <Frame title={title} exitTo={exitTo} progress={idx / cards.length} label={`${idx + 1}/${cards.length}`}>
-      <div className={actClass(a.actId)}>
+    <Frame title={title} exitTo={exitTo} progress={idx / items.length} label={`${idx + 1}/${items.length}`}>
+      <div className={actClass(q.actId)}>
         <div className="mt-4 flex flex-wrap items-center gap-2 text-[12px] font-semibold">
-          <span className="rounded-full bg-act-tint px-2.5 py-1 text-act-ink">{KIND_LABEL[card.kind]}</span>
+          <span className="rounded-full bg-act-tint px-2.5 py-1 text-act-ink">{typeLabel(q.type)}</span>
           <span className="flex items-center gap-1 rounded-full border border-line px-2.5 py-1 text-ink-2">
-            <Emblem act={a.actId} className="size-3.5 text-act" /> {actShort}
+            <Emblem act={q.actId} className="size-3.5 text-act" /> {actShort}
           </span>
-          {card.isReview && <span className="rounded-full border border-line px-2.5 py-1 text-muted">powtórka</span>}
-        </div>
-        <div className="mt-4 text-[12.5px] text-muted">
-          {chapterLabel(card.chapter)} · {card.chapter.title}
+          <span className="rounded-full border border-line px-2.5 py-1 text-muted">{REASON_LABEL[item.reason]}</span>
+          {asFlash && (
+            <span className="inline-flex items-center gap-1 rounded-full border border-line px-2.5 py-1 text-muted">
+              <Layers className="size-3" /> Fiszka
+            </span>
+          )}
         </div>
 
-        {card.kind === 'poznaj' && (
-          <>
-            <h1 className="mt-1 font-serif text-[30px] leading-tight font-semibold tracking-tight">{a.label}</h1>
-            {a.title && <div className="mt-1.5 text-[17px] font-semibold text-ink-2">{a.title}</div>}
-            {card.tagLabel && <TagHint label={card.tagLabel} />}
-            <div className="mt-5 rounded-2xl border border-line bg-surface p-4 pl-5 shadow-[inset_4px_0_0_var(--act)]">
-              <LawText article={a} size="md" onXref={xref} />
-            </div>
-            <p className="mt-3 text-[12.5px] text-muted">Przeczytaj spokojnie. Ten przepis wróci jako pytanie.</p>
-          </>
+        <h1 className="mt-4 font-serif text-[22px] leading-[1.3] font-semibold tracking-tight md:text-[24px]">{q.prompt}</h1>
+        {q.context && (
+          <blockquote className="law mt-4 rounded-2xl bg-sunk p-4 text-[15.5px] leading-[1.55]">{q.context}</blockquote>
         )}
 
-        {card.kind === 'przypomnij' && (
+        {asFlash ? (
           <>
-            <h1 className="mt-1 font-serif text-[24px] leading-[1.3] font-semibold tracking-tight">
-              Co stanowi {a.label.toLowerCase()} {actShort}?
-            </h1>
-            {a.title && <div className="mt-1.5 text-[16px] font-medium text-ink-2">„{a.title}”</div>}
-            {card.tagLabel && <TagHint label={card.tagLabel} />}
             {!revealed ? (
               <div className="mt-6 rounded-2xl border border-dashed border-line p-5 text-[14px] leading-relaxed text-muted">
-                Odpowiedz w myślach albo na głos. Potem odsłoń przepis i oceń się uczciwie — od tego zależy, kiedy
-                karta wróci.
+                Odpowiedz w myślach. Potem odsłoń i oceń się uczciwie — od tego zależy, kiedy pytanie wróci.
               </div>
             ) : (
-              <Answer card={card} xref={xref} />
+              <FlashBack q={q} onProvision={() => openProvision(q)} />
             )}
           </>
+        ) : (
+          <TestOptions
+            q={q}
+            selected={selected}
+            checked={checked}
+            onToggle={(id) => {
+              if (checked) return
+              if (q.format === 'multiple') {
+                setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]))
+              } else {
+                setSelected([id])
+              }
+            }}
+          />
         )}
 
-        {card.kind === 'ktory' && (
-          <>
-            <h1 className="mt-1 font-serif text-[22px] leading-[1.3] font-semibold tracking-tight">
-              Który przepis tak stanowi?
-            </h1>
-            <blockquote className="law mt-4 rounded-2xl bg-sunk p-4 text-[16px] leading-[1.55]">
-              {card.fragment}
-            </blockquote>
-            <div className="mt-4 space-y-2.5">
-              {card.options!.map((o, i) => {
-                const cls =
-                  choice === null
-                    ? 'border-line bg-surface'
-                    : o.correct
-                      ? 'border-emerald-600 bg-emerald-50 text-emerald-900 dark:border-emerald-400 dark:bg-emerald-950/40 dark:text-emerald-100'
-                      : choice === i
-                        ? 'border-red-500 bg-red-50 dark:bg-red-950/30'
-                        : 'border-line bg-surface opacity-50'
-                return (
-                  <button
-                    key={o.article.id}
-                    type="button"
-                    disabled={choice !== null}
-                    onClick={() => setChoice(i)}
-                    className={cn('flex w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left', cls)}
-                  >
-                    <span className="grid size-7 shrink-0 place-items-center rounded-lg border border-current/20 font-mono text-[12px]">
-                      {choice !== null && o.correct ? <Check className="size-4" strokeWidth={3} /> : 'ABCD'[i]}
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block font-serif text-[16px] font-semibold">{o.article.label}</span>
-                      {o.article.title && <span className="block truncate text-[13.5px] opacity-75">{o.article.title}</span>}
-                    </span>
-                  </button>
-                )
-              })}
+        {checked && result && (
+          <div className="mt-5">
+            <div
+              className={cn(
+                'rounded-2xl px-4 py-3 text-[14.5px] font-semibold',
+                result.correct
+                  ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100'
+                  : 'bg-red-50 text-red-900 dark:bg-red-950/30 dark:text-red-100',
+              )}
+            >
+              {result.correct ? 'Dobrze' : 'Jeszcze raz'} — {q.answer}
             </div>
-            {quizAnswered && <Answer card={card} xref={xref} />}
-          </>
+            {q.sources[0] && (
+              <div className="mt-3 rounded-2xl border border-line bg-surface p-4">
+                <SectionLabel className="mb-2">Podstawa</SectionLabel>
+                <p className="law text-[14.5px] leading-relaxed">{q.sources[0].quote}</p>
+                <div className="mt-3 flex items-center justify-between gap-3 border-t border-line pt-3">
+                  <span className="text-[12.5px] font-semibold text-act">{q.sources[0].citation}</span>
+                  <button type="button" onClick={() => openProvision(q)} className="text-[13px] font-semibold">
+                    zobacz przepis
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         )}
 
         <div className="h-28" />
         <div className="fixed inset-x-0 bottom-0 z-20 bg-paper/90 px-5 pt-3 pb-[max(env(safe-area-inset-bottom),16px)] backdrop-blur md:static md:mt-6 md:bg-transparent md:px-0">
           <div className="mx-auto max-w-2xl">
-            {card.kind === 'poznaj' && (
-              <div className="grid grid-cols-[1fr_2fr] gap-2">
-                <button type="button" onClick={() => grade('easy')} className="h-14 rounded-2xl bg-sunk text-[15px] font-semibold">
-                  Znam to
-                </button>
-                <button
-                  type="button"
-                  onClick={() => grade('good')}
-                  className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-ink text-[16px] font-semibold text-paper"
-                >
-                  Dalej <ArrowRight className="size-4" />
-                </button>
-              </div>
-            )}
-            {card.kind === 'przypomnij' && !revealed && (
+            {asFlash && !revealed && (
               <button
                 type="button"
                 onClick={() => setRevealed(true)}
@@ -229,77 +302,160 @@ export function Session({
                 Pokaż odpowiedź
               </button>
             )}
-            {card.kind === 'przypomnij' && revealed && (
-              <div className="grid grid-cols-3 gap-2">
+            {asFlash && revealed && (
+              <div className="grid grid-cols-4 gap-2">
                 {(
                   [
-                    ['hard', 'Nie wiem', 'bg-sunk text-ink'],
-                    ['good', 'Częściowo', 'bg-gold-tint text-ink'],
-                    ['easy', 'Umiem', 'bg-ink text-paper'],
+                    ['again', 'Nie pamiętam', 'bg-sunk text-ink'],
+                    ['hard', 'Trudne', 'bg-sunk text-ink'],
+                    ['good', 'Dobrze', 'bg-gold-tint text-ink'],
+                    ['easy', 'Łatwe', 'bg-ink text-paper'],
                   ] as const
                 ).map(([g, l, c]) => (
                   <button
                     key={g}
                     type="button"
-                    onClick={() => grade(g)}
-                    className={cn('flex h-14 flex-col items-center justify-center rounded-2xl', c)}
+                    onClick={() => gradeFlash(g)}
+                    className={cn('flex h-14 flex-col items-center justify-center rounded-2xl px-1', c)}
                   >
-                    <span className="text-[15px] font-semibold">{l}</span>
-                    <span className="text-[11px] opacity-60">{when(learnEngine.nextIntervalDays(store, card, g))}</span>
+                    <span className="text-[12.5px] font-semibold leading-tight">{l}</span>
+                    <span className="text-[10.5px] opacity-60">{gradeHint(learn, q, g)}</span>
                   </button>
                 ))}
               </div>
             )}
-            {card.kind === 'ktory' && (
+            {!asFlash && !checked && (
               <button
                 type="button"
-                disabled={!quizAnswered}
-                onClick={() => grade(correct ? 'good' : 'hard')}
+                disabled={!selected.length}
+                onClick={submitTest}
                 className={cn(
                   'flex h-14 w-full items-center justify-center gap-2 rounded-2xl text-[16px] font-semibold',
-                  quizAnswered ? 'bg-ink text-paper' : 'bg-sunk text-muted',
+                  selected.length ? 'bg-ink text-paper' : 'bg-sunk text-muted',
                 )}
               >
-                {quizAnswered ? (
-                  <>
-                    Dalej <ArrowRight className="size-4" />
-                  </>
-                ) : (
-                  'Wybierz odpowiedź'
-                )}
+                Sprawdź
+              </button>
+            )}
+            {!asFlash && checked && (
+              <button
+                type="button"
+                onClick={continueAfterTest}
+                className="flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-ink text-[16px] font-semibold text-paper"
+              >
+                Dalej <ArrowRight className="size-4" />
               </button>
             )}
           </div>
         </div>
       </div>
+      {sheet && <ProvisionSheet article={sheet} onClose={() => setSheet(null)} />}
     </Frame>
   )
 }
 
-function TagHint({ label }: { label: string }) {
+function FlashBack({ q, onProvision }: { q: Question; onProvision: () => void }) {
   return (
-    <div className="mt-2 inline-flex rounded-full bg-gold-tint px-2.5 py-0.5 text-[12.5px] font-medium text-ink-2">
-      Twój tag: #{label}
+    <div className="mt-6">
+      <SectionLabel className="mb-2">Odpowiedź</SectionLabel>
+      <div className="rounded-2xl border border-line bg-surface p-4">
+        <div className="text-[16px] font-semibold">{q.answer}</div>
+        {q.options && q.options.some((o) => o.correct) && (
+          <ul className="mt-3 space-y-1.5 text-[14px] text-ink-2">
+            {q.options
+              .filter((o) => o.correct)
+              .map((o) => (
+                <li key={o.id} className="flex gap-2">
+                  <Check className="mt-0.5 size-4 shrink-0 text-emerald-600" strokeWidth={2.5} />
+                  <span>{o.text}</span>
+                </li>
+              ))}
+          </ul>
+        )}
+        {q.sources[0] && (
+          <>
+            <p className="law mt-4 border-t border-line pt-3 text-[14px] leading-relaxed text-muted">{q.sources[0].quote}</p>
+            <div className="mt-3 flex items-center justify-between gap-3">
+              <span className="text-[12.5px] font-semibold text-act">{q.sources[0].citation}</span>
+              <button type="button" onClick={onProvision} className="inline-flex items-center gap-1 text-[13px] font-semibold">
+                <BookOpen className="size-3.5" /> zobacz przepis
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   )
 }
 
-function Answer({ card, xref }: { card: LearnCard; xref: (raw: string) => void }) {
-  const a = card.article
+function TestOptions({
+  q,
+  selected,
+  checked,
+  onToggle,
+}: {
+  q: Question
+  selected: string[]
+  checked: boolean
+  onToggle: (id: string) => void
+}) {
+  const options = q.options ?? []
+  const multi = q.format === 'multiple'
   return (
-    <div className="mt-6">
-      <SectionLabel className="mb-2">Odpowiedź z ustawy</SectionLabel>
-      <div className="rounded-2xl border border-line bg-surface p-4 pl-5 shadow-[inset_4px_0_0_var(--act)]">
-        <LawText article={a} size="md" onXref={xref} />
-        <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-3">
-          <span className="text-[12.5px] font-semibold text-act">
-            {a.label.toLowerCase()} {isActId(a.actId) ? ACT_META[a.actId].short : ''}
-            {a.title ? ` · ${a.title}` : ''}
-          </span>
-          <a href={href(`art/${a.id}`)} className="flex shrink-0 items-center gap-1 text-[13px] font-semibold">
-            W czytniku <ArrowRight className="size-3.5" />
-          </a>
+    <div className="mt-4 space-y-2.5">
+      {multi && <p className="text-[12.5px] text-muted">Zaznacz wszystkie poprawne.</p>}
+      {options.map((o, i) => {
+        const isSel = selected.includes(o.id)
+        const cls =
+          !checked
+            ? isSel
+              ? 'border-ink bg-sunk'
+              : 'border-line bg-surface'
+            : o.correct
+              ? 'border-emerald-600 bg-emerald-50 text-emerald-900 dark:border-emerald-400 dark:bg-emerald-950/40 dark:text-emerald-100'
+              : isSel
+                ? 'border-red-500 bg-red-50 dark:bg-red-950/30'
+                : 'border-line bg-surface opacity-50'
+        return (
+          <button
+            key={o.id}
+            type="button"
+            disabled={checked}
+            onClick={() => onToggle(o.id)}
+            className={cn('flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left', cls)}
+          >
+            <span className="grid size-7 shrink-0 place-items-center rounded-lg border border-current/20 font-mono text-[12px]">
+              {checked && o.correct ? <Check className="size-4" strokeWidth={3} /> : multi ? (isSel ? '☑' : '☐') : 'ABCD'[i]}
+            </span>
+            <span className="min-w-0 pt-0.5 text-[15px] leading-snug">{o.text}</span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function ProvisionSheet({ article, onClose }: { article: Article; onClose: () => void }) {
+  const actShort = isActId(article.actId) ? ACT_META[article.actId].short : article.actId
+  return (
+    <div className="fixed inset-0 z-40 flex flex-col justify-end bg-black/40" role="dialog" aria-modal>
+      <button type="button" className="flex-1 cursor-default" aria-label="Zamknij" onClick={onClose} />
+      <div className={cn(actClass(article.actId), 'max-h-[78dvh] overflow-auto rounded-t-3xl bg-paper px-5 pt-4 pb-[max(env(safe-area-inset-bottom),20px)] shadow-2xl')}>
+        <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-line" />
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <div className="text-[12px] font-semibold text-act">{actShort}</div>
+            <h2 className="font-serif text-[22px] font-semibold">{article.label}</h2>
+            {article.title && <div className="text-[14px] text-ink-2">{article.title}</div>}
+          </div>
+          <button type="button" onClick={onClose} className="grid size-10 place-items-center rounded-full bg-sunk" aria-label="Zamknij przepis">
+            <X className="size-5" />
+          </button>
         </div>
+        <LawText article={article} className="mt-4" size="md" />
+        <a href={href(`art/${article.id}`)} className="mt-4 inline-flex text-[13px] font-semibold">
+          Otwórz w czytniku <ArrowRight className="ml-1 size-3.5" />
+        </a>
       </div>
     </div>
   )
@@ -332,4 +488,12 @@ function Frame({
       <div className="mx-auto w-full max-w-2xl">{children}</div>
     </div>
   )
+}
+
+export function useSessionTitle(plan: SessionPlan, mode: LearnMode) {
+  return useMemo(() => {
+    const modeLabel = mode === 'flashcards' ? 'Fiszki' : mode === 'test' ? 'Test' : 'Trening'
+    if (plan.stage) return `${modeLabel} · ${plan.stage.label}`
+    return modeLabel
+  }, [plan.stage, mode])
 }

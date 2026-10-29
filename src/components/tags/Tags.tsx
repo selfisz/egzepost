@@ -2,13 +2,17 @@ import { Download, MoreHorizontal, Pin, Upload } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { ActMeta, Article, TagCategory, UserStore, UserTag } from '../../types'
 import { Reader } from '../reader/Reader'
+import { loadLearnState } from '../../learn'
+import type { LearnState } from '../../lib/learn-adapter'
 import {
+  applyImport,
   deleteTag,
   exportStoreJson,
   getPrefs,
-  importStoreJson,
+  getProfile,
   newTagId,
   setPrefs,
+  setProfile,
   togglePinnedTag,
   upsertTag,
 } from '../../lib/storage'
@@ -25,6 +29,8 @@ type Props = {
   onXref: (actId: string, number: string) => void
   draftLabel?: string | null
   onDraftConsumed?: () => void
+  learn: LearnState
+  onLearnChange: (next: LearnState) => void
 }
 
 const CATEGORIES: TagCategory[] = [
@@ -46,10 +52,14 @@ export function Tags({
   onXref,
   draftLabel,
   onDraftConsumed,
+  learn,
+  onLearnChange,
 }: Props) {
   const toast = useToast()
   const { theme, toggle: toggleTheme } = useTheme()
   const prefs = getPrefs(store)
+  const profile = getProfile(store)
+  const [nameDraft, setNameDraft] = useState(profile.name ?? '')
 
   const [view, setView] = useState<HubView>('dict')
   const [label, setLabel] = useState('')
@@ -164,11 +174,11 @@ export function Tags({
   }
 
   function doExport() {
-    const blob = new Blob([exportStoreJson(store)], { type: 'application/json' })
+    const blob = new Blob([exportStoreJson(store, learn)], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `egzepost-baza-${new Date().toISOString().slice(0, 10)}.json`
+    a.download = `regest-baza-${new Date().toISOString().slice(0, 10)}.json`
     a.click()
     URL.revokeObjectURL(url)
     toast.push('Wyeksportowano bazę JSON')
@@ -178,8 +188,9 @@ export function Tags({
     const reader = new FileReader()
     reader.onload = () => {
       try {
-        const next = importStoreJson(String(reader.result))
+        const next = applyImport(String(reader.result))
         onStoreChange(next)
+        onLearnChange(loadLearnState())
         toast.push('Zaimportowano bazę')
       } catch (e) {
         toast.push(e instanceof Error ? e.message : 'Błąd importu')
@@ -347,6 +358,37 @@ export function Tags({
       {view === 'settings' && (
         <div className="space-y-6">
           <section className="space-y-3">
+            <h2 className="text-sm font-semibold text-slate-700 dark:text-zinc-200">Profil</h2>
+            <div className="rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2.5 dark:border-zinc-800 dark:bg-zinc-900/50">
+              <label className="block text-sm font-medium" htmlFor="profile-name">
+                Imię
+              </label>
+              <p className="text-xs text-slate-500">Używane w powitaniu na starcie.</p>
+              <div className="mt-2 flex gap-2">
+                <input
+                  id="profile-name"
+                  value={nameDraft}
+                  onChange={(e) => setNameDraft(e.target.value)}
+                  placeholder="np. Anna"
+                  className={inputCls}
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    onStoreChange(
+                      setProfile(store, { name: nameDraft.trim() || undefined, greeted: true }),
+                    )
+                    toast.push(nameDraft.trim() ? 'Zapisano imię' : 'Usunięto imię')
+                  }}
+                  className="shrink-0 rounded-lg border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-700"
+                >
+                  Zapisz
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section className="space-y-3">
             <h2 className="text-sm font-semibold text-slate-700 dark:text-zinc-200">Wygląd</h2>
             <Row
               label="Motyw"
@@ -391,8 +433,8 @@ export function Tags({
           <section className="space-y-3 border-t border-slate-200/80 pt-5 dark:border-zinc-800">
             <h2 className="text-sm font-semibold text-slate-700 dark:text-zinc-200">Baza lokalna</h2>
             <p className="text-xs text-slate-500">
-              Eksport obejmuje tagi, postęp SRS, moduły nauki, przypięcia i preferencje. Dane tylko w
-              tej przeglądarce.
+              Eksport obejmuje tagi, imię, historię czytania, postęp Nauki (regest:learn:v1), stary
+              SRS, moduły i preferencje. Dane tylko w tej przeglądarce.
             </p>
             <div className="flex flex-wrap gap-2">
               <button
