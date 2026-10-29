@@ -24,8 +24,8 @@ export default defineConfig({
         short_name: 'Regest',
         description:
           'Przepisy do pracy. Nauka bez zgadywania. u.p.e.a., Kpa, Ordynacja + Twoje tagi.',
-        theme_color: '#0f172a',
-        background_color: '#f8fafc',
+        theme_color: '#f6f4ef',
+        background_color: '#f6f4ef',
         display: 'standalone',
         lang: 'pl',
         start_url: './',

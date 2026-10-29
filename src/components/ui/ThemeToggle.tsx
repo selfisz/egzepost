@@ -15,6 +15,9 @@ function readTheme(): Theme {
 
 function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark')
+  document
+    .querySelector('meta[name=theme-color]')
+    ?.setAttribute('content', theme === 'dark' ? '#0c0c0e' : '#f6f4ef')
   localStorage.setItem(KEY, theme)
   window.dispatchEvent(new CustomEvent(EVT, { detail: theme }))
 }

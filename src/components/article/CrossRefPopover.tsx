@@ -118,21 +118,12 @@ export function ActBadge({
   quiet?: boolean
 }) {
   const short = actShort(acts, actId)
-  const tone = quiet
-    ? actId === 'upea'
-      ? 'bg-slate-100 text-slate-600 dark:bg-zinc-800 dark:text-zinc-300'
-      : actId === 'ordynacja'
-        ? 'bg-stone-100 text-stone-600 dark:bg-zinc-800 dark:text-zinc-300'
-        : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300'
-    : actId === 'upea'
-      ? 'bg-indigo-500/10 text-indigo-700 dark:text-indigo-300'
-      : actId === 'ordynacja'
-        ? 'bg-amber-500/10 text-amber-800 dark:text-amber-300'
-        : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300'
+  const tone = quiet ? 'bg-sunk text-ink-2' : 'bg-act-tint text-act-ink'
   return (
     <span
       className={cn(
         'inline-flex items-center rounded px-1.5 py-0.5 font-mono text-[10px] font-medium tracking-wide',
+        `act-${actId}`,
         tone,
       )}
     >
