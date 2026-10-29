@@ -7,6 +7,7 @@ import {
   exportStoreJson,
   importStoreJson,
   newTagId,
+  togglePinnedTag,
   upsertTag,
 } from '../../lib/storage'
 import { useToast } from '../ui/Toast'
@@ -327,13 +328,20 @@ export function Tags({
                   </button>
                   {open && (
                     <div className="space-y-3 border-t border-slate-100 p-4 dark:border-zinc-800">
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <button
                           type="button"
                           className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-700"
                           onClick={() => startEdit(tag)}
                         >
                           Edytuj
+                        </button>
+                        <button
+                          type="button"
+                          className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-700"
+                          onClick={() => onStoreChange(togglePinnedTag(store, tag.id))}
+                        >
+                          {(store.pinnedTagIds ?? []).includes(tag.id) ? 'Odepnij' : 'Przypnij do Szukaj'}
                         </button>
                         <button
                           type="button"

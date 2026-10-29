@@ -1,8 +1,10 @@
-import { Search, Tag } from 'lucide-react'
+import { Clock3, Pin, Search, Tag } from 'lucide-react'
 import { useDeferredValue, useMemo, useState } from 'react'
-import type { ActMeta, Article, UserStore } from '../../types'
-import { searchArticles, type ActFilter } from '../../lib/search'
+import type { ActMeta, Article, UserStore, UserTag } from '../../types'
+import { searchArticles, type ActFilter, type SearchHit } from '../../lib/search'
+import { pushRecentArticle, pushRecentTag, togglePinnedTag } from '../../lib/storage'
 import { Reader } from '../reader/Reader'
+import { ActBadge } from '../article/CrossRefPopover'
 import { cn } from '../../lib/cn'
 
 type Props = {
@@ -17,9 +19,9 @@ type Props = {
 
 const FILTERS: { id: ActFilter; label: string }[] = [
   { id: 'all', label: 'Wszystkie' },
-  { id: 'upea', label: 'Tylko u.p.e.a.' },
-  { id: 'kpa', label: 'Tylko Kpa' },
-  { id: 'tags', label: 'Tylko moje tagi' },
+  { id: 'upea', label: 'u.p.e.a.' },
+  { id: 'kpa', label: 'Kpa' },
+  { id: 'tags', label: 'Moje tagi' },
 ]
 
 export function Lookup({
@@ -37,26 +39,74 @@ export function Lookup({
   const [highlightLegal, setHighlightLegal] = useState(false)
   const deferred = useDeferredValue(query.trim())
 
+  const byId = useMemo(() => new Map(articles.map((a) => [a.id, a])), [articles])
+  const tagById = useMemo(() => new Map(store.tags.map((t) => [t.id, t])), [store.tags])
+
   const hits = useMemo(
     () => searchArticles(deferred, articles, store.tags, actFilter),
     [deferred, articles, store.tags, actFilter],
   )
 
   const selected =
-    hits.find((h) => h.article.id === selectedId)?.article ??
-    articles.find((a) => a.id === selectedId) ??
+    (selectedId && byId.get(selectedId)) ||
+    hits.find((h) => h.article.id === selectedId)?.article ||
     null
+
+  const selectedHit = selectedId
+    ? hits.find((h) => h.article.id === selectedId)
+    : undefined
 
   const searched = deferred.length > 0
 
+  const recentArticles = useMemo(() => {
+    return (store.recentArticleIds ?? [])
+      .map((id) => byId.get(id))
+      .filter(Boolean)
+      .slice(0, 8) as Article[]
+  }, [store.recentArticleIds, byId])
+
+  const pinnedTags = useMemo(() => {
+    return (store.pinnedTagIds ?? [])
+      .map((id) => tagById.get(id))
+      .filter(Boolean) as UserTag[]
+  }, [store.pinnedTagIds, tagById])
+
+  const recentTags = useMemo(() => {
+    const pinned = new Set(store.pinnedTagIds ?? [])
+    const fromRecent = (store.recentTagIds ?? [])
+      .map((id) => tagById.get(id))
+      .filter((t): t is UserTag => !!t && !pinned.has(t.id))
+    // Fallback: newest tags by updatedAt if no recent usage yet
+    if (fromRecent.length === 0) {
+      return [...store.tags]
+        .filter((t) => !pinned.has(t.id))
+        .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+        .slice(0, 6)
+    }
+    return fromRecent.slice(0, 6)
+  }, [store.recentTagIds, store.pinnedTagIds, store.tags, tagById])
+
+  function openArticle(id: string, viaTag?: UserTag) {
+    setSelectedId(id)
+    let next = pushRecentArticle(store, id)
+    if (viaTag) next = pushRecentTag(next, viaTag.id)
+    onStoreChange(next)
+  }
+
+  function applyTagQuery(tag: UserTag) {
+    setQuery(tag.label)
+    setSelectedId(null)
+    onStoreChange(pushRecentTag(store, tag.id))
+  }
+
   return (
     <section className="mx-auto w-full max-w-3xl px-4 pb-28 pt-4 md:pb-10 md:pt-8">
-      <div className="mb-6">
+      <div className="mb-5">
         <h1 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-zinc-50">
           Szukaj
         </h1>
         <p className="mt-1 max-w-xl text-sm text-slate-500 dark:text-zinc-400">
-          Żargon, temat albo numer artykułu. Wyniki tylko z bazy ustaw i Twoich tagów.
+          Narzędzie do szybkiego trafienia w przepis — nie ściana kart.
         </p>
       </div>
 
@@ -72,8 +122,8 @@ export function Lookup({
               setQuery(e.target.value)
               setSelectedId(null)
             }}
-            placeholder="np. zarzut, tytuł wykonawczy, art. 33…"
-            className="w-full rounded-2xl border border-slate-200 bg-white py-3.5 pl-10 pr-4 text-base shadow-sm outline-none ring-indigo-500/30 placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 dark:border-zinc-800 dark:bg-zinc-900 dark:placeholder:text-zinc-500"
+            placeholder="żargon, temat, art. 33…"
+            className="w-full rounded-2xl border border-slate-200 bg-white py-3.5 pl-10 pr-14 text-base shadow-sm outline-none ring-slate-400/20 placeholder:text-slate-400 focus:border-slate-400 focus:ring-4 dark:border-zinc-800 dark:bg-zinc-900 dark:placeholder:text-zinc-500"
             aria-label="Zapytanie"
           />
           <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[10px] text-slate-400 md:inline dark:border-zinc-700 dark:bg-zinc-800">
@@ -102,13 +152,20 @@ export function Lookup({
         </div>
       </div>
 
-      {!searched && (
-        <p className="mt-8 text-sm text-slate-500 dark:text-zinc-400">
-          Wpisz zapytanie albo przejdź do <strong>Przeglądaj</strong>, żeby czytać ustawę jak kodeks.
-        </p>
+      {!searched && !selected && (
+        <EmptyHome
+          recentArticles={recentArticles}
+          pinnedTags={pinnedTags}
+          recentTags={recentTags}
+          acts={acts}
+          store={store}
+          onStoreChange={onStoreChange}
+          onOpenArticle={(id) => openArticle(id)}
+          onApplyTag={applyTagQuery}
+        />
       )}
 
-      {searched && hits.length === 0 && (
+      {searched && hits.length === 0 && !selected && (
         <div
           className="mt-8 rounded-2xl border border-dashed border-rose-300 bg-rose-50/70 p-5 text-rose-900 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-100"
           role="status"
@@ -135,27 +192,15 @@ export function Lookup({
       )}
 
       {hits.length > 0 && !selected && (
-        <div className="mt-6 space-y-2">
-          {hits.slice(0, 40).map((hit) => (
-            <button
+        <div className="mt-5 space-y-1.5" role="list">
+          <p className="mb-2 text-xs text-slate-500">{hits.length} trafień</p>
+          {hits.slice(0, 50).map((hit) => (
+            <ResultRow
               key={hit.article.id}
-              type="button"
-              onClick={() => setSelectedId(hit.article.id)}
-              className="w-full rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-slate-300 dark:border-zinc-800 dark:bg-zinc-900"
-            >
-              <div className="mb-1 flex flex-wrap items-center gap-2">
-                <span className="font-mono text-base font-bold">{hit.article.label}</span>
-                <span className="text-xs text-slate-500">
-                  {acts.find((a) => a.id === hit.article.actId)?.shortName}
-                </span>
-                <span className="rounded-full bg-slate-100 px-2 py-0.5 font-mono text-[11px] text-slate-600 dark:bg-zinc-800 dark:text-zinc-300">
-                  {hit.matchedVia}
-                </span>
-              </div>
-              <p className="line-clamp-2 text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
-                {hit.article.excerpt}
-              </p>
-            </button>
+              hit={hit}
+              acts={acts}
+              onClick={() => openArticle(hit.article.id, hit.tag)}
+            />
           ))}
         </div>
       )}
@@ -168,7 +213,7 @@ export function Lookup({
               className="rounded-xl border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-700"
               onClick={() => setSelectedId(null)}
             >
-              ← Lista wyników
+              ← {searched ? 'Lista wyników' : 'Wróć'}
             </button>
             {onOpenInBrowse && (
               <button
@@ -180,10 +225,9 @@ export function Lookup({
               </button>
             )}
           </div>
-          {hits.find((h) => h.article.id === selected.id)?.tag && (
-            <div className="rounded-xl border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm text-indigo-900 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-200">
-              Trafienie po tagu:{' '}
-              <strong>{hits.find((h) => h.article.id === selected.id)?.tag?.label}</strong>
+          {selectedHit?.tag && (
+            <div className="rounded-xl border border-indigo-200/80 bg-indigo-50/80 px-3 py-2 text-sm text-indigo-900 dark:border-indigo-900 dark:bg-indigo-950/40 dark:text-indigo-200">
+              Trafienie po tagu: <strong>{selectedHit.tag.label}</strong>
             </div>
           )}
           <Reader
@@ -199,5 +243,182 @@ export function Lookup({
         </div>
       )}
     </section>
+  )
+}
+
+function ResultRow({
+  hit,
+  acts,
+  onClick,
+}: {
+  hit: SearchHit
+  acts: ActMeta[]
+  onClick: () => void
+}) {
+  const viaTag = hit.kind === 'tag' && hit.tag
+  return (
+    <button
+      type="button"
+      role="listitem"
+      onClick={onClick}
+      className="w-full rounded-xl border border-slate-200/90 bg-white px-3.5 py-2.5 text-left transition hover:border-slate-300 hover:bg-stone-50/80 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-900/80"
+    >
+      {viaTag && (
+        <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300">
+          <Tag className="h-3 w-3" />
+          tag: {hit.tag!.label}
+        </div>
+      )}
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="font-mono text-sm font-bold tracking-tight">{hit.article.label}</span>
+        <ActBadge actId={hit.article.actId} acts={acts} />
+        {!viaTag && (
+          <span className="font-mono text-[10px] text-slate-400">{hit.matchedVia}</span>
+        )}
+      </div>
+      <p className="mt-1 line-clamp-2 text-[13px] leading-snug text-slate-600 dark:text-zinc-400">
+        {hit.article.excerpt}
+      </p>
+    </button>
+  )
+}
+
+function EmptyHome({
+  recentArticles,
+  pinnedTags,
+  recentTags,
+  acts,
+  store,
+  onStoreChange,
+  onOpenArticle,
+  onApplyTag,
+}: {
+  recentArticles: Article[]
+  pinnedTags: UserTag[]
+  recentTags: UserTag[]
+  acts: ActMeta[]
+  store: UserStore
+  onStoreChange: (next: UserStore) => void
+  onOpenArticle: (id: string) => void
+  onApplyTag: (tag: UserTag) => void
+}) {
+  return (
+    <div className="mt-8 space-y-8">
+      <section>
+        <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+          <Clock3 className="h-3.5 w-3.5" /> Ostatnio otwarte
+        </h2>
+        {recentArticles.length === 0 ? (
+          <p className="text-sm text-slate-500 dark:text-zinc-500">
+            Tu pojawią się artykuły, które otworzysz z wyszukiwania lub przeglądania.
+          </p>
+        ) : (
+          <div className="space-y-1.5">
+            {recentArticles.map((a) => (
+              <button
+                key={a.id}
+                type="button"
+                onClick={() => onOpenArticle(a.id)}
+                className="flex w-full items-center gap-2 rounded-xl border border-slate-200/80 bg-white px-3 py-2 text-left hover:bg-stone-50 dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <span className="font-mono text-sm font-semibold">{a.label}</span>
+                <ActBadge actId={a.actId} acts={acts} />
+                <span className="truncate text-xs text-slate-500">{a.excerpt}</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section>
+        <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+          <Pin className="h-3.5 w-3.5" /> Przypięte tagi
+        </h2>
+        {pinnedTags.length === 0 ? (
+          <p className="text-sm text-slate-500 dark:text-zinc-500">
+            Przypnij tagi w <strong>Moje</strong> albo ikoną pinezki przy tagu poniżej.
+          </p>
+        ) : (
+          <TagChips
+            tags={pinnedTags}
+            pinned
+            store={store}
+            onStoreChange={onStoreChange}
+            onApply={onApplyTag}
+          />
+        )}
+      </section>
+
+      {recentTags.length > 0 && (
+        <section>
+          <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <Tag className="h-3.5 w-3.5" /> Ostatnie / Twoje tagi
+          </h2>
+          <TagChips
+            tags={recentTags}
+            store={store}
+            onStoreChange={onStoreChange}
+            onApply={onApplyTag}
+          />
+        </section>
+      )}
+
+      {store.tags.length === 0 && recentArticles.length === 0 && (
+        <p className="text-sm text-slate-500 dark:text-zinc-400">
+          Albo przejdź do <strong>Przeglądaj</strong>, żeby czytać ustawę jak kodeks.
+        </p>
+      )}
+    </div>
+  )
+}
+
+function TagChips({
+  tags,
+  pinned,
+  store,
+  onStoreChange,
+  onApply,
+}: {
+  tags: UserTag[]
+  pinned?: boolean
+  store: UserStore
+  onStoreChange: (next: UserStore) => void
+  onApply: (tag: UserTag) => void
+}) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {tags.map((t) => {
+        const isPinned = (store.pinnedTagIds ?? []).includes(t.id)
+        return (
+          <div
+            key={t.id}
+            className="inline-flex items-center gap-0.5 rounded-full border border-slate-200 bg-white dark:border-zinc-700 dark:bg-zinc-900"
+          >
+            <button
+              type="button"
+              onClick={() => onApply(t)}
+              className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-stone-50 dark:text-zinc-200 dark:hover:bg-zinc-800"
+            >
+              {t.label}
+              <span className="ml-1 font-mono text-[10px] text-slate-400">{t.articleIds.length}</span>
+            </button>
+            <button
+              type="button"
+              title={isPinned ? 'Odepnij' : 'Przypnij'}
+              aria-label={isPinned ? 'Odepnij tag' : 'Przypnij tag'}
+              onClick={() => onStoreChange(togglePinnedTag(store, t.id))}
+              className={cn(
+                'mr-1 rounded-full p-1.5',
+                isPinned || pinned
+                  ? 'text-amber-600 dark:text-amber-400'
+                  : 'text-slate-400 hover:text-slate-600',
+              )}
+            >
+              <Pin className="h-3 w-3" />
+            </button>
+          </div>
+        )
+      })}
+    </div>
   )
 }

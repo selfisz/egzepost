@@ -82,4 +82,10 @@ export type UserStore = {
   tags: UserTag[]
   progress: Record<string, CardProgress>
   learnQueue: string[]
+  /** Recently opened article ids (newest first) */
+  recentArticleIds?: string[]
+  /** Pinned tag ids for empty-search home */
+  pinnedTagIds?: string[]
+  /** Recently used tag ids (newest first) */
+  recentTagIds?: string[]
 }
