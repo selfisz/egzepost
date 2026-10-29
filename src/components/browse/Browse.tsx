@@ -2,6 +2,7 @@ import { BookOpen, ChevronDown, ListTree, Rows3 } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { ActMeta, Article, UserStore } from '../../types'
 import { buildToc, chapterPeers, siblingArticles } from '../../lib/toc'
+import { pushRecentArticle } from '../../lib/storage'
 import { Reader } from '../reader/Reader'
 import { cn } from '../../lib/cn'
 
@@ -54,8 +55,11 @@ export function Browse({
       setArticleId(art.id)
       setMobileToc(false)
       if (art.chapter) setOpenChapters((o) => ({ ...o, [art.chapter!]: true }))
+      onStoreChange(pushRecentArticle(store, art.id))
     }
     onFocusConsumed?.()
+    // intentionally once per focus id
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusArticleId, articles, onFocusConsumed])
 
   useEffect(() => {
@@ -81,6 +85,7 @@ export function Browse({
     setArticleId(a.id)
     setMobileToc(false)
     if (a.chapter) setOpenChapters((o) => ({ ...o, [a.chapter!]: true }))
+    onStoreChange(pushRecentArticle(store, a.id))
     requestAnimationFrame(() => {
       document.getElementById(`reader-${a.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     })
