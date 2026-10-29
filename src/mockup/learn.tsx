@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  BookOpen,
   Check,
   Flame,
   Lock,
@@ -19,8 +18,14 @@ import { href, SectionLabel } from "./ui";
 const CURRENT: Record<ActId, number> = { upea: 3, kpa: 5, ordynacja: 0 };
 const OFFSETS = [0, 56, 84, 56, 0, -56, -84, -56];
 
-function lessons(ch: Chapter) {
-  return Math.max(1, Math.ceil(ch.articles.length / 6));
+/** Mock progress inside the current stage: share of its articles already seen. */
+const CURRENT_SEEN = 0.27;
+
+function przepisy(n: number) {
+  const d = n % 10;
+  const t = n % 100;
+  if (n === 1) return "przepis";
+  return d >= 2 && d <= 4 && (t < 12 || t > 14) ? "przepisy" : "przepisów";
 }
 
 export function LearnHome({ data, actId }: { data: MockData; actId: ActId }) {
@@ -119,19 +124,6 @@ export function LearnHome({ data, actId }: { data: MockData; actId: ActId }) {
         </span>
       </div>
 
-      {done === 0 && (
-        <div className="mt-3 flex items-center gap-3 rounded-2xl border border-dashed border-line p-4">
-          <BookOpen className="size-5 shrink-0 text-gold" />
-          <div className="min-w-0 flex-1 text-[13.5px] leading-snug">
-            <b className="font-semibold">Znasz już Ordynację?</b>{" "}
-            <span className="text-muted">
-              Test poziomujący (15 pytań) odblokuje etapy, które już umiesz.
-            </span>
-          </div>
-          <ArrowRight className="size-4 text-muted" />
-        </div>
-      )}
-
       <div className={`act-${actId} mt-6`}>
         {act.divisions.map((d, di) => {
           const divDone = d.chapters.filter((c) => c.index < cur).length;
@@ -189,8 +181,9 @@ function PathNode({
           <div className="text-[11px] font-semibold tracking-wider text-gold uppercase">
             Teraz
           </div>
-          <div className="text-[13px] font-semibold">
-            Lekcja 2 z {lessons(ch)}
+          <div className="text-[13px] font-semibold tabular-nums">
+            {Math.round(ch.articles.length * CURRENT_SEEN)} z{" "}
+            {ch.articles.length} przepisów
           </div>
           <span className="absolute -bottom-1.5 left-1/2 size-3 -translate-x-1/2 rotate-45 bg-ink" />
         </div>
@@ -220,7 +213,8 @@ function PathNode({
           {ch.title}
         </div>
         <div className="mt-0.5 text-[11px] text-muted tabular-nums">
-          {articleRange(ch)} · {lessons(ch)} lekcji
+          {articleRange(ch)} · {ch.articles.length}{" "}
+          {przepisy(ch.articles.length)}
         </div>
       </div>
     </div>
