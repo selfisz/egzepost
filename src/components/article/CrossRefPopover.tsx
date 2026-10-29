@@ -106,14 +106,17 @@ export function CrossRefPopover({ open, onOpenChange, article, acts }: Props) {
 
 export function ActBadge({ actId, acts }: { actId: string; acts: ActMeta[] }) {
   const short = actShort(acts, actId)
-  const upea = actId === 'upea'
+  const tone =
+    actId === 'upea'
+      ? 'bg-indigo-500/15 text-indigo-700 dark:text-indigo-300'
+      : actId === 'ordynacja'
+        ? 'bg-amber-500/15 text-amber-800 dark:text-amber-300'
+        : 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
   return (
     <span
       className={cn(
         'inline-flex items-center rounded-md px-2 py-0.5 font-mono text-xs font-semibold',
-        upea
-          ? 'bg-indigo-500/15 text-indigo-700 dark:text-indigo-300'
-          : 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300',
+        tone,
       )}
     >
       {short}

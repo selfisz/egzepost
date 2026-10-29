@@ -81,11 +81,16 @@ export type LearnModule = {
   id: string
   name: string
   purpose: string
-  actId?: 'upea' | 'kpa' | 'both'
+  actId?: 'upea' | 'kpa' | 'ordynacja' | 'both'
   articleIds: string[]
   seeded?: boolean
   createdAt: string
   updatedAt?: string
+}
+
+export type AppPrefs = {
+  /** Default legal syntax highlight in Reader (off = calm) */
+  highlightLegal: boolean
 }
 
 export type UserStore = {
@@ -101,4 +106,5 @@ export type UserStore = {
   recentTagIds?: string[]
   /** User-created / customized learn modules (seeds merged at runtime) */
   learnModules?: LearnModule[]
+  prefs?: AppPrefs
 }

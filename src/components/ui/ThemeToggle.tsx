@@ -3,22 +3,42 @@ import { useEffect, useState } from 'react'
 import { cn } from '../../lib/cn'
 
 const KEY = 'egzepost:theme'
+const EVT = 'egzepost:theme'
+
+type Theme = 'light' | 'dark'
+
+function readTheme(): Theme {
+  const saved = localStorage.getItem(KEY) as Theme | null
+  if (saved === 'light' || saved === 'dark') return saved
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark')
+  localStorage.setItem(KEY, theme)
+  window.dispatchEvent(new CustomEvent(EVT, { detail: theme }))
+}
 
 export function useTheme() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const saved = localStorage.getItem(KEY) as 'light' | 'dark' | null
-    if (saved) return saved
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
+  const [theme, setThemeState] = useState<Theme>(() => readTheme())
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem(KEY, theme)
+    applyTheme(theme)
   }, [theme])
+
+  useEffect(() => {
+    const onExt = (e: Event) => {
+      const next = (e as CustomEvent<Theme>).detail
+      if (next === 'light' || next === 'dark') setThemeState(next)
+    }
+    window.addEventListener(EVT, onExt)
+    return () => window.removeEventListener(EVT, onExt)
+  }, [])
 
   return {
     theme,
-    toggle: () => setTheme((t) => (t === 'dark' ? 'light' : 'dark')),
+    toggle: () => setThemeState((t) => (t === 'dark' ? 'light' : 'dark')),
+    setTheme: (t: Theme) => setThemeState(t),
   }
 }
 

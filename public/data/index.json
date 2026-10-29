@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-28T15:01:00.527Z",
+  "generatedAt": "2026-10-29T12:00:17.167Z",
   "acts": [
     {
       "id": "upea",
       "shortName": "u.p.e.a.",
       "title": "Ustawa z dnia 17 czerwca 1966 r. o postępowaniu egzekucyjnym w administracji",
       "displayAddress": "Dz.U. 1966 nr 24 poz. 151 (tekst jednolity)",
-      "articleCount": 430,
+      "articleCount": 429,
       "source": {
         "kind": "isap-pdf",
         "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf",
-        "fetchedAt": "2026-10-28T15:01:00.374Z",
+        "fetchedAt": "2026-10-29T12:00:16.304Z",
         "note": "Oficjalny tekst jednolity PDF: data/source/upea-D19660151Lj.pdf → pdftotext. ISAP: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf"
       },
       "isapPdf": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf"
@@ -24,10 +24,24 @@
       "source": {
         "kind": "isap-pdf",
         "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf",
-        "fetchedAt": "2026-10-28T15:01:00.527Z",
+        "fetchedAt": "2026-10-29T12:00:16.476Z",
         "note": "Oficjalny tekst jednolity PDF: data/source/kpa-D19600168Lj.pdf → pdftotext. ISAP: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf"
       },
       "isapPdf": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf"
+    },
+    {
+      "id": "ordynacja",
+      "shortName": "Op",
+      "title": "Ustawa z dnia 29 sierpnia 1997 r. Ordynacja podatkowa",
+      "displayAddress": "Dz.U. 1997 nr 137 poz. 926 (tekst jednolity)",
+      "articleCount": 631,
+      "source": {
+        "kind": "isap-pdf",
+        "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19971370926/U/D19970926Lj.pdf",
+        "fetchedAt": "2026-10-29T12:00:17.167Z",
+        "note": "Oficjalny tekst jednolity PDF: data/source/ordynacja-D19970926Lj.pdf → pdftotext. ISAP: https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19971370926/U/D19970926Lj.pdf"
+      },
+      "isapPdf": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19971370926/U/D19970926Lj.pdf"
     }
   ]
 }

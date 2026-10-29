@@ -2,7 +2,13 @@ import { Clock3, Pin, Search, Tag } from 'lucide-react'
 import { useDeferredValue, useMemo, useState } from 'react'
 import type { ActMeta, Article, UserStore, UserTag } from '../../types'
 import { searchArticles, type ActFilter, type SearchHit } from '../../lib/search'
-import { pushRecentArticle, pushRecentTag, togglePinnedTag } from '../../lib/storage'
+import {
+  getPrefs,
+  pushRecentArticle,
+  pushRecentTag,
+  setPrefs,
+  togglePinnedTag,
+} from '../../lib/storage'
 import { Reader } from '../reader/Reader'
 import { ActBadge } from '../article/CrossRefPopover'
 import { cn } from '../../lib/cn'
@@ -21,6 +27,7 @@ const FILTERS: { id: ActFilter; label: string }[] = [
   { id: 'all', label: 'Wszystkie' },
   { id: 'upea', label: 'u.p.e.a.' },
   { id: 'kpa', label: 'Kpa' },
+  { id: 'ordynacja', label: 'Op' },
   { id: 'tags', label: 'Moje tagi' },
 ]
 
@@ -36,8 +43,8 @@ export function Lookup({
   const [query, setQuery] = useState('')
   const [actFilter, setActFilter] = useState<ActFilter>('all')
   const [selectedId, setSelectedId] = useState<string | null>(null)
-  const [highlightLegal, setHighlightLegal] = useState(false)
   const deferred = useDeferredValue(query.trim())
+  const prefs = getPrefs(store)
 
   const byId = useMemo(() => new Map(articles.map((a) => [a.id, a])), [articles])
   const tagById = useMemo(() => new Map(store.tags.map((t) => [t.id, t])), [store.tags])
@@ -236,8 +243,10 @@ export function Lookup({
             store={store}
             onStoreChange={onStoreChange}
             onXref={onXref}
-            highlightLegal={highlightLegal}
-            onToggleHighlight={() => setHighlightLegal((v) => !v)}
+            highlightLegal={prefs.highlightLegal}
+            onToggleHighlight={() =>
+              onStoreChange(setPrefs(store, { highlightLegal: !prefs.highlightLegal }))
+            }
             showNav={false}
           />
         </div>
