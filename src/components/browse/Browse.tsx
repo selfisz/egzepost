@@ -134,13 +134,26 @@ export function Browse({
                             type="button"
                             onClick={() => selectArticle(a)}
                             className={cn(
-                              'w-full rounded-md px-2 py-1 text-left font-mono text-[12px]',
+                              'w-full rounded-md px-2 py-1 text-left text-[12px] leading-snug',
                               current?.id === a.id
                                 ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
                                 : 'text-slate-600 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800',
                             )}
                           >
-                            {a.label}
+                            <span className="font-mono font-semibold">{a.label}</span>
+                            {a.title ? (
+                              <span
+                                className={cn(
+                                  'font-sans font-normal',
+                                  current?.id === a.id
+                                    ? 'text-white/80 dark:text-zinc-700'
+                                    : 'text-slate-500 dark:text-zinc-400',
+                                )}
+                              >
+                                {' '}
+                                · {a.title}
+                              </span>
+                            ) : null}
                           </button>
                         </li>
                       ))}
@@ -153,13 +166,26 @@ export function Browse({
                     type="button"
                     onClick={() => selectArticle(a)}
                     className={cn(
-                      'block w-full rounded-md px-2 py-1 text-left font-mono text-[12px]',
+                      'block w-full rounded-md px-2 py-1 text-left text-[12px] leading-snug',
                       current?.id === a.id
                         ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800',
                     )}
                   >
-                    {a.label}
+                    <span className="font-mono font-semibold">{a.label}</span>
+                    {a.title ? (
+                      <span
+                        className={cn(
+                          'font-sans font-normal',
+                          current?.id === a.id
+                            ? 'text-white/80 dark:text-zinc-700'
+                            : 'text-slate-500 dark:text-zinc-400',
+                        )}
+                      >
+                        {' '}
+                        · {a.title}
+                      </span>
+                    ) : null}
                   </button>
                 ))}
               </div>

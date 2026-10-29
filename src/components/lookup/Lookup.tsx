@@ -279,7 +279,15 @@ function ResultRow({
         </div>
       )}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="font-mono text-sm font-bold tracking-tight">{hit.article.label}</span>
+        <span className="text-sm font-bold tracking-tight">
+          <span className="font-mono">{hit.article.label}</span>
+          {hit.article.title ? (
+            <span className="font-sans font-medium text-slate-600 dark:text-zinc-300">
+              {' '}
+              · {hit.article.title}
+            </span>
+          ) : null}
+        </span>
         <ActBadge actId={hit.article.actId} acts={acts} />
         {!viaTag && (
           <span className="font-mono text-[10px] text-slate-400">{hit.matchedVia}</span>
@@ -330,7 +338,15 @@ function EmptyHome({
                 onClick={() => onOpenArticle(a.id)}
                 className="flex w-full items-center gap-2 rounded-xl border border-slate-200/80 bg-white px-3 py-2 text-left hover:bg-stone-50 dark:border-zinc-800 dark:bg-zinc-900"
               >
-                <span className="font-mono text-sm font-semibold">{a.label}</span>
+                <span className="text-sm font-semibold">
+                  <span className="font-mono">{a.label}</span>
+                  {a.title ? (
+                    <span className="font-sans font-medium text-slate-600 dark:text-zinc-300">
+                      {' '}
+                      · {a.title}
+                    </span>
+                  ) : null}
+                </span>
                 <ActBadge actId={a.actId} acts={acts} />
                 <span className="truncate text-xs text-slate-500">{a.excerpt}</span>
               </button>

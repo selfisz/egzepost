@@ -47,6 +47,11 @@ export function actShort(acts: ActMeta[], actId: string): string {
   return acts.find((a) => a.id === actId)?.shortName ?? actId
 }
 
+/** TOC / list heading: `Art. 1 · Zakres regulacji` when Legalis title exists. */
+export function articleHeading(article: Article): string {
+  return article.title ? `${article.label} · ${article.title}` : article.label
+}
+
 export function citation(article: Article, acts: ActMeta[], para?: string): string {
   const short = actShort(acts, article.actId)
   return para ? `${article.label.toLowerCase()} ${para} ${short}` : `${article.label.toLowerCase()} ${short}`

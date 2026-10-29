@@ -9,6 +9,7 @@
     "build:pages": "tsc --noEmit && BASE_PATH=/egzepost/ vite build",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "import:acts": "tsx scripts/import-acts.ts",
+    "import:titles": "tsx scripts/import-titles.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

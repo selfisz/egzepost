@@ -61,7 +61,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zakres regulacji"
     },
     {
       "id": "upea:1a",
@@ -360,7 +361,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Objaśnienia"
     },
     {
       "id": "upea:2",
@@ -527,7 +529,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:3",
@@ -557,7 +560,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Stosowanie egzekucji administracyjnej"
     },
     {
       "id": "upea:3a",
@@ -739,7 +743,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Egzekucja z zobowiązań"
     },
     {
       "id": "upea:3b",
@@ -789,7 +794,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zobowiązany"
     },
     {
       "id": "upea:4",
@@ -813,7 +819,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:5",
@@ -921,7 +928,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Podmioty uprawnione"
     },
     {
       "id": "upea:5a",
@@ -987,7 +995,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zabezpieczenie danych osobowych"
     },
     {
       "id": "upea:6",
@@ -1066,7 +1075,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Uchylanie się zobowiązanego"
     },
     {
       "id": "upea:6a",
@@ -1090,7 +1100,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Odpowiednie zastosowanie przepisu"
     },
     {
       "id": "upea:7",
@@ -1120,7 +1131,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Środki egzekucyjne"
     },
     {
       "id": "upea:7a",
@@ -1144,7 +1156,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zasady współpracy w postępowaniu"
     },
     {
       "id": "upea:8",
@@ -1356,7 +1369,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Wyłączenie z egzekucji"
     },
     {
       "id": "upea:8a",
@@ -1513,7 +1527,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Rolnicze wyłączenia z egzekucji"
     },
     {
       "id": "upea:9",
@@ -1561,7 +1576,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Egzekucja z wynagrodzenia"
     },
     {
       "id": "upea:10",
@@ -1622,7 +1638,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Egzekucja z rent i emerytur"
     },
     {
       "id": "upea:11",
@@ -1638,7 +1655,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "uchylony"
     },
     {
       "id": "upea:12",
@@ -1670,7 +1688,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zbieg egzekucji; ograniczenia"
     },
     {
       "id": "upea:13",
@@ -1694,7 +1713,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zwolnienie spod egzekucji"
     },
     {
       "id": "upea:14",
@@ -1730,7 +1750,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zakaz egzekucji z uwagi na podmiot"
     },
     {
       "id": "upea:15",
@@ -1820,7 +1841,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Wszczęcie egzekucji"
     },
     {
       "id": "upea:16",
@@ -1844,7 +1866,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Stosowanie kar"
     },
     {
       "id": "upea:17",
@@ -1905,7 +1928,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Dopuszczalność i skutki zażalenia"
     },
     {
       "id": "upea:17a",
@@ -1945,7 +1969,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Zwrot podania"
     },
     {
       "id": "upea:17b",
@@ -1977,7 +2002,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Upoważnienie"
     },
     {
       "id": "upea:17c",
@@ -2007,7 +2033,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Doręczanie pism na adres do doręczeń elektronicznych"
     },
     {
       "id": "upea:18",
@@ -2035,7 +2062,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1 — Zasady ogólne"
+      "section": "Rozdział 1 — Zasady ogólne",
+      "title": "Odesłanie"
     },
     {
       "id": "upea:18a",
@@ -2065,7 +2093,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Prowadzenie rejestru"
     },
     {
       "id": "upea:18b",
@@ -2176,7 +2205,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Informacje gromadzone w rejestrze"
     },
     {
       "id": "upea:18c",
@@ -2218,7 +2248,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Zawiadomienie"
     },
     {
       "id": "upea:18d",
@@ -2285,7 +2316,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Ograniczenia we wprowadzaniu danych"
     },
     {
       "id": "upea:18e",
@@ -2309,7 +2341,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Ujawnienie danych, kwota"
     },
     {
       "id": "upea:18f",
@@ -2400,7 +2433,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Dane wprowadzane przez wierzyciela"
     },
     {
       "id": "upea:18g",
@@ -2428,7 +2462,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Termin wprowadzenia zmiany lub wykreślenia danych z rejestru"
     },
     {
       "id": "upea:18h",
@@ -2478,7 +2513,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Wykreślenie z rejestru danych"
     },
     {
       "id": "upea:18i",
@@ -2587,7 +2623,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Prawo wniesienia sprzeciwu"
     },
     {
       "id": "upea:18j",
@@ -2617,7 +2654,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Udostępniane danych podmiotom zainteresowanym"
     },
     {
       "id": "upea:18k",
@@ -2660,7 +2698,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Tryb i zakres udostępnianych danych"
     },
     {
       "id": "upea:18l",
@@ -2700,7 +2739,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Dostęp do systemu"
     },
     {
       "id": "upea:18m",
@@ -2760,7 +2800,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Delegacja ustawowa"
     },
     {
       "id": "upea:18n",
@@ -2784,7 +2825,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Upoważnienie"
     },
     {
       "id": "upea:18o",
@@ -2808,7 +2850,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Brak odpłatności"
     },
     {
       "id": "upea:18p",
@@ -2857,7 +2900,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Informacje udostępniane zobowiązanemu"
     },
     {
       "id": "upea:18q",
@@ -2979,7 +3023,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Zgoda na ułatwiony sposób wyszukiwania zobowiązanych w rejestrze"
     },
     {
       "id": "upea:18r",
@@ -3011,7 +3056,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Zakres danych udostępnianych osobom upoważnionym przez wierzycieli i organ prowadzący rejestr"
     },
     {
       "id": "upea:18s",
@@ -3053,7 +3099,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Postępowanie z danymi udostępnionymi z rejestru"
     },
     {
       "id": "upea:18t",
@@ -3073,7 +3120,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Odesłanie do przepisów KPA"
     },
     {
       "id": "upea:18u",
@@ -3097,7 +3145,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych"
+      "section": "Rozdział 1a — Rejestr Należności Publicznoprawnych",
+      "title": "Udostępnienie danych z rejestru a przepisy o tajemnicy skarbowej"
     },
     {
       "id": "upea:19",
@@ -3175,7 +3224,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "Pojęcie"
     },
     {
       "id": "upea:20",
@@ -3236,7 +3286,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "Właściwość"
     },
     {
       "id": "upea:21",
@@ -3252,7 +3303,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "uchylony"
     },
     {
       "id": "upea:22",
@@ -3331,7 +3383,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "Właściwość miejscowa"
     },
     {
       "id": "upea:23",
@@ -3410,7 +3463,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "Nadzór"
     },
     {
       "id": "upea:24",
@@ -3426,7 +3480,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "uchylony"
     },
     {
       "id": "upea:25",
@@ -3450,7 +3505,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 2 — Organy egzekucyjne"
+      "section": "Rozdział 2 — Organy egzekucyjne",
+      "title": "Kontrola"
     },
     {
       "id": "upea:26",
@@ -3749,7 +3805,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Wszczęcie egzekucji"
     },
     {
       "id": "upea:26a",
@@ -3793,7 +3850,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:26b",
@@ -3817,7 +3875,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Odpis tytułu wykonawczego"
     },
     {
       "id": "upea:26c",
@@ -4070,7 +4129,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Dalszy tytuł wykonawczy"
     },
     {
       "id": "upea:26d",
@@ -4106,7 +4166,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Ponownie wydany tytuł wykonawczy"
     },
     {
       "id": "upea:26e",
@@ -4192,7 +4253,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Pismo w postaci elektronicznej"
     },
     {
       "id": "upea:27",
@@ -4434,7 +4496,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Treść tytułu wykonawczego"
     },
     {
       "id": "upea:27a",
@@ -4450,7 +4513,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:27b",
@@ -4466,7 +4530,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:27c",
@@ -4482,7 +4547,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:27d",
@@ -4506,7 +4572,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Tytuł wykonawczy"
     },
     {
       "id": "upea:27e",
@@ -4555,7 +4622,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Podstawa do prowadzenia egzekucji z majątku"
     },
     {
       "id": "upea:27f",
@@ -4633,7 +4701,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Prawo sprzeciwu"
     },
     {
       "id": "upea:27g",
@@ -4669,7 +4738,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Prawa małżonka zobowiązanego"
     },
     {
       "id": "upea:27h",
@@ -4719,7 +4789,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Oddalenie sprzeciwu"
     },
     {
       "id": "upea:27i",
@@ -4762,7 +4833,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Egzekucja z rzeczy i praw obciążonych zastawem lub hipoteką"
     },
     {
       "id": "upea:27j",
@@ -4794,7 +4866,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Prawo sprzeciwu"
     },
     {
       "id": "upea:27k",
@@ -4837,7 +4910,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Podstawa do prowadzenia egzekucji"
     },
     {
       "id": "upea:27l",
@@ -4865,7 +4939,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Prawo sprzeciwu"
     },
     {
       "id": "upea:28",
@@ -4889,7 +4964,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Treść wniosku"
     },
     {
       "id": "upea:28a",
@@ -4929,7 +5005,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Następca prawny"
     },
     {
       "id": "upea:28b",
@@ -4971,7 +5048,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zmieniony tytuł wykonawczy"
     },
     {
       "id": "upea:28c",
@@ -5007,7 +5085,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Kontynuowanie egzekucji"
     },
     {
       "id": "upea:28d",
@@ -5037,7 +5116,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Postanowienie"
     },
     {
       "id": "upea:29",
@@ -5092,7 +5172,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Badanie dopuszczalności egzekucji"
     },
     {
       "id": "upea:29a",
@@ -5129,7 +5210,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Rozliczanie wydatków"
     },
     {
       "id": "upea:30",
@@ -5161,7 +5243,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zastosowanie innego środka"
     },
     {
       "id": "upea:31",
@@ -5191,7 +5274,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Właściwość organów"
     },
     {
       "id": "upea:32",
@@ -5215,7 +5299,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Tryb postępowania"
     },
     {
       "id": "upea:32a",
@@ -5321,7 +5406,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zawiadomienie"
     },
     {
       "id": "upea:32b",
@@ -5345,7 +5431,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Wniosek o podjęcie środków zabezpieczających"
     },
     {
       "id": "upea:32c",
@@ -5369,7 +5456,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zawieszenie postępowania"
     },
     {
       "id": "upea:33",
@@ -5499,7 +5587,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zarzut; podstawy"
     },
     {
       "id": "upea:34",
@@ -5606,7 +5695,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Rozpatrzenie zarzutów"
     },
     {
       "id": "upea:34a",
@@ -5642,7 +5732,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Umorzenie postępowania egzekucyjnego"
     },
     {
       "id": "upea:34b",
@@ -5670,7 +5761,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Wyłączenie umorzenia postępowania egzekucyjnego"
     },
     {
       "id": "upea:35",
@@ -5718,7 +5810,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Skutki wniesienia zarzutów"
     },
     {
       "id": "upea:35a",
@@ -5750,7 +5843,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Powództwo wstrzymujące"
     },
     {
       "id": "upea:36",
@@ -5866,7 +5960,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Żądanie wyjaśnień i informacji"
     },
     {
       "id": "upea:37",
@@ -5882,7 +5977,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:37a",
@@ -5898,7 +5994,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:37b",
@@ -5934,7 +6031,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Wezwanie do złożenia oświadczenia"
     },
     {
       "id": "upea:37c",
@@ -5970,7 +6068,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Rozporządzenie rzeczą lub prawem majątkowym po ich zajęciu"
     },
     {
       "id": "upea:38",
@@ -6012,7 +6111,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Żądanie wyłączenia"
     },
     {
       "id": "upea:39",
@@ -6048,7 +6148,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zażalenie wierzyciela"
     },
     {
       "id": "upea:40",
@@ -6072,7 +6173,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Postępowanie; odmowa wyłączenia"
     },
     {
       "id": "upea:41",
@@ -6102,7 +6204,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Sprzedaż ruchomości w toku postępowania"
     },
     {
       "id": "upea:42",
@@ -6150,7 +6253,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Wpłata do depozytu"
     },
     {
       "id": "upea:43",
@@ -6194,7 +6298,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Wierzytelności zabezpieczone"
     },
     {
       "id": "upea:44",
@@ -6218,7 +6323,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Niedopuszczalność żądania wyłączenia"
     },
     {
       "id": "upea:45",
@@ -6248,7 +6354,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Odstąpienie od czynności"
     },
     {
       "id": "upea:46",
@@ -6297,7 +6404,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Pomoc"
     },
     {
       "id": "upea:47",
@@ -6327,7 +6435,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Otwarcie pomieszczeń i przeszukanie"
     },
     {
       "id": "upea:48",
@@ -6369,7 +6478,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Przeszukanie odzieży"
     },
     {
       "id": "upea:49",
@@ -6393,7 +6503,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Środki przymusu egzekutora"
     },
     {
       "id": "upea:49a",
@@ -6417,7 +6528,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Zasady przeszukania"
     },
     {
       "id": "upea:49b",
@@ -6441,7 +6553,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Odstąpienie od egzekucji"
     },
     {
       "id": "upea:50",
@@ -6496,7 +6609,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Ochrona terenów i obiektów"
     },
     {
       "id": "upea:51",
@@ -6532,7 +6646,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Powołanie świadków"
     },
     {
       "id": "upea:52",
@@ -6556,7 +6671,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Czas dokonywania czynności"
     },
     {
       "id": "upea:53",
@@ -6617,7 +6733,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Spisanie i podpisanie protokołu"
     },
     {
       "id": "upea:54",
@@ -6721,7 +6838,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Skarga na czynność egzekucyjną organu egzekucyjnego"
     },
     {
       "id": "upea:54a",
@@ -6745,7 +6863,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Skarga na przewlekłość postępowania egzekucyjnego"
     },
     {
       "id": "upea:54b",
@@ -6810,7 +6929,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Uchylenie czynności dokonanej z naruszeniem ustawy"
     },
     {
       "id": "upea:55",
@@ -6826,7 +6946,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "uchylony"
     },
     {
       "id": "upea:55a",
@@ -6856,7 +6977,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Egzekucja należności podatkowych i celnych"
     },
     {
       "id": "upea:55b",
@@ -6904,7 +7026,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 3 — Zasady prowadzenia egzekucji"
+      "section": "Rozdział 3 — Zasady prowadzenia egzekucji",
+      "title": "Obowiązek niezwłocznego poinformowania wierzyciela"
     },
     {
       "id": "upea:56",
@@ -7020,7 +7143,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Zawieszenie postępowania"
     },
     {
       "id": "upea:56a",
@@ -7050,7 +7174,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Zawieszenie postępowania"
     },
     {
       "id": "upea:57",
@@ -7098,7 +7223,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Podjęcie zawieszonego postępowania"
     },
     {
       "id": "upea:58",
@@ -7128,7 +7254,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Wpływ zawieszenia na dokonane czynności"
     },
     {
       "id": "upea:59",
@@ -7299,7 +7426,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Umorzenie postępowania"
     },
     {
       "id": "upea:60",
@@ -7329,7 +7457,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Skutek umorzenia postępowania"
     },
     {
       "id": "upea:61",
@@ -7443,7 +7572,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego"
+      "section": "Rozdział 4 — Zawieszenie i umorzenie postępowania egzekucyjnego",
+      "title": "Wszczęcie ponownej egzekucji"
     },
     {
       "id": "upea:62",
@@ -7498,7 +7628,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Postępowanie przy zbiegu egzekucji"
     },
     {
       "id": "upea:62a",
@@ -7518,7 +7649,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Skutki zbiegu egzekucji"
     },
     {
       "id": "upea:62b",
@@ -7598,7 +7730,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Czynności w razie prowadzenia łącznie egzekucji przez sądowy organ egzekucyjny"
     },
     {
       "id": "upea:62c",
@@ -7626,7 +7759,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Zawiadomienie o przekazaniu egzekucji sądowemu organowi egzekucyjnemu"
     },
     {
       "id": "upea:62d",
@@ -7680,7 +7814,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Tryb egzekucji administracyjnej"
     },
     {
       "id": "upea:62e",
@@ -7717,7 +7852,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Kolejny zbieg egzekucji"
     },
     {
       "id": "upea:62f",
@@ -7741,7 +7877,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Zakończenie egzekucji sądowej"
     },
     {
       "id": "upea:62g",
@@ -7769,7 +7906,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Obciążenie kosztami egzekucyjnymi"
     },
     {
       "id": "upea:63",
@@ -7793,7 +7931,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Spór o właściwość między organami egzekucyjnymi"
     },
     {
       "id": "upea:63a",
@@ -7836,7 +7975,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 5 — Zbieg egzekucji"
+      "section": "Rozdział 5 — Zbieg egzekucji",
+      "title": "Doręczenia z użyciem środków komunikacji elektronicznej"
     },
     {
       "id": "upea:64",
@@ -7996,7 +8136,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Opłata manipulacyjna"
     },
     {
       "id": "upea:64a",
@@ -8115,7 +8256,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Opłaty za czynności"
     },
     {
       "id": "upea:64b",
@@ -8254,7 +8396,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Wydatki egzekucyjne"
     },
     {
       "id": "upea:64c",
@@ -8573,7 +8716,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Koszty egzekucyjne"
     },
     {
       "id": "upea:64d",
@@ -8589,7 +8733,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "uchylony"
     },
     {
       "id": "upea:64e",
@@ -8739,7 +8884,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Umorzenie kosztów"
     },
     {
       "id": "upea:64f",
@@ -8769,7 +8915,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Rozłożenie na raty"
     },
     {
       "id": "upea:65",
@@ -8809,7 +8956,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Upoważnienie"
     },
     {
       "id": "upea:65a",
@@ -8857,7 +9005,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Przedawnienie"
     },
     {
       "id": "upea:66",
@@ -8941,7 +9090,8 @@
         }
       ],
       "chapter": "Dział I — Przepisy ogólne",
-      "section": "Rozdział 6 — Koszty egzekucyjne"
+      "section": "Rozdział 6 — Koszty egzekucyjne",
+      "title": "Koszty obciążające wierzyciela"
     },
     {
       "id": "upea:67",
@@ -9230,7 +9380,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Zawiadomienie o zajęciu"
     },
     {
       "id": "upea:67a",
@@ -9254,7 +9405,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Prawa i obowiązki zobowiązanego"
     },
     {
       "id": "upea:67b",
@@ -9278,7 +9430,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Szacowanie wartości"
     },
     {
       "id": "upea:67c",
@@ -9496,7 +9649,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Uprawnienia do szacowania"
     },
     {
       "id": "upea:67d",
@@ -9650,7 +9804,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Protokół oszacowania"
     },
     {
       "id": "upea:67e",
@@ -9674,7 +9829,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Zapłata organowi egzekucyjnemu"
     },
     {
       "id": "upea:67f",
@@ -9711,7 +9867,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "upea:67g",
@@ -9769,7 +9926,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Dzień zapłaty egzekwowanej należności pieniężnej"
     },
     {
       "id": "upea:67h",
@@ -9801,7 +9959,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "upea:68",
@@ -9817,7 +9976,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "upea:68a",
@@ -9845,7 +10005,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Skutek wpłaty"
     },
     {
       "id": "upea:68b",
@@ -9869,7 +10030,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Postanowienie o nabyciu"
     },
     {
       "id": "upea:68c",
@@ -9885,7 +10047,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "upea:68d",
@@ -9905,7 +10068,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Zwolnienie obciążeń"
     },
     {
       "id": "upea:69",
@@ -9935,7 +10099,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Zobowiązania państwowych jednostek budżetowych"
     },
     {
       "id": "upea:69a",
@@ -10038,7 +10203,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Zbieg egzekucji, kolejność zajęć"
     },
     {
       "id": "upea:70",
@@ -10092,7 +10258,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Odsetki"
     },
     {
       "id": "upea:70a",
@@ -10108,7 +10275,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "upea:70b",
@@ -10124,7 +10292,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "uchylony"
     },
     {
       "id": "upea:70c",
@@ -10152,7 +10321,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Klauzula kompensacyjna"
     },
     {
       "id": "upea:71",
@@ -10182,7 +10352,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Wyjawienie majątku"
     },
     {
       "id": "upea:71a",
@@ -10248,7 +10419,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Kontrola"
     },
     {
       "id": "upea:71b",
@@ -10288,7 +10460,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Egzekucja administracyjna"
     },
     {
       "id": "upea:71c",
@@ -10361,7 +10534,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1 — Przepisy ogólne"
+      "section": "Rozdział 1 — Przepisy ogólne",
+      "title": "Odroczenie terminu"
     },
     {
       "id": "upea:71d",
@@ -10385,7 +10559,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1a — Egzekucja z pieniędzy"
+      "section": "Rozdział 1a — Egzekucja z pieniędzy",
+      "title": "Zastosowanie"
     },
     {
       "id": "upea:71e",
@@ -10488,7 +10663,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1a — Egzekucja z pieniędzy"
+      "section": "Rozdział 1a — Egzekucja z pieniędzy",
+      "title": "Pokwitowanie pobrania"
     },
     {
       "id": "upea:71f",
@@ -10518,7 +10694,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 1a — Egzekucja z pieniędzy"
+      "section": "Rozdział 1a — Egzekucja z pieniędzy",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "upea:72",
@@ -10584,7 +10761,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "Zajęcie wynagrodzenia"
     },
     {
       "id": "upea:73",
@@ -10600,7 +10778,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "uchylony"
     },
     {
       "id": "upea:74",
@@ -10616,7 +10795,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "uchylony"
     },
     {
       "id": "upea:75",
@@ -10646,7 +10826,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "Wzmianka w świadectwie"
     },
     {
       "id": "upea:76",
@@ -10662,7 +10843,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "uchylony"
     },
     {
       "id": "upea:77",
@@ -10678,7 +10860,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "uchylony"
     },
     {
       "id": "upea:78",
@@ -10694,7 +10877,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę"
+      "section": "Rozdział 2 — Egzekucja z wynagrodzenia za pracę",
+      "title": "uchylony"
     },
     {
       "id": "upea:79",
@@ -10766,7 +10950,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 3 — Egzekucja ze świadczeń z zaopatrzenia emerytalnego i ubezpieczenia"
+      "section": "Rozdział 3 — Egzekucja ze świadczeń z zaopatrzenia emerytalnego i ubezpieczenia",
+      "title": "Tryb postępowania"
     },
     {
       "id": "upea:80",
@@ -10853,7 +11038,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Tryb postępowania"
     },
     {
       "id": "upea:81",
@@ -10949,7 +11135,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Skuteczność zajęcia"
     },
     {
       "id": "upea:82",
@@ -10965,7 +11152,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "uchylony"
     },
     {
       "id": "upea:83",
@@ -10981,7 +11169,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "uchylony"
     },
     {
       "id": "upea:84",
@@ -11023,7 +11212,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Odebranie dokumentu"
     },
     {
       "id": "upea:85",
@@ -11053,7 +11243,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Egzekucja z wkładu oszczędnościowego"
     },
     {
       "id": "upea:86",
@@ -11089,7 +11280,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Umorzenie dokumentu przez wierzyciela"
     },
     {
       "id": "upea:86a",
@@ -11119,7 +11311,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Zajęcie rachunku"
     },
     {
       "id": "upea:86b",
@@ -11159,7 +11352,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Zawiadomienia i wezwania z wykorzystaniem systemu teleinformatycznego"
     },
     {
       "id": "upea:87",
@@ -11187,7 +11381,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "Odpowiednie stosowanie"
     },
     {
       "id": "upea:88",
@@ -11203,7 +11398,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych"
+      "section": "Rozdział 4 — Egzekucja z rachunków bankowych i wkładów oszczędnościowych",
+      "title": "uchylony"
     },
     {
       "id": "upea:89",
@@ -11268,7 +11464,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie wierzytelności"
     },
     {
       "id": "upea:89a",
@@ -11328,7 +11525,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zakres zajęć wierzytelności z tytułu nadpłaty lub zwrotu podatku"
     },
     {
       "id": "upea:90",
@@ -11352,7 +11550,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Wniosek o wpis w księdze wieczystej"
     },
     {
       "id": "upea:91",
@@ -11376,7 +11575,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Uchylanie się dłużnika"
     },
     {
       "id": "upea:92",
@@ -11428,7 +11628,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Stosowanie przepisów"
     },
     {
       "id": "upea:93",
@@ -11513,7 +11714,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie praw z papierów wartościowych"
     },
     {
       "id": "upea:94",
@@ -11543,7 +11745,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie papierów wartościowych"
     },
     {
       "id": "upea:94a",
@@ -11563,7 +11766,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zapis na rachunku"
     },
     {
       "id": "upea:94b",
@@ -11595,7 +11799,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Stosowanie przepisów"
     },
     {
       "id": "upea:94c",
@@ -11611,7 +11816,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "uchylony"
     },
     {
       "id": "upea:94d",
@@ -11635,7 +11841,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Wyłączenie zastosowania przepisów"
     },
     {
       "id": "upea:94e",
@@ -11699,7 +11906,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Przesyłanie dokumentów"
     },
     {
       "id": "upea:95",
@@ -11735,7 +11943,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Odbiór dokumentu"
     },
     {
       "id": "upea:95a",
@@ -11778,7 +11987,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie prawa majątkowego"
     },
     {
       "id": "upea:95b",
@@ -11821,7 +12031,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zawiadomienie o zajęciu"
     },
     {
       "id": "upea:95c",
@@ -11864,7 +12075,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zawiadomienie o zajęciu"
     },
     {
       "id": "upea:95d",
@@ -11902,7 +12114,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Skuteczność zajęcia"
     },
     {
       "id": "upea:95e",
@@ -11926,7 +12139,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Skuteczność zajęcia"
     },
     {
       "id": "upea:95f",
@@ -11975,7 +12189,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Wniosek o dokonanie wpisu"
     },
     {
       "id": "upea:95g",
@@ -12005,7 +12220,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Sprzedaż prawa majątkowego"
     },
     {
       "id": "upea:96",
@@ -12029,7 +12245,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Odesłanie"
     },
     {
       "id": "upea:96a",
@@ -12057,7 +12274,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Trasat; zobowiązany"
     },
     {
       "id": "upea:96b",
@@ -12081,7 +12299,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Prawa organu egzekucyjnego"
     },
     {
       "id": "upea:96c",
@@ -12105,7 +12324,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Weksel do zapłaty"
     },
     {
       "id": "upea:96d",
@@ -12129,7 +12349,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Indos"
     },
     {
       "id": "upea:96e",
@@ -12145,7 +12366,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "uchylony"
     },
     {
       "id": "upea:96f",
@@ -12169,7 +12391,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie wierzytelności"
     },
     {
       "id": "upea:96g",
@@ -12304,7 +12527,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie praw"
     },
     {
       "id": "upea:96h",
@@ -12346,7 +12570,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Oszacowanie"
     },
     {
       "id": "upea:96i",
@@ -12378,7 +12603,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Stosowanie przepisów"
     },
     {
       "id": "upea:96j",
@@ -12427,7 +12653,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie udziału w spółce"
     },
     {
       "id": "upea:96k",
@@ -12476,7 +12703,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Sprzedaż udziału"
     },
     {
       "id": "upea:96l",
@@ -12508,7 +12736,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Zajęcie innych praw"
     },
     {
       "id": "upea:96m",
@@ -12532,7 +12761,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych"
+      "section": "Rozdział 5 — Egzekucja z innych wierzytelności pieniężnych i innych praw majątkowych",
+      "title": "Stosowanie przepisów"
     },
     {
       "id": "upea:96n",
@@ -12597,7 +12827,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości"
+      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości",
+      "title": "Postanowienie"
     },
     {
       "id": "upea:96o",
@@ -12702,7 +12933,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości"
+      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości",
+      "title": "Treść, doręczenie"
     },
     {
       "id": "upea:96p",
@@ -12726,7 +12958,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości"
+      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości",
+      "title": "Informacja o uchyleniu z mocy prawa tymczasowego zajęcia ruchomości."
     },
     {
       "id": "upea:96q",
@@ -12756,7 +12989,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości"
+      "section": "Rozdział 5a — Zatwierdzenie tymczasowego zajęcia ruchomości",
+      "title": "Uchylenie z mocy prawa tymczasowego zajęcia ruchomości"
     },
     {
       "id": "upea:97",
@@ -12840,7 +13074,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Zajęcie ruchomości"
     },
     {
       "id": "upea:98",
@@ -12888,7 +13123,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Protokół zajęcia"
     },
     {
       "id": "upea:98a",
@@ -12908,7 +13144,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "upea:99",
@@ -12988,7 +13225,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Opis i oszacowanie"
     },
     {
       "id": "upea:100",
@@ -13068,7 +13306,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Dozór"
     },
     {
       "id": "upea:101",
@@ -13092,7 +13331,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Prawo zwykłego używania"
     },
     {
       "id": "upea:102",
@@ -13134,7 +13374,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Obowiązki dozorcy; wydatki; wynagrodzenie"
     },
     {
       "id": "upea:103",
@@ -13171,7 +13412,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Odpowiedzialność"
     },
     {
       "id": "upea:104",
@@ -13214,7 +13456,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Z wolnej ręki"
     },
     {
       "id": "upea:104a",
@@ -13310,7 +13553,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Wniosek o wyrażenie zgody na sprzedaż zajętej ruchomości"
     },
     {
       "id": "upea:104b",
@@ -13383,7 +13627,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Postanowienie o wyrażeniu zgody"
     },
     {
       "id": "upea:104c",
@@ -13407,7 +13652,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "upea:104d",
@@ -13431,7 +13677,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Postanowienie o wygaśnięciu postanowienia o wyrażeniu zgody na sprzedaż zajętej ruchomości"
     },
     {
       "id": "upea:104e",
@@ -13467,7 +13714,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Informacja roczna"
     },
     {
       "id": "upea:105",
@@ -13552,7 +13800,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Licytacyjna"
     },
     {
       "id": "upea:105a",
@@ -13664,7 +13913,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Termin i miejsce"
     },
     {
       "id": "upea:105b",
@@ -13732,7 +13982,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Wadium"
     },
     {
       "id": "upea:105c",
@@ -13774,7 +14025,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Przebieg licytacji"
     },
     {
       "id": "upea:105d",
@@ -13842,7 +14094,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Przybicie"
     },
     {
       "id": "upea:106",
@@ -13866,7 +14119,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Licytacja"
     },
     {
       "id": "upea:107",
@@ -13963,7 +14217,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Przybicie; unieważnienie licytacji"
     },
     {
       "id": "upea:107a",
@@ -13993,7 +14248,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Przetarg ofert"
     },
     {
       "id": "upea:107b",
@@ -14070,7 +14326,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Ogłoszenie o przetargu"
     },
     {
       "id": "upea:107c",
@@ -14112,7 +14369,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Otwarcie ofert"
     },
     {
       "id": "upea:107d",
@@ -14136,7 +14394,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Ruchomości"
     },
     {
       "id": "upea:107e",
@@ -14178,7 +14437,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Licytacja elektroniczna"
     },
     {
       "id": "upea:107f",
@@ -14358,7 +14618,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Warunki dopuszczenia do udziału w licytacji ruchomości za pośrednictwem Portalu eLicytacje KAS"
     },
     {
       "id": "upea:107g",
@@ -14386,7 +14647,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Przystąpienie do licytacji"
     },
     {
       "id": "upea:107h",
@@ -14422,7 +14684,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Czas trwania licytacji, przebieg"
     },
     {
       "id": "upea:107i",
@@ -14496,7 +14759,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Przybicie"
     },
     {
       "id": "upea:107j",
@@ -14520,7 +14784,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Skarga"
     },
     {
       "id": "upea:107k",
@@ -14544,7 +14809,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Cena, zapłata"
     },
     {
       "id": "upea:107l",
@@ -14568,7 +14834,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Usunięcie informacji z Portalu eLicytacje KAS"
     },
     {
       "id": "upea:108",
@@ -14677,7 +14944,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Z wolnej ręki"
     },
     {
       "id": "upea:108a",
@@ -14705,7 +14973,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Zwrot niesprzedanych ruchomości"
     },
     {
       "id": "upea:108b",
@@ -14747,7 +15016,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Odbiór nabytej ruchomości"
     },
     {
       "id": "upea:109",
@@ -14784,7 +15054,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 6 — Egzekucja z ruchomości"
+      "section": "Rozdział 6 — Egzekucja z ruchomości",
+      "title": "Upoważnienie"
     },
     {
       "id": "upea:110",
@@ -14850,7 +15121,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zaliczka na pokrycie przewidywanych wydatków"
     },
     {
       "id": "upea:110a",
@@ -14878,7 +15150,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Powiadomienie"
     },
     {
       "id": "upea:110b",
@@ -14918,7 +15191,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Inni uczestnicy"
     },
     {
       "id": "upea:110c",
@@ -15009,7 +15283,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zajęcie"
     },
     {
       "id": "upea:110d",
@@ -15039,7 +15314,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Egzekucja kilku nieruchomości"
     },
     {
       "id": "upea:110e",
@@ -15063,7 +15339,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zakres"
     },
     {
       "id": "upea:110f",
@@ -15093,7 +15370,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Rozporządzenie"
     },
     {
       "id": "upea:110g",
@@ -15153,7 +15431,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zarząd"
     },
     {
       "id": "upea:110h",
@@ -15177,7 +15456,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wprowadzenie w zarząd"
     },
     {
       "id": "upea:110i",
@@ -15213,7 +15493,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wykonywanie zarządu"
     },
     {
       "id": "upea:110j",
@@ -15249,7 +15530,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Sprawozdania zarządcy"
     },
     {
       "id": "upea:110k",
@@ -15285,7 +15567,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wynagrodzenie"
     },
     {
       "id": "upea:110l",
@@ -15346,7 +15629,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Pokrycie zobowiązań z pożytków"
     },
     {
       "id": "upea:110m",
@@ -15389,7 +15673,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Opis i oszacowanie wartości"
     },
     {
       "id": "upea:110n",
@@ -15431,7 +15716,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Prawo pierwokupu"
     },
     {
       "id": "upea:110o",
@@ -15461,7 +15747,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zawiadomienia i obwieszczenia"
     },
     {
       "id": "upea:110p",
@@ -15491,7 +15778,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Egzekucja z wydzielonej części"
     },
     {
       "id": "upea:110r",
@@ -15570,7 +15858,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Protokół"
     },
     {
       "id": "upea:110s",
@@ -15612,7 +15901,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Szacowanie wartości"
     },
     {
       "id": "upea:110t",
@@ -15654,7 +15944,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Prawa osób trzecich"
     },
     {
       "id": "upea:110u",
@@ -15678,7 +15969,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Dodatkowy opis"
     },
     {
       "id": "upea:110w",
@@ -15891,7 +16183,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Licytacja"
     },
     {
       "id": "upea:110y",
@@ -15927,7 +16220,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Przejęcie na własność"
     },
     {
       "id": "upea:110z",
@@ -15957,7 +16251,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Skarga"
     },
     {
       "id": "upea:111",
@@ -16018,7 +16313,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wysokość wadium"
     },
     {
       "id": "upea:111a",
@@ -16046,7 +16342,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wadium a przybicie"
     },
     {
       "id": "upea:111b",
@@ -16076,7 +16373,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Utrata wadium"
     },
     {
       "id": "upea:111c",
@@ -16149,7 +16447,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Przebieg"
     },
     {
       "id": "upea:111d",
@@ -16216,7 +16515,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Uczestnicy"
     },
     {
       "id": "upea:111e",
@@ -16236,7 +16536,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Cena wywoławcza"
     },
     {
       "id": "upea:111f",
@@ -16278,7 +16579,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Postąpienie"
     },
     {
       "id": "upea:111g",
@@ -16310,7 +16612,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wstrzymanie licytacji"
     },
     {
       "id": "upea:111h",
@@ -16340,7 +16643,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Prawo przejęcia"
     },
     {
       "id": "upea:111i",
@@ -16376,7 +16680,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Druga licytacja"
     },
     {
       "id": "upea:111j",
@@ -16400,7 +16705,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Kolejne licytacje"
     },
     {
       "id": "upea:111k",
@@ -16424,7 +16730,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Umorzenie; wszczęcie nowej"
     },
     {
       "id": "upea:111l",
@@ -16460,7 +16767,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Skarga"
     },
     {
       "id": "upea:111m",
@@ -16502,7 +16810,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Postanowienie o przybiciu"
     },
     {
       "id": "upea:111n",
@@ -16551,7 +16860,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Odmowa przybicia"
     },
     {
       "id": "upea:111o",
@@ -16581,7 +16891,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Odebranie zarządu"
     },
     {
       "id": "upea:111p",
@@ -16605,7 +16916,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Pokrycie należności"
     },
     {
       "id": "upea:111r",
@@ -16629,7 +16941,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zażalenie na postanowienie"
     },
     {
       "id": "upea:111s",
@@ -16657,7 +16970,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Postanowienie o wygaśnięciu"
     },
     {
       "id": "upea:111t",
@@ -16685,7 +16999,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Ponowna licytacja"
     },
     {
       "id": "upea:112",
@@ -16715,7 +17030,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Cena nabycia"
     },
     {
       "id": "upea:112a",
@@ -16731,7 +17047,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "uchylony"
     },
     {
       "id": "upea:112b",
@@ -16773,7 +17090,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Postanowienie o przyznaniu własności"
     },
     {
       "id": "upea:112c",
@@ -16816,7 +17134,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Prawo do zaspokojenia"
     },
     {
       "id": "upea:112d",
@@ -16848,7 +17167,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Służebność gruntowa"
     },
     {
       "id": "upea:112e",
@@ -16876,7 +17196,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Wstąpienie nabywcy w prawa"
     },
     {
       "id": "upea:112f",
@@ -16900,7 +17221,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Księga wieczysta"
     },
     {
       "id": "upea:112g",
@@ -16920,7 +17242,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "Zakaz"
     },
     {
       "id": "upea:113",
@@ -16936,7 +17259,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 7 — Egzekucja z nieruchomości"
+      "section": "Rozdział 7 — Egzekucja z nieruchomości",
+      "title": "uchylony"
     },
     {
       "id": "upea:114",
@@ -16960,7 +17284,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Stosowanie przepisów"
     },
     {
       "id": "upea:114a",
@@ -16984,7 +17309,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Zajęcie części ułamkowej"
     },
     {
       "id": "upea:114b",
@@ -17027,7 +17353,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Użytkowanie wieczyste"
     },
     {
       "id": "upea:114c",
@@ -17047,7 +17374,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Działanie w granicach uprawnień"
     },
     {
       "id": "upea:114d",
@@ -17087,7 +17415,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Zawieszenie postępowania"
     },
     {
       "id": "upea:114e",
@@ -17115,7 +17444,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Zawieszenie postępowania"
     },
     {
       "id": "upea:114f",
@@ -17143,7 +17473,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Data końcowa"
     },
     {
       "id": "upea:114g",
@@ -17167,7 +17498,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Postanowienie o przyznaniu"
     },
     {
       "id": "upea:114h",
@@ -17191,7 +17523,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Część ułamkowa nieruchomości"
     },
     {
       "id": "upea:114i",
@@ -17215,7 +17548,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego"
+      "section": "Rozdział 8 — Egzekucja z ułamkowej części nieruchomości oraz użytkowania wieczystego",
+      "title": "Hipoteki"
     },
     {
       "id": "upea:115",
@@ -17421,7 +17755,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Zaspokojenie z egzekucji"
     },
     {
       "id": "upea:115a",
@@ -17481,7 +17816,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Podział kwoty uzyskanej z egzekucji"
     },
     {
       "id": "upea:115b",
@@ -17505,7 +17841,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Plan podziału"
     },
     {
       "id": "upea:115c",
@@ -17554,7 +17891,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Uczestnicy"
     },
     {
       "id": "upea:115d",
@@ -17584,7 +17922,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Uzupełnienie ceny"
     },
     {
       "id": "upea:115e",
@@ -17608,7 +17947,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Hipoteka kaucyjna"
     },
     {
       "id": "upea:115f",
@@ -17660,7 +18000,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Oświadczenie o zaspokojeniu"
     },
     {
       "id": "upea:115g",
@@ -17684,7 +18025,8 @@
         }
       ],
       "chapter": "Dział II — Egzekucja należności pieniężnych",
-      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji"
+      "section": "Rozdział 9 — Podział kwoty uzyskanej z egzekucji",
+      "title": "Depozyt organu egzekucyjnego"
     },
     {
       "id": "upea:116",
@@ -17700,7 +18042,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "uchylony"
     },
     {
       "id": "upea:117",
@@ -17748,7 +18091,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:118",
@@ -17772,7 +18116,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Wyjawienie"
     },
     {
       "id": "upea:119",
@@ -17796,7 +18141,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Zasada"
     },
     {
       "id": "upea:120",
@@ -17820,7 +18166,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:121",
@@ -17862,7 +18209,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Wysokość grzywny"
     },
     {
       "id": "upea:122",
@@ -17918,7 +18266,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Dalsze grzywny"
     },
     {
       "id": "upea:123",
@@ -17942,7 +18291,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:124",
@@ -17966,7 +18316,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Egzekucja grzywien"
     },
     {
       "id": "upea:125",
@@ -17990,7 +18341,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Umorzenie grzywien"
     },
     {
       "id": "upea:126",
@@ -18018,7 +18370,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 2 — Grzywna w celu przymuszenia"
+      "section": "Rozdział 2 — Grzywna w celu przymuszenia",
+      "title": "Zwrot uiszczonych grzywien"
     },
     {
       "id": "upea:127",
@@ -18042,7 +18395,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Egzekucja czynności zastępowalnych"
     },
     {
       "id": "upea:128",
@@ -18097,7 +18451,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Tryb postępowania"
     },
     {
       "id": "upea:129",
@@ -18129,7 +18484,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Zaliczka na koszty wykonania"
     },
     {
       "id": "upea:130",
@@ -18161,7 +18517,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Zlecenie czynności"
     },
     {
       "id": "upea:131",
@@ -18189,7 +18546,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Odpowiedzialność wykonawcy"
     },
     {
       "id": "upea:132",
@@ -18219,7 +18577,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Uprawnienie zobowiązanego"
     },
     {
       "id": "upea:133",
@@ -18243,7 +18602,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Koszty wykonania zastępczego"
     },
     {
       "id": "upea:134",
@@ -18279,7 +18639,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Egzekucja zaliczki i kosztów"
     },
     {
       "id": "upea:135",
@@ -18303,7 +18664,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 3 — Wykonanie zastępcze"
+      "section": "Rozdział 3 — Wykonanie zastępcze",
+      "title": "Odesłanie"
     },
     {
       "id": "upea:136",
@@ -18333,7 +18695,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 4 — Odebranie rzeczy ruchomej"
+      "section": "Rozdział 4 — Odebranie rzeczy ruchomej",
+      "title": "Wydanie rzeczy"
     },
     {
       "id": "upea:137",
@@ -18357,7 +18720,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 4 — Odebranie rzeczy ruchomej"
+      "section": "Rozdział 4 — Odebranie rzeczy ruchomej",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:138",
@@ -18377,7 +18741,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 4 — Odebranie rzeczy ruchomej"
+      "section": "Rozdział 4 — Odebranie rzeczy ruchomej",
+      "title": "Odebranie rzeczy"
     },
     {
       "id": "upea:139",
@@ -18414,7 +18779,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 4 — Odebranie rzeczy ruchomej"
+      "section": "Rozdział 4 — Odebranie rzeczy ruchomej",
+      "title": "Czynności egzekutora"
     },
     {
       "id": "upea:140",
@@ -18438,7 +18804,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 4 — Odebranie rzeczy ruchomej"
+      "section": "Rozdział 4 — Odebranie rzeczy ruchomej",
+      "title": "Wydanie rzeczy"
     },
     {
       "id": "upea:141",
@@ -18462,7 +18829,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Wydanie nieruchomości lub lokalu"
     },
     {
       "id": "upea:142",
@@ -18482,7 +18850,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:143",
@@ -18519,7 +18888,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Czynności egzekutora"
     },
     {
       "id": "upea:144",
@@ -18559,7 +18929,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Czynności egzekutora"
     },
     {
       "id": "upea:145",
@@ -18583,7 +18954,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Otwarcie lokalu"
     },
     {
       "id": "upea:146",
@@ -18623,7 +18995,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Wydanie; przechowanie ruchomości"
     },
     {
       "id": "upea:147",
@@ -18683,7 +19056,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń"
+      "section": "Rozdział 5 — Odebranie nieruchomości. Opróżnienie lokalu i innych pomieszczeń",
+      "title": "Sprzedaż przechowywanych ruchomości"
     },
     {
       "id": "upea:148",
@@ -18707,7 +19081,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Usunięcie oporu"
     },
     {
       "id": "upea:149",
@@ -18727,7 +19102,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Wyznaczenie egzekutora"
     },
     {
       "id": "upea:150",
@@ -18776,7 +19152,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Czynności egzekutora"
     },
     {
       "id": "upea:151",
@@ -18820,7 +19197,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Zastosowanie przymusu bezpośredniego"
     },
     {
       "id": "upea:152",
@@ -18848,7 +19226,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Zastosowanie przymusu do osoby trzeciej"
     },
     {
       "id": "upea:153",
@@ -18872,7 +19251,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Ograniczenia ze względu na osobę"
     },
     {
       "id": "upea:153a",
@@ -18896,7 +19276,8 @@
         }
       ],
       "chapter": "Dział III — Egzekucja obowiązków o charakterze niepieniężnym",
-      "section": "Rozdział 6 — Przymus bezpośredni"
+      "section": "Rozdział 6 — Przymus bezpośredni",
+      "title": "Przymusowe doprowadzenie"
     },
     {
       "id": "upea:154",
@@ -18975,7 +19356,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Podstawy zabezpieczenia"
     },
     {
       "id": "upea:155",
@@ -19003,7 +19385,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:155a",
@@ -19064,7 +19447,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Wniosek o zabezpieczenie"
     },
     {
       "id": "upea:155b",
@@ -19119,7 +19503,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Doręczane dokumenty"
     },
     {
       "id": "upea:156",
@@ -19258,7 +19643,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Zarządzenie zabezpieczenia"
     },
     {
       "id": "upea:156a",
@@ -19325,7 +19711,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Kolejne zarządzenie zabezpieczenia"
     },
     {
       "id": "upea:157",
@@ -19349,7 +19736,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Określenie obowiązków"
     },
     {
       "id": "upea:157a",
@@ -19373,7 +19761,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Zmiana lub uchylenie zabezpieczenia"
     },
     {
       "id": "upea:158",
@@ -19393,7 +19782,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Kilka zabezpieczeń"
     },
     {
       "id": "upea:159",
@@ -19429,7 +19819,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Uchylenie zabezpieczenia"
     },
     {
       "id": "upea:160",
@@ -19453,7 +19844,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Niestosowanie wykonania obowiązku"
     },
     {
       "id": "upea:161",
@@ -19501,7 +19893,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Sprzedaż rzeczy"
     },
     {
       "id": "upea:162",
@@ -19525,7 +19918,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Zbieg postępowań"
     },
     {
       "id": "upea:162a",
@@ -19549,7 +19943,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Prowadzenie łącznie egzekucji i zabezpieczenia"
     },
     {
       "id": "upea:163",
@@ -19597,7 +19992,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 1 — Przepisy wspólne"
+      "section": "Rozdział 1 — Przepisy wspólne",
+      "title": "Odesłanie"
     },
     {
       "id": "upea:164",
@@ -19688,7 +20084,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych"
+      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych",
+      "title": "Formy zabezpieczenia"
     },
     {
       "id": "upea:165",
@@ -19742,7 +20139,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych"
+      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych",
+      "title": "Rozwinięcie"
     },
     {
       "id": "upea:166",
@@ -19774,7 +20172,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych"
+      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych",
+      "title": "Kaucja"
     },
     {
       "id": "upea:166a",
@@ -19804,7 +20203,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych"
+      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych",
+      "title": "Zakaz rozporządzania mieniem"
     },
     {
       "id": "upea:166b",
@@ -19824,7 +20224,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych"
+      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych",
+      "title": "Stosowanie przepisów"
     },
     {
       "id": "upea:166c",
@@ -19848,7 +20249,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych"
+      "section": "Rozdział 2 — Zabezpieczenie należności pieniężnych",
+      "title": "Wyłączenie stosowania"
     },
     {
       "id": "upea:166d",
@@ -19888,7 +20290,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Postanowienie o zabezpieczeniu"
     },
     {
       "id": "upea:166e",
@@ -19920,7 +20323,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Przeliczenie należności pieniężnej"
     },
     {
       "id": "upea:166f",
@@ -19956,7 +20360,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Przechowywanie"
     },
     {
       "id": "upea:166g",
@@ -19980,7 +20385,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Dokument stanowiący podstawę zajęcia"
     },
     {
       "id": "upea:166h",
@@ -20004,7 +20410,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Sprzedaż"
     },
     {
       "id": "upea:166i",
@@ -20032,7 +20439,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Zawiadomienie"
     },
     {
       "id": "upea:166j",
@@ -20117,7 +20525,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Zajęcie ruchomości, wierzytelności lub innego prawa majątkowego"
     },
     {
       "id": "upea:166k",
@@ -20153,7 +20562,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Zajęcie egzekucyjne"
     },
     {
       "id": "upea:166l",
@@ -20202,7 +20612,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Wydatki"
     },
     {
       "id": "upea:166m",
@@ -20230,7 +20641,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Potwierdzenie zwrotu"
     },
     {
       "id": "upea:166n",
@@ -20275,7 +20687,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym"
+      "section": "Rozdział 2a — Wykonywanie postanowienia o zabezpieczeniu majątkowym",
+      "title": "Odpowiednie zastosowanie przepisów"
     },
     {
       "id": "upea:167",
@@ -20299,7 +20712,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 3 — Zabezpieczenie obowiązków o charakterze niepieniężnym"
+      "section": "Rozdział 3 — Zabezpieczenie obowiązków o charakterze niepieniężnym",
+      "title": "Określenie środka zabezpieczenia"
     },
     {
       "id": "upea:168",
@@ -20331,7 +20745,8 @@
         }
       ],
       "chapter": "Dział IV — Postępowanie zabezpieczające",
-      "section": "Rozdział 3 — Zabezpieczenie obowiązków o charakterze niepieniężnym"
+      "section": "Rozdział 3 — Zabezpieczenie obowiązków o charakterze niepieniężnym",
+      "title": "Odesłanie"
     },
     {
       "id": "upea:168a",
@@ -20363,7 +20778,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 1 — Odpowiedzialność odszkodowawcza"
+      "section": "Rozdział 1 — Odpowiedzialność odszkodowawcza",
+      "title": "Dochodzenie odszkodowania"
     },
     {
       "id": "upea:168b",
@@ -20393,7 +20809,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 1 — Odpowiedzialność odszkodowawcza"
+      "section": "Rozdział 1 — Odpowiedzialność odszkodowawcza",
+      "title": "Przyczyny"
     },
     {
       "id": "upea:168c",
@@ -20423,7 +20840,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 1 — Odpowiedzialność odszkodowawcza"
+      "section": "Rozdział 1 — Odpowiedzialność odszkodowawcza",
+      "title": "Odpowiedzialność za szkody"
     },
     {
       "id": "upea:168d",
@@ -20489,7 +20907,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 2 — Odpowiedzialność porządkowa"
+      "section": "Rozdział 2 — Odpowiedzialność porządkowa",
+      "title": "Kara pieniężna"
     },
     {
       "id": "upea:168e",
@@ -20568,7 +20987,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 2 — Odpowiedzialność porządkowa"
+      "section": "Rozdział 2 — Odpowiedzialność porządkowa",
+      "title": "Kara pieniężna"
     },
     {
       "id": "upea:168f",
@@ -20600,7 +21020,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 3 — Odpowiedzialność karna"
+      "section": "Rozdział 3 — Odpowiedzialność karna",
+      "title": "Przepis karny"
     },
     {
       "id": "upea:168g",
@@ -20620,7 +21041,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 3 — Odpowiedzialność karna"
+      "section": "Rozdział 3 — Odpowiedzialność karna",
+      "title": "Przepis karny"
     },
     {
       "id": "upea:168h",
@@ -20644,7 +21066,8 @@
         }
       ],
       "chapter": "Dział IVA — Odpowiedzialność za naruszenie przepisów ustawy",
-      "section": "Rozdział 3 — Odpowiedzialność karna"
+      "section": "Rozdział 3 — Odpowiedzialność karna",
+      "title": "Przepis karny"
     },
     {
       "id": "upea:169",
@@ -20667,7 +21090,8 @@
           "text": "przepisów tej ustawy i przez organy w niej wskazane."
         }
       ],
-      "chapter": "Dział V — Przepisy wprowadzające i końcowe"
+      "chapter": "Dział V — Przepisy wprowadzające i końcowe",
+      "title": "Zasada stosowania nowej ustawy"
     },
     {
       "id": "upea:170",
@@ -20690,7 +21114,8 @@
           "children": []
         }
       ],
-      "chapter": "Dział V — Przepisy wprowadzające i końcowe"
+      "chapter": "Dział V — Przepisy wprowadzające i końcowe",
+      "title": "Pozostawienie w mocy"
     },
     {
       "id": "upea:171",
@@ -20735,7 +21160,8 @@
           "text": "(uchylony)"
         }
       ],
-      "chapter": "Dział V — Przepisy wprowadzające i końcowe"
+      "chapter": "Dział V — Przepisy wprowadzające i końcowe",
+      "title": "uchylony"
     },
     {
       "id": "upea:174",
@@ -20790,7 +21216,8 @@
           "text": "własności Skarbu Państwa."
         }
       ],
-      "chapter": "Dział V — Przepisy wprowadzające i końcowe"
+      "chapter": "Dział V — Przepisy wprowadzające i końcowe",
+      "title": "Upoważnienie"
     }
   ]
 }

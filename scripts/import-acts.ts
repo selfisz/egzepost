@@ -718,6 +718,7 @@ async function main() {
     'utf8',
   )
   console.log('Wrote public/data/*')
+  console.log('Tip: run `npm run import:titles` to attach Legalis Art. N [Tytuł] headings.')
 }
 
 main().catch((err) => {
