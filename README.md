@@ -1,8 +1,11 @@
-# Egze Post
+# Regest
 
-PWA do szybkiego lookupu i nauki na **u.p.e.a.**, **Kpa** oraz **Ordynacji podatkowej (Op)**. Treść tylko z zaimportowanego tekstu jednolitego + Twoich tagów — bez dopowiadania przepisów.
+PWA do szybkiego lookupu i nauki na **u.p.e.a.**, **Kpa** oraz **Ordynacji podatkowej (Op)**.  
+Tagline: *Przepisy do pracy. Nauka bez zgadywania.*  
+Treść tylko z zaimportowanego tekstu jednolitego + Twoich tagów — bez dopowiadania przepisów.
 
-**GitHub Pages:** https://selfisz.github.io/egzepost/ — setup: [`docs/GITHUB_PAGES.md`](docs/GITHUB_PAGES.md)
+**GitHub Pages:** https://selfisz.github.io/egzepost/ — setup: [`docs/GITHUB_PAGES.md`](docs/GITHUB_PAGES.md)  
+(Repo / Pages path stays `egzepost`; product name is **Regest**.)
 
 ## Uruchomienie
 

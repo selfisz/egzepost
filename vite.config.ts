@@ -20,10 +20,10 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'data/*.json'],
       manifest: {
-        name: 'Egze Post',
-        short_name: 'EgzePost',
+        name: 'Regest',
+        short_name: 'Regest',
         description:
-          'Lookup i nauka: u.p.e.a. oraz Kpa — tylko zaimportowany tekst i Twoje tagi.',
+          'Przepisy do pracy. Nauka bez zgadywania. u.p.e.a., Kpa, Ordynacja + Twoje tagi.',
         theme_color: '#0f172a',
         background_color: '#f8fafc',
         display: 'standalone',

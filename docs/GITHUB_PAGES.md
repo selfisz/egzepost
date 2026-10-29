@@ -1,6 +1,7 @@
-# GitHub Pages — Egze Post
+# GitHub Pages — Regest
 
-Site URL: **https://selfisz.github.io/egzepost/**
+Site URL: **https://selfisz.github.io/egzepost/**  
+(Product name: **Regest**; path unchanged.)
 
 ## Root cause of the blank page
 

@@ -112,19 +112,19 @@ export function Browse({
           <div key={ch.id}>
             <button
               type="button"
-              className="flex w-full items-start gap-1 rounded-lg px-2 py-1.5 text-left font-medium text-slate-800 hover:bg-slate-100 dark:text-zinc-100 dark:hover:bg-zinc-800"
+              className="flex w-full items-start gap-1 rounded-lg px-2 py-1.5 text-left text-[13px] font-medium tracking-tight text-slate-700 hover:bg-slate-100/80 dark:text-zinc-200 dark:hover:bg-zinc-800"
               onClick={() => setOpenChapters((o) => ({ ...o, [ch.label]: !open }))}
             >
               <ChevronDown
-                className={cn('mt-0.5 h-3.5 w-3.5 shrink-0 transition', !open && '-rotate-90')}
+                className={cn('mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400 transition', !open && '-rotate-90')}
               />
               <span className="leading-snug">{ch.label}</span>
             </button>
             {open && (
-              <div className="ml-3 space-y-2 border-l border-slate-200 pl-2 dark:border-zinc-700">
+              <div className="ml-3 space-y-2 border-l border-slate-200/70 pl-2 dark:border-zinc-800">
                 {ch.sections.map((sec) => (
                   <div key={sec.id}>
-                    <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                    <div className="px-2 py-1 text-[11px] font-medium tracking-wide text-slate-400">
                       {sec.label}
                     </div>
                     <ul className="space-y-0.5">

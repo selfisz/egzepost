@@ -6,6 +6,7 @@ import { ActBadge } from '../article/CrossRefPopover'
 import { citation } from '../../lib/data'
 import {
   addArticleToModule,
+  addToLearnQueue,
   newTagId,
   resolveLearnModules,
   upsertTag,
@@ -164,11 +165,22 @@ export function Reader({
                 type="button"
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-50 dark:hover:bg-zinc-800"
                 onClick={() => {
+                  onStoreChange(addToLearnQueue(store, article.id))
+                  setMenuOpen(false)
+                  toast.push('Dodano do zakresu nauki')
+                }}
+              >
+                Dodaj do zakresu nauki
+              </button>
+              <button
+                type="button"
+                className="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-50 dark:hover:bg-zinc-800"
+                onClick={() => {
                   setModulePicker(true)
                   setMenuOpen(false)
                 }}
               >
-                Dodaj do modułu nauki…
+                Dodaj do modułu…
               </button>
             </div>
           )}
