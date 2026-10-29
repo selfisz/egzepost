@@ -4,7 +4,12 @@ import type { ActMeta, Article, UserStore } from '../../types'
 import { ArticleBody } from '../article/ArticleBody'
 import { ActBadge } from '../article/CrossRefPopover'
 import { citation } from '../../lib/data'
-import { newTagId, upsertTag } from '../../lib/storage'
+import {
+  addArticleToModule,
+  newTagId,
+  resolveLearnModules,
+  upsertTag,
+} from '../../lib/storage'
 import { useToast } from '../ui/Toast'
 import { cn } from '../../lib/cn'
 
@@ -45,8 +50,10 @@ export function Reader({
   const [menuOpen, setMenuOpen] = useState(false)
   const [tagOpen, setTagOpen] = useState(false)
   const [tagInput, setTagInput] = useState('')
+  const [modulePicker, setModulePicker] = useState(false)
 
   const linked = store.tags.filter((t) => t.articleIds.includes(article.id))
+  const modules = resolveLearnModules(store)
 
   async function copyCite() {
     const c = citation(article, acts)
@@ -139,7 +146,7 @@ export function Reader({
             <MoreHorizontal className="h-4 w-4" />
           </IconBtn>
           {menuOpen && (
-            <div className="absolute right-0 top-9 z-10 min-w-[210px] rounded-xl border border-slate-200 bg-white p-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+            <div className="absolute right-0 top-9 z-10 min-w-[220px] rounded-xl border border-slate-200 bg-white p-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
               <button
                 type="button"
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-50 dark:hover:bg-zinc-800"
@@ -150,10 +157,49 @@ export function Reader({
               >
                 {highlightLegal ? 'Wyłącz podświetlenie prawa' : 'Podświetl prawo'}
               </button>
+              <button
+                type="button"
+                className="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-50 dark:hover:bg-zinc-800"
+                onClick={() => {
+                  setModulePicker(true)
+                  setMenuOpen(false)
+                }}
+              >
+                Dodaj do modułu nauki…
+              </button>
             </div>
           )}
         </div>
       </header>
+
+      {modulePicker && (
+        <div className="mb-4 rounded-xl border border-slate-200 bg-stone-50 p-3 dark:border-zinc-700 dark:bg-zinc-950">
+          <p className="mb-2 text-xs font-semibold text-slate-500">Wybierz moduł</p>
+          <div className="max-h-40 space-y-1 overflow-auto">
+            {modules.map((m) => (
+              <button
+                key={m.id}
+                type="button"
+                className="block w-full rounded-lg px-2 py-1.5 text-left text-sm hover:bg-white dark:hover:bg-zinc-800"
+                onClick={() => {
+                  onStoreChange(addArticleToModule(store, m.id, article.id))
+                  setModulePicker(false)
+                  toast.push(`Dodano do „${m.name}”`)
+                }}
+              >
+                {m.name}
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="mt-2 text-xs text-slate-500"
+            onClick={() => setModulePicker(false)}
+          >
+            Anuluj
+          </button>
+        </div>
+      )}
 
       {tagOpen && (
         <div className="mb-4 rounded-xl border border-slate-200 bg-stone-50 p-3 dark:border-zinc-700 dark:bg-zinc-950">

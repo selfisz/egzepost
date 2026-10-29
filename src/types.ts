@@ -77,6 +77,17 @@ export type CardProgress = {
   lastResult?: 'again' | 'hard' | 'good' | 'easy'
 }
 
+export type LearnModule = {
+  id: string
+  name: string
+  purpose: string
+  actId?: 'upea' | 'kpa' | 'both'
+  articleIds: string[]
+  seeded?: boolean
+  createdAt: string
+  updatedAt?: string
+}
+
 export type UserStore = {
   version: 1
   tags: UserTag[]
@@ -88,4 +99,6 @@ export type UserStore = {
   pinnedTagIds?: string[]
   /** Recently used tag ids (newest first) */
   recentTagIds?: string[]
+  /** User-created / customized learn modules (seeds merged at runtime) */
+  learnModules?: LearnModule[]
 }

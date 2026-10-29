@@ -1,4 +1,5 @@
-import type { CardProgress, UserStore, UserTag } from '../types'
+import type { CardProgress, LearnModule, UserStore, UserTag } from '../types'
+import { SEED_MODULES } from '../data/learn-seeds'
 
 const KEY = 'egzepost:user:v1'
 const MAX_RECENT_ARTICLES = 12
@@ -12,6 +13,7 @@ const empty: UserStore = {
   recentArticleIds: [],
   pinnedTagIds: [],
   recentTagIds: [],
+  learnModules: [],
 }
 
 export function loadUserStore(): UserStore {
@@ -28,10 +30,55 @@ export function loadUserStore(): UserStore {
       recentArticleIds: parsed.recentArticleIds ?? [],
       pinnedTagIds: parsed.pinnedTagIds ?? [],
       recentTagIds: parsed.recentTagIds ?? [],
+      learnModules: parsed.learnModules ?? [],
     }
   } catch {
     return structuredClone(empty)
   }
+}
+
+/** Seeds + user modules; user overrides seed with same id. */
+export function resolveLearnModules(store: UserStore): LearnModule[] {
+  const user = store.learnModules ?? []
+  const byId = new Map<string, LearnModule>()
+  for (const m of SEED_MODULES) byId.set(m.id, m)
+  for (const m of user) byId.set(m.id, m)
+  return [...byId.values()]
+}
+
+export function upsertLearnModule(store: UserStore, mod: LearnModule): UserStore {
+  const list = [...(store.learnModules ?? [])]
+  const idx = list.findIndex((m) => m.id === mod.id)
+  if (idx >= 0) list[idx] = mod
+  else list.push(mod)
+  return { ...store, learnModules: list }
+}
+
+export function addArticleToModule(store: UserStore, moduleId: string, articleId: string): UserStore {
+  const modules = resolveLearnModules(store)
+  const mod = modules.find((m) => m.id === moduleId)
+  if (!mod) return store
+  if (mod.articleIds.includes(articleId)) return store
+  const next: LearnModule = {
+    ...mod,
+    seeded: false,
+    articleIds: [...mod.articleIds, articleId],
+    updatedAt: new Date().toISOString(),
+  }
+  return upsertLearnModule(store, next)
+}
+
+export function moduleProgress(
+  store: UserStore,
+  articleIds: string[],
+): { mastered: number; total: number; pct: number } {
+  const total = articleIds.length
+  let mastered = 0
+  for (const id of articleIds) {
+    const p = store.progress[id]
+    if (p && (p.lastResult === 'easy' || p.repetitions >= 2)) mastered += 1
+  }
+  return { mastered, total, pct: total ? Math.round((mastered / total) * 100) : 0 }
 }
 
 export function saveUserStore(store: UserStore): void {
@@ -106,5 +153,6 @@ export function importStoreJson(raw: string): UserStore {
     recentArticleIds: parsed.recentArticleIds ?? [],
     pinnedTagIds: parsed.pinnedTagIds ?? [],
     recentTagIds: parsed.recentTagIds ?? [],
+    learnModules: parsed.learnModules ?? [],
   }
 }
