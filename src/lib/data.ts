@@ -1,4 +1,5 @@
 import type { ActBundle, ActMeta, Article, ArticleBlock, DataIndex } from '../types'
+import { mergeTextRuns } from './structure'
 
 export type AppData = {
   index: DataIndex
@@ -9,7 +10,7 @@ export type AppData = {
 }
 
 function ensureBlocks(a: Article): Article {
-  if (a.blocks?.length) return a
+  if (a.blocks?.length) return { ...a, blocks: mergeTextRuns(a.blocks) }
   return { ...a, blocks: [{ type: 'text', text: a.text } satisfies ArticleBlock] }
 }
 

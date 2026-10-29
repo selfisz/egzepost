@@ -1,38 +1,37 @@
-import { BookOpen, Library, Search, UserRound } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { Browse } from './components/browse/Browse'
-import { Lookup } from './components/lookup/Lookup'
-import { Learn } from './components/learn/Learn'
-import { Tags } from './components/tags/Tags'
-import { IntentStrip } from './components/home/IntentStrip'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { CrossRefPopover } from './components/article/CrossRefPopover'
-import { ThemeToggle, useTheme } from './components/ui/ThemeToggle'
+import { ActList, ActOverview, ChapterView } from './components/browse/Browse'
+import { Home } from './components/home/Home'
+import { NaukaHome, readFocusAct, writeFocusAct } from './components/nauka/Nauka'
+import { Session } from './components/nauka/Session'
+import { ArticleReader } from './components/reader/ArticleReader'
+import { SearchScreen } from './components/search/Search'
+import { go, useRoute } from './components/shell/router'
+import { Shell, TopBar, type Tab } from './components/shell/Shell'
+import { Tags } from './components/tags/Tags'
+import { useTheme } from './components/ui/ThemeToggle'
 import { ToastProvider } from './components/ui/Toast'
 import { loadAppData, type AppData } from './lib/data'
+import { learnEngine } from './lib/learn-adapter'
 import { loadUserStore, saveUserStore } from './lib/storage'
+import { getLibrary, isActId, type ActId, type Library } from './lib/structure'
 import type { Article, UserStore } from './types'
-import { cn } from './lib/cn'
 
-type Tab = 'browse' | 'lookup' | 'learn' | 'mine'
-
-function Shell() {
+function Main() {
   useTheme()
-  const [tab, setTab] = useState<Tab>('browse')
+  const route = useRoute()
   const [data, setData] = useState<AppData | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [store, setStore] = useState<UserStore>(() => loadUserStore())
   const [focusToken, setFocusToken] = useState(0)
   const [draftTag, setDraftTag] = useState<string | null>(null)
-  const [browseFocusId, setBrowseFocusId] = useState<string | null>(null)
   const [xrefArticle, setXrefArticle] = useState<Article | null>(null)
   const [xrefOpen, setXrefOpen] = useState(false)
 
   useEffect(() => {
     let cancelled = false
     loadAppData()
-      .then((d) => {
-        if (!cancelled) setData(d)
-      })
+      .then((d) => !cancelled && setData(d))
       .catch((e: unknown) => {
         if (!cancelled) setError(e instanceof Error ? e.message : 'Nie udało się wczytać bazy')
       })
@@ -45,24 +44,24 @@ function Shell() {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
-        setTab('lookup')
+        go('szukaj')
         setFocusToken((n) => n + 1)
       }
       if (e.key === 'Escape') setXrefOpen(false)
     }
+    const onAssign = (e: Event) => {
+      setDraftTag((e as CustomEvent<{ label: string }>).detail.label)
+      go('moje')
+    }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    window.addEventListener('egzepost:assign-tag', onAssign)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('egzepost:assign-tag', onAssign)
+    }
   }, [])
 
-  useEffect(() => {
-    const onAssign = (e: Event) => {
-      const detail = (e as CustomEvent<{ label: string }>).detail
-      setDraftTag(detail.label)
-      setTab('mine')
-    }
-    window.addEventListener('egzepost:assign-tag', onAssign)
-    return () => window.removeEventListener('egzepost:assign-tag', onAssign)
-  }, [])
+  const lib = useMemo(() => (data ? getLibrary(data) : null), [data])
 
   function updateStore(next: UserStore) {
     setStore(next)
@@ -71,187 +70,156 @@ function Shell() {
 
   function openXref(actId: string, number: string) {
     const article = data?.byId.get(`${actId}:${number}`)
-    if (!article) {
-      setXrefArticle(null)
-      setXrefOpen(false)
-      return
-    }
-    setXrefArticle(article)
-    setXrefOpen(true)
+    setXrefArticle(article ?? null)
+    setXrefOpen(!!article)
   }
 
-  const navItems = [
-    ['browse', 'Przeglądaj', Library],
-    ['lookup', 'Szukaj', Search],
-    ['learn', 'Ucz się', BookOpen],
-    ['mine', 'Moje', UserRound],
-  ] as const
+  if (error)
+    return (
+      <div className="mx-auto mt-16 max-w-xl rounded-2xl border border-dashed border-red-300 p-5 text-red-800 dark:border-red-900 dark:text-red-200">
+        <strong>Brak w bazie</strong>
+        <p className="text-sm">{error}</p>
+      </div>
+    )
+  if (!data || !lib)
+    return <div className="grid min-h-dvh place-items-center font-serif text-[22px] text-muted">Regest…</div>
 
-  const hideChrome = tab === 'learn'
+  const [p0, p1, p2, p3] = route.parts
+  const common = { store, onStoreChange: updateStore }
+  let tab: Tab = 'start'
+  let top = <TopBar brand />
+  let body: ReactNode
+
+  if (p0 === 'przegladaj') {
+    tab = 'przegladaj'
+    body = <ActList lib={lib} />
+  } else if (p0 === 'akt' && isActId(p1) && lib.acts[p1]) {
+    tab = 'przegladaj'
+    const act = lib.acts[p1]
+    const ch = p2 === 'r' ? act.chapters[Number(p3)] : undefined
+    if (ch) {
+      top = <TopBar back={`akt/${act.id}`} title={act.shortName} />
+      body = <ChapterView act={act} ch={ch} />
+    } else {
+      top = <TopBar back="przegladaj" />
+      body = <ActOverview act={act} />
+    }
+  } else if (p0 === 'art') {
+    tab = 'przegladaj'
+    const article = data.byId.get(p1 ?? '')
+    const act = article && isActId(article.actId) ? lib.acts[article.actId] : undefined
+    const ch = article && act?.chapterOf.get(article.id)
+    top = <TopBar back={act && ch ? `akt/${act.id}/r/${ch.index}` : 'przegladaj'} />
+    body = article ? (
+      <ArticleReader
+        lib={lib}
+        acts={data.acts}
+        article={article}
+        chapterMode={route.query.get('tryb') === 'rozdzial'}
+        onXref={openXref}
+        {...common}
+      />
+    ) : (
+      <div className="p-8 text-muted">Brak w bazie: {p1}</div>
+    )
+  } else if (p0 === 'szukaj') {
+    tab = 'szukaj'
+    body = (
+      <SearchScreen
+        lib={lib}
+        articles={data.articles}
+        store={store}
+        initial={route.query.get('q') ?? ''}
+        focusToken={focusToken}
+      />
+    )
+  } else if (p0 === 'nauka' && (p1 === 'trening' || p1 === 'etap')) {
+    return (
+      <Shell tab="nauka" bare>
+        <SessionRoute
+          key={route.parts.join('/')}
+          lib={lib}
+          kind={p1}
+          actId={isActId(p2) ? p2 : readFocusAct()}
+          index={Number(p3)}
+          onXref={openXref}
+          {...common}
+        />
+        <CrossRefPopover open={xrefOpen} onOpenChange={setXrefOpen} article={xrefArticle} acts={data.acts} />
+      </Shell>
+    )
+  } else if (p0 === 'nauka') {
+    tab = 'nauka'
+    const q = route.query.get('akt')
+    const actId: ActId = isActId(q) ? q : readFocusAct()
+    if (isActId(q)) writeFocusAct(q)
+    body = <NaukaHome lib={lib} store={store} actId={actId} />
+  } else if (p0 === 'moje') {
+    tab = 'moje'
+    top = <TopBar back="" title="Moje: tagi i ustawienia" />
+    body = (
+      <Tags
+        acts={data.acts}
+        articles={data.articles}
+        onXref={openXref}
+        draftLabel={draftTag}
+        onDraftConsumed={() => setDraftTag(null)}
+        {...common}
+      />
+    )
+  } else {
+    body = <Home lib={lib} byId={data.byId} store={store} focusAct={readFocusAct()} />
+  }
 
   return (
-    <div className="min-h-full">
-      {!hideChrome && (
-        <header className="border-b border-slate-200/70 bg-stone-50/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-            <div className="min-w-0">
-              <div className="text-lg font-semibold tracking-tight text-slate-900 dark:text-zinc-50">
-                Regest
-              </div>
-              <p className="truncate text-xs text-slate-500 dark:text-zinc-500">
-                Przepisy do pracy. Nauka bez zgadywania.
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              {data && (
-                <span className="hidden rounded border border-slate-200/80 px-2 py-0.5 font-mono text-[10px] text-slate-400 sm:inline dark:border-zinc-700">
-                  {data.articles.length} art.
-                </span>
-              )}
-              <button
-                type="button"
-                className="hidden items-center gap-2 rounded-xl border border-slate-200/80 bg-white px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50 md:inline-flex dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
-                onClick={() => {
-                  setTab('lookup')
-                  setFocusToken((n) => n + 1)
-                }}
-              >
-                <Search className="h-3.5 w-3.5" />
-                Szukaj
-                <kbd className="font-mono text-[10px] text-slate-400">⌘K</kbd>
-              </button>
-              <ThemeToggle />
-            </div>
-          </div>
+    <Shell tab={tab}>
+      {top}
+      {body}
+      <CrossRefPopover open={xrefOpen} onOpenChange={setXrefOpen} article={xrefArticle} acts={data.acts} />
+    </Shell>
+  )
+}
 
-          <nav className="mx-auto hidden max-w-6xl gap-1 px-4 pb-2 md:flex" aria-label="Główne">
-            {navItems.map(([id, label, Icon]) => (
-              <button
-                key={id}
-                type="button"
-                aria-current={tab === id ? 'page' : undefined}
-                onClick={() => setTab(id)}
-                className={cn(
-                  'inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium',
-                  tab === id
-                    ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                    : 'text-slate-600 hover:bg-slate-100 dark:text-zinc-300 dark:hover:bg-zinc-900',
-                )}
-              >
-                <Icon className="h-4 w-4" />
-                {label}
-              </button>
-            ))}
-          </nav>
-        </header>
-      )}
-
-      {data && !hideChrome && (
-        <IntentStrip store={store} onGo={(t) => setTab(t)} />
-      )}
-
-      <main>
-        {error && (
-          <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-dashed border-rose-300 p-5 text-rose-800 dark:border-rose-900 dark:text-rose-200">
-            <strong>brak w bazie</strong>
-            <p className="text-sm">{error}</p>
-          </div>
-        )}
-        {!error && !data && (
-          <p className="p-8 text-center text-sm text-slate-500">Ładowanie bazy aktów…</p>
-        )}
-
-        {data && tab === 'browse' && (
-          <Browse
-            acts={data.acts}
-            articles={data.articles}
-            store={store}
-            onStoreChange={updateStore}
-            onXref={openXref}
-            focusArticleId={browseFocusId}
-            onFocusConsumed={() => setBrowseFocusId(null)}
-          />
-        )}
-        {data && tab === 'lookup' && (
-          <Lookup
-            acts={data.acts}
-            articles={data.articles}
-            store={store}
-            onStoreChange={updateStore}
-            onXref={openXref}
-            focusToken={focusToken}
-            onOpenInBrowse={(id) => {
-              setBrowseFocusId(id)
-              setTab('browse')
-            }}
-          />
-        )}
-        {data && tab === 'learn' && (
-          <Learn
-            acts={data.acts}
-            articles={data.articles}
-            store={store}
-            onStoreChange={updateStore}
-            onXref={openXref}
-          />
-        )}
-        {data && tab === 'mine' && (
-          <Tags
-            acts={data.acts}
-            articles={data.articles}
-            store={store}
-            onStoreChange={updateStore}
-            onXref={openXref}
-            draftLabel={draftTag}
-            onDraftConsumed={() => setDraftTag(null)}
-          />
-        )}
-      </main>
-
-      {!hideChrome && (
-        <nav
-          className="fixed inset-x-2 bottom-3 z-30 grid grid-cols-4 gap-1 rounded-2xl border border-slate-200 bg-white/95 p-1 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-900/95"
-          aria-label="Główne"
-        >
-          {navItems.map(([id, label, Icon]) => (
-            <button
-              key={id}
-              type="button"
-              aria-current={tab === id ? 'page' : undefined}
-              onClick={() => {
-                setTab(id)
-                if (id === 'lookup') setFocusToken((n) => n + 1)
-              }}
-              className={cn(
-                'flex flex-col items-center gap-0.5 rounded-xl py-2 text-[10px] font-semibold',
-                tab === id
-                  ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                  : 'text-slate-600 dark:text-zinc-300',
-              )}
-            >
-              <Icon className="h-4 w-4" />
-              {label}
-            </button>
-          ))}
-        </nav>
-      )}
-
-      {data && (
-        <CrossRefPopover
-          open={xrefOpen}
-          onOpenChange={setXrefOpen}
-          article={xrefArticle}
-          acts={data.acts}
-        />
-      )}
-    </div>
+function SessionRoute({
+  lib,
+  kind,
+  actId,
+  index,
+  store,
+  onStoreChange,
+  onXref,
+}: {
+  lib: Library
+  kind: 'trening' | 'etap'
+  actId: ActId
+  index: number
+  store: UserStore
+  onStoreChange: (next: UserStore) => void
+  onXref: (actId: string, number: string) => void
+}) {
+  // Freeze the deck at session start; grading updates the store but must not reshuffle cards.
+  const [cards] = useState(() =>
+    kind === 'trening'
+      ? learnEngine.dailyPlan(lib, store, actId).cards
+      : learnEngine.stageSession(lib.acts[actId], index, store),
+  )
+  const title = kind === 'trening' ? 'Trening na dziś' : (lib.acts[actId].chapters[index]?.title ?? 'Etap')
+  return (
+    <Session
+      title={title}
+      cards={cards}
+      store={store}
+      onStoreChange={onStoreChange}
+      onXref={onXref}
+      exitTo={`nauka?akt=${actId}`}
+    />
   )
 }
 
 export default function App() {
   return (
     <ToastProvider>
-      <Shell />
+      <Main />
     </ToastProvider>
   )
 }

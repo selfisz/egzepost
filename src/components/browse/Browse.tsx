@@ -1,361 +1,225 @@
-import { BookOpen, ChevronDown, ListTree, Rows3 } from 'lucide-react'
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
-import type { ActMeta, Article, UserStore } from '../../types'
-import { buildToc, chapterPeers, siblingArticles } from '../../lib/toc'
-import { getPrefs, pushRecentArticle, setPrefs } from '../../lib/storage'
-import { Reader } from '../reader/Reader'
+import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react'
+import type { ActId, ActStructure, Chapter, Library } from '../../lib/structure'
+import { articleRange, chapterLabel, isRepealed, plural } from '../../lib/structure'
 import { cn } from '../../lib/cn'
+import { ACT_META, Emblem, actClass } from '../shell/identity'
+import { href } from '../shell/router'
+import { SectionLabel } from '../shell/Shell'
 
-type Props = {
-  acts: ActMeta[]
-  articles: Article[]
-  store: UserStore
-  onStoreChange: (next: UserStore) => void
-  onXref: (actId: string, number: string) => void
-  /** Open a specific article from search */
-  focusArticleId?: string | null
-  onFocusConsumed?: () => void
-}
-
-type ReadMode = 'single' | 'chapter'
-
-export function Browse({
-  acts,
-  articles,
-  store,
-  onStoreChange,
-  onXref,
-  focusArticleId,
-  onFocusConsumed,
-}: Props) {
-  const [actId, setActId] = useState(acts[0]?.id ?? 'upea')
-  const [articleId, setArticleId] = useState<string | null>(null)
-  const [readMode, setReadMode] = useState<ReadMode>('single')
-  const [jump, setJump] = useState('')
-  const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({})
-  const [mobileToc, setMobileToc] = useState(true)
-  const prefs = getPrefs(store)
-  const highlightLegal = prefs.highlightLegal
-  const toggleHighlight = () =>
-    onStoreChange(setPrefs(store, { highlightLegal: !prefs.highlightLegal }))
-
-  const actArticles = useMemo(
-    () => articles.filter((a) => a.actId === actId),
-    [articles, actId],
-  )
-  const toc = useMemo(() => buildToc(actArticles), [actArticles])
-
-  const current =
-    (articleId && actArticles.find((a) => a.id === articleId)) ||
-    actArticles[0] ||
-    null
-
-  useEffect(() => {
-    if (!focusArticleId) return
-    const art = articles.find((a) => a.id === focusArticleId)
-    if (art) {
-      setActId(art.actId)
-      setArticleId(art.id)
-      setMobileToc(false)
-      if (art.chapter) setOpenChapters((o) => ({ ...o, [art.chapter!]: true }))
-      onStoreChange(pushRecentArticle(store, art.id))
-    }
-    onFocusConsumed?.()
-    // intentionally once per focus id
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [focusArticleId, articles, onFocusConsumed])
-
-  useEffect(() => {
-    // Default open first chapter; pick first article when act changes
-    if (!actArticles.length) return
-    const first = actArticles[0]
-    setArticleId((prev) => {
-      if (prev && actArticles.some((a) => a.id === prev)) return prev
-      return first.id
-    })
-    if (first.chapter) {
-      setOpenChapters((o) => ({ ...o, [first.chapter!]: true }))
-    }
-  }, [actId, actArticles])
-
-  const { prev, next } = current
-    ? siblingArticles(actArticles, current)
-    : { prev: null, next: null }
-
-  const continuous = current ? chapterPeers(actArticles, current) : []
-
-  function selectArticle(a: Article) {
-    setArticleId(a.id)
-    setMobileToc(false)
-    if (a.chapter) setOpenChapters((o) => ({ ...o, [a.chapter!]: true }))
-    onStoreChange(pushRecentArticle(store, a.id))
-    requestAnimationFrame(() => {
-      document.getElementById(`reader-${a.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-  }
-
-  function doJump() {
-    const m = jump.trim().match(/^(?:art\.?\s*)?(\d+[a-z]?)$/i)
-    if (!m) return
-    const a = actArticles.find((x) => x.number.toLowerCase() === m[1].toLowerCase())
-    if (a) {
-      selectArticle(a)
-      setJump('')
-    }
-  }
-
-  const tree = (
-    <nav className="space-y-1 text-sm" aria-label="Spis treści">
-      {toc.map((ch) => {
-        const open = openChapters[ch.label] ?? false
-        return (
-          <div key={ch.id}>
-            <button
-              type="button"
-              className="flex w-full items-start gap-1 rounded-lg px-2 py-1.5 text-left text-[13px] font-medium tracking-tight text-slate-700 hover:bg-slate-100/80 dark:text-zinc-200 dark:hover:bg-zinc-800"
-              onClick={() => setOpenChapters((o) => ({ ...o, [ch.label]: !open }))}
-            >
-              <ChevronDown
-                className={cn('mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400 transition', !open && '-rotate-90')}
-              />
-              <span className="leading-snug">{ch.label}</span>
-            </button>
-            {open && (
-              <div className="ml-3 space-y-2 border-l border-slate-200/70 pl-2 dark:border-zinc-800">
-                {ch.sections.map((sec) => (
-                  <div key={sec.id}>
-                    <div className="px-2 py-1 text-[11px] font-medium tracking-wide text-slate-400">
-                      {sec.label}
-                    </div>
-                    <ul className="space-y-0.5">
-                      {sec.articles.map((a) => (
-                        <li key={a.id}>
-                          <button
-                            type="button"
-                            onClick={() => selectArticle(a)}
-                            className={cn(
-                              'w-full rounded-md px-2 py-1 text-left text-[12px] leading-snug',
-                              current?.id === a.id
-                                ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                                : 'text-slate-600 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800',
-                            )}
-                          >
-                            <span className="font-mono font-semibold">{a.label}</span>
-                            {a.title ? (
-                              <span
-                                className={cn(
-                                  'font-sans font-normal',
-                                  current?.id === a.id
-                                    ? 'text-white/80 dark:text-zinc-700'
-                                    : 'text-slate-500 dark:text-zinc-400',
-                                )}
-                              >
-                                {' '}
-                                · {a.title}
-                              </span>
-                            ) : null}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-                {ch.articles.map((a) => (
-                  <button
-                    key={a.id}
-                    type="button"
-                    onClick={() => selectArticle(a)}
-                    className={cn(
-                      'block w-full rounded-md px-2 py-1 text-left text-[12px] leading-snug',
-                      current?.id === a.id
-                        ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                        : 'text-slate-600 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800',
-                    )}
-                  >
-                    <span className="font-mono font-semibold">{a.label}</span>
-                    {a.title ? (
-                      <span
-                        className={cn(
-                          'font-sans font-normal',
-                          current?.id === a.id
-                            ? 'text-white/80 dark:text-zinc-700'
-                            : 'text-slate-500 dark:text-zinc-400',
-                        )}
-                      >
-                        {' '}
-                        · {a.title}
-                      </span>
-                    ) : null}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        )
-      })}
-    </nav>
-  )
-
+/** Proportional strip: one segment per Dział, sized by article count. */
+export function StructureStrip({ act, className }: { act: ActStructure; className?: string }) {
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pb-28 pt-4 md:pb-10 md:pt-6">
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Przeglądaj</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">
-            Spis aktu i spokojne czytanie — bez ściany wyników.
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {acts.map((a) => (
-            <button
-              key={a.id}
-              type="button"
-              aria-pressed={actId === a.id}
-              onClick={() => setActId(a.id)}
-              className={cn(
-                'rounded-full border px-3 py-1.5 text-sm font-medium',
-                actId === a.id
-                  ? 'border-slate-900 bg-slate-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900'
-                  : 'border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-900',
-              )}
-            >
-              {a.shortName}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <div className="flex rounded-xl border border-slate-200 bg-white p-0.5 dark:border-zinc-800 dark:bg-zinc-900">
-          <ModeBtn
-            active={readMode === 'single'}
-            onClick={() => setReadMode('single')}
-            icon={<BookOpen className="h-3.5 w-3.5" />}
-            label="Art. po art."
-          />
-          <ModeBtn
-            active={readMode === 'chapter'}
-            onClick={() => setReadMode('chapter')}
-            icon={<Rows3 className="h-3.5 w-3.5" />}
-            label="Scroll rozdziału"
-          />
-        </div>
-        <form
-          className="flex items-center gap-1"
-          onSubmit={(e) => {
-            e.preventDefault()
-            doJump()
-          }}
-        >
-          <input
-            value={jump}
-            onChange={(e) => setJump(e.target.value)}
-            placeholder="Art. N…"
-            className="w-28 rounded-xl border border-slate-200 bg-white px-3 py-1.5 font-mono text-sm outline-none dark:border-zinc-800 dark:bg-zinc-900"
-            aria-label="Skok do artykułu"
-          />
-          <button
-            type="submit"
-            className="rounded-xl border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-800"
-          >
-            Idź
-          </button>
-        </form>
-        <button
-          type="button"
-          className="inline-flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-1.5 text-sm md:hidden dark:border-zinc-800"
-          onClick={() => setMobileToc((v) => !v)}
-        >
-          <ListTree className="h-3.5 w-3.5" />
-          {mobileToc ? 'Ukryj spis' : 'Spis'}
-        </button>
-      </div>
-
-      {current && (
-        <p className="mb-3 text-xs text-slate-500 dark:text-zinc-500">
-          Jesteś w:{' '}
-          <span className="text-slate-700 dark:text-zinc-300">
-            {[current.chapter, current.section, current.label].filter(Boolean).join(' › ')}
-          </span>
-        </p>
-      )}
-
-      <div className="grid gap-6 md:grid-cols-[280px_minmax(0,1fr)]">
-        <aside
-          className={cn(
-            'max-h-[70vh] overflow-y-auto rounded-2xl border border-slate-200/80 bg-white/70 p-3 dark:border-zinc-800 dark:bg-zinc-900/50 md:sticky md:top-4 md:block',
-            mobileToc ? 'block' : 'hidden md:block',
-          )}
-        >
-          {tree}
-        </aside>
-
-        <div className="min-w-0">
-          {!current ? (
-            <p className="text-sm text-slate-500">Brak artykułów w tym akcie.</p>
-          ) : readMode === 'single' ? (
-            <Reader
-              article={current}
-              acts={acts}
-              store={store}
-              onStoreChange={onStoreChange}
-              onXref={onXref}
-              highlightLegal={highlightLegal}
-              onToggleHighlight={toggleHighlight}
-              hasPrev={!!prev}
-              hasNext={!!next}
-              onPrev={() => prev && selectArticle(prev)}
-              onNext={() => next && selectArticle(next)}
-            />
-          ) : (
-            <div className="rounded-2xl border border-slate-200/80 bg-white/90 px-5 dark:border-zinc-800 dark:bg-zinc-900/80">
-              {continuous.map((a) => (
-                <Reader
-                  key={a.id}
-                  article={a}
-                  acts={acts}
-                  store={store}
-                  onStoreChange={onStoreChange}
-                  onXref={onXref}
-                  highlightLegal={highlightLegal}
-                  onToggleHighlight={toggleHighlight}
-                  bare
-                  showNav={false}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
+    <div className={cn('flex h-1.5 gap-[3px] overflow-hidden rounded-full', className)} aria-hidden>
+      {act.divisions.map((d, i) => (
+        <div
+          key={i}
+          className="rounded-full bg-act"
+          style={{ flexGrow: d.articleCount, opacity: 1 - (i % 2) * 0.35 }}
+        />
+      ))}
+    </div>
   )
 }
 
-function ModeBtn({
-  active,
-  onClick,
-  icon,
-  label,
-}: {
-  active: boolean
-  onClick: () => void
-  icon: ReactNode
-  label: string
-}) {
+export function actStats(act: ActStructure) {
+  return {
+    articles: act.articleCount,
+    divisions: act.divisions.length,
+    chapters: act.chapters.filter((c) => c.no).length,
+  }
+}
+
+export function ActCover({ act, size = 'lg' }: { act: ActStructure; size?: 'lg' | 'sm' }) {
+  const m = ACT_META[act.id]
+  const s = actStats(act)
+  if (size === 'sm')
+    return (
+      <a
+        href={href(`akt/${act.id}`)}
+        className={cn(actClass(act.id), 'flex w-[148px] shrink-0 flex-col rounded-2xl bg-act-tint p-4 text-act-ink')}
+      >
+        <Emblem act={act.id} className="size-7 text-act" />
+        <div className="mt-6 font-serif text-[22px] leading-none font-semibold">{m.short}</div>
+        <div className="mt-1.5 text-[12px] leading-snug opacity-75">{m.nick}</div>
+        <StructureStrip act={act} className="mt-4" />
+      </a>
+    )
   return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
+    <a
+      href={href(`akt/${act.id}`)}
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-[10px] px-3 py-1.5 text-sm font-medium',
-        active
-          ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-          : 'text-slate-600 dark:text-zinc-300',
+        actClass(act.id),
+        'group relative block overflow-hidden rounded-[26px] bg-act-tint p-6 text-act-ink transition active:scale-[0.99]',
       )}
     >
-      {icon}
-      {label}
-    </button>
+      <Emblem act={act.id} className="pointer-events-none absolute -top-6 -right-6 size-40 text-act opacity-[0.09]" />
+      <div className="flex items-center gap-2.5">
+        <span className="grid size-10 place-items-center rounded-xl bg-act text-white dark:text-black/80">
+          <Emblem act={act.id} className="size-6" />
+        </span>
+        <span className="text-[12px] font-semibold tracking-[0.14em] uppercase opacity-70">{m.nick}</span>
+      </div>
+      <div className="mt-8 font-serif text-[38px] leading-none font-semibold tracking-tight">{m.short}</div>
+      <div className="mt-2 max-w-[18rem] text-[15px] leading-snug">{m.name}</div>
+      <div className="mt-1 text-[12.5px] opacity-60">{act.displayAddress.replace(' (tekst jednolity)', '')} · t.j.</div>
+      <StructureStrip act={act} className="mt-6" />
+      <div className="mt-3 flex items-center gap-4 text-[13px] tabular-nums">
+        <span>
+          <b className="font-semibold">{s.articles}</b> art.
+        </span>
+        <span>
+          <b className="font-semibold">{s.divisions}</b> {plural(s.divisions, 'dział', 'działy', 'działów')}
+        </span>
+        <span>
+          <b className="font-semibold">{s.chapters}</b> rozdz.
+        </span>
+        <ArrowRight className="ml-auto size-5 transition group-hover:translate-x-0.5" />
+      </div>
+    </a>
+  )
+}
+
+export function ActList({ lib }: { lib: Library }) {
+  return (
+    <div className="px-5 pt-2 md:px-8 md:pt-8">
+      <h1 className="font-serif text-[32px] leading-tight font-semibold tracking-tight">Przeglądaj</h1>
+      <p className="mt-1 text-[15px] text-muted">Trzy akty, tekst jednolity z ISAP.</p>
+      <div className="mt-6 space-y-4">
+        {lib.list.map((act) => (
+          <ActCover key={act.id} act={act} />
+        ))}
+      </div>
+      <p className="mt-6 text-center text-[12px] text-muted">
+        Tytuły artykułów są redakcyjne (Legalis) — nie są częścią ustawy.
+      </p>
+    </div>
+  )
+}
+
+export function ActOverview({ act }: { act: ActStructure }) {
+  const m = ACT_META[act.id]
+  const s = actStats(act)
+  const max = Math.max(...act.chapters.map((c) => c.articles.length))
+  return (
+    <div className={actClass(act.id)}>
+      <div className="px-5 md:px-8">
+        <div className="flex items-center gap-3">
+          <span className="grid size-11 place-items-center rounded-xl bg-act text-white dark:text-black/80">
+            <Emblem act={act.id} className="size-6" />
+          </span>
+          <div>
+            <h1 className="font-serif text-[28px] leading-none font-semibold">{m.short}</h1>
+            <div className="mt-1 text-[13px] text-muted">{m.name}</div>
+          </div>
+        </div>
+        <div className="mt-5 grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-surface py-3 text-center">
+          {(
+            [
+              [s.articles, 'artykułów'],
+              [s.divisions, 'działów'],
+              [s.chapters, 'rozdziałów'],
+            ] as const
+          ).map(([n, l]) => (
+            <div key={l}>
+              <div className="font-serif text-[22px] font-semibold tabular-nums">{n}</div>
+              <div className="text-[12px] text-muted">{l}</div>
+            </div>
+          ))}
+        </div>
+        <SectionLabel className="mt-8 mb-1">Mapa ustawy</SectionLabel>
+      </div>
+
+      <div className="mt-2 space-y-7 px-5 md:px-8">
+        {act.divisions.map((d, di) => (
+          <section key={di}>
+            <div className="sticky top-14 z-10 -mx-5 flex items-baseline gap-3 bg-paper/90 px-5 py-2 backdrop-blur md:-mx-8 md:px-8">
+              <span className="shrink-0 font-mono text-[12px] font-semibold text-act">DZIAŁ {d.no}</span>
+              <h2 className="min-w-0 flex-1 truncate font-serif text-[18px] font-semibold">{d.title}</h2>
+              <span className="text-[12px] text-muted tabular-nums">{d.articleCount}</span>
+            </div>
+            <div className="mt-1 overflow-hidden rounded-2xl border border-line bg-surface">
+              {d.chapters.map((c) => (
+                <ChapterRow key={c.index} act={act} ch={c} max={max} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ChapterRow({ act, ch, max }: { act: ActStructure; ch: Chapter; max: number }) {
+  return (
+    <a
+      href={href(`akt/${act.id}/r/${ch.index}`)}
+      className="flex items-center gap-3 border-b border-line px-4 py-3.5 last:border-b-0 active:bg-sunk"
+    >
+      <span className="w-9 shrink-0 font-mono text-[12px] text-muted">{ch.no ? `R. ${ch.no}` : '—'}</span>
+      <div className="min-w-0 flex-1">
+        <div className="text-[15px] leading-snug font-medium">{ch.title}</div>
+        <div className="mt-1.5 flex items-center gap-2">
+          <div className="h-1 flex-1 overflow-hidden rounded-full bg-sunk">
+            <div className="h-full rounded-full bg-act/70" style={{ width: `${(ch.articles.length / max) * 100}%` }} />
+          </div>
+          <span className="shrink-0 text-[11.5px] text-muted tabular-nums">{articleRange(ch)}</span>
+        </div>
+      </div>
+      <ChevronRight className="size-4 shrink-0 text-muted" />
+    </a>
+  )
+}
+
+export function ChapterView({ act, ch }: { act: ActStructure; ch: Chapter }) {
+  return (
+    <div className={cn(actClass(act.id), 'px-5 md:px-8')}>
+      <div className="text-[12px] font-semibold tracking-[0.12em] text-act uppercase">
+        Dział {ch.divisionNo} · {chapterLabel(ch)}
+      </div>
+      <h1 className="mt-1.5 font-serif text-[28px] leading-tight font-semibold tracking-tight">{ch.title}</h1>
+      <div className="mt-1 text-[13px] text-muted">
+        {articleRange(ch)} · {ch.articles.length} {plural(ch.articles.length, 'przepis', 'przepisy', 'przepisów')}
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <a
+          href={href(`art/${ch.articles[0].id}?tryb=rozdzial`)}
+          className="rounded-full bg-ink px-4 py-2 text-[13.5px] font-medium text-paper"
+        >
+          Czytaj cały rozdział
+        </a>
+        <a
+          href={href(`nauka?akt=${act.id as ActId}`)}
+          className="flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-[13.5px] font-medium"
+        >
+          <Sparkles className="size-4 text-gold" /> Etap w Nauce
+        </a>
+      </div>
+      <div className="mt-6 overflow-hidden rounded-2xl border border-line bg-surface">
+        {ch.articles.map((a) =>
+          isRepealed(a) ? (
+            <div key={a.id} className="flex gap-3 border-b border-line px-4 py-2 text-[13px] text-muted last:border-b-0">
+              <span className="w-12 shrink-0 font-serif tabular-nums">{a.number}</span>
+              <span className="italic">uchylony</span>
+            </div>
+          ) : (
+            <a
+              key={a.id}
+              href={href(`art/${a.id}`)}
+              className="flex gap-3 border-b border-line px-4 py-3.5 last:border-b-0 active:bg-sunk"
+            >
+              <span className="w-12 shrink-0 pt-[1px] font-serif text-[16px] font-semibold text-act tabular-nums">
+                {a.number}
+              </span>
+              <div className="min-w-0 flex-1">
+                <div className="text-[15px] font-medium">{a.title ?? a.label}</div>
+                <p className="law mt-0.5 line-clamp-2 text-[14px] leading-snug text-muted">
+                  {a.blocks[0]?.text || a.excerpt}
+                </p>
+              </div>
+            </a>
+          ),
+        )}
+      </div>
+    </div>
   )
 }
