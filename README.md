@@ -40,10 +40,13 @@ Status: `public/data/IMPORT.md`.
 
 ## Funkcje
 
-- **Przeglądaj** (start) — drzewo Dział→Rozdział, czytnik: art. po art. *lub* scroll rozdziału
-- **Szukaj** — Cmd/Ctrl+K, lista → czytnik, tag-first, „brak w bazie”
-- **Ucz się** — moduły + SRS
-- **Moje** — słownik żargonu, porównanie aktów, ustawienia, eksport/import JSON
-- Motyw jasny/ciemny, PWA (offline cache)
+Trzy moduły (dolne zakładki na telefonie, lewy pasek na desktopie) + osobny ekran Start:
+
+- **Start** — szukajka, „Trening na dziś”, „Czytaj dalej”, akty, Twoje tagi
+- **Przeglądaj** — okładki aktów → mapa ustawy (Działy/Rozdziały) → rozdział → czytnik (artykuł *lub* cały rozdział; cytat, podstawa, tag, „Do nauki”)
+- **Szukaj** — Cmd/Ctrl+K; numer („art. 33 upea”) albo fraza; wyniki grupowane per akt, tagi użytkownika, „brak w bazie”
+- **Nauka** — ścieżka kursu per akt (etap = rozdział), „Trening na dziś” układa się sam (SRS); ekrany korzystają z adaptera `src/lib/learn-adapter.ts`
+- **Moje** (ikona w nagłówku) — słownik żargonu, porównanie aktów, ustawienia, eksport/import JSON
+- Motyw jasny/ciemny, PWA (offline cache); trasy w hashu (`#/art/upea:33`) działają pod `/egzepost/`
 
 Dane użytkownika: `localStorage` (`egzepost:user:v1`).
