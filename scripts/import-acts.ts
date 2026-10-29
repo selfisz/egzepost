@@ -1,14 +1,12 @@
 /**
  * Import consolidated Kpa + u.p.e.a. into searchable article JSON.
  *
- * Prefer latest tekst jednolity via Sejm ELI:
- * - HTML from Obwieszczenie when available
- * - else PDF + pdftotext
- *
- * ISAP PDF URLs are often blocked by Incapsula; ELI API is the reproducible path.
+ * Default: official ISAP tekst jednolity PDFs in `data/source/` → pdftotext.
+ * Fallback (IMPORT_SOURCE=eli): Sejm ELI API HTML/PDF (ISAP download URLs are often blocked).
  *
  *   npm run import:acts
- *   IMPORT_SOURCE=local npm run import:acts   # use scripts/raw/*.html|*.txt
+ *   IMPORT_SOURCE=eli npm run import:acts     # force ELI network fetch
+ *   IMPORT_SOURCE=local npm run import:acts   # scripts/raw/*.html|*.txt only
  */
 
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises'
@@ -22,6 +20,7 @@ const execFileAsync = promisify(execFile)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
 const outDir = path.join(root, 'public', 'data')
+const sourceDir = path.join(root, 'data', 'source')
 const cacheDir = process.env.CACHE_DIR
   ? path.resolve(process.env.CACHE_DIR)
   : path.join(root, 'scripts', 'raw')
@@ -34,9 +33,11 @@ type ActDef = {
   /** Original act ELI (for metadata / ISAP links) */
   baseEli: string
   isapPdf: string
-  /** Preferred consolidated HTML sources (newest first) */
+  /** Committed official consolidated PDF under data/source/ */
+  sourcePdf: string
+  /** Preferred consolidated HTML sources (newest first) — ELI fallback */
   tjHtmlElis: string[]
-  /** Preferred consolidated PDF sources (newest first) */
+  /** Preferred consolidated PDF sources (newest first) — ELI fallback */
   tjPdfElis: string[]
   htmlFile: string
   txtFile: string
@@ -52,6 +53,7 @@ const ACTS: ActDef[] = [
     baseEli: 'DU/1966/151',
     isapPdf:
       'https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19660240151/U/D19660151Lj.pdf',
+    sourcePdf: 'upea-D19660151Lj.pdf',
     tjHtmlElis: ['DU/2023/2505', 'DU/2022/479'],
     tjPdfElis: ['DU/2026/1311', 'DU/2026/268', 'DU/2025/132', 'DU/2023/2505'],
     htmlFile: 'upea.html',
@@ -65,6 +67,7 @@ const ACTS: ActDef[] = [
     baseEli: 'DU/1960/168',
     isapPdf:
       'https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19600300168/U/D19600168Lj.pdf',
+    sourcePdf: 'kpa-D19600168Lj.pdf',
     tjHtmlElis: ['DU/2024/572'],
     tjPdfElis: ['DU/2025/1691', 'DU/2024/572'],
     htmlFile: 'kpa.html',
@@ -96,7 +99,7 @@ export type ActBundle = {
   title: string
   displayAddress: string
   source: {
-    kind: 'eli-html' | 'eli-pdf' | 'local-html' | 'local-txt'
+    kind: 'isap-pdf' | 'eli-html' | 'eli-pdf' | 'local-html' | 'local-txt'
     eli?: string
     url?: string
     fetchedAt: string
@@ -334,36 +337,155 @@ function parseArticlesFromHtml(act: ActDef, html: string): Article[] {
   })
 }
 
-function parseArticlesFromTxt(act: ActDef, txt: string): Article[] {
-  // Strip obwieszczenie preamble — start at first "Art. 1." after "załącznik" if present
-  let body = txt
-  const zal = txt.search(/za[łl][aą]cznik/i)
-  if (zal >= 0) body = txt.slice(zal)
-  const art1 = body.search(/(?:^|\n)\s*Art\.\s*1\b/)
-  if (art1 >= 0) body = body.slice(art1)
+const PAGE_HEADER = /^©?\s*Kancelaria Sejmu\b.*$/i
+const DZIAL_RE = /^(DZIAŁ|Dział)\s+([IVXLC\d]+[a-z]?)\b\.?\s*(.*)$/i
+const ROZDZIAL_RE = /^(Rozdział|ROZDZIAŁ)\s+(\d+[a-z]?)\b\.?\s*(.*)$/i
+const ART_RE = /^Art\.\s*(\d+[a-z]?)\b\.?\s*(.*)$/i
 
-  const parts = body.split(/(?=(?:^|\n)\s*Art\.\s*\d+[a-z]?\b)/)
+function cleanPdfNoise(s: string): string {
+  return s
+    .replace(/\u00a0/g, ' ')
+    .split('\n')
+    .filter((line) => {
+      const t = line.trim()
+      if (!t) return true
+      if (PAGE_HEADER.test(t)) return false
+      if (/^s\.\s*\d+\s*\/\s*\d+$/i.test(t)) return false
+      return true
+    })
+    .join('\n')
+}
+
+function parseArticlesFromTxt(act: ActDef, txt: string): Article[] {
+  // Body start: first Art. 1. Prefer załącznik only when it precedes that Art. 1
+  // (obwieszczenie annex). ISAP Lj PDFs often mention załącznik later — do not cut there.
+  const cleaned = cleanPdfNoise(txt)
+  const firstArt1 = cleaned.search(/(?:^|\n)\s*Art\.\s*1\b/)
+  const zal = cleaned.search(/za[łl][aą]cznik/i)
+  let body = cleaned
+  if (zal >= 0 && (firstArt1 < 0 || zal < firstArt1)) {
+    body = cleaned.slice(zal)
+    const art1 = body.search(/(?:^|\n)\s*Art\.\s*1\b/)
+    if (art1 >= 0) body = body.slice(art1)
+  } else if (firstArt1 >= 0) {
+    // Include preceding structure headings (DZIAŁ / Rozdział) before Art. 1
+    const pre = cleaned.slice(0, firstArt1)
+    const heading = [...pre.matchAll(/(?:^|\n)[ \t]*(DZIAŁ|Dział|Rozdział|ROZDZIAŁ)\s+/g)]
+    const dzialPre = heading.length ? heading[0].index! : -1
+    body = dzialPre >= 0 ? cleaned.slice(dzialPre) : cleaned.slice(firstArt1)
+  }
+
+  const lines = body.split(/\n/)
+  let currentDzial = ''
+  let currentDzialTitle = ''
+  let currentRoz = ''
+  let currentRozTitle = ''
+  let pendingTitle: string | null = null
+
+  type Draft = {
+    number: string
+    lines: string[]
+    chapter?: string
+    section?: string
+  }
+  let draft: Draft | null = null
+  const drafts: Draft[] = []
+
+  const flush = () => {
+    if (!draft) return
+    drafts.push(draft)
+    draft = null
+  }
+
+  const dzialLabel = () => {
+    if (!currentDzial) return undefined
+    const title = currentDzialTitle ? ` — ${currentDzialTitle}` : ''
+    return `Dział ${currentDzial}${title}`
+  }
+  const rozLabel = () => {
+    if (!currentRoz) return undefined
+    const title = currentRozTitle ? ` — ${currentRozTitle}` : ''
+    return `Rozdział ${currentRoz}${title}`
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const rawLine = lines[i]
+    const line = rawLine.trim()
+    if (!line) {
+      if (draft) draft.lines.push('')
+      continue
+    }
+
+    const dzial = line.match(DZIAL_RE)
+    if (dzial && !/^\d+\)/.test(line)) {
+      // Avoid false positives like "Dział VIII)" inside sentences — require start-of-line form
+      flush()
+      currentDzial = dzial[2]
+      currentDzialTitle = (dzial[3] || '').trim()
+      currentRoz = ''
+      currentRozTitle = ''
+      pendingTitle = currentDzialTitle ? null : 'dzial'
+      continue
+    }
+
+    const roz = line.match(ROZDZIAL_RE)
+    if (roz) {
+      flush()
+      currentRoz = roz[2]
+      currentRozTitle = (roz[3] || '').trim()
+      pendingTitle = currentRozTitle ? null : 'roz'
+      continue
+    }
+
+    const art = line.match(ART_RE)
+    if (art) {
+      flush()
+      pendingTitle = null
+      draft = {
+        number: art[1],
+        lines: art[2] ? [art[2]] : [],
+        chapter: dzialLabel(),
+        section: rozLabel(),
+      }
+      continue
+    }
+
+    // Title line immediately under DZIAŁ / Rozdział heading
+    if (pendingTitle === 'dzial' && !ART_RE.test(line) && !ROZDZIAL_RE.test(line)) {
+      currentDzialTitle = line
+      pendingTitle = null
+      continue
+    }
+    if (pendingTitle === 'roz' && !ART_RE.test(line) && !DZIAL_RE.test(line)) {
+      currentRozTitle = line
+      pendingTitle = null
+      continue
+    }
+
+    if (draft) draft.lines.push(line)
+  }
+  flush()
+
   const articles: Article[] = []
-  for (const part of parts) {
-    const m = part.match(/^\s*Art\.\s*(\d+[a-z]?)\b\.?\s*([\s\S]*)/i)
-    if (!m) continue
-    const number = m[1]
-    // Drop PDF footnote markers like "43)" glued before sentence starts
-    let raw = m[2].replace(/^\d+\)\s+/, '')
+  for (const d of drafts) {
+    let raw = d.lines.join('\n').replace(/^\d+\)\s+/, '')
     raw = normalizeWhitespace(raw)
     if (!raw || raw.length < 5) continue
     const blocks = blocksFromFlatText(raw)
     const text = flattenBlocks(blocks)
     articles.push({
-      id: `${act.id}:${number}`,
+      id: `${act.id}:${d.number}`,
       actId: act.id,
-      number,
-      label: `Art. ${number}`,
+      number: d.number,
+      label: `Art. ${d.number}`,
       text,
       excerpt: text.length > 280 ? `${text.slice(0, 277).trim()}…` : text,
       blocks,
+      chapter: d.chapter,
+      section: d.section,
     })
   }
+
   // Prefer longer text when duplicates (PDF sometimes repeats headers)
   const best = new Map<string, Article>()
   for (const a of articles) {
@@ -405,8 +527,10 @@ async function loadActSource(act: ActDef): Promise<{
 }> {
   const localHtml = path.join(cacheDir, act.htmlFile)
   const localTxt = path.join(cacheDir, act.txtFile)
+  const officialPdf = path.join(sourceDir, act.sourcePdf)
+  const mode = process.env.IMPORT_SOURCE || 'isap'
 
-  if (process.env.IMPORT_SOURCE === 'local') {
+  if (mode === 'local') {
     if (await exists(localHtml)) {
       const html = await readFile(localHtml, 'utf8')
       return {
@@ -432,7 +556,30 @@ async function loadActSource(act: ActDef): Promise<{
     throw new Error(`IMPORT_SOURCE=local but missing ${localHtml} / ${localTxt}`)
   }
 
-  // Prefer PDF of newest TJ (most up to date), then HTML
+  // Default: committed ISAP tekst jednolity PDFs in data/source/
+  if (mode !== 'eli' && (await exists(officialPdf))) {
+    console.log(`  ISAP PDF ${act.sourcePdf}…`)
+    await mkdir(cacheDir, { recursive: true })
+    const txtPath = path.join(cacheDir, act.txtFile)
+    const txt = await pdfToText(officialPdf, txtPath)
+    const articles = parseArticlesFromTxt(act, txt)
+    if (articles.length < 30) {
+      throw new Error(
+        `${act.id}: only ${articles.length} articles from ${act.sourcePdf} — aborting`,
+      )
+    }
+    return {
+      articles,
+      source: {
+        kind: 'isap-pdf',
+        url: act.isapPdf,
+        fetchedAt: new Date().toISOString(),
+        note: `Oficjalny tekst jednolity PDF: data/source/${act.sourcePdf} → pdftotext. ISAP: ${act.isapPdf}`,
+      },
+    }
+  }
+
+  // ELI fallback (network)
   await mkdir(cacheDir, { recursive: true })
   for (const eli of act.tjPdfElis) {
     console.log(`  try PDF ${eli}…`)
@@ -539,11 +686,12 @@ async function main() {
       '',
       ...bundles.map(
         (b) =>
-          `- **${b.shortName}**: ${b.articleCount} art. via ${b.source.kind}${b.source.eli ? ` (${b.source.eli})` : ''}`,
+          `- **${b.shortName}**: ${b.articleCount} art. via ${b.source.kind}${b.source.eli ? ` (${b.source.eli})` : ''}${b.source.kind === 'isap-pdf' ? ` — data/source/` : ''}`,
       ),
       '',
-      'Re-run: `npm run import:acts`',
-      'Offline: put HTML/TXT in `scripts/raw/` and `IMPORT_SOURCE=local npm run import:acts`.',
+      'Re-run: `npm run import:acts` (uses `data/source/*Lj.pdf` by default).',
+      'ELI fallback: `IMPORT_SOURCE=eli npm run import:acts`.',
+      'Raw cache: put HTML/TXT in `scripts/raw/` and `IMPORT_SOURCE=local npm run import:acts`.',
       '',
     ].join('\n'),
     'utf8',

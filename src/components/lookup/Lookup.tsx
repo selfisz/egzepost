@@ -2,7 +2,7 @@ import { Search, Tag } from 'lucide-react'
 import { useDeferredValue, useMemo, useState } from 'react'
 import type { ActMeta, Article, UserStore } from '../../types'
 import { searchArticles, type ActFilter } from '../../lib/search'
-import { ArticleCard } from '../article/ArticleCard'
+import { Reader } from '../reader/Reader'
 import { cn } from '../../lib/cn'
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
   onStoreChange: (next: UserStore) => void
   onXref: (actId: string, number: string) => void
   focusToken?: number
-  initialQuery?: string
+  onOpenInBrowse?: (articleId: string) => void
 }
 
 const FILTERS: { id: ActFilter; label: string }[] = [
@@ -29,11 +29,12 @@ export function Lookup({
   onStoreChange,
   onXref,
   focusToken,
-  initialQuery = '',
+  onOpenInBrowse,
 }: Props) {
-  const [query, setQuery] = useState(initialQuery)
+  const [query, setQuery] = useState('')
   const [actFilter, setActFilter] = useState<ActFilter>('all')
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [highlightLegal, setHighlightLegal] = useState(false)
   const deferred = useDeferredValue(query.trim())
 
   const hits = useMemo(
@@ -55,7 +56,7 @@ export function Lookup({
           Szukaj
         </h1>
         <p className="mt-1 max-w-xl text-sm text-slate-500 dark:text-zinc-400">
-          Zagadnienie, tag albo numer artykułu. Wyniki wyłącznie z bazy ustaw i Twoich tagów.
+          Żargon, temat albo numer artykułu. Wyniki tylko z bazy ustaw i Twoich tagów.
         </p>
       </div>
 
@@ -101,6 +102,12 @@ export function Lookup({
         </div>
       </div>
 
+      {!searched && (
+        <p className="mt-8 text-sm text-slate-500 dark:text-zinc-400">
+          Wpisz zapytanie albo przejdź do <strong>Przeglądaj</strong>, żeby czytać ustawę jak kodeks.
+        </p>
+      )}
+
       {searched && hits.length === 0 && (
         <div
           className="mt-8 rounded-2xl border border-dashed border-rose-300 bg-rose-50/70 p-5 text-rose-900 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-100"
@@ -111,13 +118,12 @@ export function Lookup({
           </p>
           <p className="mt-1 text-sm opacity-90">
             Aplikacja nie dopowiada treści prawnych. Możesz przypisać frazę „{deferred}” jako własny
-            tag do wybranego artykułu.
+            tag.
           </p>
           <button
             type="button"
             className="mt-3 rounded-xl bg-rose-700 px-3 py-2 text-sm font-semibold text-white hover:bg-rose-800 dark:bg-rose-600"
             onClick={() => {
-              // Jump user to tags with query as draft via custom event
               window.dispatchEvent(
                 new CustomEvent('egzepost:assign-tag', { detail: { label: deferred } }),
               )
@@ -128,19 +134,14 @@ export function Lookup({
         </div>
       )}
 
-      {hits.length > 0 && (
-        <div className="mt-6 space-y-3">
+      {hits.length > 0 && !selected && (
+        <div className="mt-6 space-y-2">
           {hits.slice(0, 40).map((hit) => (
             <button
               key={hit.article.id}
               type="button"
               onClick={() => setSelectedId(hit.article.id)}
-              className={cn(
-                'w-full rounded-2xl border p-4 text-left transition',
-                selectedId === hit.article.id
-                  ? 'border-indigo-300 bg-indigo-50/50 dark:border-indigo-800 dark:bg-indigo-950/30'
-                  : 'border-slate-200 bg-white hover:border-slate-300 dark:border-zinc-800 dark:bg-zinc-900',
-              )}
+              className="w-full rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-slate-300 dark:border-zinc-800 dark:bg-zinc-900"
             >
               <div className="mb-1 flex flex-wrap items-center gap-2">
                 <span className="font-mono text-base font-bold">{hit.article.label}</span>
@@ -151,7 +152,7 @@ export function Lookup({
                   {hit.matchedVia}
                 </span>
               </div>
-              <p className="line-clamp-3 text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
+              <p className="line-clamp-2 text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
                 {hit.article.excerpt}
               </p>
             </button>
@@ -160,16 +161,40 @@ export function Lookup({
       )}
 
       {selected && (
-        <div className="mt-6">
-          <ArticleCard
+        <div className="mt-6 space-y-3">
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              className="rounded-xl border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-700"
+              onClick={() => setSelectedId(null)}
+            >
+              ← Lista wyników
+            </button>
+            {onOpenInBrowse && (
+              <button
+                type="button"
+                className="rounded-xl border border-slate-200 px-3 py-1.5 text-sm dark:border-zinc-700"
+                onClick={() => onOpenInBrowse(selected.id)}
+              >
+                Otwórz w Przeglądaj
+              </button>
+            )}
+          </div>
+          {hits.find((h) => h.article.id === selected.id)?.tag && (
+            <div className="rounded-xl border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm text-indigo-900 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-200">
+              Trafienie po tagu:{' '}
+              <strong>{hits.find((h) => h.article.id === selected.id)?.tag?.label}</strong>
+            </div>
+          )}
+          <Reader
             article={selected}
             acts={acts}
-            tags={store.tags}
             store={store}
             onStoreChange={onStoreChange}
-            query={deferred}
-            highlightTag={hits.find((h) => h.article.id === selected.id)?.tag}
             onXref={onXref}
+            highlightLegal={highlightLegal}
+            onToggleHighlight={() => setHighlightLegal((v) => !v)}
+            showNav={false}
           />
         </div>
       )}

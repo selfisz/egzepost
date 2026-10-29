@@ -1,9 +1,10 @@
 # Import status
 
-Generated: 2026-10-28T13:56:27.744Z
+Generated: 2026-10-28T15:01:00.527Z
 
-- **u.p.e.a.**: 429 art. via eli-pdf (DU/2026/1311)
-- **Kpa**: 306 art. via eli-pdf (DU/2025/1691)
+- **u.p.e.a.**: 430 art. via isap-pdf — data/source/
+- **Kpa**: 306 art. via isap-pdf — data/source/
 
-Re-run: `npm run import:acts`
-Offline: put HTML/TXT in `scripts/raw/` and `IMPORT_SOURCE=local npm run import:acts`.
+Re-run: `npm run import:acts` (uses `data/source/*Lj.pdf` by default).
+ELI fallback: `IMPORT_SOURCE=eli npm run import:acts`.
+Raw cache: put HTML/TXT in `scripts/raw/` and `IMPORT_SOURCE=local npm run import:acts`.
