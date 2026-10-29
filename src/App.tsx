@@ -4,6 +4,7 @@ import { Browse } from './components/browse/Browse'
 import { Lookup } from './components/lookup/Lookup'
 import { Learn } from './components/learn/Learn'
 import { Tags } from './components/tags/Tags'
+import { IntentStrip } from './components/home/IntentStrip'
 import { CrossRefPopover } from './components/article/CrossRefPopover'
 import { ThemeToggle, useTheme } from './components/ui/ThemeToggle'
 import { ToastProvider } from './components/ui/Toast'
@@ -86,60 +87,68 @@ function Shell() {
     ['mine', 'Moje', UserRound],
   ] as const
 
+  const hideChrome = tab === 'learn'
+
   return (
     <div className="min-h-full">
-      <header className="border-b border-slate-200/80 bg-stone-50/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <div className="min-w-0">
-            <div className="text-lg font-semibold tracking-tight">
-              Egze <span className="text-indigo-600 dark:text-indigo-400">Post</span>
+      {!hideChrome && (
+        <header className="border-b border-slate-200/70 bg-stone-50/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+            <div className="min-w-0">
+              <div className="text-lg font-semibold tracking-tight text-slate-900 dark:text-zinc-50">
+                Regest
+              </div>
+              <p className="truncate text-xs text-slate-500 dark:text-zinc-500">
+                Przepisy do pracy. Nauka bez zgadywania.
+              </p>
             </div>
-            <p className="truncate text-xs text-slate-500 dark:text-zinc-500">
-              Kodeks do pracy i nauki · tylko baza + Twoje tagi
-            </p>
-          </div>
-          <div className="flex items-center gap-2">
-            {data && (
-              <span className="hidden rounded-full border border-slate-200 px-2.5 py-1 font-mono text-[11px] text-slate-500 sm:inline dark:border-zinc-700">
-                {data.articles.length} art.
-              </span>
-            )}
-            <button
-              type="button"
-              className="hidden items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50 md:inline-flex dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
-              onClick={() => {
-                setTab('lookup')
-                setFocusToken((n) => n + 1)
-              }}
-            >
-              <Search className="h-3.5 w-3.5" />
-              Szukaj
-              <kbd className="font-mono text-[10px] text-slate-400">⌘K</kbd>
-            </button>
-            <ThemeToggle />
-          </div>
-        </div>
-
-        <nav className="mx-auto hidden max-w-6xl gap-1 px-4 pb-2 md:flex" aria-label="Główne">
-          {navItems.map(([id, label, Icon]) => (
-            <button
-              key={id}
-              type="button"
-              aria-current={tab === id ? 'page' : undefined}
-              onClick={() => setTab(id)}
-              className={cn(
-                'inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium',
-                tab === id
-                  ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                  : 'text-slate-600 hover:bg-slate-100 dark:text-zinc-300 dark:hover:bg-zinc-900',
+            <div className="flex items-center gap-2">
+              {data && (
+                <span className="hidden rounded border border-slate-200/80 px-2 py-0.5 font-mono text-[10px] text-slate-400 sm:inline dark:border-zinc-700">
+                  {data.articles.length} art.
+                </span>
               )}
-            >
-              <Icon className="h-4 w-4" />
-              {label}
-            </button>
-          ))}
-        </nav>
-      </header>
+              <button
+                type="button"
+                className="hidden items-center gap-2 rounded-xl border border-slate-200/80 bg-white px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50 md:inline-flex dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
+                onClick={() => {
+                  setTab('lookup')
+                  setFocusToken((n) => n + 1)
+                }}
+              >
+                <Search className="h-3.5 w-3.5" />
+                Szukaj
+                <kbd className="font-mono text-[10px] text-slate-400">⌘K</kbd>
+              </button>
+              <ThemeToggle />
+            </div>
+          </div>
+
+          <nav className="mx-auto hidden max-w-6xl gap-1 px-4 pb-2 md:flex" aria-label="Główne">
+            {navItems.map(([id, label, Icon]) => (
+              <button
+                key={id}
+                type="button"
+                aria-current={tab === id ? 'page' : undefined}
+                onClick={() => setTab(id)}
+                className={cn(
+                  'inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium',
+                  tab === id
+                    ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
+                    : 'text-slate-600 hover:bg-slate-100 dark:text-zinc-300 dark:hover:bg-zinc-900',
+                )}
+              >
+                <Icon className="h-4 w-4" />
+                {label}
+              </button>
+            ))}
+          </nav>
+        </header>
+      )}
+
+      {data && !hideChrome && (
+        <IntentStrip store={store} onGo={(t) => setTab(t)} />
+      )}
 
       <main>
         {error && (
@@ -199,31 +208,33 @@ function Shell() {
         )}
       </main>
 
-      <nav
-        className="fixed inset-x-2 bottom-3 z-30 grid grid-cols-4 gap-1 rounded-2xl border border-slate-200 bg-white/95 p-1 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-900/95"
-        aria-label="Główne"
-      >
-        {navItems.map(([id, label, Icon]) => (
-          <button
-            key={id}
-            type="button"
-            aria-current={tab === id ? 'page' : undefined}
-            onClick={() => {
-              setTab(id)
-              if (id === 'lookup') setFocusToken((n) => n + 1)
-            }}
-            className={cn(
-              'flex flex-col items-center gap-0.5 rounded-xl py-2 text-[10px] font-semibold',
-              tab === id
-                ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                : 'text-slate-600 dark:text-zinc-300',
-            )}
-          >
-            <Icon className="h-4 w-4" />
-            {label}
-          </button>
-        ))}
-      </nav>
+      {!hideChrome && (
+        <nav
+          className="fixed inset-x-2 bottom-3 z-30 grid grid-cols-4 gap-1 rounded-2xl border border-slate-200 bg-white/95 p-1 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-900/95"
+          aria-label="Główne"
+        >
+          {navItems.map(([id, label, Icon]) => (
+            <button
+              key={id}
+              type="button"
+              aria-current={tab === id ? 'page' : undefined}
+              onClick={() => {
+                setTab(id)
+                if (id === 'lookup') setFocusToken((n) => n + 1)
+              }}
+              className={cn(
+                'flex flex-col items-center gap-0.5 rounded-xl py-2 text-[10px] font-semibold',
+                tab === id
+                  ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
+                  : 'text-slate-600 dark:text-zinc-300',
+              )}
+            >
+              <Icon className="h-4 w-4" />
+              {label}
+            </button>
+          ))}
+        </nav>
+      )}
 
       {data && (
         <CrossRefPopover

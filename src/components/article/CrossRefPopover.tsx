@@ -107,18 +107,32 @@ export function CrossRefPopover({ open, onOpenChange, article, acts }: Props) {
   )
 }
 
-export function ActBadge({ actId, acts }: { actId: string; acts: ActMeta[] }) {
+export function ActBadge({
+  actId,
+  acts,
+  quiet,
+}: {
+  actId: string
+  acts: ActMeta[]
+  /** Softer chip for dense chrome (TOC / learn) */
+  quiet?: boolean
+}) {
   const short = actShort(acts, actId)
-  const tone =
-    actId === 'upea'
-      ? 'bg-indigo-500/15 text-indigo-700 dark:text-indigo-300'
+  const tone = quiet
+    ? actId === 'upea'
+      ? 'bg-slate-100 text-slate-600 dark:bg-zinc-800 dark:text-zinc-300'
       : actId === 'ordynacja'
-        ? 'bg-amber-500/15 text-amber-800 dark:text-amber-300'
-        : 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        ? 'bg-stone-100 text-stone-600 dark:bg-zinc-800 dark:text-zinc-300'
+        : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300'
+    : actId === 'upea'
+      ? 'bg-indigo-500/10 text-indigo-700 dark:text-indigo-300'
+      : actId === 'ordynacja'
+        ? 'bg-amber-500/10 text-amber-800 dark:text-amber-300'
+        : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300'
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-md px-2 py-0.5 font-mono text-xs font-semibold',
+        'inline-flex items-center rounded px-1.5 py-0.5 font-mono text-[10px] font-medium tracking-wide',
         tone,
       )}
     >
