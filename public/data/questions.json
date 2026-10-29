@@ -3046,7 +3046,6 @@
    ],
    "questionIds": [
     "deadline:value:ordynacja:67a:§ 13",
-    "deadline:value:ordynacja:67a:§ 2",
     "enumeration:not-listed:ordynacja:67a:§ 11",
     "which-article:ordynacja:67a",
     "deadline:start:ordynacja:67a:§ 13",
@@ -4677,14 +4676,14 @@
   }
  ],
  "stats": {
-  "total": 1813,
+  "total": 1812,
   "byType": {
    "which-article": 1024,
    "definition": 29,
    "enumeration": 203,
    "exception": 115,
    "duty-right": 138,
-   "deadline": 278,
+   "deadline": 277,
    "order": 3,
    "comparison": 4,
    "conditions": 19
@@ -4692,16 +4691,16 @@
   "byAct": {
    "upea": 591,
    "kpa": 388,
-   "ordynacja": 834
+   "ordynacja": 833
   },
   "byFormat": {
-   "single": 1669,
+   "single": 1668,
    "multiple": 140,
    "flashcard": 4
   },
   "byDifficulty": {
    "1": 77,
-   "2": 1480,
+   "2": 1479,
    "3": 256
   },
   "rejected": 555,
@@ -4720,9 +4719,9 @@
    "deadline: artefakt importu": 10,
    "deadline: zdanie za długie": 2,
    "exception: ogólna klauzula „chyba że przepisy stanowią inaczej”": 20,
-   "exception: artefakt importu": 11,
+   "exception: artefakt importu": 12,
    "exception: wyjątek za krótki / za długi": 21,
-   "exception: kilka wyjątków w jednostce": 3,
+   "exception: kilka wyjątków w jednostce": 2,
    "exception: za mało dystraktorów": 2,
    "exception: zdanie za długie": 1,
    "enumeration: artefakt importu": 6,

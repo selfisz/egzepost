@@ -70,6 +70,7 @@ export function hasArtifacts(s: string): boolean {
     /zm\.\d|\)\)/u.test(s) ||
     /Dz\. Urz\. UE L|\d{2}\.\d{2}\.\d{4}, str\./u.test(s) ||
     /\bArt\. \d+[a-z]*\. /u.test(s) ||
+    /<\s*(§|Art\.|ust\.)/u.test(s) ||
     /(Oddział|Rozdział|Dział) [\dIVX]+[a-z]? \p{Lu}/u.test(s) ||
     /\(uchylon|\(pominięt|\(utracił/iu.test(s)
   )

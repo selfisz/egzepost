@@ -2,7 +2,7 @@
 
 Wygenerowano regułowo (bez AI) z danych `2026-10-29T12:00:17.167Z`. Plik tworzy `npm run build:questions` — nie edytuj ręcznie.
 
-**1813** pytań po walidacji · **555** kandydatów odrzuconych · 120/134 rozdziałów (etapów) ma pytania.
+**1812** pytań po walidacji · **555** kandydatów odrzuconych · 120/134 rozdziałów (etapów) ma pytania.
 
 ## Liczby
 
@@ -13,7 +13,7 @@ Wygenerowano regułowo (bez AI) z danych `2026-10-29T12:00:17.167Z`. Plik tworzy
 | Wyliczenia | 203 |
 | Wyjątki i wyłączenia | 115 |
 | Obowiązki i uprawnienia | 138 |
-| Terminy | 278 |
+| Terminy | 277 |
 | Kolejność czynności | 3 |
 | Porównania | 4 |
 | Przesłanki | 19 |
@@ -22,18 +22,18 @@ Wygenerowano regułowo (bez AI) z danych `2026-10-29T12:00:17.167Z`. Plik tworzy
 |---|---:|
 | u.p.e.a. | 591 |
 | Kpa | 388 |
-| Op | 834 |
+| Op | 833 |
 
 | Format | Pytań |
 |---|---:|
-| single | 1669 |
+| single | 1668 |
 | multiple | 140 |
 | flashcard | 4 |
 
 | Trudność | Pytań |
 |---|---:|
 | poziom 1 | 77 |
-| poziom 2 | 1480 |
+| poziom 2 | 1479 |
 | poziom 3 | 256 |
 
 ## Odrzucone kandydatury (powód)
@@ -52,7 +52,7 @@ Generator pomija przepis zamiast tworzyć słabe pytanie. Walidator sprawdza: st
 | exception: ogólna klauzula „chyba że przepisy stanowią inaczej” | 20 |
 | definition: definicja za długa na opcję | 19 |
 | definition: definicja zdradza pojęcie (wariant odwrotny) | 13 |
-| exception: artefakt importu | 11 |
+| exception: artefakt importu | 12 |
 | deadline: artefakt importu | 10 |
 | definition: definicja przez odesłanie do innej ustawy | 9 |
 | enumeration: lista otwarta i zbyt długa na fiszkę | 9 |
@@ -66,11 +66,11 @@ Generator pomija przepis zamiast tworzyć słabe pytanie. Walidator sprawdza: st
 | definition: artefakt importu | 4 |
 | definition: definicja przez samo odesłanie | 3 |
 | definition: definicja rozszerzająca („również”) | 3 |
-| exception: kilka wyjątków w jednostce | 3 |
 | exception: za mało dystraktorów spoza listy | 3 |
 | deadline: walidacja: jednoznaczność | 3 |
 | definition: za mało weryfikowalnych dystraktorów | 2 |
 | deadline: zdanie za długie | 2 |
+| exception: kilka wyjątków w jednostce | 2 |
 | exception: za mało dystraktorów | 2 |
 | conditions: artefakt importu | 2 |
 | enumeration: wprowadzenie wyliczenia zbyt ogólne | 2 |
@@ -217,20 +217,20 @@ Podstawa: art. 57 § 6 Op — „Organ podatkowy może odstąpić od ustalenia o
 
 ---
 
-**Terminy · value · single · poziom 2** — `deadline:value:ordynacja:67a:§ 2`
+**Terminy · value · single · poziom 2** — `deadline:value:ordynacja:171:§ 2`
 
-> Jaki termin przewiduje Art. 67a § 2 Op?
+> Jaki termin przewiduje Art. 171 § 2 Op?
 >
-> „… W przypadku wniosku o umorzenie w całości lub w części zaległości podatkowych, odsetek za zwłokę lub opłaty prolongacyjnej sprawę uznaje się za załatwioną milcząco w sposób w całości uwzględniający żądanie wnioskodawcy, jeżeli w terminie ▢ od dnia złożenia wniosku o umorzenie w całości lub w części zaległości podatkowych, odsetek za zwłokę lub opłaty prolongacyjnej organ podatkowy nie wydał decyzji lub postanowienia kończącego postępowanie w tej sprawie.”
+> „Jeżeli organ podatkowy otrzyma podanie złożone zgodnie z zawiadomieniem, o którym mowa w § 1, w terminie ▢ od dnia doręczenia zawiadomienia, podanie uważa się za złożone w dniu wniesienia pierwszego podania, z tym że nie wywołuje ono skutków w postaci skrócenia terminów określonych w art. 139 § 1 i 3.”
 
-- ▫️ 30 dni — _Art. 67a § 2 Op przewiduje 60 dni, nie 30 dni._
-- ✅ 60 dni
-- ▫️ 3 dni — _Art. 67a § 2 Op przewiduje 60 dni, nie 3 dni._
-- ▫️ 14 dni — _Art. 67a § 2 Op przewiduje 60 dni, nie 14 dni._
+- ▫️ 7 dni — _Art. 171 § 2 Op przewiduje 14 dni, nie 7 dni._
+- ✅ 14 dni
+- ▫️ 3 dni — _Art. 171 § 2 Op przewiduje 14 dni, nie 3 dni._
+- ▫️ 21 dni — _Art. 171 § 2 Op przewiduje 14 dni, nie 21 dni._
 
-Odpowiedź: **60 dni**
+Odpowiedź: **14 dni (od dnia doręczenia zawiadomienia)**
 
-Podstawa: art. 67a § 2 Op — „Umorzenie zaległości podatkowej powoduje również umorzenie odsetek za zwłokę w całości lub w takiej części, w jakiej została umorzona zaległość podatkowa. <§ 3. W przypadku wniosku o umorzenie w całości lub w części zaległości podatkowych, odsetek za zwłokę lu…”
+Podstawa: art. 171 § 2 Op — „Jeżeli organ podatkowy otrzyma podanie złożone zgodnie z zawiadomieniem, o którym mowa w § 1, w terminie 14 dni od dnia doręczenia zawiadomienia, podanie uważa się za złożone w dniu wniesienia pierwszego podania, z tym że nie wywołuje ono skutków w postaci skr…”
 
 ---
 

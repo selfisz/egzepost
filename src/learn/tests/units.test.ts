@@ -24,6 +24,15 @@ test('punkty słowniczka bez § mają ścieżkę „pkt N” (art. 1a pkt 4 u.p.
   assert.match(u.text, /^egzekutorze – rozumie się przez to/)
 })
 
+test('doklejony przez import następny paragraf („<§ 3.”) nie należy do jednostki (art. 67a § 2 Op)', () => {
+  const u = findUnit(real().corpus, 'ordynacja:67a', '§ 2')
+  assert.ok(u)
+  assert.doesNotMatch(u.fullText, /<\s*§|W przypadku wniosku o umorzenie/u)
+  for (const q of real().bank.questions) {
+    for (const s of q.sources) assert.doesNotMatch(s.quote, /<\s*(§|Art\.)/u, q.id)
+  }
+})
+
 test('pytania nie powstają z przepisów uchylonych', () => {
   for (const q of real().bank.questions) {
     for (const s of q.sources) assert.doesNotMatch(s.quote, /^\(?(uchylon|pominięt)/iu, q.id)

@@ -50,12 +50,16 @@ function mergeTextRuns(blocks: ArticleBlock[]): ArticleBlock[] {
   return out
 }
 
+/** The PDF import sometimes glues the next unit on after "<§ 3." — that tail belongs elsewhere and is dropped. */
+const MERGED_UNIT = /\s*<\s*(?:§|Art\.|ust\.)/u
+
 function walk(act: ActInfo, article: Article, blocks: ArticleBlock[], prefix: string, parent: Unit | undefined, out: Unit[]): Unit[] {
   const level: Unit[] = []
   for (const b of mergeTextRuns(blocks)) {
     const own = markerPath(b)
     const path = [prefix, own].filter(Boolean).join(' ')
-    const unit: Unit = { act, article, path, kind: b.type, text: clean(b.text), fullText: '', children: [], parent }
+    const text = clean(b.text).split(MERGED_UNIT)[0]
+    const unit: Unit = { act, article, path, kind: b.type, text, fullText: '', children: [], parent }
     out.push(unit)
     level.push(unit)
     if ('children' in b && b.children?.length) {
