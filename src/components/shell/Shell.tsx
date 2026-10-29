@@ -2,6 +2,7 @@ import { BarChart3, BookOpen, ChevronLeft, GraduationCap, Moon, Search, Sun, Use
 import type { ReactNode } from 'react'
 import { cn } from '../../lib/cn'
 import { useTheme } from '../ui/ThemeToggle'
+import { HelpButton } from './HelpOverlay'
 import { Wordmark } from './identity'
 import { href } from './router'
 
@@ -48,14 +49,17 @@ export function Shell({ tab, children, bare }: { tab: Tab; children: ReactNode; 
           >
             <UserRound className="size-4" /> Moje: tagi i ustawienia
           </a>
-          <button
-            type="button"
-            onClick={toggle}
-            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted hover:bg-sunk"
-          >
-            {theme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
-            {theme === 'dark' ? 'Tryb jasny' : 'Tryb ciemny'}
-          </button>
+          <div className="flex items-center gap-1">
+            <HelpButton className="grid size-10 place-items-center rounded-xl text-muted hover:bg-sunk" />
+            <button
+              type="button"
+              onClick={toggle}
+              className="flex flex-1 items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted hover:bg-sunk"
+            >
+              {theme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
+              {theme === 'dark' ? 'Tryb jasny' : 'Tryb ciemny'}
+            </button>
+          </div>
           <kbd className="px-3 pt-2 font-mono text-[11px] text-muted">⌘K / Ctrl+K — szukaj</kbd>
         </div>
       </aside>
@@ -119,14 +123,15 @@ export function TopBar({ back, title, brand }: { back?: string; title?: ReactNod
       ) : (
         <div className="min-w-0 flex-1 truncate text-[15px] font-semibold">{title}</div>
       )}
-      <div className="ml-auto flex items-center gap-1 md:hidden">
+      <div className="ml-auto flex items-center gap-1">
         <a
           href={href('moje')}
           aria-label="Moje: tagi i ustawienia"
-          className="grid size-10 place-items-center rounded-full text-ink-2 hover:bg-sunk"
+          className="grid size-10 place-items-center rounded-full text-ink-2 hover:bg-sunk md:hidden"
         >
           <UserRound className="size-[19px]" strokeWidth={1.8} />
         </a>
+        <HelpButton className="grid size-10 place-items-center rounded-full text-ink-2 hover:bg-sunk" />
         <button
           type="button"
           onClick={toggle}
