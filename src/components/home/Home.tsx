@@ -1,5 +1,7 @@
 import { Search } from 'lucide-react'
 import { cn } from '../../lib/cn'
+import type { LearnState } from '../../lib/learn-adapter'
+import { getProfile } from '../../lib/storage'
 import type { ActId, Library } from '../../lib/structure'
 import { chapterLabel, isActId } from '../../lib/structure'
 import type { Article, UserStore } from '../../types'
@@ -11,26 +13,28 @@ import { SectionLabel } from '../shell/Shell'
 
 const FALLBACK_SHORTCUTS = ['zarzut', 'tytuł wykonawczy', 'doręczenie zastępcze', 'przedawnienie', 'koszty upomnienia']
 
-function greeting(d: Date) {
+function greeting(d: Date, name?: string) {
   const h = d.getHours()
-  if (h < 5 || h >= 21) return 'Dobry wieczór.'
-  if (h < 18) return 'Dzień dobry.'
-  return 'Dobry wieczór.'
+  const base = h < 5 || h >= 18 ? 'Dobry wieczór' : 'Dzień dobry'
+  return name ? `${base}, ${name}.` : `${base}.`
 }
 
 export function Home({
   lib,
   byId,
   store,
+  learn,
   focusAct,
 }: {
   lib: Library
   byId: Map<string, Article>
   store: UserStore
+  learn: LearnState
   focusAct: ActId
 }) {
   const now = new Date()
   const date = now.toLocaleDateString('pl-PL', { weekday: 'long', day: 'numeric', month: 'long' })
+  const name = getProfile(store).name
   const recent = (store.recentArticleIds ?? []).map((id) => byId.get(id)).filter((a): a is Article => !!a)
   const last = recent[0]
   const pinned = new Set(store.pinnedTagIds ?? [])
@@ -39,7 +43,7 @@ export function Home({
   return (
     <div className="px-5 pt-2 md:px-8 md:pt-8">
       <div className="text-[13px] text-muted first-letter:uppercase">{date}</div>
-      <h1 className="mt-1 font-serif text-[32px] leading-tight font-semibold tracking-tight">{greeting(now)}</h1>
+      <h1 className="mt-1 font-serif text-[32px] leading-tight font-semibold tracking-tight">{greeting(now, name)}</h1>
 
       <a
         href={href('szukaj')}
@@ -50,7 +54,7 @@ export function Home({
       </a>
 
       <div className="mt-4">
-        <TrainingCard lib={lib} store={store} focusAct={focusAct} />
+        <TrainingCard lib={lib} learn={learn} focusAct={focusAct} />
       </div>
 
       {last && isActId(last.actId) && (

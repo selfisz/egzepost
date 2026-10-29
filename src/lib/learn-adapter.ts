@@ -1,216 +1,317 @@
 /**
- * Thin learning adapter for the Nauka screens.
+ * UI adapter over `src/learn` (Nauka v4).
  *
- * The UI only talks to `learnEngine`. Today it is backed by the existing
- * per-article SRS progress (`store.progress`, `store.learnQueue`) and the
- * imported statute text. A future engine (e.g. the rule-based question engine
- * in `src/learn/`) can replace `legacyEngine` by implementing `LearnEngine`
- * without touching the screens.
+ * Caps „Który artykuł?” share here (not in the engine). Legacy per-article SRS
+ * in `egzepost:user:v1` stays untouched; new progress lives in `regest:learn:v1`.
  */
-import type { Article, UserStore } from '../types'
-import { isDue, review, type Grade } from './srs'
-import { setProgress } from './storage'
-import type { ActId, ActStructure, Chapter, Library } from './structure'
-import { isRepealed } from './structure'
+import {
+  buildSession,
+  currentStage,
+  flashcardOutcome,
+  gradeAnswer,
+  guidedPath,
+  loadQuestionBank,
+  loadLearnState,
+  mistakes,
+  progressBy,
+  recordAnswer,
+  saveLearnState,
+  stageProgress,
+  summarize,
+  TYPE_LABELS,
+  type Grade,
+  type LearnMode,
+  type LearnState,
+  type Question,
+  type QuestionBank,
+  type QuestionType,
+  type SessionItem,
+  type SessionOptions,
+  type SessionPlan,
+  type Stage,
+} from '../learn'
+import type { ActId, Chapter, Library } from './structure'
 
-export type { Grade }
+export type { Grade, LearnMode, LearnState, Question, QuestionBank, QuestionType, SessionItem, SessionPlan, Stage }
+export { TYPE_LABELS, flashcardOutcome, gradeAnswer, guidedPath, mistakes, progressBy, summarize }
 
-export type CardKind = 'poznaj' | 'przypomnij' | 'ktory'
+const SESSION_SIZE = 12
+/** Cap „Który artykuł?” to ~1/3 of a session — it is 57% of the bank. */
+const WHICH_ARTICLE_SHARE = 1 / 3
 
-export type LearnCard = {
-  id: string
-  kind: CardKind
-  article: Article
-  chapter: Chapter
-  isReview: boolean
-  /** User tag linked to the article — their own wording, shown as a hint. */
-  tagLabel?: string
-  /** For `ktory`: verbatim fragment shown as the question. */
-  fragment?: string
-  /** For `ktory`: candidate articles (exactly one correct). */
-  options?: { article: Article; correct: boolean }[]
+let bankPromise: Promise<QuestionBank> | null = null
+
+export function ensureBank(): Promise<QuestionBank> {
+  if (!bankPromise) {
+    bankPromise = loadQuestionBank(`${import.meta.env.BASE_URL}data/`)
+  }
+  return bankPromise
 }
 
-export type StageState = 'done' | 'current' | 'locked'
+export function getLearnState(): LearnState {
+  return loadLearnState()
+}
 
-export type StageInfo = {
-  chapter: Chapter
-  state: StageState
+export function persistLearnState(state: LearnState): LearnState {
+  saveLearnState(state)
+  return state
+}
+
+export function sessionHref(opts: {
+  mode: LearnMode
+  actId?: ActId
+  stageId?: string
+  mistakesOnly?: boolean
+  articleId?: string
+}): string {
+  const q = new URLSearchParams()
+  q.set('m', opts.mode)
+  if (opts.actId) q.set('akt', opts.actId)
+  if (opts.stageId) q.set('etap', opts.stageId)
+  if (opts.mistakesOnly) q.set('bledy', '1')
+  if (opts.articleId) q.set('art', opts.articleId)
+  return `nauka/sesja?${q.toString()}`
+}
+
+export type ChapterRow = {
+  stage: Stage
+  /** Matching structure chapter, when articleIds overlap. */
+  chapter: Chapter | null
   seen: number
   total: number
+  correct: number
+  mistakes: number
+  status: ReturnType<typeof stageProgress>['status']
+  proposed: boolean
 }
 
-export type DailyPlan = {
-  cards: LearnCard[]
-  reviews: number
-  fresh: number
-  focusStage?: Chapter
+export type NaukaSnapshot = {
+  actId: ActId
+  proposed: Stage | null
+  mastered: number
+  total: number
+  seen: number
+  mistakes: number
+  dueToday: number
+  chapters: ChapterRow[]
+  /** Composition line under Test/Fiszki. */
+  lineup: { retry: number; review: number; new: number; proposedLabel?: string }
 }
 
-export interface LearnEngine {
-  readonly id: string
-  stages(act: ActStructure, store: UserStore): StageInfo[]
-  dailyPlan(lib: Library, store: UserStore, focusAct: ActId): DailyPlan
-  stageSession(act: ActStructure, chapterIndex: number, store: UserStore): LearnCard[]
-  grade(store: UserStore, card: LearnCard, grade: Grade): UserStore
-  /** Days until the card returns for a given grade (0 = still today). */
-  nextIntervalDays(store: UserStore, card: LearnCard, grade: Grade): number
+function matchChapter(lib: Library, stage: Stage): Chapter | null {
+  const act = lib.acts[stage.actId as ActId]
+  if (!act) return null
+  const ids = new Set(stage.articleIds)
+  let best: Chapter | null = null
+  let bestN = 0
+  for (const ch of act.chapters) {
+    const n = ch.articles.filter((a) => ids.has(a.id)).length
+    if (n > bestN) {
+      bestN = n
+      best = ch
+    }
+  }
+  return bestN > 0 ? best : null
 }
 
-const SESSION_MAX = 12
-const REVIEW_MAX = 8
-const FRESH_MIN = 4
-const FRESH_MAX = 8
-const QUEUE_MAX = 2
+export function naukaSnapshot(bank: QuestionBank, state: LearnState, lib: Library, actId: ActId, now = Date.now()): NaukaSnapshot {
+  const actQs = bank.questions.filter((q) => q.actId === actId)
+  const summary = summarize(
+    actQs.map((q) => q.id),
+    state,
+  )
+  const proposed = currentStage(bank, state, { filter: { actId } })
+  const path = guidedPath(bank, state, actId)
+  const chapters: ChapterRow[] = path.map(({ stage, progress }) => ({
+    stage,
+    chapter: matchChapter(lib, stage),
+    seen: progress.seen,
+    total: progress.total,
+    correct: progress.correct,
+    mistakes: progress.mistakes,
+    status: progress.status,
+    proposed: proposed?.id === stage.id,
+  }))
 
-function learnable(ch: Chapter): Article[] {
-  return ch.articles.filter((a) => !isRepealed(a) && a.text.trim().length > 20)
+  let dueToday = 0
+  for (const q of actQs) {
+    const p = state.questions[q.id]
+    if (p && p.dueAt <= now) dueToday++
+  }
+
+  const preview = buildCappedSession(bank, state, { mode: 'mixed', size: SESSION_SIZE, filter: { actId } })
+  return {
+    actId,
+    proposed,
+    mastered: summary.mastered,
+    total: summary.total,
+    seen: summary.seen,
+    mistakes: summary.mistakes,
+    dueToday,
+    chapters,
+    lineup: {
+      retry: preview.counts.retry,
+      review: preview.counts.review,
+      new: preview.counts.new,
+      proposedLabel: proposed?.label,
+    },
+  }
 }
 
-function hash(s: string): number {
-  let h = 2166136261
-  for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619)
-  return h >>> 0
+function eligibleExtras(bank: QuestionBank, _state: LearnState, opts: SessionOptions, used: Set<string>): Question[] {
+  void _state
+  const f = opts.filter ?? {}
+  const maxD = opts.maxDifficulty ?? 3
+  return bank.questions.filter((q) => {
+    if (used.has(q.id)) return false
+    if (q.type === 'which-article') return false
+    if (q.difficulty > maxD) return false
+    if (opts.mode === 'test' && q.format === 'flashcard') return false
+    if (f.actId && q.actId !== f.actId) return false
+    if (f.stageId && q.stageId !== f.stageId) return false
+    if (f.types?.length && !f.types.includes(q.type)) return false
+    return true
+  })
 }
 
-function seededShuffle<T>(list: T[], seed: string): T[] {
-  const out = [...list]
-  let h = hash(seed)
-  for (let i = out.length - 1; i > 0; i--) {
-    h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0
-    const j = h % (i + 1)
-    ;[out[i], out[j]] = [out[j], out[i]]
+/**
+ * Prefer non-which-article fillers so the capped type does not dominate.
+ * Order: unseen in proposed/filter stage, then other unseen, then seen.
+ */
+function fillNonWhich(
+  bank: QuestionBank,
+  state: LearnState,
+  opts: SessionOptions,
+  plan: SessionPlan,
+  need: number,
+): SessionItem[] {
+  if (need <= 0) return []
+  const used = new Set(plan.items.map((i) => i.question.id))
+  const presentAs = (q: Question) => (opts.mode === 'flashcards' ? 'flashcard' : q.format)
+  const pool = eligibleExtras(bank, state, opts, used)
+  const stageIds = new Set(plan.stage ? plan.stage.questionIds : [])
+  const ranked = [
+    ...pool.filter((q) => !state.questions[q.id] && stageIds.has(q.id)),
+    ...pool.filter((q) => !state.questions[q.id] && !stageIds.has(q.id)),
+    ...pool.filter((q) => state.questions[q.id]),
+  ]
+  const out: SessionItem[] = []
+  for (const q of ranked) {
+    if (out.length >= need) break
+    if (used.has(q.id)) continue
+    used.add(q.id)
+    out.push({ question: q, reason: state.questions[q.id] ? 'review' : 'new', presentAs: presentAs(q) as SessionItem['presentAs'] })
   }
   return out
 }
 
-function firstFragment(a: Article): string {
-  const b = a.blocks.find((x) => x.text.trim().length > 30) ?? a.blocks[0]
-  const text = (b?.text ?? a.text).trim()
-  return text.length > 320 ? `${text.slice(0, 300).replace(/\s+\S*$/, '')} …` : text
+/** Post-process engine plan: keep „Który artykuł?” ≤ ~1/3 of items. */
+export function capWhichArticle(bank: QuestionBank, state: LearnState, plan: SessionPlan, opts: SessionOptions): SessionPlan {
+  const size = Math.max(plan.items.length, opts.size ?? SESSION_SIZE)
+  const maxWhich = Math.max(0, Math.floor(size * WHICH_ARTICLE_SHARE))
+  const which = plan.items.filter((i) => i.question.type === 'which-article')
+  const other = plan.items.filter((i) => i.question.type !== 'which-article')
+  if (which.length <= maxWhich) return plan
+
+  const keptWhich = which.slice(0, maxWhich)
+  let items = [...other, ...keptWhich]
+  const need = size - items.length
+  items = [...items, ...fillNonWhich(bank, state, opts, { ...plan, items }, need)].slice(0, size)
+
+  const counts = { retry: 0, review: 0, new: 0 }
+  for (const it of items) counts[it.reason]++
+  return { ...plan, items, counts }
 }
 
-function tagFor(store: UserStore, a: Article): string | undefined {
-  return store.tags.find((t) => t.articleIds.includes(a.id))?.label
+export function buildCappedSession(bank: QuestionBank, state: LearnState, opts: SessionOptions = {}): SessionPlan {
+  const withSize = { size: SESSION_SIZE, ...opts }
+  const plan = buildSession(bank, state, withSize)
+  return capWhichArticle(bank, state, plan, withSize)
 }
 
-function makeCard(store: UserStore, a: Article, ch: Chapter, isReview: boolean): LearnCard {
-  const tagLabel = tagFor(store, a)
-  if (!isReview) return { id: `poznaj:${a.id}`, kind: 'poznaj', article: a, chapter: ch, isReview, tagLabel }
-  const reps = store.progress[a.id]?.repetitions ?? 0
-  const peers = learnable(ch).filter((p) => p.id !== a.id)
-  const canQuiz = peers.length >= 3
-  const canRecall = !!(a.title || tagLabel)
-  const wantQuiz = canQuiz && (!canRecall || (hash(a.id) + reps) % 2 === 0)
-  if (!wantQuiz) return { id: `przypomnij:${a.id}`, kind: 'przypomnij', article: a, chapter: ch, isReview, tagLabel }
-  const distractors = seededShuffle(peers, `${a.id}:${reps}`).slice(0, 3)
-  const options = seededShuffle(
-    [{ article: a, correct: true }, ...distractors.map((d) => ({ article: d, correct: false }))],
-    `${a.id}:opts:${reps}`,
-  )
-  return {
-    id: `ktory:${a.id}`,
-    kind: 'ktory',
-    article: a,
-    chapter: ch,
-    isReview,
-    tagLabel,
-    fragment: firstFragment(a),
-    options,
+export type SessionRequest = {
+  mode: LearnMode
+  actId?: ActId
+  stageId?: string
+  mistakesOnly?: boolean
+  /** Prefer questions of this article (from „Do nauki”). */
+  articleId?: string
+  learnQueue?: string[]
+}
+
+export function planSession(bank: QuestionBank, state: LearnState, req: SessionRequest): SessionPlan {
+  if (req.mistakesOnly) {
+    const list = mistakes(bank, state).filter((q) => !req.actId || q.actId === req.actId)
+    const presentAs = (q: Question) => (req.mode === 'flashcards' ? 'flashcard' : q.format)
+    const raw: SessionItem[] = list.slice(0, SESSION_SIZE).map((question) => ({
+      question,
+      reason: 'retry' as const,
+      presentAs: presentAs(question) as SessionItem['presentAs'],
+    }))
+    const base: SessionPlan = {
+      actId: req.actId ?? state.activeActId ?? bank.acts[0]?.id ?? null,
+      stage: null,
+      items: raw,
+      counts: { retry: raw.length, review: 0, new: 0 },
+    }
+    return capWhichArticle(bank, state, base, { mode: req.mode, size: SESSION_SIZE, filter: { actId: req.actId } })
   }
-}
 
-function stagesOf(act: ActStructure, store: UserStore): StageInfo[] {
-  let currentAssigned = false
-  return act.chapters.map((chapter) => {
-    const items = learnable(chapter)
-    const seen = items.filter((a) => store.progress[a.id]).length
-    const complete = seen >= items.length
-    let state: StageState
-    if (complete && !currentAssigned) state = 'done'
-    else if (!currentAssigned) {
-      state = 'current'
-      currentAssigned = true
-    } else state = complete ? 'done' : 'locked'
-    return { chapter, state, seen, total: items.length }
-  })
-}
+  const filter: SessionOptions['filter'] = {
+    ...(req.actId ? { actId: req.actId } : {}),
+    ...(req.stageId ? { stageId: req.stageId } : {}),
+  }
+  let plan = buildCappedSession(bank, state, { mode: req.mode, size: SESSION_SIZE, filter })
 
-export const legacyEngine: LearnEngine = {
-  id: 'legacy-srs',
+  const pinIds: string[] = []
+  if (req.articleId) pinIds.push(req.articleId)
+  for (const id of req.learnQueue ?? []) if (!pinIds.includes(id)) pinIds.push(id)
 
-  stages: stagesOf,
-
-  dailyPlan(lib, store, focusAct) {
-    const now = Date.now()
-    const due: { a: Article; ch: Chapter; dueAt: string }[] = []
-    for (const act of lib.list) {
-      for (const ch of act.chapters) {
-        for (const a of learnable(ch)) {
-          const p = store.progress[a.id]
-          if (p && isDue(p, now)) due.push({ a, ch, dueAt: p.dueAt })
-        }
+  if (pinIds.length) {
+    const presentAs = (q: Question) => (req.mode === 'flashcards' ? 'flashcard' : q.format)
+    const pinned: SessionItem[] = []
+    const used = new Set<string>()
+    for (const artId of pinIds) {
+      for (const q of bank.questions) {
+        if (q.articleId !== artId) continue
+        if (req.mode === 'test' && q.format === 'flashcard') continue
+        if (used.has(q.id)) continue
+        used.add(q.id)
+        pinned.push({ question: q, reason: state.questions[q.id] ? 'review' : 'new', presentAs: presentAs(q) as SessionItem['presentAs'] })
+        if (pinned.length >= Math.ceil(SESSION_SIZE / 2)) break
       }
+      if (pinned.length >= Math.ceil(SESSION_SIZE / 2)) break
     }
-    due.sort((x, y) => x.dueAt.localeCompare(y.dueAt))
-    const reviews = due.slice(0, REVIEW_MAX).map((d) => makeCard(store, d.a, d.ch, true))
+    const rest = plan.items.filter((i) => !used.has(i.question.id))
+    const items = [...pinned, ...rest].slice(0, SESSION_SIZE)
+    const counts = { retry: 0, review: 0, new: 0 }
+    for (const it of items) counts[it.reason]++
+    plan = { ...plan, items, counts }
+    plan = capWhichArticle(bank, state, plan, { mode: req.mode, size: SESSION_SIZE, filter })
+  }
 
-    const fresh: LearnCard[] = []
-    const taken = new Set(reviews.map((c) => c.article.id))
-    for (const id of store.learnQueue) {
-      if (fresh.length >= QUEUE_MAX) break
-      const act = lib.list.find((x) => id.startsWith(`${x.id}:`))
-      const ch = act?.chapterOf.get(id)
-      const a = act?.articles.find((x) => x.id === id)
-      if (!a || !ch || store.progress[id] || taken.has(id)) continue
-      fresh.push(makeCard(store, a, ch, false))
-      taken.add(id)
-    }
-
-    const act = lib.acts[focusAct] ?? lib.list[0]
-    const current = stagesOf(act, store).find((s) => s.state === 'current')
-    const freshTarget = Math.min(FRESH_MAX, Math.max(FRESH_MIN, SESSION_MAX - reviews.length))
-    if (current) {
-      for (const a of learnable(current.chapter)) {
-        if (fresh.length >= freshTarget) break
-        if (store.progress[a.id] || taken.has(a.id)) continue
-        fresh.push(makeCard(store, a, current.chapter, false))
-        taken.add(a.id)
-      }
-    }
-
-    const cards = [...fresh.slice(0, 2), ...reviews, ...fresh.slice(2)].slice(0, SESSION_MAX)
-    return {
-      cards,
-      reviews: cards.filter((c) => c.isReview).length,
-      fresh: cards.filter((c) => !c.isReview).length,
-      focusStage: current?.chapter,
-    }
-  },
-
-  stageSession(act, chapterIndex, store) {
-    const ch = act.chapters[chapterIndex]
-    if (!ch) return []
-    const items = learnable(ch)
-    const unseen = items.filter((a) => !store.progress[a.id]).slice(0, 8)
-    const now = Date.now()
-    const seen = items.filter((a) => store.progress[a.id])
-    const dueSeen = seen.filter((a) => isDue(store.progress[a.id], now))
-    const reviewPool = unseen.length ? dueSeen : dueSeen.length ? dueSeen : seededShuffle(seen, `${ch.index}:${now}`)
-    const cards = [
-      ...unseen.map((a) => makeCard(store, a, ch, false)),
-      ...reviewPool.map((a) => makeCard(store, a, ch, true)),
-    ]
-    return cards.slice(0, SESSION_MAX)
-  },
-
-  grade(store, card, grade) {
-    return setProgress(store, review(store.progress[card.article.id], card.article.id, grade))
-  },
-
-  nextIntervalDays(store, card, grade) {
-    return review(store.progress[card.article.id], card.article.id, grade).intervalDays
-  },
+  return plan
 }
 
-export const learnEngine: LearnEngine = legacyEngine
+export function applyAnswer(
+  state: LearnState,
+  question: Question,
+  input: { correct: boolean; grade?: Grade; selected?: string[] },
+): LearnState {
+  return persistLearnState(recordAnswer(state, question, input))
+}
+
+export function gradeHint(state: LearnState, question: Question, grade: Grade): string {
+  const next = recordAnswer(state, question, flashcardOutcome(grade))
+  const due = next.questions[question.id]?.dueAt ?? Date.now()
+  const ms = due - Date.now()
+  if (ms <= 15 * 60_000) return 'za 10 min'
+  const days = Math.max(1, Math.round(ms / 86_400_000))
+  if (days === 1) return 'za 1 dzień'
+  if (days < 5) return `za ${days} dni`
+  return `za ${days} dni`
+}
+
+export function typeLabel(t: QuestionType): string {
+  return TYPE_LABELS[t]
+}
