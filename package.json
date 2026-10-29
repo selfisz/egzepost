@@ -10,6 +10,8 @@
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "import:acts": "tsx scripts/import-acts.ts",
     "import:titles": "tsx scripts/import-titles.ts",
+    "build:questions": "tsx scripts/build-questions.ts",
+    "test": "tsx --test src/learn/tests/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
