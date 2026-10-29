@@ -98,6 +98,17 @@ export type AppPrefs = {
   highlightLegal: boolean
 }
 
+/**
+ * Personal learning set („Mój zestaw”): chapters from any act + individual articles
+ * (e.g. from „Do nauki”). Sessions from the set never silently pull outside this scope.
+ */
+export type LearnSet = {
+  /** Stage ids (`Stage.id` from the question bank). */
+  stageIds: string[]
+  /** Article ids (`actId:number`). */
+  articleIds: string[]
+}
+
 /** First-visit name + greeting; editable in Moje. */
 export type UserProfile = {
   /** Display name used in „Dzień dobry, {imię}.” */
@@ -117,7 +128,13 @@ export type UserStore = {
   version: 1
   tags: UserTag[]
   progress: Record<string, CardProgress>
+  /**
+   * Legacy pin-queue for „Do nauki”. Kept in sync with `learnSet.articleIds`
+   * so older code and exports stay compatible.
+   */
   learnQueue: string[]
+  /** Personal learning set — chapters + articles across acts. */
+  learnSet?: LearnSet
   /** Recently opened article ids (newest first) */
   recentArticleIds?: string[]
   /** Pinned tag ids for empty-search home */

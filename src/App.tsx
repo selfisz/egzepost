@@ -23,7 +23,7 @@ import {
   type SessionPlan,
 } from './lib/learn-adapter'
 import { getLearnState } from './lib/learn-adapter'
-import { loadUserStore, saveUserStore } from './lib/storage'
+import { getLearnSet, loadUserStore, saveUserStore } from './lib/storage'
 import { getLibrary, isActId, type ActId, type Library } from './lib/structure'
 import type { Article, UserStore } from './types'
 
@@ -170,7 +170,7 @@ function Main() {
     const q = route.query.get('akt')
     const actId: ActId = isActId(q) ? q : readFocusAct()
     if (isActId(q)) writeFocusAct(q)
-    body = <NaukaHome lib={lib} store={store} learn={learn} actId={actId} />
+    body = <NaukaHome lib={lib} store={store} onStoreChange={updateStore} learn={learn} actId={actId} />
   } else if (p0 === 'statystyki' && isActId(p1)) {
     tab = 'statystyki'
     top = <TopBar back="statystyki" title={lib.acts[p1].shortName} />
@@ -228,6 +228,7 @@ function SessionRoute({
   const stageId = query.get('etap') ?? undefined
   const mistakesOnly = query.get('bledy') === '1'
   const articleId = query.get('art') ?? undefined
+  const zestawMode = query.get('zestaw') === '1'
 
   const [plan, setPlan] = useState<SessionPlan | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -239,11 +240,11 @@ function SessionRoute({
         if (cancelled) return
         const next = planSession(bank, learn, {
           mode,
-          actId,
-          stageId,
-          mistakesOnly,
-          articleId,
-          learnQueue: store.learnQueue,
+          actId: zestawMode ? undefined : actId,
+          stageId: zestawMode ? undefined : stageId,
+          mistakesOnly: zestawMode ? false : mistakesOnly,
+          articleId: zestawMode ? undefined : articleId,
+          zestaw: zestawMode ? getLearnSet(store) : undefined,
         })
         setPlan(next)
       })
@@ -268,6 +269,24 @@ function SessionRoute({
   }
   if (!plan) {
     return <div className="grid min-h-dvh place-items-center font-serif text-[22px] text-muted">Sesja…</div>
+  }
+
+  if (plan.items.length === 0) {
+    return (
+      <div className="grid min-h-dvh place-items-center p-8 text-center">
+        <div>
+          <p className="font-serif text-[22px] font-semibold">brak pytań — tylko przeczytaj</p>
+          <p className="mt-2 text-[14px] text-muted">
+            {zestawMode
+              ? 'W „Mój zestaw” nie ma pytań silnika dla wybranych pozycji.'
+              : 'W tym zakresie silnik nie ma pytań.'}
+          </p>
+          <a href={`#/nauka?akt=${actId}`} className="mt-6 inline-flex h-11 items-center rounded-2xl bg-ink px-5 text-[14px] font-semibold text-paper">
+            Wróć do Nauki
+          </a>
+        </div>
+      </div>
+    )
   }
 
   return (

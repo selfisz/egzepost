@@ -235,12 +235,12 @@ function Actions({
         <ActionBtn icon={<Tag className="size-4" />} label="Tag" active={tagOpen} onClick={() => setTagOpen((v) => !v)} />
         <ActionBtn
           icon={queued ? <BookmarkCheck className="size-4" /> : <BookmarkPlus className="size-4" />}
-          label={queued ? 'W nauce' : 'Do nauki'}
+          label={queued ? 'W zestawie' : 'Do nauki'}
           active={queued}
           onClick={() => {
             if (queued) return
             onStoreChange(addToLearnQueue(store, article.id))
-            toast.push('Dodano do treningu — pojawi się w „Trening na dziś”')
+            toast.push('Dodano do „Mój zestaw”')
           }}
         />
       </div>

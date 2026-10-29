@@ -1,4 +1,13 @@
-import type { AppPrefs, CardProgress, LearnModule, ReadEntry, UserProfile, UserStore, UserTag } from '../types'
+import type {
+  AppPrefs,
+  CardProgress,
+  LearnModule,
+  LearnSet,
+  ReadEntry,
+  UserProfile,
+  UserStore,
+  UserTag,
+} from '../types'
 import { SEED_MODULES } from '../data/learn-seeds'
 import type { LearnState } from '../learn'
 import { emptyLearnState, LEARN_STORAGE_KEY, parseLearnState, saveLearnState } from '../learn'
@@ -9,11 +18,14 @@ const MAX_RECENT_TAGS = 12
 
 export const defaultPrefs: AppPrefs = { highlightLegal: false }
 
+const emptyLearnSet = (): LearnSet => ({ stageIds: [], articleIds: [] })
+
 const empty: UserStore = {
   version: 1,
   tags: [],
   progress: {},
   learnQueue: [],
+  learnSet: emptyLearnSet(),
   recentArticleIds: [],
   pinnedTagIds: [],
   recentTagIds: [],
@@ -34,12 +46,37 @@ function seedReadLogFromRecent(store: UserStore): Record<string, ReadEntry> {
   return readLog
 }
 
+/** Merge legacy `learnQueue` into `learnSet.articleIds` and keep both in sync. */
+export function getLearnSet(store: UserStore): LearnSet {
+  const set = store.learnSet ?? emptyLearnSet()
+  const articleIds = [...new Set([...set.articleIds, ...(store.learnQueue ?? [])])]
+  const stageIds = [...new Set(set.stageIds)]
+  return { stageIds, articleIds }
+}
+
+function withSyncedLearnSet(store: UserStore, set: LearnSet): UserStore {
+  const stageIds = [...new Set(set.stageIds)]
+  const articleIds = [...new Set(set.articleIds)]
+  return {
+    ...store,
+    learnSet: { stageIds, articleIds },
+    learnQueue: articleIds,
+  }
+}
+
 function normalizeStore(parsed: UserStore): UserStore {
+  const learnQueue = parsed.learnQueue ?? []
+  const rawSet = parsed.learnSet ?? emptyLearnSet()
+  const learnSet: LearnSet = {
+    stageIds: [...new Set(rawSet.stageIds ?? [])],
+    articleIds: [...new Set([...(rawSet.articleIds ?? []), ...learnQueue])],
+  }
   const base: UserStore = {
     version: 1,
     tags: parsed.tags,
     progress: parsed.progress ?? {},
-    learnQueue: parsed.learnQueue ?? [],
+    learnQueue: learnSet.articleIds,
+    learnSet,
     recentArticleIds: parsed.recentArticleIds ?? [],
     pinnedTagIds: parsed.pinnedTagIds ?? [],
     recentTagIds: parsed.recentTagIds ?? [],
@@ -152,12 +189,52 @@ export function setProgress(store: UserStore, progress: CardProgress): UserStore
 }
 
 export function addToLearnQueue(store: UserStore, articleId: string): UserStore {
-  if (store.learnQueue.includes(articleId)) return store
-  return { ...store, learnQueue: [...store.learnQueue, articleId] }
+  return addArticleToLearnSet(store, articleId)
 }
 
 export function clearLearnQueueArticle(store: UserStore, articleId: string): UserStore {
-  return { ...store, learnQueue: store.learnQueue.filter((id) => id !== articleId) }
+  return removeArticleFromLearnSet(store, articleId)
+}
+
+export function addArticleToLearnSet(store: UserStore, articleId: string): UserStore {
+  const set = getLearnSet(store)
+  if (set.articleIds.includes(articleId)) return withSyncedLearnSet(store, set)
+  return withSyncedLearnSet(store, { ...set, articleIds: [...set.articleIds, articleId] })
+}
+
+export function removeArticleFromLearnSet(store: UserStore, articleId: string): UserStore {
+  const set = getLearnSet(store)
+  return withSyncedLearnSet(store, { ...set, articleIds: set.articleIds.filter((id) => id !== articleId) })
+}
+
+export function addStageToLearnSet(store: UserStore, stageId: string): UserStore {
+  const set = getLearnSet(store)
+  if (set.stageIds.includes(stageId)) return withSyncedLearnSet(store, set)
+  return withSyncedLearnSet(store, { ...set, stageIds: [...set.stageIds, stageId] })
+}
+
+export function removeStageFromLearnSet(store: UserStore, stageId: string): UserStore {
+  const set = getLearnSet(store)
+  return withSyncedLearnSet(store, { ...set, stageIds: set.stageIds.filter((id) => id !== stageId) })
+}
+
+export function toggleStageInLearnSet(store: UserStore, stageId: string): UserStore {
+  const set = getLearnSet(store)
+  return set.stageIds.includes(stageId) ? removeStageFromLearnSet(store, stageId) : addStageToLearnSet(store, stageId)
+}
+
+/** Add all articles linked to a tag into Mój zestaw. */
+export function addTagArticlesToLearnSet(store: UserStore, tagId: string): UserStore {
+  const tag = store.tags.find((t) => t.id === tagId)
+  if (!tag) return store
+  let next = store
+  for (const id of tag.articleIds) next = addArticleToLearnSet(next, id)
+  return next
+}
+
+export function learnSetSize(store: UserStore): number {
+  const set = getLearnSet(store)
+  return set.stageIds.length + set.articleIds.length
 }
 
 export function pushRecentArticle(store: UserStore, articleId: string): UserStore {
