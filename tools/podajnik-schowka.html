@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<!-- Twarda blokada komunikacji sieciowej na poziomie silnika przeglądarki -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; form-action 'none'; base-uri 'none';">
+<meta name="referrer" content="no-referrer">
+<title>Podajnik Schowka (Offline RAM)</title>
+<style>
+  :root {
+    --bg: #181a1f;
+    --card: #22262e;
+    --border: #343a46;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #2ea043;
+    --accent-hover: #3fb950;
+    --warn: #d29922;
+    --danger: #f85149;
+    --blue: #388bfd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 12px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .badge-offline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #122117;
+    border: 1px solid #2ea04366;
+    color: #56d364;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  textarea {
+    width: 100%;
+    height: 120px;
+    background: #0d1117;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    resize: vertical;
+    user-select: text;
+  }
+  textarea:focus { outline: 1px solid var(--blue); }
+  .opts {
+    display: flex;
+    gap: 12px;
+    margin: 8px 0 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .opts label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    margin: 0;
+    font-weight: normal;
+  }
+  button {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    transition: filter 0.1s, transform 0.05s;
+  }
+  button:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--accent);
+    font-size: 17px;
+    padding: 18px 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-blue { background: var(--blue); }
+  .btn-sec {
+    background: #30363d;
+    color: var(--text);
+    font-size: 12px;
+    padding: 9px 8px;
+  }
+  .btn-sec:hover { background: #3c444d; }
+  .btn-warn { background: #9e6a03; font-size: 12px; padding: 9px 8px; }
+  .btn-danger { background: #b62324; font-size: 12px; padding: 9px 8px; }
+  .row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .row > * { flex: 1; }
+  .status-box {
+    text-align: center;
+    padding: 14px 10px;
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .counter {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .current-val {
+    font-family: Consolas, monospace;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #58a6ff;
+    margin: 6px 0;
+    word-break: break-all;
+  }
+  .type-tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #1f2937;
+    color: var(--muted);
+  }
+  .progress-wrap {
+    width: 100%;
+    height: 6px;
+    background: #0d1117;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.15s;
+  }
+  .toast {
+    font-size: 12px;
+    text-align: center;
+    min-height: 18px;
+    color: #56d364;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .hidden { display: none !important; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .stats-grid div {
+    background: #161b22;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .stats-grid strong {
+    display: block;
+    font-size: 14px;
+    color: var(--text);
+  }
+</style>
+</head>
+<body>
+
+<div class="badge-offline">
+  <span>TRYB: 100% OFFLINE (TYLKO RAM)</span>
+  <span>CSP: CONNECT-NONE</span>
+</div>
+
+<!-- EKRAN 1: WCZYTYWANIE -->
+<div id="view-setup" class="card">
+  <label for="raw-input">Wklej kolumnę (lub kolumny A:B NIP/PESEL) z Excela:</label>
+  <textarea id="raw-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Wklej tutaj wiersze z Excela (Ctrl+V)..."></textarea>
+  
+  <div class="opts">
+    <label><input type="checkbox" id="opt-clean" checked> Tylko cyfry (usuń spacje i myślniki)</label>
+    <label><input type="checkbox" id="opt-mask"> Maskuj na ekranie</label>
+  </div>
+
+  <button type="button" class="btn-blue" id="btn-load">Załaduj do pamięci RAM i wyczyść pole</button>
+</div>
+
+<!-- EKRAN 2: PRACA -->
+<div id="view-work" class="card hidden">
+  <div class="toast" id="toast-msg">Gotowy do pracy</div>
+
+  <div class="status-box">
+    <div class="counter" id="lbl-counter">Rekord: 0 / 0</div>
+    <div class="current-val" id="lbl-value">---</div>
+    <span class="type-tag" id="lbl-type">Oczekiwanie na start</span>
+    <div class="progress-wrap">
+      <div class="progress-bar" id="prog-bar"></div>
+    </div>
+  </div>
+
+  <button type="button" class="btn-primary" id="btn-next">
+    KOPIUJ NASTĘPNY (Spacja / Klik)
+  </button>
+
+  <div class="row">
+    <button type="button" class="btn-sec" id="btn-prev">⬅ Cofnij o 1</button>
+    <button type="button" class="btn-sec" id="btn-recopy">📋 Kopiuj ten sam</button>
+    <button type="button" class="btn-warn" id="btn-flag">⚠️ Oznacz Błędny</button>
+  </div>
+
+  <div class="opts" style="justify-content: space-between; margin-top: 10px;">
+    <label><input type="checkbox" id="opt-mask-work"> Ukryj środek numeru na ekranie</label>
+  </div>
+
+  <div class="stats-grid">
+    <div>Pozostało<strong id="st-left">0</strong></div>
+    <div>Przerobione<strong id="st-done">0</strong></div>
+    <div>Błędne<strong id="st-err">0</strong></div>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+
+  <div class="row">
+    <button type="button" class="btn-sec" id="btn-copy-err">Kopiuj listę Błędnych</button>
+    <button type="button" class="btn-danger" id="btn-panic">WYCZYŚĆ PAMIĘĆ (PANIC)</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  "use strict";
+
+  // Dane wyłącznie w ulotnych zmiennych lokalnych (znikają po zamknięciu karty)
+  let queue = [];
+  let errors = [];
+  let currentIndex = -1;
+
+  const elSetup = document.getElementById('view-setup');
+  const elWork = document.getElementById('view-work');
+  const elInput = document.getElementById('raw-input');
+  const optClean = document.getElementById('opt-clean');
+  const optMask = document.getElementById('opt-mask');
+  const optMaskWork = document.getElementById('opt-mask-work');
+
+  const lblCounter = document.getElementById('lbl-counter');
+  const lblValue = document.getElementById('lbl-value');
+  const lblType = document.getElementById('lbl-type');
+  const progBar = document.getElementById('prog-bar');
+  const toastMsg = document.getElementById('toast-msg');
+
+  const stLeft = document.getElementById('st-left');
+  const stDone = document.getElementById('st-done');
+  const stErr = document.getElementById('st-err');
+
+  const btnNext = document.getElementById('btn-next');
+
+  // Bezpieczne kopiowanie do schowka działające dla lokalnych plików file://
+  function copyToSystemClipboard(text) {
+    const fallbackCopy = (str) => {
+      const ta = document.createElement('textarea');
+      ta.value = str;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-9999px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try {
+        ok = document.execCommand('copy');
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      return ok;
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+      return true;
+    } else {
+      return fallbackCopy(text);
+    }
+  }
+
+  function normalizeRecord(rawLine, digitsOnly) {
+    // Obsługa wklejenia 2 kolumn z Excela (np. A=NIP, B=PESEL): bierze pierwszą niepustą kolumnę
+    const parts = rawLine.split('\t');
+    let chosen = "";
+    for (let i = 0; i < parts.length; i++) {
+      const candidate = parts[i].trim();
+      const cleaned = digitsOnly ? candidate.replace(/\D+/g, '') : candidate;
+      if (cleaned.length > 0) {
+        chosen = cleaned;
+        break;
+      }
+    }
+    return chosen;
+  }
+
+  function detectType(val) {
+    if (/^\d{10}$/.test(val)) return "NIP (10 znaków)";
+    if (/^\d{11}$/.test(val)) return "PESEL (11 znaków)";
+    if (/^\d{9}$/.test(val)) return "REGON (9 znaków)";
+    return "Długość: " + val.length + " zn.";
+  }
+
+  function formatDisplay(val) {
+    if (!val) return "---";
+    if (!optMaskWork.checked || val.length < 5) return val;
+    return val.slice(0, 3) + "•••••" + val.slice(-2);
+  }
+
+  function showToast(msg, color) {
+    toastMsg.textContent = msg;
+    toastMsg.style.color = color || "#56d364";
+  }
+
+  function updateUI() {
+    const total = queue.length;
+    if (currentIndex < 0) {
+      lblCounter.textContent = "Gotowych w kolejce: " + total;
+      lblValue.textContent = "KLIKNIJ START";
+      lblType.textContent = "Pierwsze kliknięcie załaduje rekord nr 1";
+      progBar.style.width = "0%";
+      stLeft.textContent = total;
+      stDone.textContent = 0;
+      stErr.textContent = errors.length;
+      btnNext.textContent = "ZAŁADUJ PIERWSZY (1 / " + total + ")";
+      return;
+    }
+
+    const currentVal = queue[currentIndex];
+    const humanIdx = currentIndex + 1;
+    lblCounter.textContent = "W SCHOWKU REKORD: " + humanIdx + " z " + total;
+    lblValue.textContent = formatDisplay(currentVal);
+    lblType.textContent = detectType(currentVal);
+
+    const pct = Math.round((humanIdx / total) * 100);
+    progBar.style.width = pct + "%";
+
+    stLeft.textContent = Math.max(0, total - humanIdx);
+    stDone.textContent = humanIdx;
+    stErr.textContent = errors.length;
+
+    if (humanIdx < total) {
+      btnNext.textContent = "KOPIUJ NASTĘPNY (" + (humanIdx + 1) + " / " + total + ")";
+    } else {
+      btnNext.textContent = "KONIEC KOLEJKI (Ostatni w schowku)";
+    }
+  }
+
+  // Załadowanie danych z pola tekstowego i natychmiastowe wyczyszczenie DOM
+  document.getElementById('btn-load').addEventListener('click', function() {
+    const raw = elInput.value;
+    const digitsOnly = optClean.checked;
+    optMaskWork.checked = optMask.checked;
+
+    // Natychmiastowe nadpisanie i wyczyszczenie pola tekstowego
+    elInput.value = "";
+
+    const lines = raw.split(/\r?\n/);
+    queue = [];
+    errors = [];
+    currentIndex = -1;
+
+    for (let i = 0; i < lines.length; i++) {
+      const item = normalizeRecord(lines[i], digitsOnly);
+      // Pomija wiersz nagłówkowy (jeśli np. po usunięciu liter jest pusty)
+      if (item.length > 0) {
+        queue.push(item);
+      }
+    }
+
+    if (queue.length === 0) {
+      alert("Brak prawidłowych rekordów do wczytania.");
+      return;
+    }
+
+    elSetup.classList.add('hidden');
+    elWork.classList.remove('hidden');
+    updateUI();
+    showToast("Wczytano " + queue.length + " rekordów do RAM", "#58a6ff");
+    btnNext.focus();
+  });
+
+  // Pobranie kolejnego rekordu do schowka
+  function loadNextRecord() {
+    if (queue.length === 0) return;
+    if (currentIndex + 1 < queue.length) {
+      currentIndex++;
+      const val = queue[currentIndex];
+      copyToSystemClipboard(val);
+      updateUI();
+      showToast("✓ Skopiowano do schowka (#" + (currentIndex + 1) + ")", "#56d364");
+    } else {
+      copyToSystemClipboard(queue[currentIndex]);
+      showToast("To już ostatni rekord (" + queue.length + ") – skopiowano ponownie", "#d29922");
+    }
+  }
+
+  btnNext.addEventListener('click', loadNextRecord);
+
+  // Cofnij o 1
+  document.getElementById('btn-prev').addEventListener('click', function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      const val = queue[currentIndex];
+      copyToSystemClipboard(val);
+      updateUI();
+      showToast("↩ Cofnięto i skopiowano #" + (currentIndex + 1), "#58a6ff");
+    }
+  });
+
+  // Kopiuj ponownie obecny
+  document.getElementById('btn-recopy').addEventListener('click', function() {
+    if (currentIndex >= 0 && currentIndex < queue.length) {
+      copyToSystemClipboard(queue[currentIndex]);
+      showToast("📋 Skopiowano ponownie #" + (currentIndex + 1), "#56d364");
+    }
+  });
+
+  // Oznacz jako błędny i od razu podaj następny
+  document.getElementById('btn-flag').addEventListener('click', function() {
+    if (currentIndex >= 0 && currentIndex < queue.length) {
+      const badVal = queue[currentIndex];
+      if (errors.indexOf(badVal) === -1) {
+        errors.push(badVal);
+      }
+      if (currentIndex + 1 < queue.length) {
+        currentIndex++;
+        copyToSystemClipboard(queue[currentIndex]);
+        updateUI();
+        showToast("⚠️ Oznaczono błąd -> w schowku następny (#" + (currentIndex + 1) + ")", "#d29922");
+      } else {
+        updateUI();
+        showToast("⚠️ Oznaczono błąd (koniec kolejki)", "#d29922");
+      }
+    }
+  });
+
+  // Kopiowanie listy błędnych na koniec pracy
+  document.getElementById('btn-copy-err').addEventListener('click', function() {
+    if (errors.length === 0) {
+      showToast("Lista błędnych jest pusta", "#8b949e");
+      return;
+    }
+    copyToSystemClipboard(errors.join("\r\n"));
+    showToast("📋 Skopiowano " + errors.length + " błędnych rekordów (wklej do Excela)", "#d29922");
+  });
+
+  optMaskWork.addEventListener('change', updateUI);
+
+  // Przycisk PANIC - zeruje zmienne RAM i nadpisuje schowek systemowy
+  function wipeAllMemory() {
+    for (let i = 0; i < queue.length; i++) queue[i] = "";
+    for (let i = 0; i < errors.length; i++) errors[i] = "";
+    queue.length = 0;
+    errors.length = 0;
+    currentIndex = -1;
+    elInput.value = "";
+    lblValue.textContent = "---";
+    copyToSystemClipboard(" ");
+    elWork.classList.add('hidden');
+    elSetup.classList.remove('hidden');
+  }
+
+  document.getElementById('btn-panic').addEventListener('click', wipeAllMemory);
+
+  // Dodatkowe czyszczenie RAM przy zamykaniu karty
+  window.addEventListener('beforeunload', function() {
+    for (let i = 0; i < queue.length; i++) queue[i] = "";
+    queue.length = 0;
+    errors.length = 0;
+  });
+})();
+</script>
+</body>
+</html>

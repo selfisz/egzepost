@@ -50,3 +50,7 @@ Trzy moduły (dolne zakładki na telefonie, lewy pasek na desktopie) + osobny ek
 - Motyw jasny/ciemny, PWA (offline cache); trasy w hashu (`#/art/upea:33`) działają pod `/egzepost/`
 
 Dane użytkownika: `localStorage` (`egzepost:user:v1`).
+
+## Narzędzia
+
+- [`tools/podajnik-schowka.html`](tools/podajnik-schowka.html) — samodzielny, offline podajnik schowka (otwórz lokalnie lub z raw GitHub); niezwiązany z PWA.
